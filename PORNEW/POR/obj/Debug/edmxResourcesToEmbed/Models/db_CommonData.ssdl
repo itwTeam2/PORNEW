@@ -1,0 +1,688 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CommonDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Divisions">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="DivisionName" />
+    </Key>
+    <Property Name="LocationID" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="DivisionID" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="DivisionType" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="DivisionName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OfficeCommand" Type="varchar" MaxLength="80" />
+    <Property Name="NoOfPersonnel" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="IDSeriesStart" Type="int" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedUser" Type="int" Nullable="false" />
+    <Property Name="Rank" Type="varchar" MaxLength="20" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Appointment" Type="varchar" MaxLength="50" />
+    <Property Name="NoPrefix" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sno" Type="int" />
+    <Property Name="SLAFStationID" Type="nvarchar" MaxLength="30" />
+    <Property Name="AppName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedUser" Type="int" />
+    <Property Name="HostID" Type="varchar" MaxLength="50" />
+    <Property Name="AgendaOrder" Type="int" />
+    <Property Name="WsEnable" Type="int" />
+    <Property Name="LetterHeadingName" Type="nvarchar" MaxLength="100" />
+    <Property Name="DivisionshortName" Type="varchar" MaxLength="15" />
+    <Property Name="SerNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="KitPrefix" Type="nvarchar" MaxLength="10" />
+    <Property Name="Maindiv" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="EpasLocations">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="DBName" />
+    </Key>
+    <Property Name="LocationID" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="LocationName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="NoOfDivisions" Type="int" />
+    <Property Name="NoOfPersonnel" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="DBName" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="SystemURL" Type="nvarchar" MaxLength="255" />
+    <Property Name="OCLIDSeriesStart" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedUser" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedUser" Type="int" />
+    <Property Name="HostID" Type="varchar" MaxLength="50" />
+    <Property Name="LocAddress" Type="varchar" MaxLength="100" />
+    <Property Name="TelephoneNo" Type="varchar" MaxLength="50" />
+    <Property Name="FaxNo" Type="varchar" MaxLength="50" />
+    <Property Name="NameOfCO" Type="varchar" MaxLength="50" />
+    <Property Name="RankofCO" Type="varchar" MaxLength="20" />
+    <Property Name="Appointment" Type="varchar" MaxLength="20" />
+    <Property Name="NameOfOCL" Type="varchar" MaxLength="50" />
+    <Property Name="RankofOCL" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.BloodGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BloodGroup">
+    <Key>
+      <PropertyRef Name="BloodGroupCode" />
+    </Key>
+    <Property Name="BloodGroupCode" Type="int" Nullable="false" />
+    <Property Name="BloodGroup" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.Branch' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Branch">
+    <Key>
+      <PropertyRef Name="BranchID" />
+      <PropertyRef Name="BranchName" />
+    </Key>
+    <Property Name="BranchID" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="BranchName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Directorate" Type="varchar" MaxLength="15" />
+    <Property Name="BranchShortName" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.Country' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryRegionCode" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="CountryRegionCode" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ShortName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.Directorate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Directorate">
+    <Key>
+      <PropertyRef Name="directCode" />
+      <PropertyRef Name="directorateName" />
+    </Key>
+    <Property Name="directCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="directorateName" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.District' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="DIST_CODE" />
+    </Key>
+    <Property Name="DIST_CODE" Type="int" Nullable="false" />
+    <Property Name="PROV_CODE" Type="nchar" MaxLength="10" />
+    <Property Name="DESCRIPTION" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.Division' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Division">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="DivisionID" />
+      <PropertyRef Name="DivisionType" />
+      <PropertyRef Name="DivisionName" />
+      <PropertyRef Name="NoOfPersonnel" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="CreatedDate" />
+      <PropertyRef Name="CreatedUser" />
+    </Key>
+    <Property Name="LocationID" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="DivisionID" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="DivisionType" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="DivisionName" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="OfficeCommand" Type="varchar" MaxLength="80" />
+    <Property Name="NoOfPersonnel" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedUser" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.EducationSubject' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="EducationSubject">
+    <Key>
+      <PropertyRef Name="SubjectID" />
+      <PropertyRef Name="EducationLevel" />
+    </Key>
+    <Property Name="SubjectID" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="SubjectName" Type="varchar" MaxLength="250" />
+    <Property Name="EducationLevel" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.Electorate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Electorate">
+    <Key>
+      <PropertyRef Name="ElectroCode" />
+    </Key>
+    <Property Name="ElectroCode" Type="int" Nullable="false" />
+    <Property Name="ElectrorateName" Type="nvarchar" MaxLength="255" />
+    <Property Name="District" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.Establishment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Establishment">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="LocationName" />
+    </Key>
+    <Property Name="LocationID" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="LocationName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="LocShortName" Type="char" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.EstablishmentNew' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="EstablishmentNew">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="LocationName" />
+    </Key>
+    <Property Name="LocationID" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="LocationName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="LocShortName" Type="char" MaxLength="10" />
+    <Property Name="HelpDeskStatus" Type="char" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.GSDivision' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="GSDivision">
+    <Key>
+      <PropertyRef Name="GSDivisionID" />
+      <PropertyRef Name="District" />
+      <PropertyRef Name="GSName" />
+    </Key>
+    <Property Name="GSDivisionID" Type="int" Nullable="false" />
+    <Property Name="District" Type="int" Nullable="false" />
+    <Property Name="GSName" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.MaritalStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MaritalStatus">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Description" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.MedicalCategory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MedicalCategory">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'CommonData.dbo.Nationality' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Nationality">
+          <Property Name="CODE" Type="int" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.NOKRelationship' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="NOKRelationship">
+    <Key>
+      <PropertyRef Name="RelationCode" />
+    </Key>
+    <Property Name="RelationCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOKRelationship" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.P2_AGADivision' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="P2_AGADivision">
+    <Key>
+      <PropertyRef Name="DistrictCode" />
+      <PropertyRef Name="AGADivCode" />
+    </Key>
+    <Property Name="DistrictCode" Type="int" Nullable="false" />
+    <Property Name="AGADivCode" Type="int" Nullable="false" />
+    <Property Name="AGADivName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.P2_District' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="P2_District">
+    <Key>
+      <PropertyRef Name="DIST_CODE" />
+    </Key>
+    <Property Name="DIST_CODE" Type="int" Nullable="false" />
+    <Property Name="PROV_CODE" Type="nchar" MaxLength="10" />
+    <Property Name="DESCRIPTION" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.P2_Electorate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="P2_Electorate">
+    <Key>
+      <PropertyRef Name="ElectroCode" />
+    </Key>
+    <Property Name="ElectroCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ElectrorateName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Distric" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.P2_GSDivision' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="P2_GSDivision">
+    <Key>
+      <PropertyRef Name="GSCode" />
+    </Key>
+    <Property Name="GSCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GSName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.P2_PoliceStation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="P2_PoliceStation">
+    <Key>
+      <PropertyRef Name="PoliceStationCode" />
+    </Key>
+    <Property Name="PoliceStationCode" Type="int" Nullable="false" />
+    <Property Name="PoliceStation" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.P2_PostCode' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="P2_PostCode">
+    <Key>
+      <PropertyRef Name="POST_CODE" />
+    </Key>
+    <Property Name="DIST_CODE" Type="int" />
+    <Property Name="POST_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="CATG" Type="varchar" MaxLength="1" />
+    <Property Name="POST_CODE" Type="varchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'CommonData.dbo.P2_Province' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="P2_Province">
+          <Property Name="PROV_CODE" Type="nvarchar" MaxLength="255" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.P2_Town' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="P2_Town">
+    <Key>
+      <PropertyRef Name="TownCOde" />
+      <PropertyRef Name="DIST_CODE" />
+    </Key>
+    <Property Name="TownCOde" Type="int" Nullable="false" />
+    <Property Name="DIST_CODE" Type="int" Nullable="false" />
+    <Property Name="Town" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.PoliceStation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PoliceStation">
+    <Key>
+      <PropertyRef Name="PoliceStationCode" />
+    </Key>
+    <Property Name="District" Type="int" />
+    <Property Name="PoliceStationCode" Type="int" Nullable="false" />
+    <Property Name="PoliceStation" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.PostOffice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PostOffice">
+    <Key>
+      <PropertyRef Name="PostOfficeCode" />
+      <PropertyRef Name="District" />
+    </Key>
+    <Property Name="PostOfficeCode" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="District" Type="int" Nullable="false" />
+    <Property Name="PostOfficeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'CommonData.dbo.Province' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Province">
+          <Property Name="PROV_CODE" Type="nvarchar" MaxLength="255" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.ProvinceNew' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ProvinceNew">
+    <Key>
+      <PropertyRef Name="PROV_CODE" />
+    </Key>
+    <Property Name="PROV_CODE" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.Rank' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Rank">
+    <Key>
+      <PropertyRef Name="RANK" />
+    </Key>
+    <Property Name="RANK" Type="int" Nullable="false" />
+    <Property Name="RNK_NAME" Type="varchar" MaxLength="15" />
+    <Property Name="RANK_TYPE" Type="int" />
+    <Property Name="SHORT_NAME" Type="varchar" MaxLength="255" />
+    <Property Name="LONG_NAME" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'CommonData.dbo.Religion' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Religion">
+          <Property Name="CODE" Type="int" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.ReligionNew' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ReligionNew">
+    <Key>
+      <PropertyRef Name="CODE" />
+    </Key>
+    <Property Name="CODE" Type="int" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.School' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="School">
+    <Key>
+      <PropertyRef Name="SchoolID" />
+      <PropertyRef Name="DIST_CODE" />
+      <PropertyRef Name="SchoolName" />
+    </Key>
+    <Property Name="SchoolID" Type="int" Nullable="false" />
+    <Property Name="DIST_CODE" Type="int" Nullable="false" />
+    <Property Name="SchoolName" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.Section' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Section">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="LocationName" />
+      <PropertyRef Name="DivisionID" />
+      <PropertyRef Name="DivisionName" />
+    </Key>
+    <Property Name="LocationID" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="LocationName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="DivisionID" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="DivisionName" Type="varchar" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.ServiceStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ServiceStatus">
+    <Key>
+      <PropertyRef Name="SVCStatus" />
+    </Key>
+    <Property Name="SVCStatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Service_Status" Type="varchar" MaxLength="40" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.ServiceType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ServiceType">
+    <Key>
+      <PropertyRef Name="SVCType" />
+    </Key>
+    <Property Name="SVCType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Service_Type" Type="varchar" MaxLength="50" />
+    <Property Name="IsOfficer" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.Town' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Town">
+    <Key>
+      <PropertyRef Name="TownCOde" />
+      <PropertyRef Name="DIST_CODE" />
+    </Key>
+    <Property Name="TownCOde" Type="int" Nullable="false" />
+    <Property Name="DIST_CODE" Type="int" Nullable="false" />
+    <Property Name="Town" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.Trade' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Trade">
+    <Key>
+      <PropertyRef Name="TRADE" />
+      <PropertyRef Name="TRD_NAME" />
+    </Key>
+    <Property Name="TRADE" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="TRD_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DIRECTOR" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CommonData.dbo.Vw_EpasDivision' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_EpasDivision">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="DivisionID" />
+      <PropertyRef Name="DivisionName" />
+    </Key>
+    <Property Name="LocationID" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="DivisionID" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="DivisionName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CommonDataModelStoreContainer">
+    <EntitySet Name="Divisions" EntityType="Self.Divisions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EpasLocations" EntityType="Self.EpasLocations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BloodGroup" EntityType="Self.BloodGroup" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BloodGroup].[BloodGroupCode] AS [BloodGroupCode], 
+    [BloodGroup].[BloodGroup] AS [BloodGroup]
+    FROM [dbo].[BloodGroup] AS [BloodGroup]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Branch" EntityType="Self.Branch" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Branch].[BranchID] AS [BranchID], 
+    [Branch].[BranchName] AS [BranchName], 
+    [Branch].[Directorate] AS [Directorate], 
+    [Branch].[BranchShortName] AS [BranchShortName]
+    FROM [dbo].[Branch] AS [Branch]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Country" EntityType="Self.Country" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Country].[CountryRegionCode] AS [CountryRegionCode], 
+    [Country].[Name] AS [Name], 
+    [Country].[ShortName] AS [ShortName]
+    FROM [dbo].[Country] AS [Country]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Directorate" EntityType="Self.Directorate" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Directorate].[directCode] AS [directCode], 
+    [Directorate].[directorateName] AS [directorateName]
+    FROM [dbo].[Directorate] AS [Directorate]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="District" EntityType="Self.District" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [District].[DIST_CODE] AS [DIST_CODE], 
+    [District].[PROV_CODE] AS [PROV_CODE], 
+    [District].[DESCRIPTION] AS [DESCRIPTION]
+    FROM [dbo].[District] AS [District]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Division" EntityType="Self.Division" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Division].[LocationID] AS [LocationID], 
+    [Division].[DivisionID] AS [DivisionID], 
+    [Division].[DivisionType] AS [DivisionType], 
+    [Division].[DivisionName] AS [DivisionName], 
+    [Division].[OfficeCommand] AS [OfficeCommand], 
+    [Division].[NoOfPersonnel] AS [NoOfPersonnel], 
+    [Division].[Description] AS [Description], 
+    [Division].[Status] AS [Status], 
+    [Division].[CreatedDate] AS [CreatedDate], 
+    [Division].[CreatedUser] AS [CreatedUser]
+    FROM [dbo].[Division] AS [Division]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="EducationSubject" EntityType="Self.EducationSubject" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [EducationSubject].[SubjectID] AS [SubjectID], 
+    [EducationSubject].[SubjectName] AS [SubjectName], 
+    [EducationSubject].[EducationLevel] AS [EducationLevel]
+    FROM [dbo].[EducationSubject] AS [EducationSubject]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Electorate" EntityType="Self.Electorate" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Electorate].[ElectroCode] AS [ElectroCode], 
+    [Electorate].[ElectrorateName] AS [ElectrorateName], 
+    [Electorate].[District] AS [District]
+    FROM [dbo].[Electorate] AS [Electorate]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Establishment" EntityType="Self.Establishment" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Establishment].[LocationID] AS [LocationID], 
+    [Establishment].[LocationName] AS [LocationName], 
+    [Establishment].[LocShortName] AS [LocShortName]
+    FROM [dbo].[Establishment] AS [Establishment]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="EstablishmentNew" EntityType="Self.EstablishmentNew" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [EstablishmentNew].[LocationID] AS [LocationID], 
+    [EstablishmentNew].[LocationName] AS [LocationName], 
+    [EstablishmentNew].[LocShortName] AS [LocShortName], 
+    [EstablishmentNew].[HelpDeskStatus] AS [HelpDeskStatus]
+    FROM [dbo].[EstablishmentNew] AS [EstablishmentNew]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GSDivision" EntityType="Self.GSDivision" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [GSDivision].[GSDivisionID] AS [GSDivisionID], 
+    [GSDivision].[District] AS [District], 
+    [GSDivision].[GSName] AS [GSName]
+    FROM [dbo].[GSDivision] AS [GSDivision]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MaritalStatus" EntityType="Self.MaritalStatus" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MaritalStatus].[ID] AS [ID], 
+    [MaritalStatus].[Description] AS [Description]
+    FROM [dbo].[MaritalStatus] AS [MaritalStatus]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MedicalCategory" EntityType="Self.MedicalCategory" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MedicalCategory].[CategoryID] AS [CategoryID], 
+    [MedicalCategory].[Category] AS [Category]
+    FROM [dbo].[MedicalCategory] AS [MedicalCategory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="NOKRelationship" EntityType="Self.NOKRelationship" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [NOKRelationship].[RelationCode] AS [RelationCode], 
+    [NOKRelationship].[NOKRelationship] AS [NOKRelationship]
+    FROM [dbo].[NOKRelationship] AS [NOKRelationship]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="P2_AGADivision" EntityType="Self.P2_AGADivision" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [P2_AGADivision].[DistrictCode] AS [DistrictCode], 
+    [P2_AGADivision].[AGADivCode] AS [AGADivCode], 
+    [P2_AGADivision].[AGADivName] AS [AGADivName]
+    FROM [dbo].[P2_AGADivision] AS [P2_AGADivision]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="P2_District" EntityType="Self.P2_District" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [P2_District].[DIST_CODE] AS [DIST_CODE], 
+    [P2_District].[PROV_CODE] AS [PROV_CODE], 
+    [P2_District].[DESCRIPTION] AS [DESCRIPTION]
+    FROM [dbo].[P2_District] AS [P2_District]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="P2_Electorate" EntityType="Self.P2_Electorate" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [P2_Electorate].[ElectroCode] AS [ElectroCode], 
+    [P2_Electorate].[ElectrorateName] AS [ElectrorateName], 
+    [P2_Electorate].[Distric] AS [Distric]
+    FROM [dbo].[P2_Electorate] AS [P2_Electorate]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="P2_GSDivision" EntityType="Self.P2_GSDivision" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [P2_GSDivision].[GSCode] AS [GSCode], 
+    [P2_GSDivision].[GSName] AS [GSName]
+    FROM [dbo].[P2_GSDivision] AS [P2_GSDivision]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="P2_PoliceStation" EntityType="Self.P2_PoliceStation" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [P2_PoliceStation].[PoliceStationCode] AS [PoliceStationCode], 
+    [P2_PoliceStation].[PoliceStation] AS [PoliceStation]
+    FROM [dbo].[P2_PoliceStation] AS [P2_PoliceStation]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="P2_PostCode" EntityType="Self.P2_PostCode" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [P2_PostCode].[DIST_CODE] AS [DIST_CODE], 
+    [P2_PostCode].[POST_NAME] AS [POST_NAME], 
+    [P2_PostCode].[CATG] AS [CATG], 
+    [P2_PostCode].[POST_CODE] AS [POST_CODE]
+    FROM [dbo].[P2_PostCode] AS [P2_PostCode]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="P2_Town" EntityType="Self.P2_Town" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [P2_Town].[TownCOde] AS [TownCOde], 
+    [P2_Town].[DIST_CODE] AS [DIST_CODE], 
+    [P2_Town].[Town] AS [Town]
+    FROM [dbo].[P2_Town] AS [P2_Town]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PoliceStation" EntityType="Self.PoliceStation" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PoliceStation].[District] AS [District], 
+    [PoliceStation].[PoliceStationCode] AS [PoliceStationCode], 
+    [PoliceStation].[PoliceStation] AS [PoliceStation]
+    FROM [dbo].[PoliceStation] AS [PoliceStation]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PostOffice" EntityType="Self.PostOffice" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PostOffice].[PostOfficeCode] AS [PostOfficeCode], 
+    [PostOffice].[District] AS [District], 
+    [PostOffice].[PostOfficeName] AS [PostOfficeName]
+    FROM [dbo].[PostOffice] AS [PostOffice]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ProvinceNew" EntityType="Self.ProvinceNew" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ProvinceNew].[PROV_CODE] AS [PROV_CODE], 
+    [ProvinceNew].[DESCRIPTION] AS [DESCRIPTION]
+    FROM [dbo].[ProvinceNew] AS [ProvinceNew]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Rank" EntityType="Self.Rank" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Rank].[RANK] AS [RANK], 
+    [Rank].[RNK_NAME] AS [RNK_NAME], 
+    [Rank].[RANK_TYPE] AS [RANK_TYPE], 
+    [Rank].[SHORT_NAME] AS [SHORT_NAME], 
+    [Rank].[LONG_NAME] AS [LONG_NAME]
+    FROM [dbo].[Rank] AS [Rank]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ReligionNew" EntityType="Self.ReligionNew" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ReligionNew].[CODE] AS [CODE], 
+    [ReligionNew].[DESCRIPTION] AS [DESCRIPTION]
+    FROM [dbo].[ReligionNew] AS [ReligionNew]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="School" EntityType="Self.School" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [School].[SchoolID] AS [SchoolID], 
+    [School].[DIST_CODE] AS [DIST_CODE], 
+    [School].[SchoolName] AS [SchoolName]
+    FROM [dbo].[School] AS [School]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Section" EntityType="Self.Section" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Section].[LocationID] AS [LocationID], 
+    [Section].[LocationName] AS [LocationName], 
+    [Section].[DivisionID] AS [DivisionID], 
+    [Section].[DivisionName] AS [DivisionName]
+    FROM [dbo].[Section] AS [Section]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ServiceStatus" EntityType="Self.ServiceStatus" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ServiceStatus].[SVCStatus] AS [SVCStatus], 
+    [ServiceStatus].[Service_Status] AS [Service_Status]
+    FROM [dbo].[ServiceStatus] AS [ServiceStatus]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ServiceType" EntityType="Self.ServiceType" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ServiceType].[SVCType] AS [SVCType], 
+    [ServiceType].[Service_Type] AS [Service_Type], 
+    [ServiceType].[IsOfficer] AS [IsOfficer]
+    FROM [dbo].[ServiceType] AS [ServiceType]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Town" EntityType="Self.Town" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Town].[TownCOde] AS [TownCOde], 
+    [Town].[DIST_CODE] AS [DIST_CODE], 
+    [Town].[Town] AS [Town]
+    FROM [dbo].[Town] AS [Town]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Trade" EntityType="Self.Trade" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Trade].[TRADE] AS [TRADE], 
+    [Trade].[TRD_NAME] AS [TRD_NAME], 
+    [Trade].[DIRECTOR] AS [DIRECTOR]
+    FROM [dbo].[Trade] AS [Trade]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_EpasDivision" EntityType="Self.Vw_EpasDivision" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_EpasDivision].[LocationID] AS [LocationID], 
+    [Vw_EpasDivision].[DivisionID] AS [DivisionID], 
+    [Vw_EpasDivision].[DivisionName] AS [DivisionName]
+    FROM [dbo].[Vw_EpasDivision] AS [Vw_EpasDivision]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,321 @@
+﻿
+@model POR.Models.LivingInOut._GSQHeader
+
+<link href="~/Content/CustomeStyle.css" rel="stylesheet" />
+<script src="~/Scripts/Jq.js"></script>
+<script src="~/Scripts/GSQHeader.js"></script>
+@{
+    ViewBag.Title = "CreateAllocateMQ";
+}
+@using (Html.BeginForm("CreateAllocateMQ", "P2GSQHeader", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1 style="text-align:center">
+                <i class="fa fa-home">
+                    Occupation Of AMQ -P2
+                    <small>Add New Details</small>
+                </i>
+
+            </h1>
+            <div id="ErrorMessage">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong> @TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong>@TempData["ErrMsg"]
+                    </div>
+                }
+            </div>
+        </section>
+        <br />
+
+        <section class="col-lg-12 connectedSortable">
+            <div class="nav-tabs-custom">
+                <div style="padding-top:3px"><h4><center><b>OMQ Details</b></center> </h4></div>
+
+                <div class="row">
+                    <div class="box-body">
+                        <div class="form-group">
+                            @*Service No*@
+                            <div class="col-lg-2">
+                                @Html.Label("Service Number", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.ServiceNo, new { @class = "form-control ", autocomplete = "off" })
+                            </div>
+
+                            @*Rank*@
+                            <div class="col-lg-2">
+                                @Html.Label("Rank", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Rank, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+
+                            </div>
+
+                            @*Name*@
+                            <div class="col-lg-6">
+                                @Html.Label("Name", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.FullName, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+
+                            </div>
+
+                            @*Branch/Trade*@
+                            <div class="col-lg-2">
+                                @Html.Label("Branch/Trade", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Trade, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="box-body">
+                        <div class="form-group">
+
+                            @*MQ Recovery Type*@
+                            <div class="col-lg-3" style="font-weight:bold">
+                                <div class="box-body" style="border:2px solid #f7f2f2;border-radius:6px">
+                                    @Html.Label("Spouse/Husband Work In SLAF", new { @class = "control-label" })
+                                    <div class="row">
+                                        <div class="col-lg-6" style="font-weight:bold">
+                                            Yes  : @Html.RadioButton("WorkingSLAF", "1", new { @class = "form-check-input", @id = "YeswrkingSLAFRb" })
+                                        </div>
+                                        <div class="col-lg-6">
+                                            No  : @Html.RadioButton("WorkingSLAF", "2", new { @class = "form-check-input", @id = "NowrkingSLAFRb" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @*Husband Wife Work in SLAF*@
+                            @*<div class="col-lg-4">
+                                    @Html.Label("Spouse/Husband Name", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.SpaouseName, new { @class = "form-control ", autocomplete = "off" })
+                                    @Html.HiddenFor(model => model.SpaouseWrkStatus)
+                                </div>*@
+
+                            @*GSQ Location*@
+                            <div class="col-lg-4">
+                                @Html.Label("GSQ Location", new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.Location, ViewBag.DDL_Location as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Location, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                            @*GSQ No*@
+                            <div class="col-lg-4">
+                                @Html.Label("GSQ No", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.GSQNo, new { @class = "form-control ", autocomplete = "off" })
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="box-body">
+                        <div class="form-group">
+                            @*GSQ Status*@
+                            <div class="col-lg-3">
+                                @Html.Label("GSQ Status", new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.StatusName, ViewBag.DDL_GSQStatus as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                @Html.HiddenFor(model => model.StatusName, new { @class = "form-control ", autocomplete = "off" })
+                            </div>
+
+                            @*Allocated Date*@
+                            <div class="col-lg-3" id="dvallocateDate">
+                                @Html.Label("Allocation Date", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.AllocatedDate, new { @class = "form-control", @type = "date" })
+                            </div>
+
+                            @*Vacant Date*@
+                            <div class="col-lg-3" id="dvVacantDate">
+                                @Html.Label("Vacant Date", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.VacantDate, new { @class = "form-control", @type = "date" })
+                            </div>
+
+                            @*Recovery Type*@
+                            <div class="col-lg-3" style="font-weight:bold">
+                                <div class="box-body" style="border:2px solid #f7f2f2;border-radius:6px">
+                                    @Html.Label("Select MQ Recovery Type", new { @class = "control-label" })
+                                    <div class="row">
+                                        <div class="col-lg-6" style="font-weight:bold">
+                                            Basic 10%  : @Html.RadioButton("MQRecovery", "1", new { @class = "form-check-input", @id = "MQRecoveryRb" })
+                                        </div>
+                                        <div class="col-lg-6">
+                                            Valuation  : @Html.RadioButton("MQRecovery", "2", new { @class = "form-check-input", @id = "ValuationRb" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @*Authority*@
+                            <div class="col-lg-3">
+                                @Html.Label("Authority", new { @class = "control-label" })
+                                @Html.TextAreaFor(model => model.Authority, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                                @Html.ValidationMessageFor(model => model.Authority, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="col-lg-6 connectedSortable">
+            <div class="nav-tabs-custom">
+                <div style="padding-top:3px"><h4> <center> <b>NOK Change Details</b> </center> </h4></div>
+
+                <div class="row">
+                    <div class="box-body">
+                        @*NOK Name/NOK Category*@
+                        <div class="form-group">
+                            @*Present Address*@
+                            <div class="col-lg-6">
+                                @Html.Label("NOK Name", new { @class = "control-label" })
+                                @Html.TextAreaFor(model => model.NOKName, new { @class = "form-control ", autocomplete = "off"})
+                                @Html.HiddenFor(model => model.NOKName, new { @class = "form-control ", autocomplete = "off" })
+                            </div>
+                            <div class="col-lg-6">
+                                @Html.Label("NOK Change Category", new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.NOKRelationship1, ViewBag.DDL_Relationship as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.NOKRelationship1, string.Empty, new { @class = "label label-danger" })
+                            </div>                          
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    @*NOK With Effect Date/NOK Address*@
+                    <div class="box-body">
+                        <div class="col-lg-6">
+                            @Html.Label("NOK With Effect Date", new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.NOKWDate, new { @class = "form-control", @type = "date" })
+                            @Html.ValidationMessageFor(model => model.NOKWDate, string.Empty, new { @class = "label label-danger" })
+                        </div>
+                        @*NOK Address*@
+                        <div class="col-lg-6">
+                            @Html.Label("Present Address", new { @class = "control-label" })
+                            @Html.TextAreaFor(model => model.NOKaddress, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                            @Html.ValidationMessageFor(model => model.NOKaddress, string.Empty, new { @class = "label label-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                @*<div class="box-body">
+                    <div class="row">
+                        <div class="box-body">
+                            <div class="col-lg-12 alert-success" id="dvHRIMSNOKInfo">
+                                <div><p style="font-size:12px;text-align:center"><b><u>HRMIS NOK Details</u></b></p></div>
+                                <ol type="a">
+                                    <li><span class="col-lg-3"> <b>NOK Name:</b></span><span class="col-lg-9"><b><i id="Name"></i></b></span></li>
+                                    <li style="margin-top:30px"><span class="col-lg-4"> <b>NOK Relationship:</b></span><span class="col-lg-8"><b><i id="NOKRelationship"></i></b></span></li>
+                                    <li style="margin-top:30px"><span class="col-lg-4"> <b>NOK Address:</b></span><span class="col-lg-8"><b><i id="NOKAddress"></i></b></span></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+
+            </div>
+        </section>
+
+        <section class="col-lg-6 connectedSortable">
+            <div class="nav-tabs-custom">
+                <div class="row">
+                    <div class="box-body">
+                        @*Province/District*@
+                        <div class="form-group">
+                           
+                            <div class="col-lg-6">
+                                @Html.Label("Select Province", new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.ProvinceId, ViewBag.DDL_Provincial_Result as SelectList, "SELECT", htmlAttributes: new { @class = "form-control", @id = "ProvinceId" })                              
+                            </div>
+
+                            <div class="col-lg-6">
+                                @Html.Label("Select District", new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.District, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control", @id = "DistId" })
+                                @*@Html.DropDownListFor(model => model.District, ViewBag.DDL_DistricSelectAll_Result as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })*@                                
+                                @Html.HiddenFor(model => model.DESCRIPTION, new { @class = "form-control ", autocomplete = "off" })
+                            </div>                           
+                        </div>
+
+                        @*GS Division/Nearest Town*@
+                        <div class="form-group">
+                            @*GS Division*@
+                            <div class="col-lg-6">
+                                @Html.Label("Select GS Division", new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.GSName, ViewBag.DDL_GSDivisionSelectAll_Result as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.GSName, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                            @*Nearest Town*@
+                            <div class="col-lg-6">
+                                @Html.Label("Select Nearest Town", new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.Town1, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Town1, string.Empty, new { @class = "label label-danger" })
+
+                            </div>                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="box-body">
+                        @*Police Station*@
+                        <div class="form-group">
+
+                            @*Police Station/Post Office*@
+                            <div class="col-lg-6">
+                                @Html.Label("Select Police Station", new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.PoliceStation1, ViewBag.DDL_PoliceStation as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.PoliceStation1, string.Empty, new { @class = "label label-danger" })                                    
+                            </div>
+
+                            @*Post Office*@
+                            <div class="col-lg-6">
+                                @Html.Label("Select Post Office", new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.PostOfficeName, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.PostOfficeName, string.Empty, new { @class = "label label-danger" })
+                            </div>
+                            
+                        </div>
+                        <div class="form-group">
+                            @*Remarks*@
+                            @Html.Label("Remarks", new { @class = "control-label" })
+                            @Html.TextAreaFor(model => model.Remarks, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                            @Html.ValidationMessageFor(model => model.Remarks, string.Empty, new { @class = "label label-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-body">
+                    <div class="row">
+                        <div class="box-body">
+                            @*Button Area*@
+                            <div class="form-group">
+                                <button type="button" class="col-lg- btn btn-info pull-right" style="height:40px;width:140px" onclick="location.href='@Url.Action("ClearFileds", "P2GSQHeader")'">
+                                    <span class="info-box-text"><i class=" fa fa-remove"></i>Clear Fileds</span>
+                                </button>
+
+                                <button type="button" class="col-lg-4 btn btn-warning pull-left" id="btnYes" style="height:40px;width:187px" onclick="location.href='@Url.Action("Index", "P2GSQHeader")'">
+                                    <span class="info-box-text"><i class=" fa fa-hand-o-left"></i> Go to Pending List</span>
+                                </button>
+
+                                <button type="submit" id="sd" value="Save Details" class="col-lg-4 btn btn-success col-lg-offset-1" style="height:40px;width:130px">
+                                    <span class="info-box-text"><i class=" fa fa-save"></i> Save</span>
+                                </button>                              
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+}

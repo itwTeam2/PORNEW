@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="P3HRMSModelStoreContainer" CdmEntityContainer="dbContextP3">
+    <EntitySetMapping Name="Postings">
+      <EntityTypeMapping TypeName="P3HRMSModel.Posting">
+        <MappingFragment StoreEntitySet="Posting">
+          <ScalarProperty Name="SvcDocStatus" ColumnName="SvcDocStatus" />
+          <ScalarProperty Name="RptStatus" ColumnName="RptStatus" />
+          <ScalarProperty Name="Duty" ColumnName="Duty" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="ToSectionInfo" ColumnName="ToSectionInfo" />
+          <ScalarProperty Name="ToSection" ColumnName="ToSection" />
+          <ScalarProperty Name="FromSectionInfo" ColumnName="FromSectionInfo" />
+          <ScalarProperty Name="FromSection" ColumnName="FromSection" />
+          <ScalarProperty Name="ModifiedMachine" ColumnName="ModifiedMachine" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedUser" ColumnName="ModifiedUser" />
+          <ScalarProperty Name="CreatedMachine" ColumnName="CreatedMachine" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateReported" ColumnName="DateReported" />
+          <ScalarProperty Name="P3AuthorityDate" ColumnName="P3AuthorityDate" />
+          <ScalarProperty Name="InOut" ColumnName="InOut" />
+          <ScalarProperty Name="TravelMode" ColumnName="TravelMode" />
+          <ScalarProperty Name="ApprovedStatus" ColumnName="ApprovedStatus" />
+          <ScalarProperty Name="PostingType" ColumnName="PostingType" />
+          <ScalarProperty Name="DirectorateAuthorityDate" ColumnName="DirectorateAuthorityDate" />
+          <ScalarProperty Name="DirectorateAuthority" ColumnName="DirectorateAuthority" />
+          <ScalarProperty Name="Directorate" ColumnName="Directorate" />
+          <ScalarProperty Name="P3Authority" ColumnName="P3Authority" />
+          <ScalarProperty Name="PORAuthorityDate" ColumnName="PORAuthorityDate" />
+          <ScalarProperty Name="PORAuthority" ColumnName="PORAuthority" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="ToDivisionID" ColumnName="ToDivisionID" />
+          <ScalarProperty Name="ToLocationID" ColumnName="ToLocationID" />
+          <ScalarProperty Name="FromDivisionID" ColumnName="FromDivisionID" />
+          <ScalarProperty Name="FromLocationID" ColumnName="FromLocationID" />
+          <ScalarProperty Name="NoOfOccurances" ColumnName="NoOfOccurances" />
+          <ScalarProperty Name="PORDate" ColumnName="PORDate" />
+          <ScalarProperty Name="PORLocation" ColumnName="PORLocation" />
+          <ScalarProperty Name="OccuranceNo" ColumnName="OccuranceNo" />
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="PostingID" ColumnName="PostingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

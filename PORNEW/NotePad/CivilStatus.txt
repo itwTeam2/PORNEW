@@ -1,0 +1,75 @@
+
+//////////Individual Search
+
+
+
+public ActionResult IndividualSearchMarried(string sortOrder, string currentFilter, string searchString, int? page)
+        {
+            ///Created BY   : 38746 Cpl Madusanka 
+            ///Created Date : 2021/07/27
+            /// Description : Search details for Individual Search
+
+            int? UID = Convert.ToInt32(Session["UID"]);
+            int pageSize = 0;
+            int pageNumber = 1;
+
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "Name" : "";
+            ViewBag.DateSortParm = sortOrder == "LeaveCategoryName" ? "Rank" : "FromDate";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var UserInfo = _db.UserInfoes.Where(x => x.UID == UID).FirstOrDefault();
+
+            // List<Vw_Leave> objleave = new List<Vw_Leave>();
+            var LocationId = _db.UserInfoes.Where(x => x.UID == UID).Select(x => x.LocationId).FirstOrDefault();
+
+            var objMarried = _db.Vw_CurrentUserRoleMarried.Where(x=>x.HeaderActive == 1).Take(200).OrderBy(x=>x.CreatedDate).ToList();
+
+            TempData["UserRole"] = UserInfo.RoleId;
+
+            if (UserInfo.RoleId == (int)POR.Enum.UserRole.P3CLERK || UserInfo.RoleId == (int)POR.Enum.UserRole.P3SNCO || UserInfo.RoleId == (int)POR.Enum.UserRole.P3OIC)
+            {
+                 objMarried = _db.Vw_CurrentUserRoleMarried.Where(x => x.Location == LocationId).Take(200).ToList();
+            }        
+
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                objMarried = _db.Vw_CurrentUserRoleMarried.Where(s => s.ServiceNo.Contains(searchString) || s.Rank.Contains(searchString)).ToList();
+            }
+
+            switch (sortOrder)
+            {
+                case "Service No":
+                    objMarried = objMarried.OrderBy(s => s.ServiceNo).ToList();
+                    break;
+                case "Rank":
+                    objMarried = objMarried.OrderBy(s => s.Rank).ToList();
+                    break;
+                case "Name With Initials":
+                    objMarried = objMarried.OrderBy(s => s.Name).ToList();
+                    break;
+                case "Category Name":
+                    objMarried = objMarried.OrderBy(s => s.CategoryName).ToList();
+                    break;
+                case "Authority":
+                    objMarried = objMarried.OrderBy(s => s.Authority).ToList();
+                    break;
+            }
+
+            pageSize = 10;
+            pageNumber = (page ?? 1);
+            return View(objMarried.ToPagedList(pageNumber, pageSize));
+
+            // return View(_db.Vw_Leave.ToList());
+        }

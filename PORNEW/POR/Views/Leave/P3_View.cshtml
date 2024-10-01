@@ -1,0 +1,135 @@
+﻿@model IEnumerable<POR.Models.LeaveHeader>
+
+@{
+    ViewBag.Title = "P3_View";
+}
+
+<h2>P3_View</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ServiceCategoryId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstablishmentId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeivisionId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalDays)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaymentTypeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FromDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Authority)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PorStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedMac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedMac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Active)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeaveCategory.LeaveCategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserInfo.LocationId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserInfo1.LocationId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServiceCategoryId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstablishmentId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeivisionId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalDays)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaymentTypeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FromDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Authority)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PorStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedMac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedMac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Active)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeaveCategory.LeaveCategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserInfo.LocationId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserInfo1.LocationId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LHID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LHID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LHID })
+        </td>
+    </tr>
+}
+
+</table>

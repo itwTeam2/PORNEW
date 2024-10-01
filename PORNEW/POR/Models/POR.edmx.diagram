@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e015c76b0ac945cd9285d408d7f152e7" Name="Diagram1">
+        <EntityTypeShape EntityType="PORModel.Allowance" Width="1.5" PointX="13" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.AllowanceCategory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.AllowanceItemCode" Width="1.5" PointX="15.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.AllowancePaymentType" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.AnnualLeavePlan" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Appointment" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.CivilStatusCategory" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.CivilStatusDivorceDetail" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.CivilStatusHeader" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.CivilStatusMarriedDetail" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.CivilStatusSpouseDetail" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.CivilStatusWidowDetail" Width="1.5" PointX="2.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.DirectItem" Width="1.5" PointX="4.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.DutyLocation" Width="1.5" PointX="12.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.EDCS_AllowanceValue" Width="1.5" PointX="15.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.EDCS_AllowanceValueRank" Width="1.5" PointX="14.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.EDCS_ProcessedTransactions" Width="1.5" PointX="16.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.EDCS_ProcessHeader" Width="1.5" PointX="17.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.EDCS_ProcessTypes" Width="1.5" PointX="17.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.EDProcessUser" Width="1.5" PointX="4.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.F121FlowStatus" Width="1.5" PointX="0.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.F252ChargeHeader" Width="1.5" PointX="10.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.F252OffenceInfo" Width="1.5" PointX="18.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.F252PunishmentDetails" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.F252PunishmentHeader" Width="1.5" PointX="19.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.F252WitnessHeader" Width="1.5" PointX="19.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.F252WittnessPerson" Width="1.5" PointX="12.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.FixAllowanceDetailsFlowStatu" Width="1.5" PointX="2.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.FixedAllowanceCancel" Width="1.5" PointX="17.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.FixedAllowanceCancelManual" Width="1.5" PointX="4.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.FixedAllowanceDetail" Width="1.5" PointX="15.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.FixedAllowanceEligibleList" Width="1.5" PointX="20.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.FlowManagementStatu" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.FlowStatusCivilStatusDetail" Width="1.5" PointX="14.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.FlowStatusGSQDetail" Width="1.5" PointX="16.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.FlowStatusLivingInOutDetail" Width="1.5" PointX="18.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.FlowStatusNOKChangeDetail" Width="1.5" PointX="20.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.FlowStatusPsnContact" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.FlowStatusSecondaryDutyDetail" Width="1.5" PointX="21.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.GSQHeader" Width="1.5" PointX="6.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.GSQStatu" Width="1.5" PointX="21.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.HolidayType" Width="1.5" PointX="22.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.LeaveCategory" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.LeaveCount" Width="1.5" PointX="22.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.LeaveDetail" Width="1.5" PointX="22.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.LeaveFlowStatu" Width="1.5" PointX="23.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.LeaveHeader" Width="1.5" PointX="8.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.LeaveProcessHeadar" Width="1.5" PointX="23.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.LeaveType" Width="1.5" PointX="23.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.LivingInOutHeader" Width="1.5" PointX="8.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.LivingStatu" Width="1.5" PointX="10.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Location" Width="1.5" PointX="24.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.LocationType" Width="1.5" PointX="10.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.MaritalStatu" Width="1.5" PointX="24.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.MovementCondition" Width="1.5" PointX="24.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.MovementStatu" Width="1.5" PointX="24.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.MP" Width="1.5" PointX="24.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.NOKChangeDetail" Width="1.5" PointX="25.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.NOKChangeHeader" Width="1.5" PointX="0.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.NOKStatu" Width="1.5" PointX="2.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.PaymentType" Width="1.5" PointX="25.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.PORFlowGroup" Width="1.5" PointX="25.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.PORMasterCategory" Width="1.5" PointX="12.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.PORMasterSubCategory" Width="1.5" PointX="14.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.PorModule" Width="1.5" PointX="16.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.ProcessHistory" Width="1.5" PointX="18.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.PsnChildDetail" Width="1.5" PointX="26.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.PsnContactDetail" Width="1.5" PointX="26.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.PsnContactHeader" Width="1.5" PointX="26.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.PSubCategory" Width="1.5" PointX="27.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.PublicHolidayCalender" Width="1.5" PointX="27.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.RationAllowenceCharge" Width="1.5" PointX="27.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.RecordStatu" Width="1.5" PointX="20.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.SecDutyAppointment" Width="1.5" PointX="22.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.SecondaryDutyDetail" Width="1.5" PointX="2.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.SecondaryDutyHeader" Width="1.5" PointX="4.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.SecurityQuestion" Width="1.5" PointX="3.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.ServiceCategory" Width="1.5" PointX="28.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.ServiceType" Width="1.5" PointX="28.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.svc" Width="1.5" PointX="28.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.sysdiagram" Width="1.5" PointX="28.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.SystemLog" Width="1.5" PointX="8.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.test" Width="1.5" PointX="28.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.UserDetail" Width="1.5" PointX="8.25" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.UserInfo" Width="1.5" PointX="6" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.UserPermission" Width="1.5" PointX="28.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.UserRole" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.WitnessDocument" Width="1.5" PointX="29.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.AllowanceType" Width="1.5" PointX="29.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.DisturbanceAmount" Width="1.5" PointX="29.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.ItemCodeList" Width="1.5" PointX="10.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.PorObject" Width="1.5" PointX="24.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.PorYear" Width="1.5" PointX="30.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.RationValue" Width="1.5" PointX="12.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.SecondaryDutyStatu" Width="1.5" PointX="30.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Service_Type" Width="1.5" PointX="14.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.svc2" Width="1.5" PointX="16.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.F121AllDetails" Width="1.5" PointX="30.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.F1250" Width="1.5" PointX="18.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.TESTMDATA" Width="1.5" PointX="20.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.TestVw" Width="1.5" PointX="30.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_AllNOK" Width="1.5" PointX="31.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_CivliStatusReject" Width="1.5" PointX="6.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_CurrentAttachment" Width="1.5" PointX="31.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_CurrentPosting" Width="1.5" PointX="31.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_CurrentUserLiving" Width="1.5" PointX="30.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_CurrentUserRoleMarried" Width="1.5" PointX="8.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_DirectItem" Width="1.5" PointX="32.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_F121" Width="1.5" PointX="32.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_FAEligibleList" Width="1.5" PointX="32.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_FixedAllowance_FLowStatus" Width="1.5" PointX="22.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_FixedAllowanceDetail" Width="1.5" PointX="32.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_FixedAllowanceDetailReport" Width="1.5" PointX="24.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_FlowStatus" Width="1.5" PointX="26.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_FlowStatusUser_ToolTip" Width="1.5" PointX="33.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_GSQDetails" Width="1.5" PointX="10.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_Holiday" Width="1.5" PointX="33.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_Leave" Width="1.5" PointX="12.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_LeaveDetail" Width="1.5" PointX="14.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_LeaveFlow_FullDetails" Width="1.5" PointX="32.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_LeaveFlowToolTip" Width="1.5" PointX="0.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_LeaveP3Details" Width="1.5" PointX="2.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_LeavePlan" Width="1.5" PointX="33.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_LeaveProcessDetails" Width="1.5" PointX="34.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.VW_LeaveTest" Width="1.5" PointX="34.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_LivingStatusReject" Width="1.5" PointX="34.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_MQDetails" Width="1.5" PointX="35.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_NOK_Details" Width="1.5" PointX="35.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_NOKChangeDetails" Width="1.5" PointX="36.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_NokDetailsP2" Width="1.5" PointX="36.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_Offences" Width="1.5" PointX="36.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_OfficerNOK" Width="1.5" PointX="36.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_OtherNOK" Width="1.5" PointX="36.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_P2Marriage" Width="1.5" PointX="26.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_P2PersonalDetail" Width="1.5" PointX="36.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_P3PersonalDetail" Width="1.5" PointX="34.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_PersonalDetail" Width="1.5" PointX="36.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_PorReport" Width="1.5" PointX="37.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_Punishments" Width="1.5" PointX="28.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.VW_RANKS" Width="1.5" PointX="38.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_RejectLeave" Width="1.5" PointX="38.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_SelectUserRole" Width="1.5" PointX="38.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_UpdateQuery" Width="1.5" PointX="38.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_UserFlowHistory" Width="1.5" PointX="38.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PORModel.Vw_UserProfile" Width="1.5" PointX="39.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="PORModel.FK_Allowance_Section" ManuallyRouted="false" />
+        <AssociationConnector Association="PORModel.FK_AllowanceItemCode_Allowance" ManuallyRouted="false" />
+        <AssociationConnector Association="PORModel.FK_AllowanceValue_Allowance" ManuallyRouted="false" />
+        <AssociationConnector Association="PORModel.FK_FixedAllowanceDetail_Allowance" ManuallyRouted="false" />
+        <AssociationConnector Association="PORModel.FK_FixedAllowanceCancel_FixedAllowanceDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="PORModel.FK_FlowManagementStatus_UserRole" ManuallyRouted="false" />
+        <AssociationConnector Association="PORModel.FK_LeaveHeader_LeaveCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="PORModel.FK_LeaveHeader_UserInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="PORModel.FK_LeaveHeader_UserInfo1" ManuallyRouted="false" />
+        <AssociationConnector Association="PORModel.FK_UserInfo_SecurityQuestion" ManuallyRouted="false" />
+        <AssociationConnector Association="PORModel.FK_SystemLog_UserInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="PORModel.FK_UserDetail_UserInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="PORModel.FK_UserInfo_UserRole" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

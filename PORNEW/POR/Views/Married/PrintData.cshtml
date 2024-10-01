@@ -1,0 +1,38 @@
+﻿
+
+@{
+    ViewBag.Title = "View And Print Data";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using POR.Models.Married;
+@model POR.Models.Married._CivilStatus
+
+<section id="about"></section>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="form-group">
+            @Html.ActionLink("Back to List", "IndexCivilStatus", "Married", new { @class = "btn btn-warning pull-right" })
+        </div>
+
+        <div style="margin-top:50px">
+            @using (Html.BeginForm("PrintData", "Married", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="row">
+                    <iframe src="~/Report/Married/MarriedDetailPrint.aspx" width="1100" height="750"></iframe>
+                </div>
+            }
+        </div>
+       
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+@section Scripts
+{
+
+}
+

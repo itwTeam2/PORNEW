@@ -1,0 +1,695 @@
+﻿@using POR.Models
+@model IEnumerable<POR.Models.LivingInOut._GSQHeader>
+<link href="~/Content/CustomeStyle.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Details";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="content-wrapper" style="height:900px !important;">
+
+        <section class="content-header">
+
+            <h1>
+                General Service Quarters Details
+                <small>View Added Details</small>
+            </h1>
+
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#"><i class="fa fa-dashboard"></i> Home</a>
+                </li>
+                <li class="active">GSQ Details</li>
+            </ol>
+
+            <div id="ErrorMessage">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong> @TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong>@TempData["ErrMsg"]
+                    </div>
+                }
+            </div>
+
+        </section>
+
+        <br />
+        @{
+            int GSQHID = Convert.ToInt32(Request.Params["GSQHID"]);
+        }
+
+        <section class="col-lg-12 nav-tabs-custom connectedSortable">
+
+            @foreach (var item in Model)
+            {
+                int RejectStatus = Convert.ToInt32(TempData["Rejectstatus"]);
+
+                if (RejectStatus != 2)
+                {
+                    //Normal Record detils are loaded in this section
+                    <div class="col-lg-6">
+                        <br />
+                        <dl class="dl-horizontal">
+                            @* Service No *@
+                            <dt class="form-group">
+                                Service No :
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.ServiceNo)
+
+                            </dd>
+
+                            @* Rank  *@
+                            <dt class="form-group">
+                                Rank :
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.Rank)
+
+                            </dd>
+
+                            @* Name *@
+                            <dt class="form-group">
+                                Name :
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.Name)
+
+                            </dd>
+
+                            @* GSQ Location *@
+                            <dt class="form-group">
+                                GSQ Location :
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.GSQLocation)
+
+                            </dd>
+
+                            @* GSQ Authoruty *@
+                            <dt class="form-group">
+                                Authority :
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.Authority)
+
+                            </dd>
+
+                            @* GSQ No *@
+                            <dt class="form-group">
+                                GSQNo :
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.GSQNo)
+
+                            </dd>
+
+                            @* Ref No *@
+                            <dt class="form-group">
+                                Refference No :
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.RefNo)
+
+                            </dd>
+
+                            @* GSQ Status *@
+                            <dt class="form-group">
+                                GSQ Status:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.GSQStatusName)
+
+                            </dd>
+
+                            @* Spouse/Husband Work In SLAF *@
+                            <dt class="form-group">
+                                Spouse/Husband Work In SLAF:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.SpouseHusbandWorking)
+
+                            </dd>
+
+                            @* Select MQ Recovery Type *@
+                            <dt class="form-group">
+                                MQ Recovery Type:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.MQRecoveryType)
+
+                            </dd>
+
+                            @if (item.GSQStatus == (int)POR.Enum.GSQStatus.Allocate)
+                            {
+                                @* Allocated Date *@
+                                <dt class="form-group">
+                                    GSQ Allocated Date :
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.AllocatedDate)
+
+                                </dd>
+                            }
+                            else
+                            {
+                                @* Vacant Date *@
+                                <dt class="form-group">
+                                    GSQ Vacant Date :
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.VacantDate)
+
+                                </dd>
+
+                            }
+
+                            @*This if statement is to check reject records available in the data list*@
+
+                            @if (item.PreviousReject >= 1)
+                            {
+                                @* Reject Ref :*@
+                                <dt class="alert alert-danger">
+                                    Reject Ref No :
+                                </dt>
+
+                                <dd class="alert alert-danger" style="height:55px">
+                                    @Html.DisplayFor(model => item.RejectAuth)
+
+                                </dd>
+                            }
+
+                        </dl>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <br />
+                        <dl class="dl-horizontal">
+                            @*NOKName*@
+                            <dt class="form-group">
+                                @Html.Label("NOK Name :", new { @class = "control-label" })
+
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.NOKName)
+
+                            </dd>
+
+                            @*NOK Change to*@
+                            <dt class="form-group">
+                                @Html.Label(" NOK Change To :", new { @class = "control-label" })
+
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.NOKChangeTo)
+
+                            </dd>
+
+                            @*NOKaddress*@
+                            <dt class="form-group">
+                                @Html.Label(" NOK Address :", new { @class = "control-label" })
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.NOKaddress)
+                            </dd>
+
+                            @*@With Effice Date*@
+                            <dt class="form-group">
+                                @Html.Label("With Effect Date :", new { @class = "control-label" })
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.NOKWDate)
+                            </dd>
+
+                            @*District*@
+                            <dt class="form-group">
+                                @Html.Label("District :", new { @class = "control-label" })
+
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.DistrictName)
+                            </dd>
+
+                            @*GS Division*@
+                            <dt class="form-group">
+                                @Html.Label("GS Division :", new { @class = "control-label" })
+
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.GSName)
+                            </dd>
+
+                            @*Nearest Town*@
+                            <dt class="form-group">
+                                @Html.Label("Nearest Town :", new { @class = "control-label" })
+
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.NearestTown)
+                            </dd>
+
+                            @*Police Station*@
+                            <dt class="form-group">
+                                @Html.Label("Police Station :", new { @class = "control-label" })
+
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.PoliceStation1)
+                            </dd>
+
+                            @*Post Office*@
+                            <dt class="form-group">
+                                Post Office :
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.PostOfficeName)
+
+                            </dd>
+                        </dl>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-lg-6">
+                        <br />
+                        <dl class="dl-horizontal">
+                            @* Service No *@
+                            <dt class="form-group">
+                                Service No :
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.ServiceNo)
+
+                            </dd>
+
+                            @* Rank  *@
+                            <dt class="form-group">
+                                Rank :
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.Rank)
+
+                            </dd>
+
+                            @* Name *@
+                            <dt class="form-group">
+                                Name :
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.Name)
+
+                            </dd>
+
+                            @* GSQ Location *@
+                            <dt class="form-group">
+                                GSQ Location :
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.GSQLocation)
+
+                            </dd>
+
+                            @* GSQ Authoruty *@
+                            <dt class="form-group">
+                                Authority :
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.Authority)
+
+                            </dd>                           
+
+                            @* GSQ No *@
+                            <dt class="form-group">
+                                GSQNo :
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.GSQNo)
+
+                            </dd>
+
+                            @* Ref No *@
+                            <dt class="form-group">
+                                Refference No :
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.RefNo)
+
+                            </dd>
+
+                            @* GSQ Status *@
+                            <dt class="form-group">
+                                GSQ Status:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.GSQStatusName)
+
+                            </dd>
+
+                            @* Spouse/Husband Work In SLAF *@
+                            <dt class="form-group">
+                                Spouse/Husband Work In SLAF:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.SpouseHusbandWorking)
+
+                            </dd>
+
+                            @* Select MQ Recovery Type *@
+                            <dt class="form-group">
+                                MQ Recovery Type:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.MQRecoveryType)
+
+                            </dd>
+
+                            @if (item.GSQStatus == (int)POR.Enum.GSQStatus.Allocate)
+                            {
+                                @* Allocated Date *@
+                                <dt class="form-group">
+                                    GSQ Allocated Date :
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.AllocatedDate)
+
+                                </dd>
+                            }
+                            else
+                            {
+                                @* Vacant Date *@
+                                <dt class="form-group">
+                                    GSQ Vacant Date :
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.VacantDate)
+
+                                </dd>
+
+                            }
+
+                            @*Reject Reason Comment :*@
+                            <dt class="alert-danger" style="border-radius:4px">
+                                Reject Reason :
+                            </dt>
+
+                            <dd class="alert-danger" style="border-radius:4px">
+                                @Html.DisplayFor(model => item.Comment)
+                            </dd>
+
+                            @*Reject Reason Person :*@
+                            <dt class="form-group alert-warning" style="border-radius:4px">
+                                Reject Person :
+                            </dt>
+
+                            <dd class="alert-warning" style="border-radius:4px">
+                                @Html.DisplayFor(model => item.RejectRoleName)
+                            </dd>
+
+                        </dl>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <br />
+                        <dl class="dl-horizontal">
+                            @*NOKName*@
+                            <dt class="form-group">
+                                @Html.Label("NOK Name :", new { @class = "control-label" })
+
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.NOKName)
+
+                            </dd>
+
+                            @*NOK Change to*@
+                            <dt class="form-group">
+                                @Html.Label(" NOK Change To :", new { @class = "control-label" })
+
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.NOKChangeTo)
+
+                            </dd>
+
+                            @*NOKaddress*@
+                            <dt class="form-group">
+                                @Html.Label(" NOK Address :", new { @class = "control-label" })
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.NOKaddress)
+                            </dd>
+
+                            @*@With Effice Date*@
+                            <dt class="form-group">
+                                @Html.Label("With Effect Date :", new { @class = "control-label" })
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.NOKWDate)
+                            </dd>
+
+                            @*District*@
+                            <dt class="form-group">
+                                @Html.Label("District :", new { @class = "control-label" })
+
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.DistrictName)
+                            </dd>
+
+                            @*GS Division*@
+                            <dt class="form-group">
+                                @Html.Label("GS Division :", new { @class = "control-label" })
+
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.GSName)
+                            </dd>
+
+                            @*Nearest Town*@
+                            <dt class="form-group">
+                                @Html.Label("Nearest Town :", new { @class = "control-label" })
+
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.NearestTown)
+                            </dd>
+
+                            @*Police Station*@
+                            <dt class="form-group">
+                                @Html.Label("Police Station :", new { @class = "control-label" })
+
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.PoliceStation1)
+                            </dd>
+
+                            @*Post Office*@
+                            <dt class="form-group">
+                                Post Office :
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => item.PostOfficeName)
+
+                            </dd>
+
+                        </dl>
+                    </div>
+                }
+
+                @*Fixed Details Id popup Box value*@
+                <input type="hidden" id="hndGSQHID" value="@Html.DisplayFor(model => item.GSQHID)" />
+                <input type="hidden" id="hndFMSID" value="@Html.DisplayFor(model => item.FMSID)" />
+            }
+        </section>
+
+        <section>
+            @{
+                int? URID = Convert.ToInt32(TempData["UserRoleId"]);
+                int? CurrentStatus = Convert.ToInt32(TempData["CurrentStatus"]);
+                int? SubmitStatus = Convert.ToInt32(TempData["SubmitStatus"]);
+                int Reject = Convert.ToInt32(TempData["Rejectstatus"]);
+
+                foreach (var item in Model)
+                {
+                    if (item.RSID == (int)POR.Enum.RecordStatus.Insert)
+                    {
+                        <div class="col-lg-12">
+                            @Html.ActionLink("Forward", "Forward", "GSQHeader", new { id = item.GSQHID }, new { @class = "btn btn-primary", id = "btnCertify" })
+                            @if (Reject == 2)
+                            {
+                                @Html.ActionLink("Edit", "Edit", "GSQHeader", new { id = item.GSQHID, rejectStatus = 2 }, new { @class = "btn btn-warning" })
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Edit", "Edit", "GSQHeader", new { id = item.GSQHID, rejectStatus = 1 }, new { @class = "btn btn-warning" })
+                            }
+                            @Html.ActionLink("Delete", "Delete", "GSQHeader", new { id = item.GSQHID }, new { @class = "btn btn-danger" })
+                            @Html.ActionLink("Back to List", "IndexAllocateMQ", "GSQHeader", new { @class = "btn btn-info" })
+                        </div>
+                    }
+                    else if (item.RSID == (int)POR.Enum.RecordStatus.Forward && (URID == CurrentStatus || CurrentStatus == 0))
+                    {
+                        if (CurrentStatus == (int)POR.Enum.UserRole.ACCOUNTS01)
+                        {
+                            <div class="col-lg-12">
+                                @Html.ActionLink("Certify to ED", "Forward", "GSQHeader", new { id = item.GSQHID, Sno = item.Sno, CSHID = item.GSQHID }, new { @class = "btn btn-success", id = "btnCertify" })
+                                <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-danger" />
+                                @Html.ActionLink("Back to List", "IndexAllocateMQ", "GSQHeader", new { @class = "btn btn-info" })
+
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-lg-12">
+                                @Html.ActionLink("Forward", "Forward", "GSQHeader", new { id = item.GSQHID }, new { @class = "btn btn-primary", id = "btnCertify" })
+                                <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-danger" />
+                                @Html.ActionLink("Back to List", "IndexAllocateMQ", "GSQHeader", new { @class = "btn btn-info" })
+
+                            </div>
+                        }
+                    }
+                    else if (item.RSID == (int)POR.Enum.RecordStatus.Forward && (URID == CurrentStatus && CurrentStatus != 1))
+                    {
+                        <div class="col-lg-12">
+                            @Html.ActionLink("Forward", "Forward", "GSQHeader", new { id = item.GSQHID }, new { @class = "btn btn-primary", id = "btnCertify" })
+                            <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-danger" />
+                            @Html.ActionLink("Back to List", "IndexAllocateMQ", "GSQHeader", new { @class = "btn btn-info" })
+                        </div>
+                    }
+                    else if (item.RSID == (int)POR.Enum.RecordStatus.Reject && URID == CurrentStatus && CurrentStatus == (int)POR.Enum.UserRole.P3CLERK)
+                    {
+                        <div class="col-lg-12">
+                            @Html.ActionLink("Reject Confirm", "RejectConfirm", "GSQHeader", new { id = item.GSQHID }, new { @class = "btn btn-danger" })
+                            @Html.ActionLink("Edit", "Edit", "GSQHeader", new { id = item.GSQHID, rejectStatus = 2 }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("Back to List", "RejectIndex", "GSQHeader", new { @class = "btn btn-info" })
+                        </div>
+                    }
+                    else if (item.RSID == (int)POR.Enum.RecordStatus.Reject && URID == CurrentStatus && CurrentStatus != (int)POR.Enum.UserRole.AccountsClerk)
+                    {
+                        <div class="col-lg-12">
+                            @Html.ActionLink("Forward", "Forward", "GSQHeader", new { id = item.GSQHID }, new { @class = "btn btn-primary", id = "btnCertify" })
+                            <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-danger" />
+                            @Html.ActionLink("Back to List", "RejectIndex", "GSQHeader", new { @class = "btn btn-info" })
+                        </div>
+                    }
+                    else if (item.RSID == (int)POR.Enum.RecordStatus.Reject && URID == (int)POR.Enum.UserRole.P3SNCO && CurrentStatus != (int)POR.Enum.UserRole.AccountsClerk)
+                    {
+                        <div class="col-lg-12">
+                            @Html.ActionLink("Forward", "Forward", "GSQHeader", new { id = item.GSQHID }, new { @class = "btn btn-primary", id = "btnCertify" })
+                            <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-danger" />
+                            @Html.ActionLink("Back to List", "RejectIndex", "GSQHeader", new { @class = "btn btn-info" })
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-lg-12">
+                            @Html.ActionLink("Back to List", "IndexAllocateMQ", "GSQHeader", new { @class = "btn btn-info" })
+                        </div>
+                    }
+                    @*Fixed Details Id popup Box value*@
+                    @*<input type="hidden" id="hndFADID" value="@Html.DisplayFor(model => model.CSHID)" />
+                        <input type="hidden" id="hndFMSID" value="@Html.DisplayFor(model => model.FMSID)" />*@
+                }
+            }
+        </section>
+
+        <div class="loading" id="dvloader">
+            <img class="loading-image" src="~/Content/img/Spinner-3.gif" alt="Loading..." />
+        </div>
+
+    </div>
+                }
+<script src="~/Scripts/Jq.js"></script>
+<script src="~/Scripts/GSQHeader.js"></script>
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="border-bottom:none !important;">
+                Reject Comments
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <hr style="margin-top: 0px !important; margin-bottom: 0px !important; padding-bottom: 0px !important; padding-top: 0px !important; " />
+            </div>
+            <div class="modal-body" id="partial2">
+                @{
+                    <div>
+                        @Html.Partial("_RejectCommentGSQ")
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#btnReject').click(function () {
+            var GSQHID = $("#hndGSQHID").val();
+            var FMSID = $("#hndFMSID").val();
+
+            var route = '@Url.Action("Reject", "GSQHeader")?GSQHID=' + GSQHID + '&FMSID=' + FMSID;
+
+            //$('#partial2').load(route);
+        });
+    });
+</script>

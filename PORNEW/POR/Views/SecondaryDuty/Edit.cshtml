@@ -1,0 +1,489 @@
+﻿@model POR.Models.SecondaryDuty._SecondaryDuty
+
+<script src="~/Scripts/Jq.js"></script>
+
+@{
+    ViewBag.Title = "RegiMakeInfo";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="content-wrapper">
+
+        <section class="content-header">
+
+            <h1 style="text-align:center"><span> Edit Secondary Duty</span></h1>
+
+            <div id="ErrorMessage">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong> @TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong>@TempData["ErrMsg"]
+                    </div>
+                }
+            </div>
+
+        </section>
+
+        <br />
+
+        <section class="col-lg-12 connectedSortable">
+            <div class="nav-tabs-custom" style="height:695px">
+                @Html.ValidationSummary(true)
+                <div class="box-body">
+                    @*Service Number*@
+                    @{if (ViewBag.OICPROCESS < 1)
+                        {
+                    <div class="form-group">
+                        <div class="col-lg-6">
+                            @Html.Label("Service Number", new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.ServiceNo, new { @class = "form-control ", autocomplete = "off", @readonly = "readonly" })
+                            @Html.HiddenFor(model => model.ServiceNo, new { @class = "form-control ", autocomplete = "off" })
+                            @Html.ValidationMessageFor(model => model.Snumber, string.Empty, new { @class = "label label-danger" })
+                        </div>
+
+                        <div class="col-lg-6">
+                            @Html.Label("Rank", new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.Rank, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                        </div>
+
+                    </div>
+
+                    @*Name*@
+                    <div class="form-group">
+                        <div class="col-lg-12" style="margin-top:12px">
+                            @Html.Label("Name", new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.FullName, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(model => model.FullName, string.Empty, new { @class = "label label-danger" })
+
+                        </div>
+                    </div>
+
+                    @*Branch/Trade/Civil Status*@
+                    <div class="form-group">
+                        <div class="col-lg-6" style="margin-top:12px">
+                            @Html.Label("Branch/Trade", new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.Trade, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                        </div>
+                        @*<div class="col-lg-6" style="margin-top:12px">
+                                @Html.Label("Civil Status", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Marriage_Status, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.Marriage_Status, string.Empty, new { @class = "label label-danger" })
+                            </div>*@
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-12" style="margin-top:12px">
+                            @Html.Label("Ref No", new { @class = "control-label" })
+                            @Html.TextAreaFor(model => model.RefNo, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(model => model.RefNo, string.Empty, new { @class = "label label-danger" })
+                        </div>
+
+                    </div>
+                    @*Authority*@
+                    <div class="form-group">
+                        <div class="col-lg-12" style="margin-top:12px">
+                            @Html.Label("Authority", new { @class = "control-label" })
+                            @Html.TextAreaFor(model => model.Authority, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                            @Html.ValidationMessageFor(model => model.Authority, string.Empty, new { @class = "label label-danger" })
+                        </div>
+
+                    </div>
+                    @*Ares*@
+                    <div class="form-group">
+                        @*<div class="col-lg-12" style="margin-top:12px">
+                            @Html.Label("Area for responsibility ", new { @class = "control-label" })
+                            @Html.TextAreaFor(model => model.AreaforResponsibility, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                            @Html.ValidationMessageFor(model => model.AreaforResponsibility, string.Empty, new { @class = "label label-danger" })
+                        </div>*@
+                        <div class="col-lg-12" style="margin-top: 11px">
+                            @Html.Label("Area for responsibility ", new { @class = "control-label" })
+                            @Html.DropDownListFor(model => model.AreaforResponsibility, ViewBag.DDL_SDutyLocation as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.AreaforResponsibility, string.Empty, new { @class = "label label-danger" })
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        @*<div class="col-lg-12" style="margin-top:12px">
+                            @Html.Label("Appointment ", new { @class = "control-label" })
+                            @Html.TextAreaFor(model => model.Appointment, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                            @Html.ValidationMessageFor(model => model.Appointment, string.Empty, new { @class = "label label-danger" })
+                        </div>*@
+                        <div class="col-lg-12" style="margin-top: 11px">
+                            @Html.Label("Appointment", new { @class = "control-label" })
+                            @Html.DropDownListFor(model => model.Appointment, ViewBag.DDL_SDutyAppointment as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Appointment, string.Empty, new { @class = "label label-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-12" style="margin-top:12px">
+                            @Html.Label("With Effect Date ", new { @class = "control-label" })
+                            @Html.TextAreaFor(model => model.WFDate, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                            @Html.ValidationMessageFor(model => model.WFDate, string.Empty, new { @class = "label label-danger" })
+                        </div>
+
+                    </div>
+
+
+                            }
+                        }
+                    @*Select Duty Status*@
+                    <div class="col-lg-12" style="margin-top: 11px">
+                        @Html.Label("Duty Status", new { @class = "control-label" })
+                        @Html.DropDownListFor(model => model.SDSID, ViewBag.DDL_SDutyCategories as SelectList, "SELECT", htmlAttributes: new { @class = "form-control", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.SDSID, string.Empty, new { @class = "label label-danger" })
+                    </div>
+
+
+                    @{ if (ViewBag.OICPROCESS == 1)
+                        {
+                    <div class="form-group" id="dvdatePeriod">
+
+                        <div class="form-group">
+                            <div class="col-lg-6">
+                                @Html.Label("Service Number", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.ServiceNo, new { @class = "form-control ", autocomplete = "off", @readonly = "readonly" })
+                                @Html.HiddenFor(model => model.ServiceNo, new { @class = "form-control ", autocomplete = "off" })
+                                @Html.ValidationMessageFor(model => model.Snumber, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                            <div class="col-lg-6">
+                                @Html.Label("Rank", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Rank, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            </div>
+
+                        </div>
+
+                        @*Name*@
+                        <div class="form-group">
+                            <div class="col-lg-12" style="margin-top:12px">
+                                @Html.Label("Name", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.FullName, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.FullName, string.Empty, new { @class = "label label-danger" })
+
+                            </div>
+                        </div>
+
+                        @*Branch/Trade/Civil Status*@
+                        <div class="form-group">
+                            @*<div class="col-lg-6" style="margin-top:12px">
+                                @Html.Label("Branch/Trade", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Trade, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            </div>*@
+                            @*<div class="col-lg-6" style="margin-top:12px">
+                @Html.Label("Civil Status", new { @class = "control-label" })
+                @Html.TextBoxFor(model => model.Marriage_Status, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.Marriage_Status, string.Empty, new { @class = "label label-danger" })
+            </div>*@
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12" style="margin-top:12px">
+                                @Html.Label("Ref No", new { @class = "control-label" })
+                                @Html.TextAreaFor(model => model.RefNo, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.RefNo, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                        </div>
+                        @*Authority*@
+                        <div class="form-group">
+                            <div class="col-lg-12" style="margin-top:12px">
+                                @Html.Label("Authority", new { @class = "control-label" })
+                                @Html.TextAreaFor(model => model.Authority, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.Authority, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                        </div>
+                        @*Ares*@
+                        <div class="form-group">
+                            <div class="col-lg-12" style="margin-top:12px">
+                                @Html.Label("Area for responsibility ", new { @class = "control-label" })
+                                @Html.TextAreaFor(model => model.AreaforResponsibility, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.AreaforResponsibility, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12" style="margin-top:12px">
+                                @Html.Label("Appointment ", new { @class = "control-label" })
+                                @Html.TextAreaFor(model => model.Appointment, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.Appointment, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12" style="margin-top:12px">
+                                @Html.Label("With Effect Date ", new { @class = "control-label" })
+                                @Html.TextAreaFor(model => model.WFDate, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.WFDate, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <div class="col-lg-6">
+
+                                @Html.Label("Taking Over Service Number", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Snumber2, new { @class = "form-control ", autocomplete = "off" })
+                                @Html.HiddenFor(model => model.Snumber2, new { @class = "form-control ", autocomplete = "off" })
+                                @Html.ValidationMessageFor(model => model.Snumber2, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                            <div class="col-lg-6">
+                                @Html.Label("Rank", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Rank2, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            </div>
+
+                        </div>
+
+                        @*Name*@
+                        <div class="form-group">
+                            <div class="col-lg-12" style="margin-top:12px">
+                                @Html.Label("Name", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.FullName2, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.FullName, string.Empty, new { @class = "label label-danger" })
+
+                            </div>
+                        </div>
+
+                        @*Branch/Trade/Civil Status*@
+                        <div class="form-group">
+                            @*<div class="col-lg-6" style="margin-top:12px">
+                                @Html.Label("Branch/Trade", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Trade2, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            </div>*@
+
+                        </div>
+
+                        <div class="col-lg-6" style="margin-top:12px">
+                            @Html.Label("With Effect Date", new { @class = "control-label" })
+                            <input id="searchDate" type="date" name="FromDate" class="form-control" />
+                            @*@Html.TextBoxFor(model => model.FromDate, new { @class = "form-control datepicker" })
+                @Html.ValidationMessageFor(model => model.FromDate, string.Empty, new { @class = "label label-danger" })*@
+
+                        </div>
+
+                        <div class="col-lg-6" style="margin-top:12px">
+
+                            @Html.Label("Authority", new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.Remarks, new { @class = "form-control ", autocomplete = "off" })
+                            @Html.HiddenFor(model => model.Remarks, new { @class = "form-control ", autocomplete = "off" })
+                            @Html.ValidationMessageFor(model => model.Snumber2, string.Empty, new { @class = "label label-danger" })
+                        </div>
+
+                    </div>}
+                        }
+
+
+                    @*Submit area Button.*@
+                    <div class="nav-tabs-custom col-lg-12" style="margin-left:5px;height:45px;margin-top:20px" >
+                        <h5 class="text-black" style="float:left"><b>Save Your Details</b></h5>
+
+                        <section class="col-lg-6" style="margin-top: 9px">
+
+                            <div class="col-lg-12 pull-right">
+                                <input type="submit" value="Save Details" class="btn btn btn-success pull-right" name="btnName" />
+                            </div>
+                        </section>
+                    </div>
+
+
+                    @*<div id="warnningDv">
+                        <section class="col-lg-12 alert alert-danger" style="margin-left:15px;margin-top:10px">
+                            <div class="form-group">
+                                <div>
+                                    <p style="font-size:15px;text-align:center">
+                                        <b>
+                                            This is not a valied request. Need to authorized Married POR first.
+                                        </b>
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>*@
+
+                    <div class="card-body d-flex flex-column">
+                        <section class="col-lg-12" style="margin-top:30px">
+                            <button type="button" class="col-lg- btn btn-warning pull-right" id="btnYes" style="height:40px;width:200px" onclick="location.href='@Url.Action("Index", "SecondaryDuty")'">
+                                <span class="info-box-text"><i class=" fa fa-hand-o-left"></i> Go to Pending List</span>
+                            </button>
+                            <button type="button" class="col-lg- btn btn-info" style="height:40px;width:140px" onclick="location.href='@Url.Action("ClearFileds", "SecondaryDuty")'">
+                                <span class="info-box-text"><i class=" fa fa-remove"></i>Clear Fileds</span>
+                            </button>
+                        </section>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        @*<section class="col-lg-6 alert" id="dvHRIMSNOKInfo">
+                <div class="nav-tabs-custom alert-success">
+                    <div class="box-body">
+                        <div><p style="font-size:12px;text-align:center"><b><u>HRMIS NOK Details</u></b></p></div>
+                        <ol type="a">
+                            <li><span class="col-lg-3"> <b>NOK Name:</b></span><span class="col-lg-9"><b><i id="Name"></i></b></span></li>
+                            <li style="margin-top:30px"><span class="col-lg-4"> <b>NOK Relationship:</b></span><span class="col-lg-8"><b><i id="NOKRelationship"></i></b></span></li>
+                            <li style="margin-top:30px"><span class="col-lg-4"> <b>NOK Address:</b></span><span class="col-lg-8"><b><i id="NOKAddress"></i></b></span></li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <section class="col-lg-6 alert" id="dvPORIncludeNOKDetails" style="height:500px">
+                <div class="nav-tabs-custom  alert-error">
+                    <div class="box-body">
+                        <div><p style="font-size:12px;text-align:center"><b><u>POR Include NOK Details</u></b></p></div>
+                        <ol type="a">
+                            <li><span class="col-lg-3"> <b>NOK Name:</b></span><span class="col-lg-9"><b><i id="PORName"></i></b></span></li>
+                            <li style="margin-top:60px"><span class="col-lg-4"> <b>NOK Relationship:</b></span><span class="col-lg-8"><b><i id="PORNOKRelationship"></i></b></span></li>
+                            <li style="margin-top:30px"><span class="col-lg-4"> <b>NOK Address:</b></span><span class="col-lg-8"><b><i id="PORNOKAddress"></i></b></span></li>
+                        </ol>
+                    </div>
+                </div>
+            </section>*@
+
+    </div>
+}
+<script>
+    $(function () {
+        $("#Snumber2").change(function () {
+            $.ajax({
+                url: '@Url.Content("~/SecondaryDuty/getname")',
+                //url: './getname',
+                type: 'POST',
+                dataType: 'json',
+                data: { id: $("#Snumber2").val() },
+                success: function (data) {
+                    if (data.ServiceNo == "Service number is not valid.") {
+                        alert("Service number is not valid.");
+                        $("#Snumber2").val('');
+                        $("#ServiceNo2").val('');
+                    }
+                    else {
+                        $("#Snumber2").val(data.ServiceNo);
+                        $("#FullName2").val(data.Name);
+                        $("#Rank2").val(data.Rank);
+                        $("#Trade2").val(data.Branch);
+
+
+                        if (data.service_type == 1001 || data.service_type == 1002 || data.service_type == 1003 || data.service_type == 1004) {
+
+                            if (data.Marriage_Status == 1) {
+                                $("#Marriage_Status").val("Single");
+                            }
+                            else if (data.Marriage_Status == 2) {
+                                $("#Marriage_Status").val("Married");
+                            }
+                            else if (data.Marriage_Status == 3) {
+                                $("#Marriage_Status").val("Divorce");
+                            }
+                            else if (data.Marriage_Status == 4) {
+                                $("#Marriage_Status").val("Widowed");
+                            }
+                        }
+                        else if (data.service_type == 1005 || data.service_type == 1006 || data.service_type == 1007 || data.service_type == 1008) {
+
+                            if (data.Marriage_Status == 0) {
+                                $("#Marriage_Status").val("Single");
+                            }
+                            else if (data.Marriage_Status == 1) {
+                                $("#Marriage_Status").val("Married");
+
+                            }
+                            else if (data.Marriage_Status == 2) {
+                                $("#Marriage_Status").val("Divorce");
+                            }
+                            else if (data.Marriage_Status == 3) {
+                                $("#Marriage_Status").val("Widowed");
+                            }
+                        }
+                    }
+                },
+                error: function () {
+                    alert("error iiiiiiin function");
+                }
+            });
+        });
+    });
+
+
+
+
+    $(function () {
+        $("#SDSID").change(function () {
+
+            var lsid = $("#SDSID").val();
+            //201 = M/L/IN , 203 = M/L/OUT , 205 = M/R/OUT
+            if (lsid == 1 || lsid == 2) {
+                $.ajax({
+                    type: 'POST',
+                    dataType: "json",
+                    url: './GetSdutyDetails',
+                    data: { id: $("#Snumber").val() },
+                    success: function (data) {
+                        if (data == 0) {
+                            $("#warnningDv").show();
+
+                        }
+                        else {
+
+                            if (lsid == 2) {
+                                $("#dvNormalSaveArea").show();
+                                $("#dvdatePeriod").show();
+
+                                $("#dvNokShowArea").hide();
+                                $("#warnningDv").hide();
+                                $("#dvWithEffctDate").hide();
+                            }
+                            else {
+                                $("#dvNokShowArea").hide();
+                                $("#warnningDv").hide();
+                                $("#dvdatePeriod").hide();
+
+                                $("#dvNormalSaveArea").show();
+                                $("#dvWithEffctDate").show();
+                            }
+                        }
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve Make.' + ex);
+                    }
+                });
+                return false;
+            }
+            else {
+
+                if (lsid == 1 || lsid == 2) {
+                    $("#dvNormalSaveArea").show();
+                    $("#dvdatePeriod").show();
+
+                    $("#dvNokShowArea").hide();
+                    $("#warnningDv").hide();
+                    $("#dvWithEffctDate").hide();
+                }
+                else {
+                    $("#dvNokShowArea").hide();
+                    $("#warnningDv").hide();
+                    $("#dvdatePeriod").hide();
+
+                    $("#dvNormalSaveArea").show();
+                    $("#dvWithEffctDate").show();
+                }
+            }
+        })
+    });
+
+    
+</script>

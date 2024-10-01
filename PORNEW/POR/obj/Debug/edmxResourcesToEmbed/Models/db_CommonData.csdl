@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CommonDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="dbContextCommonData" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Divisions" EntityType="CommonDataModel.Division" />
+    <EntitySet Name="EpasLocations" EntityType="CommonDataModel.EpasLocation" />
+    <EntitySet Name="BloodGroups" EntityType="CommonDataModel.BloodGroup" />
+    <EntitySet Name="Branches" EntityType="CommonDataModel.Branch" />
+    <EntitySet Name="Countries" EntityType="CommonDataModel.Country" />
+    <EntitySet Name="Directorates" EntityType="CommonDataModel.Directorate" />
+    <EntitySet Name="Districts" EntityType="CommonDataModel.District" />
+    <EntitySet Name="Divisions1" EntityType="CommonDataModel.Division1" />
+    <EntitySet Name="EducationSubjects" EntityType="CommonDataModel.EducationSubject" />
+    <EntitySet Name="Electorates" EntityType="CommonDataModel.Electorate" />
+    <EntitySet Name="Establishments" EntityType="CommonDataModel.Establishment" />
+    <EntitySet Name="EstablishmentNews" EntityType="CommonDataModel.EstablishmentNew" />
+    <EntitySet Name="GSDivisions" EntityType="CommonDataModel.GSDivision" />
+    <EntitySet Name="MaritalStatus" EntityType="CommonDataModel.MaritalStatu" />
+    <EntitySet Name="MedicalCategories" EntityType="CommonDataModel.MedicalCategory" />
+    <EntitySet Name="NOKRelationships" EntityType="CommonDataModel.NOKRelationship" />
+    <EntitySet Name="P2_AGADivision" EntityType="CommonDataModel.P2_AGADivision" />
+    <EntitySet Name="P2_District" EntityType="CommonDataModel.P2_District" />
+    <EntitySet Name="P2_Electorate" EntityType="CommonDataModel.P2_Electorate" />
+    <EntitySet Name="P2_GSDivision" EntityType="CommonDataModel.P2_GSDivision" />
+    <EntitySet Name="P2_PoliceStation" EntityType="CommonDataModel.P2_PoliceStation" />
+    <EntitySet Name="P2_PostCode" EntityType="CommonDataModel.P2_PostCode" />
+    <EntitySet Name="P2_Town" EntityType="CommonDataModel.P2_Town" />
+    <EntitySet Name="PoliceStations" EntityType="CommonDataModel.PoliceStation" />
+    <EntitySet Name="PostOffices" EntityType="CommonDataModel.PostOffice" />
+    <EntitySet Name="ProvinceNews" EntityType="CommonDataModel.ProvinceNew" />
+    <EntitySet Name="Ranks" EntityType="CommonDataModel.Rank" />
+    <EntitySet Name="ReligionNews" EntityType="CommonDataModel.ReligionNew" />
+    <EntitySet Name="Schools" EntityType="CommonDataModel.School" />
+    <EntitySet Name="Sections" EntityType="CommonDataModel.Section" />
+    <EntitySet Name="ServiceStatus" EntityType="CommonDataModel.ServiceStatu" />
+    <EntitySet Name="ServiceTypes" EntityType="CommonDataModel.ServiceType" />
+    <EntitySet Name="Towns" EntityType="CommonDataModel.Town" />
+    <EntitySet Name="Trades" EntityType="CommonDataModel.Trade" />
+    <EntitySet Name="Vw_EpasDivision" EntityType="CommonDataModel.Vw_EpasDivision" />
+  </EntityContainer>
+  <EntityType Name="Division">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="DivisionName" />
+    </Key>
+    <Property Name="LocationID" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="DivisionID" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="DivisionType" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="DivisionName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OfficeCommand" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="NoOfPersonnel" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IDSeriesStart" Type="Int32" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedUser" Type="Int32" Nullable="false" />
+    <Property Name="Rank" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Appointment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NoPrefix" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sno" Type="Int32" />
+    <Property Name="SLAFStationID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="AppName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedUser" Type="Int32" />
+    <Property Name="HostID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AgendaOrder" Type="Int32" />
+    <Property Name="WsEnable" Type="Int32" />
+    <Property Name="LetterHeadingName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DivisionshortName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SerNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="KitPrefix" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Maindiv" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EpasLocation">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="DBName" />
+    </Key>
+    <Property Name="LocationID" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="LocationName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NoOfDivisions" Type="Int32" />
+    <Property Name="NoOfPersonnel" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DBName" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="SystemURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="OCLIDSeriesStart" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedUser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedUser" Type="Int32" />
+    <Property Name="HostID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LocAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TelephoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FaxNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NameOfCO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RankofCO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Appointment" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NameOfOCL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RankofOCL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BloodGroup">
+    <Key>
+      <PropertyRef Name="BloodGroupCode" />
+    </Key>
+    <Property Name="BloodGroupCode" Type="Int32" Nullable="false" />
+    <Property Name="BloodGroup1" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Branch">
+    <Key>
+      <PropertyRef Name="BranchID" />
+      <PropertyRef Name="BranchName" />
+    </Key>
+    <Property Name="BranchID" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="BranchName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Directorate" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="BranchShortName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryRegionCode" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="CountryRegionCode" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ShortName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Directorate">
+    <Key>
+      <PropertyRef Name="directCode" />
+      <PropertyRef Name="directorateName" />
+    </Key>
+    <Property Name="directCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="directorateName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="DIST_CODE" />
+    </Key>
+    <Property Name="DIST_CODE" Type="Int32" Nullable="false" />
+    <Property Name="PROV_CODE" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Division1">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="DivisionID" />
+      <PropertyRef Name="DivisionType" />
+      <PropertyRef Name="DivisionName" />
+      <PropertyRef Name="NoOfPersonnel" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="CreatedDate" />
+      <PropertyRef Name="CreatedUser" />
+    </Key>
+    <Property Name="LocationID" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="DivisionID" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="DivisionType" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="DivisionName" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="OfficeCommand" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="NoOfPersonnel" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedUser" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EducationSubject">
+    <Key>
+      <PropertyRef Name="SubjectID" />
+      <PropertyRef Name="EducationLevel" />
+    </Key>
+    <Property Name="SubjectID" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SubjectName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="EducationLevel" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Electorate">
+    <Key>
+      <PropertyRef Name="ElectroCode" />
+    </Key>
+    <Property Name="ElectroCode" Type="Int32" Nullable="false" />
+    <Property Name="ElectrorateName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="District" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Establishment">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="LocationName" />
+    </Key>
+    <Property Name="LocationID" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="LocationName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="LocShortName" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EstablishmentNew">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="LocationName" />
+    </Key>
+    <Property Name="LocationID" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="LocationName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="LocShortName" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="HelpDeskStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="GSDivision">
+    <Key>
+      <PropertyRef Name="GSDivisionID" />
+      <PropertyRef Name="District" />
+      <PropertyRef Name="GSName" />
+    </Key>
+    <Property Name="GSDivisionID" Type="Int32" Nullable="false" />
+    <Property Name="District" Type="Int32" Nullable="false" />
+    <Property Name="GSName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MaritalStatu">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Description" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MedicalCategory">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="NOKRelationship">
+    <Key>
+      <PropertyRef Name="RelationCode" />
+    </Key>
+    <Property Name="RelationCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOKRelationship1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="P2_AGADivision">
+    <Key>
+      <PropertyRef Name="DistrictCode" />
+      <PropertyRef Name="AGADivCode" />
+    </Key>
+    <Property Name="DistrictCode" Type="Int32" Nullable="false" />
+    <Property Name="AGADivCode" Type="Int32" Nullable="false" />
+    <Property Name="AGADivName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="P2_District">
+    <Key>
+      <PropertyRef Name="DIST_CODE" />
+    </Key>
+    <Property Name="DIST_CODE" Type="Int32" Nullable="false" />
+    <Property Name="PROV_CODE" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="P2_Electorate">
+    <Key>
+      <PropertyRef Name="ElectroCode" />
+    </Key>
+    <Property Name="ElectroCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ElectrorateName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Distric" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="P2_GSDivision">
+    <Key>
+      <PropertyRef Name="GSCode" />
+    </Key>
+    <Property Name="GSCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GSName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="P2_PoliceStation">
+    <Key>
+      <PropertyRef Name="PoliceStationCode" />
+    </Key>
+    <Property Name="PoliceStationCode" Type="Int32" Nullable="false" />
+    <Property Name="PoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="P2_PostCode">
+    <Key>
+      <PropertyRef Name="POST_CODE" />
+    </Key>
+    <Property Name="DIST_CODE" Type="Int32" />
+    <Property Name="POST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CATG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="POST_CODE" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="P2_Town">
+    <Key>
+      <PropertyRef Name="TownCOde" />
+      <PropertyRef Name="DIST_CODE" />
+    </Key>
+    <Property Name="TownCOde" Type="Int32" Nullable="false" />
+    <Property Name="DIST_CODE" Type="Int32" Nullable="false" />
+    <Property Name="Town" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PoliceStation">
+    <Key>
+      <PropertyRef Name="PoliceStationCode" />
+    </Key>
+    <Property Name="District" Type="Int32" />
+    <Property Name="PoliceStationCode" Type="Int32" Nullable="false" />
+    <Property Name="PoliceStation1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PostOffice">
+    <Key>
+      <PropertyRef Name="PostOfficeCode" />
+      <PropertyRef Name="District" />
+    </Key>
+    <Property Name="PostOfficeCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="District" Type="Int32" Nullable="false" />
+    <Property Name="PostOfficeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ProvinceNew">
+    <Key>
+      <PropertyRef Name="PROV_CODE" />
+    </Key>
+    <Property Name="PROV_CODE" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Rank">
+    <Key>
+      <PropertyRef Name="RANK1" />
+    </Key>
+    <Property Name="RANK1" Type="Int32" Nullable="false" />
+    <Property Name="RNK_NAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="RANK_TYPE" Type="Int32" />
+    <Property Name="SHORT_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LONG_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ReligionNew">
+    <Key>
+      <PropertyRef Name="CODE" />
+    </Key>
+    <Property Name="CODE" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="School">
+    <Key>
+      <PropertyRef Name="SchoolID" />
+      <PropertyRef Name="DIST_CODE" />
+      <PropertyRef Name="SchoolName" />
+    </Key>
+    <Property Name="SchoolID" Type="Int32" Nullable="false" />
+    <Property Name="DIST_CODE" Type="Int32" Nullable="false" />
+    <Property Name="SchoolName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Section">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="LocationName" />
+      <PropertyRef Name="DivisionID" />
+      <PropertyRef Name="DivisionName" />
+    </Key>
+    <Property Name="LocationID" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="LocationName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DivisionID" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="DivisionName" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ServiceStatu">
+    <Key>
+      <PropertyRef Name="SVCStatus" />
+    </Key>
+    <Property Name="SVCStatus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Service_Status" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ServiceType">
+    <Key>
+      <PropertyRef Name="SVCType" />
+    </Key>
+    <Property Name="SVCType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Service_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsOfficer" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Town">
+    <Key>
+      <PropertyRef Name="TownCOde" />
+      <PropertyRef Name="DIST_CODE" />
+    </Key>
+    <Property Name="TownCOde" Type="Int32" Nullable="false" />
+    <Property Name="DIST_CODE" Type="Int32" Nullable="false" />
+    <Property Name="Town1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Trade">
+    <Key>
+      <PropertyRef Name="TRADE1" />
+      <PropertyRef Name="TRD_NAME" />
+    </Key>
+    <Property Name="TRADE1" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="TRD_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DIRECTOR" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_EpasDivision">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="DivisionID" />
+      <PropertyRef Name="DivisionName" />
+    </Key>
+    <Property Name="LocationID" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="DivisionID" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="DivisionName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

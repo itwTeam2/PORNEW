@@ -1,0 +1,74 @@
+﻿ @{
+    Layout = null;
+}
+<link rel="stylesheet" href="~/Scripts/adminlte/components/bootstrap/dist/css/bootstrap.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="~/Scripts/adminlte/components/font-awesome/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet" href="~/Scripts/adminlte/components/Ionicons/css/ionicons.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="~/Content/adminlte/css/AdminLTE.min.css">
+<!-- iCheck -->
+<link rel="stylesheet" href="~/Scripts/adminlte/plugins/iCheck/square/blue.css">
+<link href="~/Content/CustomeStyle.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width" />   
+<title>Login</title>
+@model POR.Models._UserLogin
+
+@using (Html.BeginForm())
+{
+    <div class="col-lg-offset-4 col-lg-4" style=" box-shadow: 2px 2px 2px 1px; margin-top:20px; padding-top:20px; ">
+        <div class="row">
+            <section class="col-lg-12" >
+                <div id="Header" class="col-lg-12 systemDirectorate">Sri Lanka Air Force Directorate of Administration</div>
+                <div class="login-logo">                   
+                    <img src="~/Content/img/SLAF-Crest.png" width="150" />
+                    <h1 class="systemMainHeading">E-POR</h1>
+                </div>
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <div class="box-body">
+                    <div class="form-group loginWrapper">
+                        <h4 class="LoginWord"><b>Login</b></h4>
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(model => model.UserName, new { @class = "form-control ", autocomplete = "off", placeholder = "User Name", MaxLength = "25" })
+                        @Html.ValidationMessageFor(model => model.UserName, string.Empty, new { @class = "label label-danger input-xm" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.PasswordFor(model => model.Password, new { @class = "form-control ", autocomplete = "off", placeholder = "Password", MaxLength = "20" })
+                        @Html.ValidationMessageFor(model => model.Password, string.Empty, new { @class = "label label-danger input-xm" })
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-12" style="padding:0px !important;">
+                            <input type="submit" value="Login" class="btn btn-primary btn-block" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">              
+                            <div class="col-lg-12" style="padding:0px !important;">
+                            @*<div class="col-lg-6" style="padding:0px !important;margin-top:5px">@Html.ActionLink("Create User Account", "UserRegistration", "User", new { id = 445 }, new { })</div>*@
+                            @*<div class="col-lg-6" style="padding:0px !important;margin-top:5px">@Html.ActionLink("Forgotten Password!", "UserRegistration", "User", new { id = 445 }, new { })</div>*@
+                        </div>
+                    </div>
+                    <div>@ViewBag.Errmsg</div>
+                </div>
+            </section>
+
+            @{
+                if (TempData["Error"] != null)
+                {
+                    <div class="alert alert-danger" style="margin-top:0px;"><b>@TempData["Error"]</b></div>
+                }
+            }
+        </div>
+        <div class="box-footer no-border">
+            <hr />
+            <div class="col-sm-12" style=" height:20px; text-align:center; font-family:Calibri; font-size:14px; color:#808080;">© 2021 Information Technology Unit, All Rights Reserved.</div>
+        </div>
+    </div>
+    
+}
+

@@ -1,0 +1,667 @@
+﻿
+@model POR.Models.Married._CivilStatus
+
+<link href="~/Content/CustomeStyle.css" rel="stylesheet" />
+<script src="~/Scripts/Jq.js"></script>
+
+@{
+    ViewBag.Title = "RegiMakeInfo";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1 style="text-align:center"><span><i class="fa fa-heart"> P2 - Civil Status</i></span></h1>
+
+            <div id="ErrorMessage" style="margin-top:5px">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong> @TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong>@TempData["ErrMsg"]
+                    </div>
+                }
+            </div>
+
+        </section>
+        <br />
+
+        <section class="col-lg-6 connectedSortable">
+            <div class="nav-tabs-custom">
+                @Html.ValidationSummary(true)
+                <div class="box-body">
+                    <div>
+                        @*Service Number*@
+                        <div class="form-group">
+                            <div class="col-lg-6">
+                                @Html.Label("Service Number", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Snumber, new { @class = "form-control ", autocomplete = "off" })
+                                @Html.HiddenFor(model => model.ServiceNo, new { @class = "form-control ", autocomplete = "off" })
+                                @Html.ValidationMessageFor(model => model.ServiceNo, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                            <div class="col-lg-6">
+                                @Html.Label("Rank", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Rank, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            </div>
+
+                        </div>
+
+                        @*Name*@
+                        <div class="form-group">
+                            <div class="col-lg-12" style="margin-top:12px">
+                                @Html.Label("Name", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Name, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            </div>
+                        </div>
+
+                        @*Branch/Trade*@
+                        <div class="form-group">
+                            <div class="col-lg-6" style="margin-top:12px">
+                                @Html.Label("Branch/Trade", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Trade, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            </div>
+
+                            <div class="col-lg-6" style="margin-top:12px">
+                                @Html.Label("Civil Status", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Marriage_Status, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                                @*@Html.ValidationMessageFor(model => model.Marriage_Status, string.Empty, new { @class = "label label-danger" })*@
+                            </div>
+
+                        </div>
+
+                        @*Select Civil Status Subcategory*@
+                        <div class="form-group">
+                            <div class="col-lg-6" style="margin-top: 11px">
+                                @Html.Label("Select Civil Status Subcategory", new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.CSCID, ViewBag.DDL_CivilStatusCat as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                @Html.HiddenFor(model => model.CSCID, new { @class = "form-control ", autocomplete = "off" })
+
+                                @*@Html.DropDownListFor(model => model.InOut_CAT_ID, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })*@
+
+                            </div>
+
+                            <div class="col-lg-6" style="margin-top: 11px">
+                                @Html.Label("Authority", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Authority, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                                @*@Html.ValidationMessageFor(model => model.Marriage_Status, string.Empty, new { @class = "label label-danger" })*@
+                            </div>
+                        </div>
+
+                        @*Spouse Name*@
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                @Html.Label("Spouse Name", new { @class = "control-label" })
+                                @Html.TextAreaFor(model => model.SpouseName, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                                @*@Html.ValidationMessageFor(model => model.Marriage_Status, string.Empty, new { @class = "label label-danger" })*@
+                            </div>
+                        </div>
+
+                        <div id="LowerDewtailsDv"></div>
+
+                        @*Marriage Details details enter area*@
+                        <div id="dvMarriage">
+
+                            <div class="form-group" style="margin-top:15px">
+                                <div class="col-lg-12">
+                                    @Html.Label("Marriage Date", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.MarriageDate,new { @class = "form-control datepicker" , @type = "date" })
+                                    @Html.ValidationMessageFor(model => model.MarriageDate, string.Empty, new { @class = "label label-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-12">
+                                    @Html.Label("Marriage Certificate No", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.MarriageCertificateNo, new { @class = "form-control ", autocomplete = "off" })
+                                    @Html.ValidationMessageFor(model => model.MarriageCertificateNo, string.Empty, new { @class = "label label-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-12">
+                                    @Html.Label("Registrar's' Office Location", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.RegistarOfficeLocation, new { @class = "form-control ", autocomplete = "off" })
+                                    @Html.ValidationMessageFor(model => model.RegistarOfficeLocation, string.Empty, new { @class = "label label-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-12">
+                                    @Html.Label("With Effect Date", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.WEFDate, new { @class = "form-control datepicker", @type = "date" })
+                                    @Html.ValidationMessageFor(model => model.WEFDate, string.Empty, new { @class = "label label-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        @*Divorce Details details enter area*@
+                        <div id="dvDivorce">
+
+                            <div class="form-group">
+                                <div class="col-lg-12">
+                                    @Html.Label("Divorce Date", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.DivorceDate, new { @class = "form-control datepicker", @type = "date" })
+                                    @Html.ValidationMessageFor(model => model.DivorceDate, string.Empty, new { @class = "label label-danger" })
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-12">
+                                    @Html.Label("Divorce Place/Location", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.DivorceLocation, new { @class = "form-control ", autocomplete = "off" })
+                                    @Html.ValidationMessageFor(model => model.DivorceLocation, string.Empty, new { @class = "label label-danger" })
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-12">
+                                    @Html.Label("Court Case No", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.CourtCaseNo, new { @class = "form-control ", autocomplete = "off" })
+                                    @Html.ValidationMessageFor(model => model.CourtCaseNo, string.Empty, new { @class = "label label-danger" })
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-12">
+                                    @Html.Label("Date Of Case", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.DivorceCaseDate, new { @class = "form-control datepicker", @type = "date" })
+                                    @Html.ValidationMessageFor(model => model.DivorceCaseDate, string.Empty, new { @class = "label label-danger" })
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        @*Widow Details details enter area*@
+                        <div id="dvWidow">
+
+                            <div class="form-group">
+                                <div class="col-lg-12">
+                                    @Html.Label("Death Certificate No", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.DeathCertificateNo, new { @class = "form-control ", autocomplete = "off" })
+                                    @Html.ValidationMessageFor(model => model.DeathCertificateNo, string.Empty, new { @class = "label label-danger" })
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-12">
+                                    @Html.Label("Date of Decease", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.DateofDecease, new { @class = "form-control datepicker", @type = "date" })
+                                    @Html.ValidationMessageFor(model => model.DateofDecease, string.Empty, new { @class = "label label-danger" })
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div id="dvWarnning">
+                            <section class="col-lg-12 alert alert-danger" style="margin-left:15px;margin-top:10px">
+                                <div class="form-group">
+                                    <div>
+                                        <p style="font-size:15px;text-align:center">
+                                            <b>
+                                                This is not a Valied Request.No Record to find in P3 HRMS
+                                            </b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="col-lg-6 connectedSortable">
+            <div class="nav-tabs-custom" col-lg-12">
+                <div class="box-body">
+                    <div style="margin-top:-10px">
+                        <center><h4><b>NOK Change Details</b></h4></center>
+                        <div class="box-body">
+                            <div>
+                                @*NOK Name*@
+                                <div class="form-group">
+                                    @Html.Label("NOK Name", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.NOKName, new { @class = "form-control ", autocomplete = "off" })
+                                    @Html.HiddenFor(model => model.NOKName, new { @class = "form-control ", autocomplete = "off" })
+                                </div>
+
+                                @*NOK Change Category &&  @*With Effect Date*@
+                                <div class="form-group">
+                                    <div class="col-lg-6">
+                                        @Html.Label("NOK Change Category", new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.RelationshipName, ViewBag.DDL_Relationship as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                        @Html.HiddenFor(model => model.RelationshipName, new { @class = "form-control ", autocomplete = "off" })
+                                    </div>
+                                    <div class="col-lg-6">
+                                        @Html.Label("NOK With Effect Date", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.NOKWDate, new { @class = "form-control datepicker", @type = "date" })
+                                        @Html.ValidationMessageFor(model => model.NOKWDate, string.Empty, new { @class = "label label-danger" })
+                                    </div>
+
+                                </div>
+
+                                @*NOK Address*@
+                                <div class="form-group">
+                                    @Html.Label("NOK Address", new { @class = "control-label" })
+                                    @Html.TextAreaFor(model => model.NOKaddress, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                                    @Html.ValidationMessageFor(model => model.NOKaddress, string.Empty, new { @class = "label label-danger" })
+                                </div>
+
+                                @*District and GS*@
+                                <div class="form-group">
+                                    @*District*@
+                                    <div class="col-lg-6">
+                                        @Html.Label("Select District", new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.District, ViewBag.DDL_DistricSelectAll_Result as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                        @*@Html.DropDownListFor(model => model.GSName, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })*@
+                                        @Html.HiddenFor(model => model.DESCRIPTION, new { @class = "form-control ", autocomplete = "off" })
+
+                                    </div>
+
+                                    @*GS Division*@
+                                    <div class="col-lg-6">
+                                        @Html.Label("Select GS Division", new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.GSName, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.GSName, string.Empty, new { @class = "label label-danger" })
+
+                                    </div>
+                                </div>
+
+                                @*Nearest Town and Police Station*@
+                                <div class="form-group">
+                                    @*Nearest Town*@
+                                    <div class="col-lg-6" style="margin-top:12px">
+                                        @Html.Label("Select Nearest Town", new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.Town1, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Town1, string.Empty, new { @class = "label label-danger" })
+
+                                    </div>
+                                    @*Police Station*@
+                                    <div class="col-lg-6" style="margin-top:12px">
+                                        @Html.Label("Select Police Station", new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.PoliceStation1, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.PoliceStation1, string.Empty, new { @class = "label label-danger" })
+
+                                    </div>
+                                </div>
+
+                                @*Post Office*@
+                                <div class="form-group">
+                                    <div class="col-lg-12">
+                                        @Html.Label("Select Post Office", new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.PostOfficeName, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.PostOfficeName, string.Empty, new { @class = "label label-danger" })
+                                    </div>
+                                </div>
+
+                                @*Remarks*@
+                                <div class="form-group">
+                                    @Html.Label("Remarks", new { @class = "control-label" })
+                                    @Html.TextAreaFor(model => model.Remarks, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                                    @Html.ValidationMessageFor(model => model.Remarks, string.Empty, new { @class = "label label-danger" })
+                                </div>
+
+                                <div>
+                                    <div class="form-group">
+                                        <section class="col-lg-6">
+                                            <button type="button" class="col-lg-4 btn btn-warning pull-right" id="btnYes" style="height:40px;width:200px" onclick="location.href='@Url.Action("IndexCivilStatus", "Married")'">
+                                                <span class="info-box-text"><i class=" fa fa-hand-o-left"></i> Go to Pending List</span>
+                                            </button>
+                                        </section>
+
+                                        <section class="col-lg-6">
+                                            <button type="submit" class="col-lg-4 btn btn-success pull-right" style="height:40px;width:200px">
+                                                <span class="info-box-text"><i class=" fa fa-save"></i> Save</span>
+                                            </button>
+                                            @*<i class=" fa fa-hand-o-left"><input type="submit" value="Save" class="btn btn-success pull-right submitBtn"></i>*@
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+}
+
+<script type="text/javascript">
+    ///Create By: Flt lt Wickramasinghe
+    ///Create Date: 17/06/2021  
+    ///Description: Marriage controller related js function write in this js file.
+
+    $(document).ready(function () {
+        ///Created BY   : Flt Lt Wickramasinghe
+        ///Created Date : 2021/05/25
+        ///Description : hide the marriage,divorce,widow details enter text fields.
+
+        /// Drop down list in Operation Contribution
+        $("#dvMarriage").hide();
+        $("#dvDivorce").hide();
+        $("#dvWidow").hide();
+        $("#LowerDewtailsDv").hide();
+        $("#dvWarnning").hide();
+
+    });
+
+
+    ///Load respective text area according to por clerk selected sub category
+    $(function () {
+        ///Created BY   : Flt Lt Wickramasinghe
+        ///Created Date : 2021/05/25
+        ///Description : Load respective text area according to por clerk selected sub category
+
+        /// 300 = Marriage, 301 = Divorce, 302 = Widow ,311 = Null and Void
+
+        $("#CSCID").change(function () {
+            var CSCID = $("#CSCID").val();
+
+            if (CSCID == 300) {
+                $("#dvMarriage").show();
+                $("#dvDivorce").hide();
+                $("#dvWidow").hide();
+                var asb = $("#Snumber").val();
+
+                $.ajax({                    
+                    url: './getMarriageDetails',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: { id: $("#Snumber").val() },
+                    success: function (data) {
+                        if (data.SpouseName == "No records to found in HRMIS and Please Contact the Cmd P3 Section") {
+                            $("#warnningDv").show();
+                        }
+                        else {
+                            $("#SpouseName").val(data.SpouseName);
+                        }
+
+                    },
+                    error: function (ex) {
+                        alert("in error function" + ex);
+                    }
+                });
+
+            }
+            else if (CSCID == 301) {
+                $("#dvDivorce").show();
+                $("#dvMarriage").hide();
+                $("#dvWidow").hide();
+                $("#SpouseName").val('');
+
+                $.ajax({
+                    //url: '@Url.Content("~/User/getfullName")',
+                    url: './getMarriageDetails',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: { id: $("#Snumber").val() },
+                    success: function (data) {
+                        if (data.SpouseName == "No records to found in HRMIS and Please Contact the Cmd P3 Section") {
+                            $("#warnningDv").show();
+                        }
+                        else {
+                            $("#SpouseName").val(data.SpouseName);
+                        }
+
+                    },
+                    error: function (ex) {
+                        alert("in error function" + ex);
+                    }
+                });
+            }
+            else if (CSCID == 302) {
+                $("#dvWidow").show();
+                $("#dvDivorce").hide();
+                $("#dvMarriage").hide();
+                $("#SpouseName").val('');
+
+                $.ajax({
+                    //url: '@Url.Content("~/User/getfullName")',
+                    url: './getMarriageDetails',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: { id: $("#Snumber").val() },
+                    success: function (data) {
+                        if (data.SpouseName == "No records to found in HRMIS and Please Contact the Cmd P3 Section") {
+                            $("#warnningDv").show();
+                        }
+                        else {
+                            $("#SpouseName").val(data.SpouseName);
+                        }
+
+                    },
+                    error: function (ex) {
+                        alert("in error function" + ex);
+                    }
+                });
+            }
+
+        });
+        return false;
+    });
+
+    ////load details according to service number
+    $(function () {
+        $("#Snumber").change(function () {
+
+            //var ServiceNum = $("#ServiceNo").val()
+            $.ajax({
+                url: '@Url.Content("~/Married/getname")',
+                //url: './getname',
+                type: 'POST',
+                dataType: 'json',
+                data: { id: $("#Snumber").val() },
+                success: function (data) {
+
+                    if (data.ServiceNo == "Service number is not valid.") {
+                        alert("Service number is not valid.");
+                        $("#Snumber").val('');
+                        $("#ServiceNo").val('');
+                    }
+                    else {
+
+                        $("#Snumber").val(data.ServiceNo);
+                        $("#ServiceNo").val(data.ServiceNo);
+                        $("#Name").val(data.Name);
+                        $("#Rank").val(data.Rank);
+                        $("#Trade").val(data.Branch);                            
+                       
+                    }
+                },
+                error: function (ex) {
+                    alert("in error function" + ex);
+                }
+            });
+        });
+    });
+
+    //Select GS divition  Relevant to the Distric
+    $(function () {
+        //DDL for Select
+        $("#District").change(function () {
+            //DDL Automaticaly Bind
+            $("#GSName").empty();
+            $.ajax({
+                type: 'POST',
+                dataType: "json",
+                url: './FromDistrict',
+                data: { id: $("#District").val() },
+                success: function (FromDistrict) {
+                    var items = '<option>SELECT</option>';
+                    $('#GSName').html(items);
+                    $.each(FromDistrict, function (i, FromDistrict) {
+                        $("#GSName").append('<option value="' + FromDistrict.Value + '">' +
+                           FromDistrict.Text + '</option>');
+                        //$("#District").val(data.DESCRIPTION);
+                    });
+                },
+                error: function (ex) {
+                    alert('Failed to retrieve Make.' + ex);
+                }
+            });
+            return false;
+        })
+    });
+    //Select Police Station  Relevant to the Distric
+    $(function () {
+        //DDL for Select
+        $("#District").change(function () {
+            //DDL Automaticaly Bind
+            $("#PoliceStation1").empty();
+            $.ajax({
+                type: 'POST',
+                dataType: "json",
+                url: './FromPoliceStation',
+                //url: '/Married/FromPoliceStation',
+                data: { id: $("#District").val() },
+                success: function (FromPoliceStation) {
+                    var items = '<option>SELECT</option>';
+                    $('#PoliceStation1').html(items);
+                    $.each(FromPoliceStation, function (i, FromPoliceStation) {
+                        $("#PoliceStation1").append('<option value="' + FromPoliceStation.Value + '">' +
+                           FromPoliceStation.Text + '</option>');
+                    });
+                },
+                error: function (ex) {
+                    alert('Failed to retrieve Make.' + ex);
+                }
+            });
+            return false;
+        })
+    });
+    //Select Town Relevant to the Distric
+    $(function () {
+        //DDL for Select
+        $("#District").change(function () {
+            //DDL Automaticaly Bind
+
+            $("#Town1").empty();
+            $.ajax({
+                type: 'POST',
+                dataType: "json",
+                url: './FromTown',
+                //url: '/Married/FromTown',
+                data: { id: $("#District").val() },
+                success: function (FromTown) {
+                    var items = '<option>SELECT</option>';
+                    $('#Town1').html(items);
+                    $.each(FromTown, function (i, FromTown) {
+                        $("#Town1").append('<option value="' + FromTown.Value + '">' +
+                           FromTown.Text + '</option>');
+                    });
+                },
+                error: function (ex) {
+                    alert('Failed to retrieve Make.' + ex);
+                }
+            });
+            return false;
+        })
+    });
+    //Select Post Office Relevant to the Distric
+    $(function () {
+        //DDL for Select
+        $("#District").change(function () {
+            //DDL Automaticaly Bind
+
+            $("#PostOfficeName").empty();
+            $.ajax({
+                type: 'POST',
+                dataType: "json",
+                url: './FromPostOffice',
+                //url: '/Married/FromPostOffice',
+                data: { id: $("#District").val() },
+                success: function (FromTown) {
+                    var items = '<option>SELECT</option>';
+                    $('#PostOfficeName').html(items);
+                    $.each(FromTown, function (i, FromTown) {
+                        $("#PostOfficeName").append('<option value="' + FromTown.Value + '">' +
+                           FromTown.Text + '</option>');
+                    });
+                },
+                error: function (ex) {
+                    alert('Failed to retrieve Make.' + ex);
+                }
+            });
+            return false;
+        })
+    });
+
+    ///Get the confirmation wheather record have in HRMIS Marriage table
+    $(function () {
+        $("#CSCID").change(function () {
+            var CSCID = $("#CSCID").val();
+
+            $.ajax({
+                type: 'POST',
+                dataType: "json",
+                url: './getDetailsConfirmation',
+                data: { id: $("#Snumber").val(), CivilCat: CSCID },
+                success: function (data) {
+
+                    if (CSCID == 300) {
+                        if (data == 0) {
+                            $("#dvWarnning").show();
+                            $("#dvMarriage").hide();
+                            $("#dvDivorce").hide();
+                            $("#dvWidow").hide();
+                        }
+                        else {
+                            $("#dvMarriage").show();
+                            $("#dvWarnning").hide();
+                        }
+                    }
+                    else if (CSCID == 301) {
+                        if (data == 0) {
+                            $("#dvWarnning").show();
+                            $("#dvMarriage").hide();
+                            $("#dvDivorce").hide();
+                            $("#dvWidow").hide();
+                        }
+                        else {
+                            $("#dvDivorce").show();
+                            $("#dvWarnning").hide();
+                        }
+                    }
+                    else {
+                        if (data == 0) {
+                            $("#dvWarnning").show();
+                            $("#dvMarriage").hide();
+                            $("#dvDivorce").hide();
+                            $("#dvWidow").hide();
+                        }
+                        else {
+                            $("#dvWidow").show();
+                            $("#dvWarnning").hide();
+                        }
+                    }
+
+
+
+                },
+                error: function (ex) {
+                    alert('Failed to retrieve Make.' + ex);
+                }
+            });
+            return false;
+
+        })
+
+
+    });
+
+
+</script>

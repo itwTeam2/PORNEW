@@ -1,0 +1,121 @@
+﻿@model POR.Models.SecondaryDuty._SecondaryDuty
+
+<script src="~/Scripts/Jq.js"></script>
+<script src="~/Scripts/SecDuty.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@{
+    ViewBag.Title = "RegiMakeInfo";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="content-wrapper">
+
+        <section class="content-header">
+
+            <h1 style="text-align:center"><span>Add Your Camp Secondary Duty Location</span></h1>
+
+            <div id="ErrorMessage">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong> @TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong>@TempData["ErrMsg"]
+                    </div>
+                }
+            </div>
+
+        </section>
+
+        <br />
+
+        <section class="col-lg-12 connectedSortable">
+            <div class="nav-tabs-custom" style="height:695px">
+                @Html.ValidationSummary(true)
+                <div class="box-body">
+                    @*Service Number*@
+                    
+
+                    @*Name*@
+                    
+
+                    @*Branch/Trade/Civil Status*@
+                    
+
+                    @*Authority*@
+                    
+                    @*Ares*@
+                    <div class="form-group">
+                        <div class="col-lg-12" style="margin-top:12px">
+                            @Html.Label("Duty Location ", new { @class = "control-label" })
+                            @Html.TextAreaFor(model => model.DutyLocation, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                            @Html.ValidationMessageFor(model => model.DutyLocation, "", new { @class = "label label-danger" })
+                        </div>
+
+                    </div>
+                  
+
+
+                  
+
+                    @*Select Duty Status*@
+                    
+
+                    @*From Date/To Date for period section*@
+
+                   
+
+                    @*with effect date*@
+
+                  
+
+                    @*NOK Button Area*@
+                    
+
+                    @*Submit area Button.*@
+                    <div class="nav-tabs-custom col-lg-12" style="margin-left:5px;height:45px;margin-top:20px" >
+                        <h5 class="text-black" style="float:left"><b>Save Your Details</b></h5>
+
+                        <section class="col-lg-6" style="margin-top: 9px">
+
+                            <div class="col-lg-12 pull-right">
+                                <input type="submit" value="Save Details" class="btn btn btn-success pull-right" name="btnName" />
+                            </div>
+                        </section>
+                    </div>
+
+
+                    <div id="warnningDv">
+                        <section class="col-lg-12 alert alert-danger" style="margin-left:15px;margin-top:10px">
+                            <div class="form-group">
+                                <div>
+                                    <p style="font-size:15px;text-align:center">
+                                        <b>
+                                            This is not a valied request. Need to authorized Married POR first.
+                                        </b>
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                  
+
+                </div>
+            </div>
+        </section>
+
+
+
+  
+
+    </div>
+}

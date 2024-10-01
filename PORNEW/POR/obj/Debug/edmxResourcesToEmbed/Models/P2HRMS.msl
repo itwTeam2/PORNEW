@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="P3HRMSModelStoreContainer" CdmEntityContainer="P3HRMS">
+    <EntitySetMapping Name="Marriages">
+      <EntityTypeMapping TypeName="P3HRMSModel.Marriage">
+        <MappingFragment StoreEntitySet="Marriage">
+          <ScalarProperty Name="MarriageID" ColumnName="MarriageID" />
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="MarriedCertificateID" ColumnName="MarriedCertificateID" />
+          <ScalarProperty Name="SpouseName" ColumnName="SpouseName" />
+          <ScalarProperty Name="SpouseNICNO" ColumnName="SpouseNICNO" />
+          <ScalarProperty Name="SpouseOccupation" ColumnName="SpouseOccupation" />
+          <ScalarProperty Name="SpouseOffAdress" ColumnName="SpouseOffAdress" />
+          <ScalarProperty Name="MarriedDate" ColumnName="MarriedDate" />
+          <ScalarProperty Name="MarriedPlace" ColumnName="MarriedPlace" />
+          <ScalarProperty Name="MarriedStatus" ColumnName="MarriedStatus" />
+          <ScalarProperty Name="IsArmedService" ColumnName="IsArmedService" />
+          <ScalarProperty Name="ArmedService" ColumnName="ArmedService" />
+          <ScalarProperty Name="SpouseRank" ColumnName="SpouseRank" />
+          <ScalarProperty Name="SpouseServiceNo" ColumnName="SpouseServiceNo" />
+          <ScalarProperty Name="AuthRef" ColumnName="AuthRef" />
+          <ScalarProperty Name="MarriagePOR" ColumnName="MarriagePOR" />
+          <ScalarProperty Name="POROccuranceNo" ColumnName="POROccuranceNo" />
+          <ScalarProperty Name="DivorceDate" ColumnName="DivorceDate" />
+          <ScalarProperty Name="DivorcePOR" ColumnName="DivorcePOR" />
+          <ScalarProperty Name="DateOfDeath" ColumnName="DateOfDeath" />
+          <ScalarProperty Name="DeathPOR" ColumnName="DeathPOR" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsServiceWedding" ColumnName="IsServiceWedding" />
+          <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedMachine" ColumnName="CreatedMachine" />
+          <ScalarProperty Name="ModifiedUser" ColumnName="ModifiedUser" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedMachine" ColumnName="ModifiedMachine" />
+          <ScalarProperty Name="MarriedCertificateUpdateStatus" ColumnName="MarriedCertificateUpdateStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NOK_Change_Details">
+      <EntityTypeMapping TypeName="P3HRMSModel.NOK_Change_Details">
+        <MappingFragment StoreEntitySet="NOK_Change_Details">
+          <ScalarProperty Name="NOKID" ColumnName="NOKID" />
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="NOKType" ColumnName="NOKType" />
+          <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+          <ScalarProperty Name="NOKName" ColumnName="NOKName" />
+          <ScalarProperty Name="NOKAddress" ColumnName="NOKAddress" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="GramaseDiv" ColumnName="GramaseDiv" />
+          <ScalarProperty Name="NearPoliceSta" ColumnName="NearPoliceSta" />
+          <ScalarProperty Name="NearTown" ColumnName="NearTown" />
+          <ScalarProperty Name="NearPostOff" ColumnName="NearPostOff" />
+          <ScalarProperty Name="WEFDate" ColumnName="WEFDate" />
+          <ScalarProperty Name="AuthRefNo" ColumnName="AuthRefNo" />
+          <ScalarProperty Name="PORRefNo" ColumnName="PORRefNo" />
+          <ScalarProperty Name="LivingStatus" ColumnName="LivingStatus" />
+          <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedUser" ColumnName="ModifiedUser" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedMachine" ColumnName="CreatedMachine" />
+          <ScalarProperty Name="ModifiedMachine" ColumnName="ModifiedMachine" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="GsqStatus" ColumnName="GsqStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Relationships">
+      <EntityTypeMapping TypeName="P3HRMSModel.Relationship">
+        <MappingFragment StoreEntitySet="Relationships">
+          <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+          <ScalarProperty Name="RelationshipName" ColumnName="RelationshipName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServicePersonnelProfiles">
+      <EntityTypeMapping TypeName="P3HRMSModel.ServicePersonnelProfile">
+        <MappingFragment StoreEntitySet="ServicePersonnelProfile">
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="SvcID" ColumnName="SvcID" />
+          <ScalarProperty Name="FingerID" ColumnName="FingerID" />
+          <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+          <ScalarProperty Name="TANo" ColumnName="TANo" />
+          <ScalarProperty Name="ActiveNo" ColumnName="ActiveNo" />
+          <ScalarProperty Name="F1250" ColumnName="F1250" />
+          <ScalarProperty Name="RR_No" ColumnName="RR_No" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="IntakeType" ColumnName="IntakeType" />
+          <ScalarProperty Name="Intake" ColumnName="Intake" />
+          <ScalarProperty Name="Branch_Trade" ColumnName="Branch_Trade" />
+          <ScalarProperty Name="Trade_Group" ColumnName="Trade_Group" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="OtherNames" ColumnName="OtherNames" />
+          <ScalarProperty Name="Initials" ColumnName="Initials" />
+          <ScalarProperty Name="Service_Type" ColumnName="Service_Type" />
+          <ScalarProperty Name="Service_Status" ColumnName="Service_Status" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Date_of_Enlist" ColumnName="Date_of_Enlist" />
+          <ScalarProperty Name="Expire_Date" ColumnName="Expire_Date" />
+          <ScalarProperty Name="Date_of_PresentRank" ColumnName="Date_of_PresentRank" />
+          <ScalarProperty Name="Posted_Location" ColumnName="Posted_Location" />
+          <ScalarProperty Name="Posted_Formation" ColumnName="Posted_Formation" />
+          <ScalarProperty Name="Current_Location" ColumnName="Current_Location" />
+          <ScalarProperty Name="Current_Formation" ColumnName="Current_Formation" />
+          <ScalarProperty Name="Posted_Status" ColumnName="Posted_Status" />
+          <ScalarProperty Name="LivingIn_Out" ColumnName="LivingIn_Out" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="NICNo_New" ColumnName="NICNo_New" />
+          <ScalarProperty Name="Marriage_Status" ColumnName="Marriage_Status" />
+          <ScalarProperty Name="MedCat" ColumnName="MedCat" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedMachine" ColumnName="CreatedMachine" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedMachine" ColumnName="ModifiedMachine" />
+          <ScalarProperty Name="NICNo" ColumnName="NICNo" />
+          <ScalarProperty Name="HashSno" ColumnName="HashSno" />
+          <ScalarProperty Name="Appoinment" ColumnName="Appoinment" />
+          <ScalarProperty Name="MedicalBoardStatus" ColumnName="MedicalBoardStatus" />
+          <ScalarProperty Name="SvcDocLocation" ColumnName="SvcDocLocation" />
+          <ScalarProperty Name="LivingIn_Out_PorNo" ColumnName="LivingIn_Out_PorNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServicePersonnelProfileNews">
+      <EntityTypeMapping TypeName="P3HRMSModel.ServicePersonnelProfileNew">
+        <MappingFragment StoreEntitySet="ServicePersonnelProfileNew">
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="SvcID" ColumnName="SvcID" />
+          <ScalarProperty Name="FingerID" ColumnName="FingerID" />
+          <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+          <ScalarProperty Name="TANo" ColumnName="TANo" />
+          <ScalarProperty Name="ActiveNo" ColumnName="ActiveNo" />
+          <ScalarProperty Name="F1250" ColumnName="F1250" />
+          <ScalarProperty Name="RR_No" ColumnName="RR_No" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="IntakeType" ColumnName="IntakeType" />
+          <ScalarProperty Name="Intake" ColumnName="Intake" />
+          <ScalarProperty Name="Branch_Trade" ColumnName="Branch_Trade" />
+          <ScalarProperty Name="Trade_Group" ColumnName="Trade_Group" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="OtherNames" ColumnName="OtherNames" />
+          <ScalarProperty Name="Initials" ColumnName="Initials" />
+          <ScalarProperty Name="Service_Type" ColumnName="Service_Type" />
+          <ScalarProperty Name="Service_Status" ColumnName="Service_Status" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Date_of_Enlist" ColumnName="Date_of_Enlist" />
+          <ScalarProperty Name="Expire_Date" ColumnName="Expire_Date" />
+          <ScalarProperty Name="Date_of_PresentRank" ColumnName="Date_of_PresentRank" />
+          <ScalarProperty Name="Posted_Location" ColumnName="Posted_Location" />
+          <ScalarProperty Name="Posted_Formation" ColumnName="Posted_Formation" />
+          <ScalarProperty Name="Current_Location" ColumnName="Current_Location" />
+          <ScalarProperty Name="Current_Formation" ColumnName="Current_Formation" />
+          <ScalarProperty Name="Posted_Status" ColumnName="Posted_Status" />
+          <ScalarProperty Name="LivingIn_Out" ColumnName="LivingIn_Out" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="NICNo_New" ColumnName="NICNo_New" />
+          <ScalarProperty Name="Marriage_Status" ColumnName="Marriage_Status" />
+          <ScalarProperty Name="MedCat" ColumnName="MedCat" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedMachine" ColumnName="CreatedMachine" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedMachine" ColumnName="ModifiedMachine" />
+          <ScalarProperty Name="NICNo" ColumnName="NICNo" />
+          <ScalarProperty Name="HashSno" ColumnName="HashSno" />
+          <ScalarProperty Name="Appoinment" ColumnName="Appoinment" />
+          <ScalarProperty Name="MedicalBoardStatus" ColumnName="MedicalBoardStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sec_Duty_Details">
+      <EntityTypeMapping TypeName="P3HRMSModel.Sec_Duty_Details">
+        <MappingFragment StoreEntitySet="Sec_Duty_Details">
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ModifiedMachine" ColumnName="ModifiedMachine" />
+          <ScalarProperty Name="CreatedMachine" ColumnName="CreatedMachine" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedUser" ColumnName="ModifiedUser" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="DutyEndDate" ColumnName="DutyEndDate" />
+          <ScalarProperty Name="DutyStatus" ColumnName="DutyStatus" />
+          <ScalarProperty Name="AuthReff" ColumnName="AuthReff" />
+          <ScalarProperty Name="Base" ColumnName="Base" />
+          <ScalarProperty Name="Duty_Allocate_Date" ColumnName="Duty_Allocate_Date" />
+          <ScalarProperty Name="SecDutyLocation" ColumnName="SecDutyLocation" />
+          <ScalarProperty Name="Appointment" ColumnName="Appointment" />
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="SecDutyID" ColumnName="SecDutyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Divisions">
+      <EntityTypeMapping TypeName="P3HRMSModel.Division">
+        <MappingFragment StoreEntitySet="Divisions">
+          <ScalarProperty Name="Commanding" ColumnName="Commanding" />
+          <ScalarProperty Name="RptDivisionName" ColumnName="RptDivisionName" />
+          <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="NoOfPersonnel" ColumnName="NoOfPersonnel" />
+          <ScalarProperty Name="OfficeCommand" ColumnName="OfficeCommand" />
+          <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
+          <ScalarProperty Name="DivisionType" ColumnName="DivisionType" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

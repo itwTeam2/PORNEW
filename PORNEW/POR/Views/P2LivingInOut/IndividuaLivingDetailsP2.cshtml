@@ -1,0 +1,152 @@
+﻿
+@using POR.Models
+@model POR.Models.Vw_CurrentUserLiving
+
+@{
+    ViewBag.Title = "IndividualMarriedDetails";
+}
+<div class="content-wrapper" style="height:900px !important;">
+    <section class="content-header">
+        <h1 style="margin-left:16px">
+            Record Current Flow Status
+            <small>View</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Record Current Flow Status</li>
+        </ol>
+
+    </section>
+    <section class="col-lg-8 connectedSortable" style="margin-top:5px">
+        <div class="col-lg-8">
+            <div class="nav-tabs-custom">
+                <br />
+                <dl class="dl-horizontal">
+
+                    <dt class="form-group">
+                        Service No :
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ServiceNo)
+                    </dd>
+                    <dt class="form-group">
+                        Rank :
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Rank)
+                    </dd>
+                    <dt class="form-group">
+                        Name with Initials :
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt class="form-group">
+                        Establishment :
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Location)
+                    </dd>
+                    <dt class="form-group">
+                        Authority :
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Authority)
+                    </dd>
+                    <dt class="form-group">
+                        Ref No :
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.RefNo)
+                    </dd>
+                    <dt class="form-group">
+                        Record Update Date:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.CreatedDate)
+                    </dd>
+                    <dt class="form-group">
+                        Category Name :
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.LivingStatusShortName)
+                    </dd>
+                    <dt class="form-group">
+                        Comment :
+                    </dt>
+                    @{
+                        int? RecordStatusID = Convert.ToInt32(Model.RSID);
+
+                        if (RecordStatusID == 3000)
+                        {
+                            <dd style="color:#FF0000">
+                                @Html.DisplayFor(model => model.Comment)
+                            </dd>
+                        }
+                        else
+                        {
+                            <dd>
+                                @Html.DisplayFor(model => model.Comment)
+                            </dd>
+                        }
+                    }
+
+                    <dt class="form-group">
+                        Status :
+                    </dt>
+
+                    @{
+
+                        if (RecordStatusID == 3000)
+                        {
+                            <dd style="color:#FF0000">
+                                @Html.DisplayFor(model => model.RoleName)  - Reject POR
+                            </dd>
+                        }
+                        else
+                        {
+                            <dd>
+                                @Html.DisplayFor(model => model.RoleName)
+                            </dd>
+                        }
+                    }
+
+
+                </dl>
+            </div>
+
+        </div>
+
+        <div class="col-lg-8">
+            @Html.ActionLink("Back to Search Page", "IndividualSearchLivingInOutP2", "P2LivingInOut", new { id = Model.InOut_ID }, new { @class = "btn btn-info" })
+        </div>
+
+        <div class="col-lg-2" style="padding-top: 100px; padding-bottom: 270px; font-size: 20px; ">
+
+            @{
+                string UserRole;
+                string Rdate;
+                if (TempData["RejectUserRole"] != null && TempData["RejectDate"] != null)
+                {
+                    UserRole = TempData["RejectUserRole"].ToString();
+                    Rdate = TempData["RejectDate"].ToString();
+                    <div class="alert alert-error">
+                        <span>@UserRole Rejected</span> <br />
+                        <span>Date : @Rdate</span><br />
+                        <span>Comment : @Html.DisplayFor(model => model.Comment)</span>
+                    </div>
+                }
+            }
+        </div>
+    </section>
+</div>
+
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+
+
+
+
+<div id="dialog" style="display: none; position:relative;">
+</div>

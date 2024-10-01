@@ -1,0 +1,713 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="P3HRMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Divisions">
+          <Key>
+            <PropertyRef Name="LocationID" />
+            <PropertyRef Name="DivisionID" />
+          </Key>
+          <Property Name="LocationID" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="DivisionID" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="DivisionType" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="DivisionName" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="OfficeCommand" Type="varchar" MaxLength="80" />
+          <Property Name="NoOfPersonnel" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedUser" Type="int" Nullable="false" />
+          <Property Name="RptDivisionName" Type="varchar" MaxLength="50" />
+          <Property Name="Commanding" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Marriage">
+          <Key>
+            <PropertyRef Name="MarriageID" />
+          </Key>
+          <Property Name="MarriageID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SNo" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="MarriedCertificateID" Type="varchar" MaxLength="50" />
+          <Property Name="SpouseName" Type="varchar" MaxLength="255" />
+          <Property Name="SpouseNICNO" Type="varchar" MaxLength="50" />
+          <Property Name="SpouseOccupation" Type="varchar" MaxLength="50" />
+          <Property Name="SpouseOffAdress" Type="varchar" MaxLength="100" />
+          <Property Name="MarriedDate" Type="datetime" />
+          <Property Name="MarriedPlace" Type="varchar" MaxLength="255" />
+          <Property Name="MarriedStatus" Type="int" />
+          <Property Name="IsArmedService" Type="int" />
+          <Property Name="ArmedService" Type="int" />
+          <Property Name="SpouseRank" Type="varchar" MaxLength="100" />
+          <Property Name="SpouseServiceNo" Type="varchar" MaxLength="20" />
+          <Property Name="AuthRef" Type="varchar" MaxLength="255" />
+          <Property Name="MarriagePOR" Type="varchar" MaxLength="255" />
+          <Property Name="POROccuranceNo" Type="int" />
+          <Property Name="DivorceDate" Type="datetime" />
+          <Property Name="DivorcePOR" Type="varchar" MaxLength="100" />
+          <Property Name="DateOfDeath" Type="datetime" />
+          <Property Name="DeathPOR" Type="varchar" MaxLength="100" />
+          <Property Name="ApprovedDate" Type="datetime" />
+          <Property Name="Status" Type="int" />
+          <Property Name="IsServiceWedding" Type="int" />
+          <Property Name="CreatedUser" Type="varchar" MaxLength="30" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedMachine" Type="varchar" MaxLength="50" />
+          <Property Name="ModifiedUser" Type="varchar" MaxLength="50" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ModifiedMachine" Type="varchar" MaxLength="50" />
+          <Property Name="MarriedCertificateUpdateStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="NOK_Change_Details">
+          <Key>
+            <PropertyRef Name="NOKID" />
+          </Key>
+          <Property Name="NOKID" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="SNo" Type="varchar" MaxLength="30" />
+          <Property Name="NOKType" Type="int" Nullable="false" />
+          <Property Name="Relationship" Type="int" />
+          <Property Name="NOKName" Type="varchar" MaxLength="150" />
+          <Property Name="NOKAddress" Type="varchar" MaxLength="350" />
+          <Property Name="District" Type="int" />
+          <Property Name="GramaseDiv" Type="int" />
+          <Property Name="NearPoliceSta" Type="int" />
+          <Property Name="NearTown" Type="int" />
+          <Property Name="NearPostOff" Type="varchar" MaxLength="10" />
+          <Property Name="WEFDate" Type="datetime" />
+          <Property Name="AuthRefNo" Type="varchar" MaxLength="100" />
+          <Property Name="PORRefNo" Type="varchar" MaxLength="100" />
+          <Property Name="LivingStatus" Type="int" />
+          <Property Name="CreatedUser" Type="varchar" MaxLength="20" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedUser" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="CreatedMachine" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedMachine" Type="varchar" MaxLength="20" />
+          <Property Name="Status" Type="int" />
+          <Property Name="GsqStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="Relationships">
+          <Key>
+            <PropertyRef Name="RelationshipID" />
+          </Key>
+          <Property Name="RelationshipID" Type="int" Nullable="false" />
+          <Property Name="RelationshipName" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Sec_Duty_Details">
+          <Key>
+            <PropertyRef Name="SecDutyID" />
+          </Key>
+          <Property Name="SecDutyID" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="SNo" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Appointment" Type="int" Nullable="false" />
+          <Property Name="SecDutyLocation" Type="int" Nullable="false" />
+          <Property Name="Duty_Allocate_Date" Type="datetime" />
+          <Property Name="Base" Type="varchar" MaxLength="5" />
+          <Property Name="AuthReff" Type="varchar" MaxLength="50" />
+          <Property Name="DutyStatus" Type="int" />
+          <Property Name="DutyEndDate" Type="datetime" />
+          <Property Name="Remarks" Type="varchar(max)" />
+          <Property Name="CreatedUser" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedUser" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="CreatedMachine" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedMachine" Type="varchar" MaxLength="20" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Area" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="ServicePersonnelProfile">
+          <Key>
+            <PropertyRef Name="SNo" />
+          </Key>
+          <Property Name="SNo" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="SvcID" Type="varchar" MaxLength="10" />
+          <Property Name="FingerID" Type="varchar" MaxLength="10" />
+          <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+          <Property Name="TANo" Type="varchar" MaxLength="50" />
+          <Property Name="ActiveNo" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="F1250" Type="varchar" MaxLength="50" />
+          <Property Name="RR_No" Type="varchar" MaxLength="50" />
+          <Property Name="Rank" Type="int" Nullable="false" />
+          <Property Name="IntakeType" Type="int" />
+          <Property Name="Intake" Type="varchar" MaxLength="10" />
+          <Property Name="Branch_Trade" Type="int" />
+          <Property Name="Trade_Group" Type="varchar" MaxLength="50" />
+          <Property Name="Surname" Type="varchar(max)" />
+          <Property Name="OtherNames" Type="varchar(max)" />
+          <Property Name="Initials" Type="varchar" MaxLength="50" />
+          <Property Name="Service_Type" Type="int" />
+          <Property Name="Service_Status" Type="int" />
+          <Property Name="Remark" Type="varchar(max)" />
+          <Property Name="ProfilePicture" Type="varbinary(max)" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="Date_of_Enlist" Type="datetime" />
+          <Property Name="Expire_Date" Type="datetime" />
+          <Property Name="Date_of_PresentRank" Type="datetime" />
+          <Property Name="Posted_Location" Type="varchar" MaxLength="5" />
+          <Property Name="Posted_Formation" Type="varchar" MaxLength="50" />
+          <Property Name="Current_Location" Type="varchar" MaxLength="5" />
+          <Property Name="Current_Formation" Type="varchar" MaxLength="5" />
+          <Property Name="Posted_Status" Type="varchar" MaxLength="5" />
+          <Property Name="LivingIn_Out" Type="varchar" MaxLength="10" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Sex" Type="char" MaxLength="1" />
+          <Property Name="NICNo_New" Type="varchar" MaxLength="15" />
+          <Property Name="Marriage_Status" Type="char" MaxLength="3" />
+          <Property Name="MedCat" Type="int" />
+          <Property Name="Picture" Type="varbinary(max)" />
+          <Property Name="CreatedBy" Type="nchar" MaxLength="10" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedMachine" Type="nchar" MaxLength="15" />
+          <Property Name="ModifiedBy" Type="nchar" MaxLength="10" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ModifiedMachine" Type="nchar" MaxLength="15" />
+          <Property Name="NICNo" Type="varchar" MaxLength="15" />
+          <Property Name="HashSno" Type="varchar(max)" />
+          <Property Name="Appoinment" Type="varchar" MaxLength="100" />
+          <Property Name="MedicalBoardStatus" Type="int" />
+          <Property Name="SvcDocLocation" Type="varchar" MaxLength="10" />
+          <Property Name="LivingIn_Out_PorNo" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="ServicePersonnelProfileNew">
+          <Key>
+            <PropertyRef Name="SNo" />
+          </Key>
+          <Property Name="SNo" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="SvcID" Type="varchar" MaxLength="10" />
+          <Property Name="FingerID" Type="varchar" MaxLength="10" />
+          <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+          <Property Name="TANo" Type="varchar" MaxLength="50" />
+          <Property Name="ActiveNo" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="F1250" Type="varchar" MaxLength="50" />
+          <Property Name="RR_No" Type="varchar" MaxLength="50" />
+          <Property Name="Rank" Type="int" Nullable="false" />
+          <Property Name="IntakeType" Type="int" />
+          <Property Name="Intake" Type="varchar" MaxLength="10" />
+          <Property Name="Branch_Trade" Type="int" />
+          <Property Name="Trade_Group" Type="varchar" MaxLength="50" />
+          <Property Name="Surname" Type="varchar(max)" />
+          <Property Name="OtherNames" Type="varchar(max)" />
+          <Property Name="Initials" Type="varchar" MaxLength="50" />
+          <Property Name="Service_Type" Type="int" />
+          <Property Name="Service_Status" Type="int" />
+          <Property Name="Remark" Type="varchar(max)" />
+          <Property Name="ProfilePicture" Type="varbinary(max)" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="Date_of_Enlist" Type="datetime" />
+          <Property Name="Expire_Date" Type="datetime" />
+          <Property Name="Date_of_PresentRank" Type="datetime" />
+          <Property Name="Posted_Location" Type="varchar" MaxLength="5" />
+          <Property Name="Posted_Formation" Type="varchar" MaxLength="50" />
+          <Property Name="Current_Location" Type="varchar" MaxLength="5" />
+          <Property Name="Current_Formation" Type="varchar" MaxLength="5" />
+          <Property Name="Posted_Status" Type="varchar" MaxLength="5" />
+          <Property Name="LivingIn_Out" Type="varchar" MaxLength="3" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Sex" Type="char" MaxLength="1" />
+          <Property Name="NICNo_New" Type="varchar" MaxLength="15" />
+          <Property Name="Marriage_Status" Type="char" MaxLength="3" />
+          <Property Name="MedCat" Type="int" />
+          <Property Name="Picture" Type="varbinary(max)" />
+          <Property Name="CreatedBy" Type="nchar" MaxLength="10" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedMachine" Type="nchar" MaxLength="15" />
+          <Property Name="ModifiedBy" Type="nchar" MaxLength="10" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ModifiedMachine" Type="nchar" MaxLength="15" />
+          <Property Name="NICNo" Type="varchar" MaxLength="15" />
+          <Property Name="HashSno" Type="varchar(max)" />
+          <Property Name="Appoinment" Type="varchar" MaxLength="100" />
+          <Property Name="MedicalBoardStatus" Type="int" />
+        </EntityType>
+        <EntityContainer Name="P3HRMSModelStoreContainer">
+          <EntitySet Name="Divisions" EntityType="Self.Divisions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Marriage" EntityType="Self.Marriage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NOK_Change_Details" EntityType="Self.NOK_Change_Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Relationships" EntityType="Self.Relationships" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sec_Duty_Details" EntityType="Self.Sec_Duty_Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServicePersonnelProfile" EntityType="Self.ServicePersonnelProfile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServicePersonnelProfileNew" EntityType="Self.ServicePersonnelProfileNew" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="P3HRMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Marriage">
+          <Key>
+            <PropertyRef Name="MarriageID" />
+          </Key>
+          <Property Name="MarriageID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MarriedCertificateID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SpouseName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SpouseNICNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SpouseOccupation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SpouseOffAdress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MarriedDate" Type="DateTime" Precision="3" />
+          <Property Name="MarriedPlace" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="MarriedStatus" Type="Int32" />
+          <Property Name="IsArmedService" Type="Int32" />
+          <Property Name="ArmedService" Type="Int32" />
+          <Property Name="SpouseRank" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SpouseServiceNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AuthRef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="MarriagePOR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="POROccuranceNo" Type="Int32" />
+          <Property Name="DivorceDate" Type="DateTime" Precision="3" />
+          <Property Name="DivorcePOR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfDeath" Type="DateTime" Precision="3" />
+          <Property Name="DeathPOR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="IsServiceWedding" Type="Int32" />
+          <Property Name="CreatedUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedMachine" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedMachine" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MarriedCertificateUpdateStatus" Type="Int32" />
+        </EntityType>
+        <EntityType Name="NOK_Change_Details">
+          <Key>
+            <PropertyRef Name="NOKID" />
+          </Key>
+          <Property Name="NOKID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NOKType" Type="Int32" Nullable="false" />
+          <Property Name="Relationship" Type="Int32" />
+          <Property Name="NOKName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="NOKAddress" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Name="District" Type="Int32" />
+          <Property Name="GramaseDiv" Type="Int32" />
+          <Property Name="NearPoliceSta" Type="Int32" />
+          <Property Name="NearTown" Type="Int32" />
+          <Property Name="NearPostOff" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="WEFDate" Type="DateTime" Precision="3" />
+          <Property Name="AuthRefNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PORRefNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LivingStatus" Type="Int32" />
+          <Property Name="CreatedUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedMachine" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedMachine" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="GsqStatus" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Relationship">
+          <Key>
+            <PropertyRef Name="RelationshipID" />
+          </Key>
+          <Property Name="RelationshipID" Type="Int32" Nullable="false" />
+          <Property Name="RelationshipName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ServicePersonnelProfile">
+          <Key>
+            <PropertyRef Name="SNo" />
+          </Key>
+          <Property Name="SNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SvcID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FingerID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TANo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ActiveNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="F1250" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RR_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Rank" Type="Int32" Nullable="false" />
+          <Property Name="IntakeType" Type="Int32" />
+          <Property Name="Intake" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Branch_Trade" Type="Int32" />
+          <Property Name="Trade_Group" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OtherNames" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Initials" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Service_Type" Type="Int32" />
+          <Property Name="Service_Status" Type="Int32" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProfilePicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="Date_of_Enlist" Type="DateTime" Precision="3" />
+          <Property Name="Expire_Date" Type="DateTime" Precision="3" />
+          <Property Name="Date_of_PresentRank" Type="DateTime" Precision="3" />
+          <Property Name="Posted_Location" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Posted_Formation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Current_Location" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Current_Formation" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Posted_Status" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="LivingIn_Out" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Sex" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="NICNo_New" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Marriage_Status" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="MedCat" Type="Int32" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedMachine" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedMachine" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="NICNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="HashSno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Appoinment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MedicalBoardStatus" Type="Int32" />
+          <Property Name="SvcDocLocation" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LivingIn_Out_PorNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ServicePersonnelProfileNew">
+          <Key>
+            <PropertyRef Name="SNo" />
+          </Key>
+          <Property Name="SNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SvcID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FingerID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TANo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ActiveNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="F1250" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RR_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Rank" Type="Int32" Nullable="false" />
+          <Property Name="IntakeType" Type="Int32" />
+          <Property Name="Intake" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Branch_Trade" Type="Int32" />
+          <Property Name="Trade_Group" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OtherNames" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Initials" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Service_Type" Type="Int32" />
+          <Property Name="Service_Status" Type="Int32" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProfilePicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="Date_of_Enlist" Type="DateTime" Precision="3" />
+          <Property Name="Expire_Date" Type="DateTime" Precision="3" />
+          <Property Name="Date_of_PresentRank" Type="DateTime" Precision="3" />
+          <Property Name="Posted_Location" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Posted_Formation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Current_Location" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Current_Formation" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Posted_Status" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="LivingIn_Out" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Sex" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="NICNo_New" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Marriage_Status" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="MedCat" Type="Int32" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedMachine" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedMachine" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="NICNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="HashSno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Appoinment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MedicalBoardStatus" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="P3HRMS" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Marriages" EntityType="Self.Marriage" />
+          <EntitySet Name="NOK_Change_Details" EntityType="Self.NOK_Change_Details" />
+          <EntitySet Name="Relationships" EntityType="Self.Relationship" />
+          <EntitySet Name="ServicePersonnelProfiles" EntityType="Self.ServicePersonnelProfile" />
+          <EntitySet Name="ServicePersonnelProfileNews" EntityType="Self.ServicePersonnelProfileNew" />
+          <EntitySet Name="Sec_Duty_Details" EntityType="P3HRMSModel.Sec_Duty_Details" />
+          <EntitySet Name="Divisions" EntityType="P3HRMSModel.Division" />
+        </EntityContainer>
+        <EntityType Name="Sec_Duty_Details">
+          <Key>
+            <PropertyRef Name="SecDutyID" />
+          </Key>
+          <Property Name="SecDutyID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SNo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Appointment" Type="Int32" Nullable="false" />
+          <Property Name="SecDutyLocation" Type="Int32" Nullable="false" />
+          <Property Name="Duty_Allocate_Date" Type="DateTime" Precision="3" />
+          <Property Name="Base" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="AuthReff" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DutyStatus" Type="Int32" />
+          <Property Name="DutyEndDate" Type="DateTime" Precision="3" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedUser" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedMachine" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedMachine" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Area" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Division">
+          <Key>
+            <PropertyRef Name="LocationID" />
+            <PropertyRef Name="DivisionID" />
+          </Key>
+          <Property Name="LocationID" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="DivisionID" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="DivisionType" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="DivisionName" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="OfficeCommand" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="NoOfPersonnel" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedUser" Type="Int32" Nullable="false" />
+          <Property Name="RptDivisionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Commanding" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="P3HRMSModelStoreContainer" CdmEntityContainer="P3HRMS">
+          <EntitySetMapping Name="Marriages">
+            <EntityTypeMapping TypeName="P3HRMSModel.Marriage">
+              <MappingFragment StoreEntitySet="Marriage">
+                <ScalarProperty Name="MarriageID" ColumnName="MarriageID" />
+                <ScalarProperty Name="SNo" ColumnName="SNo" />
+                <ScalarProperty Name="MarriedCertificateID" ColumnName="MarriedCertificateID" />
+                <ScalarProperty Name="SpouseName" ColumnName="SpouseName" />
+                <ScalarProperty Name="SpouseNICNO" ColumnName="SpouseNICNO" />
+                <ScalarProperty Name="SpouseOccupation" ColumnName="SpouseOccupation" />
+                <ScalarProperty Name="SpouseOffAdress" ColumnName="SpouseOffAdress" />
+                <ScalarProperty Name="MarriedDate" ColumnName="MarriedDate" />
+                <ScalarProperty Name="MarriedPlace" ColumnName="MarriedPlace" />
+                <ScalarProperty Name="MarriedStatus" ColumnName="MarriedStatus" />
+                <ScalarProperty Name="IsArmedService" ColumnName="IsArmedService" />
+                <ScalarProperty Name="ArmedService" ColumnName="ArmedService" />
+                <ScalarProperty Name="SpouseRank" ColumnName="SpouseRank" />
+                <ScalarProperty Name="SpouseServiceNo" ColumnName="SpouseServiceNo" />
+                <ScalarProperty Name="AuthRef" ColumnName="AuthRef" />
+                <ScalarProperty Name="MarriagePOR" ColumnName="MarriagePOR" />
+                <ScalarProperty Name="POROccuranceNo" ColumnName="POROccuranceNo" />
+                <ScalarProperty Name="DivorceDate" ColumnName="DivorceDate" />
+                <ScalarProperty Name="DivorcePOR" ColumnName="DivorcePOR" />
+                <ScalarProperty Name="DateOfDeath" ColumnName="DateOfDeath" />
+                <ScalarProperty Name="DeathPOR" ColumnName="DeathPOR" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IsServiceWedding" ColumnName="IsServiceWedding" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedMachine" ColumnName="CreatedMachine" />
+                <ScalarProperty Name="ModifiedUser" ColumnName="ModifiedUser" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedMachine" ColumnName="ModifiedMachine" />
+                <ScalarProperty Name="MarriedCertificateUpdateStatus" ColumnName="MarriedCertificateUpdateStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NOK_Change_Details">
+            <EntityTypeMapping TypeName="P3HRMSModel.NOK_Change_Details">
+              <MappingFragment StoreEntitySet="NOK_Change_Details">
+                <ScalarProperty Name="NOKID" ColumnName="NOKID" />
+                <ScalarProperty Name="SNo" ColumnName="SNo" />
+                <ScalarProperty Name="NOKType" ColumnName="NOKType" />
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+                <ScalarProperty Name="NOKName" ColumnName="NOKName" />
+                <ScalarProperty Name="NOKAddress" ColumnName="NOKAddress" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="GramaseDiv" ColumnName="GramaseDiv" />
+                <ScalarProperty Name="NearPoliceSta" ColumnName="NearPoliceSta" />
+                <ScalarProperty Name="NearTown" ColumnName="NearTown" />
+                <ScalarProperty Name="NearPostOff" ColumnName="NearPostOff" />
+                <ScalarProperty Name="WEFDate" ColumnName="WEFDate" />
+                <ScalarProperty Name="AuthRefNo" ColumnName="AuthRefNo" />
+                <ScalarProperty Name="PORRefNo" ColumnName="PORRefNo" />
+                <ScalarProperty Name="LivingStatus" ColumnName="LivingStatus" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedUser" ColumnName="ModifiedUser" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedMachine" ColumnName="CreatedMachine" />
+                <ScalarProperty Name="ModifiedMachine" ColumnName="ModifiedMachine" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="GsqStatus" ColumnName="GsqStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Relationships">
+            <EntityTypeMapping TypeName="P3HRMSModel.Relationship">
+              <MappingFragment StoreEntitySet="Relationships">
+                <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+                <ScalarProperty Name="RelationshipName" ColumnName="RelationshipName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServicePersonnelProfiles">
+            <EntityTypeMapping TypeName="P3HRMSModel.ServicePersonnelProfile">
+              <MappingFragment StoreEntitySet="ServicePersonnelProfile">
+                <ScalarProperty Name="SNo" ColumnName="SNo" />
+                <ScalarProperty Name="SvcID" ColumnName="SvcID" />
+                <ScalarProperty Name="FingerID" ColumnName="FingerID" />
+                <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+                <ScalarProperty Name="TANo" ColumnName="TANo" />
+                <ScalarProperty Name="ActiveNo" ColumnName="ActiveNo" />
+                <ScalarProperty Name="F1250" ColumnName="F1250" />
+                <ScalarProperty Name="RR_No" ColumnName="RR_No" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="IntakeType" ColumnName="IntakeType" />
+                <ScalarProperty Name="Intake" ColumnName="Intake" />
+                <ScalarProperty Name="Branch_Trade" ColumnName="Branch_Trade" />
+                <ScalarProperty Name="Trade_Group" ColumnName="Trade_Group" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="OtherNames" ColumnName="OtherNames" />
+                <ScalarProperty Name="Initials" ColumnName="Initials" />
+                <ScalarProperty Name="Service_Type" ColumnName="Service_Type" />
+                <ScalarProperty Name="Service_Status" ColumnName="Service_Status" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Date_of_Enlist" ColumnName="Date_of_Enlist" />
+                <ScalarProperty Name="Expire_Date" ColumnName="Expire_Date" />
+                <ScalarProperty Name="Date_of_PresentRank" ColumnName="Date_of_PresentRank" />
+                <ScalarProperty Name="Posted_Location" ColumnName="Posted_Location" />
+                <ScalarProperty Name="Posted_Formation" ColumnName="Posted_Formation" />
+                <ScalarProperty Name="Current_Location" ColumnName="Current_Location" />
+                <ScalarProperty Name="Current_Formation" ColumnName="Current_Formation" />
+                <ScalarProperty Name="Posted_Status" ColumnName="Posted_Status" />
+                <ScalarProperty Name="LivingIn_Out" ColumnName="LivingIn_Out" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="NICNo_New" ColumnName="NICNo_New" />
+                <ScalarProperty Name="Marriage_Status" ColumnName="Marriage_Status" />
+                <ScalarProperty Name="MedCat" ColumnName="MedCat" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedMachine" ColumnName="CreatedMachine" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedMachine" ColumnName="ModifiedMachine" />
+                <ScalarProperty Name="NICNo" ColumnName="NICNo" />
+                <ScalarProperty Name="HashSno" ColumnName="HashSno" />
+                <ScalarProperty Name="Appoinment" ColumnName="Appoinment" />
+                <ScalarProperty Name="MedicalBoardStatus" ColumnName="MedicalBoardStatus" />
+                <ScalarProperty Name="SvcDocLocation" ColumnName="SvcDocLocation" />
+                <ScalarProperty Name="LivingIn_Out_PorNo" ColumnName="LivingIn_Out_PorNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServicePersonnelProfileNews">
+            <EntityTypeMapping TypeName="P3HRMSModel.ServicePersonnelProfileNew">
+              <MappingFragment StoreEntitySet="ServicePersonnelProfileNew">
+                <ScalarProperty Name="SNo" ColumnName="SNo" />
+                <ScalarProperty Name="SvcID" ColumnName="SvcID" />
+                <ScalarProperty Name="FingerID" ColumnName="FingerID" />
+                <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+                <ScalarProperty Name="TANo" ColumnName="TANo" />
+                <ScalarProperty Name="ActiveNo" ColumnName="ActiveNo" />
+                <ScalarProperty Name="F1250" ColumnName="F1250" />
+                <ScalarProperty Name="RR_No" ColumnName="RR_No" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="IntakeType" ColumnName="IntakeType" />
+                <ScalarProperty Name="Intake" ColumnName="Intake" />
+                <ScalarProperty Name="Branch_Trade" ColumnName="Branch_Trade" />
+                <ScalarProperty Name="Trade_Group" ColumnName="Trade_Group" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="OtherNames" ColumnName="OtherNames" />
+                <ScalarProperty Name="Initials" ColumnName="Initials" />
+                <ScalarProperty Name="Service_Type" ColumnName="Service_Type" />
+                <ScalarProperty Name="Service_Status" ColumnName="Service_Status" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Date_of_Enlist" ColumnName="Date_of_Enlist" />
+                <ScalarProperty Name="Expire_Date" ColumnName="Expire_Date" />
+                <ScalarProperty Name="Date_of_PresentRank" ColumnName="Date_of_PresentRank" />
+                <ScalarProperty Name="Posted_Location" ColumnName="Posted_Location" />
+                <ScalarProperty Name="Posted_Formation" ColumnName="Posted_Formation" />
+                <ScalarProperty Name="Current_Location" ColumnName="Current_Location" />
+                <ScalarProperty Name="Current_Formation" ColumnName="Current_Formation" />
+                <ScalarProperty Name="Posted_Status" ColumnName="Posted_Status" />
+                <ScalarProperty Name="LivingIn_Out" ColumnName="LivingIn_Out" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="NICNo_New" ColumnName="NICNo_New" />
+                <ScalarProperty Name="Marriage_Status" ColumnName="Marriage_Status" />
+                <ScalarProperty Name="MedCat" ColumnName="MedCat" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedMachine" ColumnName="CreatedMachine" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedMachine" ColumnName="ModifiedMachine" />
+                <ScalarProperty Name="NICNo" ColumnName="NICNo" />
+                <ScalarProperty Name="HashSno" ColumnName="HashSno" />
+                <ScalarProperty Name="Appoinment" ColumnName="Appoinment" />
+                <ScalarProperty Name="MedicalBoardStatus" ColumnName="MedicalBoardStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sec_Duty_Details">
+            <EntityTypeMapping TypeName="P3HRMSModel.Sec_Duty_Details">
+              <MappingFragment StoreEntitySet="Sec_Duty_Details">
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ModifiedMachine" ColumnName="ModifiedMachine" />
+                <ScalarProperty Name="CreatedMachine" ColumnName="CreatedMachine" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedUser" ColumnName="ModifiedUser" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="DutyEndDate" ColumnName="DutyEndDate" />
+                <ScalarProperty Name="DutyStatus" ColumnName="DutyStatus" />
+                <ScalarProperty Name="AuthReff" ColumnName="AuthReff" />
+                <ScalarProperty Name="Base" ColumnName="Base" />
+                <ScalarProperty Name="Duty_Allocate_Date" ColumnName="Duty_Allocate_Date" />
+                <ScalarProperty Name="SecDutyLocation" ColumnName="SecDutyLocation" />
+                <ScalarProperty Name="Appointment" ColumnName="Appointment" />
+                <ScalarProperty Name="SNo" ColumnName="SNo" />
+                <ScalarProperty Name="SecDutyID" ColumnName="SecDutyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Divisions">
+            <EntityTypeMapping TypeName="P3HRMSModel.Division">
+              <MappingFragment StoreEntitySet="Divisions">
+                <ScalarProperty Name="Commanding" ColumnName="Commanding" />
+                <ScalarProperty Name="RptDivisionName" ColumnName="RptDivisionName" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="NoOfPersonnel" ColumnName="NoOfPersonnel" />
+                <ScalarProperty Name="OfficeCommand" ColumnName="OfficeCommand" />
+                <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
+                <ScalarProperty Name="DivisionType" ColumnName="DivisionType" />
+                <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

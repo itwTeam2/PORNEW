@@ -1,0 +1,399 @@
+﻿@model POR.Models.LivingInOut._LivingInOut
+
+<script src="~/Scripts/Jq.js"></script>
+@*<script src="~/Scripts/LivingInOut.js"></script>*@
+@{
+    ViewBag.Title = "Edit";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="content-wrapper">
+        <section class="content-header">
+
+            <h1 style="text-align:center"><span>Bechelors/Spinster In/Out</span></h1>
+
+            <div id="ErrorMessage">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong> @TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong>@TempData["ErrMsg"]
+                    </div>
+                }
+            </div>
+        </section>
+        <br />
+     @{ 
+         int LivingStatusCode = Convert.ToInt32(TempData["LivingStatusCode"]);
+         int RejectStatus = Convert.ToInt32(TempData["Rejectstatus"]);
+         
+         /// LivingStatusCode =203  && 201  equal to M/L/OUT and M/L/IN
+        <section class="col-lg-6 connectedSortable">
+            <div class="nav-tabs-custom" style="height:695px">
+                @Html.ValidationSummary(true)              
+                       
+                  <div class="box-body">
+                        @*Service Number*@
+                        <div class="form-group">
+                            <div class="col-lg-6">
+                                @Html.Label("Service Number", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Snumber, new { @class = "form-control ", autocomplete = "off", @readonly = "readonly" })
+                                @Html.HiddenFor(model => model.ServiceNo, new { @class = "form-control ", autocomplete = "off" })
+                                @Html.HiddenFor(model => model.LIOHID, new { @class = "form-control ", autocomplete = "off" })
+                                @Html.ValidationMessageFor(model => model.Snumber, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                            <div class="col-lg-6">
+                                @Html.Label("Rank", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Rank, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            </div>
+
+                        </div>
+                        @*Name*@
+                        <div class="form-group">
+                            <div class="col-lg-12" style="margin-top:12px">
+                                @Html.Label("Name", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.FullName, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.FullName, string.Empty, new { @class = "label label-danger" })
+
+                            </div>
+                        </div>
+
+                        @*Branch/Trade/Authority*@
+                        <div class="form-group">                           
+                            <div class="col-lg-12" style="margin-top:12px">
+                                @Html.Label("Authority", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Authority, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                                @*@Html.ValidationMessageFor(model => model.Marriage_Status, string.Empty, new { @class = "label label-danger" })*@
+                            </div>
+                        </div>
+                        @*Select Living In/Out Status*@
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                @Html.Label("Living In/Out Status", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.CategoryName, new { @class = "form-control ", autocomplete = "off", @readonly = "readonly" })
+                            </div>
+                            @*<div class="col-lg-6">
+                                    @Html.Label("Select Living In/Out Status", new { @class = "control-label" })
+                                    @Html.DropDownListFor(model => model.LSID, ViewBag.DDL_InOutCategories as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.LSID, string.Empty, new { @class = "label label-danger" })
+                                </div>*@
+                        </div>
+                       
+                        @*RejectStatus == 2 mean it's reject Record*@
+                        @if (RejectStatus == 2)
+                        {
+                            <div class="form-group">
+                                @Html.Label("Reject Ref No", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.RejectRefNo, new { @class = "form-control alert-danger", autocomplete = "off", @readonly = "readonly" })
+                            </div>
+                        }
+                        @if (LivingStatusCode == 203 || LivingStatusCode == 201)
+	                    {
+		                  @*with effect date*@
+                            <div class="form-group">
+                                <div class="col-lg-12" style="margin-top:12px">
+                                    @Html.Label("With Effective Date", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.FromDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            @*From Date/To Date for period section*@
+                            <div class="form-group">
+                                <div class="col-lg-6" style="margin-top:12px">
+                                    @Html.Label("From Date", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.FromDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+                                    @Html.ValidationMessageFor(model => model.FromDate, string.Empty, new { @class = "label label-danger", @type = "date" })
+
+                                </div>
+
+                                <div class="col-lg-6" style="margin-top:12px">
+                                    @Html.Label("To Date", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.ToDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+                                    @*@Html.ValidationMessageFor(model => model.ToDate, string.Empty, new { @class = "label label-danger" })*@
+                                </div>
+
+                            </div>
+
+                        }
+                                              
+                        @*Submit area Button.*@
+                        <div class="nav-tabs-custom col-lg-12" style="margin-left:5px;height:45px;margin-top:20px" id="btnEdit">
+                            <h5 class="text-black" style="float:left"><b>Save Your Details</b></h5>
+                            <section class="col-lg-6 pull-right" style="margin-top: 9px">
+                                <div class="col-lg-12">
+                                    <input type="submit" value="Save Details" class="btn btn btn-success pull-right" name="btnName" />
+                                </div>
+                            </section>
+                        </div>                
+                </div>
+              </div>        
+        </section>
+         }
+        @{
+            int NOKStatus = Convert.ToInt32(TempData["NOKchangeStatus"]);
+            if (NOKStatus == 1)
+            {
+                <script>
+                    $("#btnEdit").hide();
+                </script>
+
+               <section class="col-lg-6 connectedSortable">
+                    <div class="nav-tabs-custom">
+                        <div class="box-body">
+                            @*NOK Name*@
+                            <div class="form-group">
+                                @Html.Label("NOK Name", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.NOKName, new { @class = "form-control ", autocomplete = "off" })
+                            </div>
+
+                            @*NOK Change Category *@
+                            <div class="form-group">
+                                <div class="col-lg-6">
+                                    @Html.Label("NOK Relationship", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.NOKChangeTo, new { @class = "form-control ", autocomplete = "off", @readonly = "readonly" })
+                                </div>
+                                <div class="col-lg-6">
+                                    @Html.Label("NOK Change Category", new { @class = "control-label" })
+                                    @Html.DropDownListFor(model => model.RelationshipName, ViewBag.DDL_Relationship as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                    @Html.HiddenFor(model => model.RelationshipName, new { @class = "form-control ", autocomplete = "off" })
+                                </div>
+
+                            </div>
+
+                            @*With Effect Date*@
+                            <div class="form-group">
+                                @Html.Label("NOK With Effect Date", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.NOKWEFDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+                                @Html.ValidationMessageFor(model => model.NOKWEFDate, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                            @*NOK Address*@
+                            <div class="form-group">
+                                @Html.Label("NOK Address", new { @class = "control-label" })
+                                @Html.TextAreaFor(model => model.NOKaddress, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                                @Html.ValidationMessageFor(model => model.NOKaddress, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                            @*District*@
+                            <div class="form-group">
+                                @*District*@
+                                <div class="col-lg-6">
+                                    @Html.Label("District", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.EditedDistrict1, new { @class = "form-control ", autocomplete = "off", @readonly = "readonly" })
+                                </div>
+
+                                <div class="col-lg-6">
+                                    @Html.Label("Select District", new { @class = "control-label" })
+                                    @Html.DropDownListFor(model => model.District, ViewBag.DDL_DistricSelectAll_Result as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                    @*@Html.DropDownListFor(model => model.GSName, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })*@
+
+                                </div>
+                            </div>
+
+                            @*GS Division*@
+                            <div class="form-group">
+                                @*GS Division*@
+                                <div class="col-lg-6">
+                                    @Html.Label("GS Division", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.EditedGSnumber, new { @class = "form-control ", autocomplete = "off", @readonly = "readonly" })
+                                </div>
+                                @*GS Division*@
+                                <div class="col-lg-6">
+                                    @Html.Label("Select GS Division", new { @class = "control-label" })
+                                    @Html.DropDownListFor(model => model.GSName, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.GSName, string.Empty, new { @class = "label label-danger" })
+                                </div>
+                            </div>
+
+                            @*Nearest Town*@
+                            <div class="form-group">
+                                <div class="col-lg-6">
+                                    @Html.Label("Nearest Town", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.NearestTown, new { @class = "form-control ", autocomplete = "off", @readonly = "readonly" })
+                                </div>
+
+                                <div class="col-lg-6" style="margin-top:12px">
+                                    @Html.Label("Select Nearest Town", new { @class = "control-label" })
+                                    @Html.DropDownListFor(model => model.Town1, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Town1, string.Empty, new { @class = "label label-danger" })
+
+                                </div>
+                            </div>
+
+                            @*Nearest Town and Police Station*@
+                            <div class="form-group">
+                                @*Police Station*@
+                                <div class="col-lg-6">
+                                    @Html.Label("Police Station", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.EditPoliceStation, new { @class = "form-control ", autocomplete = "off", @readonly = "readonly" })
+
+                                </div>
+
+                                @*Police Station*@
+                                <div class="col-lg-6" style="margin-top:12px">
+                                    @Html.Label("Select Police Station", new { @class = "control-label" })
+                                    @Html.DropDownListFor(model => model.PoliceStation1, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.PoliceStation1, string.Empty, new { @class = "label label-danger" })
+                                </div>
+                            </div>
+
+                            @*Post Office*@
+                            <div class="form-group">
+                                <div class="col-lg-6">
+                                    @Html.Label("Post Office", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.EditPostOfficeName, new { @class = "form-control ", autocomplete = "off", @readonly = "readonly" })
+                                </div>
+                                <div class="col-lg-6">
+                                    @Html.Label("Select Post Office", new { @class = "control-label" })
+                                    @Html.DropDownListFor(model => model.PostOfficeName, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.PostOfficeName, string.Empty, new { @class = "label label-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <section class="col-lg-6" style="margin-top:20px">
+                                    <button type="button" class="col-lg-4 btn btn-warning pull-right" id="btnYes" style="height:40px;width:200px" onclick="location.href='@Url.Action("IndexLivingINOutStatus", "LivingInOut")'">
+                                        <span class="info-box-text"><i class=" fa fa-hand-o-left"></i> Go to Pending List</span>
+                                    </button>
+                                </section>
+
+                                <section class="col-lg-6" style="margin-top:20px">
+                                    <button type="submit" class="col-lg-4 btn btn-success pull-right" style="height:40px;width:200px">
+                                        <span class="info-box-text"><i class=" fa fa-save"></i> Save</span>
+                                    </button>
+                                    @*<i class=" fa fa-hand-o-left"><input type="submit" value="Save" class="btn btn-success pull-right submitBtn"></i>*@
+                                </section>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            }
+        }        
+
+    </div>
+
+}
+<script>
+    //Select GS divition  Relevant to the Distric
+$(function () {
+    //DDL for Select
+    $("#District").change(function () {
+        //DDL Automaticaly Bind
+        $("#GSName").empty();
+        $.ajax({
+            type: 'POST',
+            dataType: "json",
+            url: '@Url.Content("~/LivingInOut/FromDistrict")',
+            data: { id: $("#District").val() },
+            success: function (FromDistrict) {
+                var items = '<option>SELECT</option>';
+                $('#GSName').html(items);
+                $.each(FromDistrict, function (i, FromDistrict) {
+                    $("#GSName").append('<option value="' + FromDistrict.Value + '">' +
+                       FromDistrict.Text + '</option>');
+                    //$("#District").val(data.DESCRIPTION);
+                });
+            },
+            error: function (ex) {
+                alert('Failed to retrieve Make.' + ex);
+            }
+        });
+        return false;
+    })
+});
+//Select Police Station  Relevant to the Distric
+$(function () {
+    //DDL for Select
+    $("#District").change(function () {
+        //DDL Automaticaly Bind
+        $("#PoliceStation1").empty();
+        $.ajax({
+            type: 'POST',
+            dataType: "json",
+            url: '@Url.Content("~/LivingInOut/FromPoliceStation")',
+            data: { id: $("#District").val() },
+            success: function (FromPoliceStation) {
+                var items = '<option>SELECT</option>';
+                $('#PoliceStation1').html(items);
+                $.each(FromPoliceStation, function (i, FromPoliceStation) {
+                    $("#PoliceStation1").append('<option value="' + FromPoliceStation.Value + '">' +
+                       FromPoliceStation.Text + '</option>');
+                });
+            },
+            error: function (ex) {
+                alert('Failed to retrieve Make.' + ex);
+            }
+        });
+        return false;
+    })
+});
+
+//Select Town Relevant to the Distric
+$(function () {
+    //DDL for Select
+    $("#District").change(function () {
+        //DDL Automaticaly Bind
+
+        $("#Town1").empty();
+        $.ajax({
+            type: 'POST',
+            dataType: "json",
+            url: '@Url.Content("~/LivingInOut/FromTown")',
+
+            data: { id: $("#District").val() },
+            success: function (FromTown) {
+                var items = '<option>SELECT</option>';
+                $('#Town1').html(items);
+                $.each(FromTown, function (i, FromTown) {
+                    $("#Town1").append('<option value="' + FromTown.Value + '">' +
+                       FromTown.Text + '</option>');
+                });
+            },
+            error: function (ex) {
+                alert('Failed to retrieve Make.' + ex);
+            }
+        });
+        return false;
+    })
+});
+//Select Post Office Relevant to the Distric
+$(function () {
+    //DDL for Select
+    $("#District").change(function () {
+        //DDL Automaticaly Bind
+
+        $("#PostOfficeName").empty();
+        $.ajax({
+            type: 'POST',
+            dataType: "json",
+            url: '@Url.Content("~/LivingInOut/FromPostOffice")',
+            data: { id: $("#District").val() },
+            success: function (FromTown) {
+                var items = '<option>SELECT</option>';
+                $('#PostOfficeName').html(items);
+                $.each(FromTown, function (i, FromTown) {
+                    $("#PostOfficeName").append('<option value="' + FromTown.Value + '">' +
+                       FromTown.Text + '</option>');
+                });
+            },
+            error: function (ex) {
+                alert('Failed to retrieve Make.' + ex);
+            }
+        });
+        return false;
+    })
+});
+
+</script>

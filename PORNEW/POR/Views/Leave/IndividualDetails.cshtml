@@ -1,0 +1,341 @@
+﻿@using POR.Models
+@model POR.Models.Vw_Leave
+
+@{
+    ViewBag.Title = "IndividualDetails";
+}
+<div class="content-wrapper" style="height:900px !important;">
+    <section class="content-header">
+        <h1>
+            Leave Details
+            <small>View</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+        </ol>
+        <div id="ErrorMessage">
+            @if (TempData["ScfMsg"] != null)
+            {
+                <div id="Msg" class="col-lg-12  alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Alert! </strong> @TempData["ScfMsg"]
+                </div>
+            }
+            else if (TempData["ErrMsg"] != null)
+            {
+                <div id="Msg" class="col-lg-12 alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Alert! </strong>@TempData["ErrMsg"]
+                </div>
+
+            }
+        </div>
+    </section>
+    <section class="col-lg-8 connectedSortable">
+        <div class="col-lg-8">
+            <br />
+            <dl class="dl-horizontal">
+
+                <dt class="form-group">
+                    Service No
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ServiceNo)
+                </dd>
+                <dt class="form-group">
+                    Service Type
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ServiceCategoryName)
+                </dd>
+                <dt class="form-group">
+                    Rank
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Rank)
+                </dd>
+                <dt class="form-group">
+                    Name with Initials
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+                <dt class="form-group">
+                    Leave Category
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.LeaveCategoryName)
+                </dd>
+                <dt class="form-group">
+                    Payment Type
+                </dt>
+
+                <dd>
+                    @{
+                        int? PaymentTypeId = Convert.ToInt32(Model.PaymentTypeId);
+                        string PaymentTypeName = null;
+                        if (PaymentTypeId == 1)
+                        {
+                            PaymentTypeName = "Half Pay";
+                        }
+                        else if (PaymentTypeId == 2)
+                        {
+                            PaymentTypeName = "Full Pay";
+                        }
+                        else if (PaymentTypeId == 0)
+                        {
+                            PaymentTypeName = "N/A";
+                        }
+                    }
+                    @PaymentTypeName
+                </dd>
+                <dt class="form-group">
+                    Leave Date
+                </dt>
+
+                <dd>
+                    <b>From </b> @Html.ValueFor(model => model.FromDate, "{0:dd/MM/yyyy}") <b>To </b>@Html.ValueFor(model => model.ToDate, "{0:dd/MM/yyyy}")
+                </dd>
+                <dt class="form-group">
+                    No Of days
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.TotalDays) Days
+                </dd>
+
+                <dt class="form-group">
+                    Authority
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Authority)
+                </dd>
+                <dt class="form-group">
+                    Status
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.RoleName)
+                </dd>
+                @{
+                    Double sum = 0.00;
+                    sum = Convert.ToDouble(Model.Weekend);
+                    string Substring = "";
+                    string SubstringNum = "";
+                    string Week = "";
+                    int count = sum.ToString().Count();
+
+
+                    if (count == 3)
+                    {
+                        Substring = sum.ToString().Substring(1, 2);
+                        SubstringNum = sum.ToString().Substring(0, 1);
+                    }
+                    else if (count == 4)
+                    {
+                        Substring = sum.ToString().Substring(2, 2);
+                        SubstringNum = sum.ToString().Substring(0, 2);
+                    }
+                    else if (count == 5)
+                    {
+                        Substring = sum.ToString().Substring(5, 2);
+                        SubstringNum = sum.ToString().Substring(0, 3);
+                    }
+                    else if (count == 1)
+                    {
+                        Substring = sum.ToString().Substring(0, 1);
+                        SubstringNum = sum.ToString().Substring(0, 1);
+                    }
+
+                    if (sum == 0.5)
+                    {
+                        Week = "Half Weekend";
+                    }
+                    else if (Substring == ".5")
+                    {
+                        Week = SubstringNum + " " + "And" + " " + "Half Day";
+                    }
+                    else
+                    {
+                        Week = sum.ToString();
+                    }
+                }
+
+            </dl>          
+        </div>
+        <div class="col-lg-8">
+            @Html.ActionLink("Back to List", "Individualsearch", "Leave", new { id = Model.LHID }, new { @class = "btn btn-info" })
+        </div>
+
+        <div class="col-lg-2" style="padding-top: 100px; padding-bottom: 270px; font-size: 20px; ">
+
+            @{
+                string UserRole;
+                string Rdate;
+                if (TempData["RejectUserRole"] != null && TempData["RejectDate"] != null)
+                {
+                    UserRole = TempData["RejectUserRole"].ToString();
+                    Rdate = TempData["RejectDate"].ToString();
+                    <div class="alert alert-error">
+                        <span>@UserRole Rejected</span> <br />
+                        <span>Date : @Rdate</span><br />
+                        <span>Comment : @Html.DisplayFor(model => model.Comment)</span>
+                    </div>
+                }
+            }
+        </div>
+    </section>
+    <section class="col-lg-4 connectedSortable">
+        <div class="nav-tabs-custom">
+            <div class="box-body">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <!-- Info Boxes Style 2 -->
+                        <div class="info-box bg-green">
+                            <span class="info-box-icon"><i class="ion ion-stats-bars"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-number">Leave</span>
+                                <span class="info-box-text">Weekend -  @Html.DisplayFor(model => Week)</span>
+                                <span class="info-box-text">Public Holiday -  @Html.DisplayFor(model => model.PublicHoliday) </span>
+                                <span class="info-box-number"></span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 50%"></div>
+                                </div>
+
+                                <span class="progress-description">
+                                    <span class="progress-description">
+
+                                    </span>
+
+                                </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <div class="info-box bg-yellow">
+                            <span class="info-box-icon"><i class="ion ion-bag"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-number">Leave</span>
+                                <span class="info-box-text">Accumulated Leave -  @Html.DisplayFor(model => model.AnnualLeave)  </span>
+                                <span class="info-box-text">Privilege Leave   -  @Html.DisplayFor(model => model.PrivilegeLeave)</span>
+                                <span class="info-box-number"></span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 50%"></div>
+                                </div>
+                                <span class="progress-description">
+                                    <span class="progress-description">
+                                    </span>
+                                </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+
+                        <div class="info-box bg-red">
+                            <span class="info-box-icon"><i class="ion ion-pie-graph"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-number">Leave</span>
+                                <span class="info-box-text">Casual Leave - @Html.DisplayFor(model => model.CasualLeave)</span>
+                                <span class="info-box-text">Leave Leave  - @Html.DisplayFor(model => model.LeaveLeave)</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 70%"></div>
+                                </div>
+                                <span class="progress-description">
+                                </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                        <div class="info-box bg-aqua">
+                            <span class="info-box-icon"><i class="ion ion-person-stalker"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Re-engagement</span>
+                                <span class="info-box-number">@Html.DisplayFor(model => model.ReEngagementLeave)</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 40%"></div>
+                                </div>
+                                <span class="progress-description">
+                                    40% Increase in 30 Days
+                                </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="border-bottom:none !important;">
+                Reject Comments
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <hr style="margin-top: 0px !important; margin-bottom: 0px !important; padding-bottom: 0px !important; padding-top: 0px !important; " />
+            </div>
+            <div class="modal-body" id="partial2">
+                <div>
+                    @Html.Partial("_RejectCommentLeave")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="dialog" style="display: none; position:relative;">
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#btnReject').click(function () {
+            var FADID = $("#hndFADID").val();
+            var FMSID = $("#hndFMSID").val();
+            var route = '@Url.Action("Reject", "Leave")?LHID=' + LHID + '&FMSID=' + FMSID;
+            $('#partial2').load(route);
+        });
+    });
+</script>
+
+<script type="text/javascript">
+
+    $(function () {
+        //Evoid Conflict of the two version jqery
+        $.noConflict();
+        $("#dialog").dialog({
+            autoOpen: false,
+            modal: true,
+            title: "User Flow History...", height: 350, width: 800
+        });
+
+        $("#details").click(function () {
+            var FADID = $("#hndFADID").val();
+            $.ajax({
+                type: "POST",
+                url: '@Url.Content("~/FixedAllowanceDetail/UserFlowHistory")',
+                data: '{FADID: "' + FADID + '" }',
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (response) {
+                    $('#dialog').html(response);
+                    $('#dialog').dialog('open');
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        });
+
+    });
+</script>

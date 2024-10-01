@@ -1,0 +1,40 @@
+﻿@model IEnumerable<POR.Models.Vw_FlowStatus>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table id="history" class="table table-striped" style="font-size:11px;">
+    <tr>
+        <th>
+            Role Name
+        </th>
+        <th>
+            Rank & Name
+        </th>
+        <th>
+            Posted Location
+        </th>
+        <th>
+            Record Date
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.RoleName)*@
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.ServiceNo) - @Html.DisplayFor(modelItem => item.Rank) &nbsp; @Html.DisplayFor(modelItem => item.Name)*@
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.PostedLocation) - @Html.DisplayFor(modelItem => item.Formation)*@
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.CreatedDate)*@
+            </td>
+        </tr>
+    }
+
+</table>

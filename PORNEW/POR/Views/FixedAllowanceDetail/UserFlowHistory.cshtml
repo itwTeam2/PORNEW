@@ -1,0 +1,94 @@
+﻿@model IEnumerable<POR.Models.Vw_UserFlowHistory>
+
+<div class="content-wrapper" style="height:900px !important;">
+
+    <section class="content-header">
+        <h1>
+            Fixed Allowances Details
+            <small>Users Flow History</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+        </ol>
+        <div id="ErrorMessage">
+            @if (TempData["ScfMsg"] != null)
+            {
+            <div id="Msg" class="col-lg-12  alert alert-success">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Alert!</strong> @TempData["ScfMsg"]
+            </div>
+            }
+            else if (TempData["ErrMsg"] != null)
+            {
+            <div id="Msg" class="col-lg-12 alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Alert!</strong>@TempData["ErrMsg"]
+            </div>
+
+            }
+        </div>
+    </section>
+    <section class="col-lg-12 connectedSortable">
+        <div class="nav-tabs-custom">
+            @Html.ValidationSummary(true)
+            <div class="box-body">        
+                <table class="table">
+                    <tr>
+                        <th>
+                            Record Status
+                        </th>                                        
+                        <th>
+                            Rank & Name
+                        </th>
+                        <th>
+                            Posted Location
+                        </th>
+                        <th>
+                            Record Date
+                        </th>         
+                        
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>                           
+                            @{
+                                string RecordStatus = null;
+                                if (item.RecordStatusId==1000)
+                                {
+                                    RecordStatus = "Created";
+                                }
+                                else if (item.RecordStatusId == 2000)
+                                {
+                                    RecordStatus = "Forwarded";
+                                }
+                                else if (item.RecordStatusId == 3000)
+                                {
+                                    RecordStatus = "Rejected";
+                                }
+                            }
+                            @RecordStatus by @Html.DisplayFor(modelItem => item.RoleName) 
+                        </td>  
+                                  
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ServiceNo) - @Html.DisplayFor(modelItem => item.Rank) &nbsp; @Html.DisplayFor(modelItem => item.Name)                            
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PostedLocation) - @Html.DisplayFor(modelItem => item.Formation)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedDate)
+                        </td>                           
+                    </tr>
+                    }
+
+                </table>
+            </div>
+
+        </div>
+        @Html.ActionLink("Back to List", "Index_AllRecord", "FixedAllowanceDetail", new {RSID = Request.QueryString["RSID"] }, new { @class = "btn btn-info" })
+    </section>
+
+</div>

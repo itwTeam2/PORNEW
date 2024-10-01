@@ -1,0 +1,97 @@
+﻿
+
+@{
+    ViewBag.Title = "ReportCampLevel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using POR.Models.F121;
+@model POR.Models.F121._F121
+
+<section id="about"></section>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Offence Report
+        </h1>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+
+        @using (Html.BeginForm("ReportCampLevel", "F121", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="input-group">
+                        <div class="form-group" style="width:290px;">
+                            <label></label>
+                            <div class="input-group date" style="width:290px;">
+                                <label>Please Select Date Period</label>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <div class="form-group" style="width:290px;">
+                            <label>From Date</label>
+                            <div class="input-group date" style="width:200px;">
+                                @*@Html.TextBoxFor(m => m.fromDate, new { @id = "datepicker", @placeholder = "Enter From Date", @class = "form-control", @required = "required", title = "Enter From Date", @style = "width:160px" })*@
+                                @Html.TextBoxFor(m => m.fromDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date", @required = "required", title = "Enter From Date" })
+                                <div class="input-group-addon" id="datetime">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <div class="form-group" style="width:290px;">
+                            <label>To Date</label>
+                            <div class="input-group date" style="width:200px;">
+                                @*@Html.TextBoxFor(m => m.toDate, new { @id = "Todatepicker", @placeholder = "Enter To Date", @class = "form-control", @required = "required", title = "Enter To Date", @style = "width:160px" }*@
+                                @Html.TextBoxFor(m => m.toDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date", @required = "required", title = "Enter From Date" })
+                                <div class="input-group-addon" id="datetime">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <div class="form-group" style="width:290px;">
+                            <label></label>
+
+                            <input type="submit" class="btn btn-lg btn-primary btn-block" style="width:92px;height:40px" value="View" />
+
+
+                        </div>
+                    </div>
+                </div>
+                @*<div class="col-md-3">
+                        <div class="form-group fa-align-right">
+                            <input type="submit" class="btn btn-lg btn-primary btn-block" style="width:100px" value="View" />
+                        </div>
+                    </div>*@
+            </div>
+                <div class="row">
+                    <iframe src="~/Report/RDLC/ReportCampLevel.aspx" width="1100" height="750"></iframe>
+                </div>
+        }
+
+
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+@section Scripts
+{
+
+}
+
+

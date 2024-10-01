@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="P3HRMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="dbContextP3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Postings" EntityType="P3HRMSModel.Posting" />
+  </EntityContainer>
+  <EntityType Name="Posting">
+    <Key>
+      <PropertyRef Name="PostingID" />
+    </Key>
+    <Property Name="PostingID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SNo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="OccuranceNo" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="PORLocation" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="PORDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NoOfOccurances" Type="Int32" Nullable="false" />
+    <Property Name="FromLocationID" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="FromDivisionID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="ToLocationID" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="ToDivisionID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="EffectiveDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PORAuthority" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PORAuthorityDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="P3Authority" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Directorate" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DirectorateAuthority" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DirectorateAuthorityDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PostingType" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedStatus" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TravelMode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="InOut" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="P3AuthorityDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateReported" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="CreatedUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMachine" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMachine" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FromSection" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FromSectionInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ToSection" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ToSectionInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Duty" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="RptStatus" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="SvcDocStatus" Type="Int32" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,70 @@
+public ActionResult IndividualSearchLivingInOut(string sortOrder, string currentFilter, string searchString, int? page)
+        {
+            ///Created BY   : 03558 WAKY Wickramasinghe
+            ///Created Date : 2021/09/03
+            /// Description : Search details for Individual Search
+
+
+            int? UID = Convert.ToInt32(Session["UID"]);
+            int pageSize = 0;
+            int pageNumber = 1;
+
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "Name" : "";
+            ViewBag.DateSortParm = sortOrder == "LeaveCategoryName" ? "Rank" : "FromDate";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var UserInfo = _db.UserInfoes.Where(x => x.UID == UID).FirstOrDefault();
+
+            // List<Vw_Leave> objleave = new List<Vw_Leave>();
+            var LocationId = _db.UserInfoes.Where(x => x.UID == UID).Select(x => x.LocationId).FirstOrDefault();
+
+            TempData["UserRole"] = UserInfo.RoleId;
+
+            var objLivingINOut = _db.Vw_CurrentUserLiving.Where(x=>x.Active == 1).Take(200).OrderBy(x=>x.CreatedDate).ToList();
+
+            if (UserInfo.RoleId == (int)POR.Enum.UserRole.P3CLERK || UserInfo.RoleId == (int)POR.Enum.UserRole.P3SNCO || UserInfo.RoleId == (int)POR.Enum.UserRole.P3OIC)
+            {
+                objLivingINOut = _db.Vw_CurrentUserLiving.Where(x => x.Location == LocationId).Take(200).ToList();
+            }
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                objLivingINOut = _db.Vw_CurrentUserLiving.Where(s => s.ServiceNo.Contains(searchString) || s.Rank.Contains(searchString)).ToList();
+            }
+
+            switch (sortOrder)
+            {
+                case "Service No":
+                    objLivingINOut = objLivingINOut.OrderBy(s => s.ServiceNo).ToList();
+                    break;
+                case "Rank":
+                    objLivingINOut = objLivingINOut.OrderBy(s => s.Rank).ToList();
+                    break;
+                case "Name With Initials":
+                    objLivingINOut = objLivingINOut.OrderBy(s => s.Name).ToList();
+                    break;
+                case "Category Name":
+                    objLivingINOut = objLivingINOut.OrderBy(s => s.LivingStatusShortName).ToList();
+                    break;
+                case "Authority":
+                    objLivingINOut = objLivingINOut.OrderBy(s => s.Authority).ToList();
+                    break;
+            }
+
+            pageSize = 10;
+            pageNumber = (page ?? 1);
+            return View(objLivingINOut.ToPagedList(pageNumber, pageSize));
+
+            // return View(_db.Vw_Leave.ToList());
+        }

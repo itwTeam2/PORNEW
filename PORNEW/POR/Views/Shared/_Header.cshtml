@@ -1,0 +1,71 @@
+﻿<header class="main-header">
+    <!-- Logo -->
+    @{
+        int RID = 0;
+        string UserName = null;
+        if (Session["RID"] != null && Session["UserName"] != null)
+        {
+            RID = Convert.ToInt32(Session["RID"]);
+            if (!string.IsNullOrEmpty(Session["UserName"].ToString()))
+            {
+                UserName = Session["UserName"].ToString();
+                //@UserName;
+            }
+            if (RID == (int)POR.Enum.UserRole.P3CLERK)
+            {
+                <a href="@Url.Action("P3ClkHome", "Home")" class="logo" style="height:61px">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><b>P</b>OR</span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><b>POR</b></span>
+                </a>
+            }
+            else
+            {
+                <a href="@Url.Action("", "")" class="logo" style="height:61px">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><b>P</b>OR</span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><b>POR</b></span>
+                </a>
+            }
+
+
+
+        }
+        else
+        {
+            Response.Redirect(Url.Action("Login", "User"));
+        }
+    }
+    
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+
+                <!-- User Account: style can be found in dropdown.less -->
+                <li class="dropdown user user-menu">
+                    @*<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="~/Content/adminlte/img/avatar04.png" class="user-image" alt="User Image">
+                            <span class="hidden-xs">Admin</span>
+
+                        </a>*@
+                    <button type="button" class="btn btn-sm btn-default" style="margin-right:50px;width:57px;margin-top:9px;width:56px" onclick="location.href='@Url.Action("Logout", "User")'">
+                        <span class="info-box-text"><i class=" fa fa-sign-out"></i></span>
+                    </button>
+                    <br />
+                    <span class="hidden-xs" style="color:#ffffff">Sign Out</span>                    
+                </li>
+                <!-- Control Sidebar Toggle Button -->
+                @*<li>
+                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                    </li>*@
+            </ul>
+        </div>
+    </nav>
+</header>

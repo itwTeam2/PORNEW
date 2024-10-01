@@ -1,0 +1,75 @@
+﻿@model POR.Models.FixedAllowanceDetail
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <h4>FixedAllowanceDetail</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        
+        <dt class="form-group">
+            Service No
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remark)
+        </dd>
+
+        <dt class="form-group">
+            Rank
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt class="form-group">
+            Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedMac)
+        </dd>      
+              
+        <dt class="form-group">
+            Effective Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EffectiveDate)
+        </dd>
+
+        <dt class="form-group">
+            End Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt class="form-group">
+            Camp Authority
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CampAuthority)
+        </dd>
+
+        <dt class="form-group">
+            Camp Authority Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CampAuthorityDate)
+        </dd>        
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.FADID }) |
+    @Html.ActionLink("Back to List", "Index")*@
+</p>

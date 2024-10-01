@@ -1,0 +1,237 @@
+﻿@using POR.Models
+@model POR.Models.Vw_FixedAllowanceDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="content-wrapper" style="height:900px !important;">
+    <section class="content-header">
+        <h1>
+            Fixed Allowance Details
+            <small>View Details</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+        </ol>
+        <div id="ErrorMessage">
+            @if (TempData["ScfMsg"] != null)
+            {
+                <div id="Msg" class="col-lg-12  alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Alert! </strong> @TempData["ScfMsg"]
+                </div>
+            }
+            else if (TempData["ErrMsg"] != null)
+            {
+                <div id="Msg" class="col-lg-12 alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Alert! </strong>@TempData["ErrMsg"]
+                </div>
+
+            }
+        </div>
+    </section>
+    <br />
+    <section class="col-lg-12 connectedSortable">
+        <div class="nav-tabs-custom">
+            <br />
+            <dl class="dl-horizontal">
+                <dt class="form-group">
+                    Service No
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ServiceNo)
+                </dd>
+
+                <dt class="form-group">
+                    Service Type
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Service_Type)
+                </dd>
+
+                <dt class="form-group">
+                    Rank
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Rank)
+                </dd>
+
+                <dt class="form-group">
+                    Name with Initials
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt class="form-group">
+                    Allowance
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AllowanceName)
+                </dd>
+                <dt class="form-group">
+                    Allowance Category
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+                <dt class="form-group">
+                    Payment Type
+                </dt>
+
+                <dd>
+                    @{
+                        int? PaymentTypeId = Convert.ToInt32(Model.FullHalfPay);
+                        string PaymentTypeName = null;
+                        if (PaymentTypeId == 1)
+                        {
+                            PaymentTypeName = "Half Pay";
+                        }
+                        else if (PaymentTypeId == 2)
+                        {
+                            PaymentTypeName = "Full Pay";
+                        }
+                        else if (PaymentTypeId == 0)
+                        {
+                            PaymentTypeName = "N/A";
+                        }
+                    }
+                    @PaymentTypeName
+                </dd>
+                <dt class="form-group">
+                    Effective Date
+                </dt>
+
+                <dd>
+                    @Html.ValueFor(model => model.EffectiveDate, "{0:dd/MM/yyyy}")
+                </dd>
+
+                <dt class="form-group">
+                    End Date
+                </dt>
+
+                <dd>
+                    @Html.ValueFor(model => model.EndDate, "{0:dd/MM/yyyy}")
+                </dd>
+
+                <dt class="form-group">
+                    Authority
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CampAuthority)
+                </dd>
+
+                <dt class="form-group">
+                    Authority Date
+                </dt>
+
+                <dd>
+                    @Html.ValueFor(model => model.CampAuthorityDate, "{0:dd/MM/yyyy}")
+
+                </dd>
+                <dt class="form-group">
+                    Remark
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Remark)
+                </dd>
+            </dl>
+        </div>
+    </section>
+    <section>
+
+        @{             
+            <div class="col-lg-12">
+                @Html.ActionLink("Back to List", "Index_AllRecord", "FixedAllowanceDetail", new { id = Model.FADID }, new { @class = "btn btn-info" })
+            </div>
+          
+        }
+
+    </section>
+
+    <section class="col-lg-12 connectedSortable">
+        <br />
+        <ol class="breadcrumb">
+            @{ dbContext _db = new dbContext(); }
+
+            @if (ViewData["AllFlowStatus"] != null)
+            {
+                int? CurrentStatus_UserRole;
+                
+                string User;
+                
+                //int? LogingUserRoleId = Convert.ToInt32(TempData["UserRoleId"]);
+
+                if (TempData["CurrentStatusUserRole"] != null)
+                {
+                    CurrentStatus_UserRole = Convert.ToInt32(TempData["CurrentStatusUserRole"]);
+                }
+                else
+                {
+                    CurrentStatus_UserRole = null;
+                }
+
+                foreach (var DDR in ViewData["AllFlowStatus"] as IList<Vw_FlowStatus>)
+                {
+                    int i = 0;
+                    if (DDR.CurrentStatus != 0)
+                    {
+                        if (ViewData["UserFlow_ToolTip"] != null)
+                        {
+                            foreach (var DDR_1 in ViewData["UserFlow_ToolTip"] as IList<Vw_FlowStatusUser_ToolTip>)
+                            {
+                                User = DDR_1.ServiceNo + " - " + DDR_1.Rank + " " + DDR_1.Name;
+                                if (DDR_1.RID == null)
+                                {
+                                    int? RID = _db.UserInfoes.Where(x => x.UID == DDR_1.CreatedBy).Select(x => x.RoleId).FirstOrDefault();
+                                    if (DDR.RID == RID && CurrentStatus_UserRole == DDR.RID)
+                                    {
+                                        i = 1;
+                                        <li class="active"> <a href="#" title="@User">@DDR.RoleName</a></li>
+                                    }
+                                    else if (DDR.RID == RID)
+                                    {
+                                        i = 1;
+                                        <li class="active"> <a href="#" title="@User">@DDR.RoleName</a></li>
+                                    }
+                                }
+                                else
+                                {
+                                    if (DDR.RID == DDR_1.RID && i == 0)
+                                    {
+                                        i = 1;
+                                        <li class="active"> <a href="#" title="@User">@DDR.RoleName</a></li>
+                                    }
+                                }
+
+                            }
+                        }
+                        if (i != 1)
+                        {
+                            if (CurrentStatus_UserRole == DDR.RID)
+                            {
+                                <li class="active text-bold"> <a class="text-danger" href="#" title="">@DDR.RoleName</a></li>
+                            }
+                            else
+                            {
+                                <li class="active"> <a href="#" title="">@DDR.RoleName</a></li>
+                            }
+                            
+                        }
+                    }
+
+                }
+            }
+        </ol>
+    </section>
+</div>

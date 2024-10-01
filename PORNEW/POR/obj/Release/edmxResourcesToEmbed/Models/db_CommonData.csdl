@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CommonDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Directorate">
+    <Key>
+      <PropertyRef Name="directCode" />
+      <PropertyRef Name="directorateName" />
+    </Key>
+    <Property Name="directCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="directorateName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="DIST_CODE" />
+    </Key>
+    <Property Name="DIST_CODE" Type="Int32" Nullable="false" />
+    <Property Name="PROV_CODE" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Division">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="DivisionID" />
+      <PropertyRef Name="DivisionType" />
+      <PropertyRef Name="DivisionName" />
+      <PropertyRef Name="NoOfPersonnel" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="CreatedDate" />
+      <PropertyRef Name="CreatedUser" />
+    </Key>
+    <Property Name="LocationID" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DivisionID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DivisionType" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DivisionName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OfficeCommand" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="NoOfPersonnel" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedUser" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Establishment">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="LocationName" />
+    </Key>
+    <Property Name="LocationID" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="LocationName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LocShortName" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EstablishmentNew">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="LocationName" />
+    </Key>
+    <Property Name="LocationID" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="LocationName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LocShortName" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="HelpDeskStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="GSDivision">
+    <Key>
+      <PropertyRef Name="GSDivisionID" />
+      <PropertyRef Name="District" />
+      <PropertyRef Name="GSName" />
+    </Key>
+    <Property Name="GSDivisionID" Type="Int32" Nullable="false" />
+    <Property Name="District" Type="Int32" Nullable="false" />
+    <Property Name="GSName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PoliceStation">
+    <Key>
+      <PropertyRef Name="PoliceStationCode" />
+    </Key>
+    <Property Name="District" Type="Int32" />
+    <Property Name="PoliceStationCode" Type="Int32" Nullable="false" />
+    <Property Name="PoliceStation1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PostOffice">
+    <Key>
+      <PropertyRef Name="PostOfficeCode" />
+      <PropertyRef Name="District" />
+    </Key>
+    <Property Name="PostOfficeCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="District" Type="Int32" Nullable="false" />
+    <Property Name="PostOfficeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ProvinceNew">
+    <Key>
+      <PropertyRef Name="PROV_CODE" />
+    </Key>
+    <Property Name="PROV_CODE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Rank">
+    <Key>
+      <PropertyRef Name="RANK1" />
+    </Key>
+    <Property Name="RANK1" Type="Int32" Nullable="false" />
+    <Property Name="RNK_NAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="RANK_TYPE" Type="Int32" />
+    <Property Name="SHORT_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LONG_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Town">
+    <Key>
+      <PropertyRef Name="TownCOde" />
+      <PropertyRef Name="DIST_CODE" />
+    </Key>
+    <Property Name="TownCOde" Type="Int32" Nullable="false" />
+    <Property Name="DIST_CODE" Type="Int32" Nullable="false" />
+    <Property Name="Town1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Trade">
+    <Key>
+      <PropertyRef Name="TRADE1" />
+      <PropertyRef Name="TRD_NAME" />
+    </Key>
+    <Property Name="TRADE1" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TRD_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DIRECTOR" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="dbContextCommonData" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Directorates" EntityType="Self.Directorate" />
+    <EntitySet Name="Districts" EntityType="Self.District" />
+    <EntitySet Name="Divisions" EntityType="Self.Division" />
+    <EntitySet Name="Establishments" EntityType="Self.Establishment" />
+    <EntitySet Name="EstablishmentNews" EntityType="Self.EstablishmentNew" />
+    <EntitySet Name="GSDivisions" EntityType="Self.GSDivision" />
+    <EntitySet Name="PoliceStations" EntityType="Self.PoliceStation" />
+    <EntitySet Name="PostOffices" EntityType="Self.PostOffice" />
+    <EntitySet Name="ProvinceNews" EntityType="Self.ProvinceNew" />
+    <EntitySet Name="Ranks" EntityType="Self.Rank" />
+    <EntitySet Name="Towns" EntityType="Self.Town" />
+    <EntitySet Name="Trades" EntityType="Self.Trade" />
+    <EntitySet Name="ServiceTypes" EntityType="CommonDataModel.ServiceType" />
+  </EntityContainer>
+  <EntityType Name="ServiceType">
+    <Key>
+      <PropertyRef Name="SVCType" />
+    </Key>
+    <Property Name="SVCType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Service_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsOfficer" Type="Int32" />
+  </EntityType>
+</Schema>

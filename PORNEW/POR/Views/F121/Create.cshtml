@@ -1,0 +1,341 @@
+﻿
+@model POR.Models.F121._F121
+
+<link href="~/Content/CustomeStyle.css" rel="stylesheet" />
+<script src="~/Scripts/Jq.js"></script>
+<script src="~/Scripts/F121.js"></script>
+@{
+    ViewBag.Title = "RegiMakeInfo";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="content-wrapper" style="height: 1059.75px !important;">
+
+        <section class="content-header">
+            <h1 style="text-align:center"><span><i class="fa fa-gavel">  Add Charge Details </i></span></h1>
+
+            <div id="ErrorMessage" style="margin-top:5px">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong> @TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong>@TempData["ErrMsg"]
+                    </div>
+                }
+            </div>
+
+        </section>
+        <br />
+
+        <section class="col-lg-6 connectedSortable">
+            <div class="nav-tabs-custom">
+                @Html.ValidationSummary(true)
+                <div class="box-body">
+                    <div>
+                        <div class="form-group">
+                            <div class="col-lg-6">
+                                @Html.Label("Service Number", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Snumber, new { @class = "form-control ", autocomplete = "off" })
+                                @Html.HiddenFor(model => model.ServiceNo, new { @class = "form-control ", autocomplete = "off" })
+                                @Html.ValidationMessageFor(model => model.ServiceNo, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                            <div class="col-lg-6">
+                                @Html.Label("Rank", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Rank, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-6" style="margin-top:12px">
+                                @Html.Label("Name", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Name, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-6" style="margin-top:12px">
+                                @Html.Label("Branch/Trade", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Trade, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-6" style="margin-top:12px">
+                                @Html.Label("Charge No (In Letters)", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.ChargeNo2, new { @class = "form-control ", autocomplete = "off" })
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-6" style="margin-top:12px">
+                                @Html.Label("Charge No", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.ChargeNo, new { @class = "form-control ", autocomplete = "off" })
+
+                            </div>
+                        </div>
+                        @*<div class="form-group">
+                                <div class="col-lg-6" style="margin-top:12px">
+                                    @Html.Label("Charge No 2", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.ChargeNo2, new { @class = "form-control ", autocomplete = "off" })
+
+                                </div>
+                            </div>*@
+                        <div class="form-group">
+                            <div class="col-lg-6" style="margin-top: 11px">
+                                @Html.Label("Charge Date", new { @class = "control-label" })
+                                @*@Html.TextBoxFor(model => model.ChargeDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })*@
+                                @Html.TextBoxFor(model => model.ChargeDate, new { @class = "form-control", autocomplete = "off", placeholder = "DD/MM/YYYY", @type = "date" })
+                                @Html.ValidationMessageFor(model => model.ChargeDate, string.Empty, new { @class = "label label-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-6" style="margin-top: 80px">
+                                @Html.Label("Date of Offence", new { @class = "control-label" })
+                                @*@Html.TextBoxFor(model => model.OffenceDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })*@
+                                @Html.TextBoxFor(model => model.OffenceDate, new { @class = "form-control", autocomplete = "off", placeholder = "DD/MM/YYYY", @type = "date" })
+                                @Html.ValidationMessageFor(model => model.OffenceDate, string.Empty, new { @class = "label label-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-6" style="margin-top:-58px">
+                                @Html.Label("Place of Offence", new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.LocShortName, ViewBag.DDL_Establishment as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                @Html.HiddenFor(model => model.LocShortName, new { @class = "form-control ", autocomplete = "off" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-12" style="margin-top: 11px">
+                                @Html.Label("Offence", new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.OffenceID, ViewBag.DDL_OffenceName as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                @Html.HiddenFor(model => model.OffenceID, new { @class = "form-control ", autocomplete = "off" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12" style="margin-top: 11px">
+                                @Html.Label("Summary Of Offence (OFFENCE WOAS)", new { @class = "control-label" })
+                                @Html.TextAreaFor(model => model.OffenceWASO, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                                @Html.ValidationMessageFor(model => model.OffenceWASO, string.Empty, new { @class = "label label-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12" style="margin-top: 11px">
+                                @Html.Label("Witnesses Details", new { @class = "control-label" })
+                            </div>
+                            <div class="box-footer clearfix" style="float:left">
+                                <input type="button" value="Witnesses" class="btn btn-primary" id="btnWitnesses" style="width:200px" />
+                            </div>
+                            <div class="box-footer clearfix" style="float:right">
+                                <input type="button" value="Documentary" class="btn btn-warning" id="btnDoc" style="width:200px" />
+                            </div>
+                            <div class="box-footer clearfix" style="float:right">
+                                <input type="button" value="Production" class="btn btn-info" id="btnPro" style="width:200px" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12" style="margin-top: 11px">
+                                @Html.Label("Punishment Details", new { @class = "control-label" })
+                                <div>
+                                    <input type="button" value="Punishment" class="btn btn-danger" id="btnPunishment" style="width:200px" />
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="col-lg-6 connectedSortable" id="Sec">
+            <div class="nav-tabs-custom" col-lg-12">
+                <div class="box-body">
+                    <div style="margin-top:-10px">
+                        <div>
+                            <div class="nav-tabs-custom" id="dvWitness">
+                                <div id="dv02"></div>
+                            </div>
+                            <div class="nav-tabs-custom" id="dvDoc">
+                                <div id="dv03"></div>
+                            </div>
+                            <div class="nav-tabs-custom" id="dvPro">
+                                <div id="dv04"></div>
+                            </div>
+
+                            <section class="col-lg-4 connectedSortable" id="dvAddwitness">
+                                <div class="col-lg-06">
+                                    <div class="nav-tabs-custom" style="height:200px ; width:200px">
+                                        <table id="tblItemList" class="table table-responsive table-striped table-hover">
+                                            <tr>
+                                                <th>Service Number / Name</th>
+                                            </tr>
+                                            <tbody>
+                                                <tr class="">
+                                                    <td style="height:10px"></td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                        @*<input class="btn btn-warning pull-right" name="submitButton" id="btnSubmitTeam" value="Save" type="button" style="margin-right:20px" />*@
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="col-lg-4 connectedSortable" id="dvAdddoc">
+                                <div class="col-lg-06">
+                                    <div class="nav-tabs-custom" style="height:200px ; width:200px">
+                                        <table id="tblItemListDoc" class="table table-responsive table-striped table-hover">
+                                            <tr>
+                                                <th>Document Details</th>
+                                            </tr>
+                                            <tbody>
+                                                <tr class="">
+                                                    <td style="height:10px"></td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                        @*<input class="btn btn-warning pull-right" name="submitButton" id="btnSubmitTeam" value="Save" type="button" style="margin-right:20px" />*@
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="col-lg-4 connectedSortable" id="dvPro">
+                                <div class="col-lg-06">
+                                    <div class="nav-tabs-custom" style="height:200px ; width:200px">
+                                        <table id="tblItemListDoc" class="table table-responsive table-striped table-hover">
+                                            <tr>
+                                                <th>Production Details</th>
+                                            </tr>
+                                            <tbody>
+                                                <tr class="">
+                                                    <td style="height:10px"></td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                        @*<input class="btn btn-warning pull-right" name="submitButton" id="btnSubmitTeam" value="Save" type="button" style="margin-right:20px" />*@
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="col-lg-6 connectedSortable" id="Punishment">
+            <div class="nav-tabs-custom">
+                @Html.ValidationSummary(true)
+                <div class="box-body">
+
+                    <div class="form-group">
+                        <div class="col-lg-12" style="margin-top: 11px">
+                            @Html.Label("Punishment Awarded", new { @class = "control-label" })
+                            @Html.DropDownListFor(model => model.PunishmentID, ViewBag.DDL_Punishments as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                            @Html.HiddenFor(model => model.PunishmentID, new { @class = "form-control ", autocomplete = "off" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-12" style="margin-top: 11px">
+                            @Html.Label("Punishment Description", new { @class = "control-label" })
+                            @Html.TextAreaFor(model => model.PunishmentDescription, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                            @Html.ValidationMessageFor(model => model.PunishmentDescription, string.Empty, new { @class = "label label-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-12" style="margin-top: 11px">
+                            @Html.Label("Awarded Date", new { @class = "control-label" })
+                            @*@Html.TextBoxFor(model => model.PunishDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })*@
+                            @Html.TextBoxFor(model => model.PunishDate, new { @class = "form-control", autocomplete = "off", placeholder = "DD/MM/YYYY", @type = "date" })
+                            @Html.ValidationMessageFor(model => model.PunishDate, string.Empty, new { @class = "label label-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-12" style="margin-top: 11px">
+                            @Html.Label("Sec. 40(3) of AF A Compiled With", new { @class = "control-label" })
+                            @*@Html.DropDownListFor(model => model.Sec40, ViewBag.UserType as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })*@
+                            <span><b>   :   </b></span> &nbsp;&nbsp;
+                            @Html.RadioButtonFor(model => model.Sec40, "1")
+                            &nbsp;&nbsp;<b>   YES   </b>
+                            <span><b>      </b></span> &nbsp;&nbsp;
+                            @Html.RadioButtonFor(model => model.Sec40, "2")
+                            &nbsp;&nbsp;<span><b>  NO  </b></span>
+
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-12" style="margin-top: 11px">
+                            @Html.Label("Opted for CM", new { @class = "control-label" })
+                            @*@Html.DropDownListFor(model => model.OptCM, ViewBag.OptCM as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })*@
+                            <span><b>   :   </b></span> &nbsp;&nbsp;
+                            @Html.RadioButtonFor(model => model.OptCM, "3")
+                            &nbsp;&nbsp;<b>   YES   </b>
+                            <span><b>      </b></span> &nbsp;&nbsp;
+                            @Html.RadioButtonFor(model => model.OptCM, "4")
+                            &nbsp;&nbsp;<span><b>  NO  </b></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-12" style="margin-top: 11px">
+                            @Html.Label("Remanded for Trial by CM", new { @class = "control-label" })
+                            @*@Html.DropDownListFor(model => model.RecCM, ViewBag.RecCM as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })*@
+                            <span><b>   :   </b></span> &nbsp;&nbsp;
+                            @Html.RadioButtonFor(model => model.RecCM, "5")
+                            &nbsp;&nbsp;<b>   YES   </b>
+                            <span><b>      </b></span>&nbsp;&nbsp;
+                            @Html.RadioButtonFor(model => model.RecCM, "6")
+                            &nbsp;&nbsp;<span><b>  NO  </b></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-12" style="margin-top: 11px">
+                            @Html.Label("By Whom Awared Punishment", new { @class = "control-label" })
+                            @Html.TextAreaFor(model => model.Appointment, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                            @Html.ValidationMessageFor(model => model.Appointment, string.Empty, new { @class = "label label-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-12">
+
+                        </div>
+                        <div class="box-footer clearfix" style="float:left">
+                            <button type="button" class="col-lg-4 btn btn-success pull-right" id="btnYes" style="height:35px;width:200px" onclick="location.href='@Url.Action("IndexCivilStatus", "Married")'">
+                                <i class="fa fa-hand-o-right"></i> Go to Pending List
+                            </button>
+                        </div>
+                        <div class="box-footer clearfix" style="float:right">
+                            <input class="btn btn-info pull-right" name="submitButton" id="btnSubmit" value="Save" type="button" style="width:200px" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        @Html.Hidden("RedirectTo", Url.Action("Create", "F121"))
+
+    </div>
+}
+

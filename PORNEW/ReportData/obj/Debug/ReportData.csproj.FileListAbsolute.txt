@@ -1,0 +1,36 @@
+E:\POR new\por 2\PORNEW\ReportData\bin\ReportData.dll.config
+E:\POR new\por 2\PORNEW\ReportData\bin\ReportData.dll
+E:\POR new\por 2\PORNEW\ReportData\bin\ReportData.pdb
+E:\POR new\por 2\PORNEW\ReportData\obj\Debug\ReportData.csprojResolveAssemblyReference.cache
+E:\POR new\por 2\PORNEW\ReportData\obj\Debug\ReportData.dll
+E:\POR new\por 2\PORNEW\ReportData\obj\Debug\ReportData.pdb
+D:\TFS2021\PORNEW\ReportData\bin\ReportData.dll.config
+D:\TFS2021\PORNEW\ReportData\bin\ReportData.dll
+D:\TFS2021\PORNEW\ReportData\bin\ReportData.pdb
+D:\TFS2021\PORNEW\ReportData\bin\EntityFramework.dll
+D:\TFS2021\PORNEW\ReportData\bin\EntityFramework.SqlServer.dll
+D:\TFS2021\PORNEW\ReportData\bin\EntityFramework.xml
+D:\TFS2021\PORNEW\ReportData\bin\EntityFramework.SqlServer.xml
+D:\TFS2021\PORNEW\ReportData\obj\Debug\ReportData.dll
+D:\TFS2021\PORNEW\ReportData\obj\Debug\ReportData.pdb
+D:\TFS2021\PORNEW\ReportData\obj\Debug\ReportData.csprojResolveAssemblyReference.cache
+D:\Projects\New folder (2)\PORNEW\ReportData\bin\ReportData.dll.config
+D:\Projects\New folder (2)\PORNEW\ReportData\bin\ReportData.dll
+D:\Projects\New folder (2)\PORNEW\ReportData\bin\ReportData.pdb
+D:\Projects\New folder (2)\PORNEW\ReportData\bin\EntityFramework.dll
+D:\Projects\New folder (2)\PORNEW\ReportData\bin\EntityFramework.SqlServer.dll
+D:\Projects\New folder (2)\PORNEW\ReportData\bin\EntityFramework.xml
+D:\Projects\New folder (2)\PORNEW\ReportData\bin\EntityFramework.SqlServer.xml
+D:\Projects\New folder (2)\PORNEW\ReportData\obj\Debug\ReportData.csprojResolveAssemblyReference.cache
+D:\Projects\New folder (2)\PORNEW\ReportData\obj\Debug\ReportData.dll
+D:\Projects\New folder (2)\PORNEW\ReportData\obj\Debug\ReportData.pdb
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\ReportData\bin\ReportData.dll.config
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\ReportData\bin\ReportData.dll
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\ReportData\bin\ReportData.pdb
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\ReportData\bin\EntityFramework.dll
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\ReportData\bin\EntityFramework.SqlServer.dll
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\ReportData\bin\EntityFramework.xml
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\ReportData\bin\EntityFramework.SqlServer.xml
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\ReportData\obj\Debug\ReportData.csprojResolveAssemblyReference.cache
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\ReportData\obj\Debug\ReportData.dll
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\ReportData\obj\Debug\ReportData.pdb

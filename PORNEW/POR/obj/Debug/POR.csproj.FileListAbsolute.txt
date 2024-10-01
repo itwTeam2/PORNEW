@@ -1,0 +1,264 @@
+D:\projects_2018\POR\POR\bin\POR.dll.config
+D:\projects_2018\POR\POR\bin\POR.dll
+D:\projects_2018\POR\POR\bin\POR.pdb
+D:\projects_2018\POR\POR\bin\PagedList.dll
+D:\projects_2018\POR\POR\bin\PagedList.Mvc.dll
+D:\projects_2018\POR\POR\bin\PagedList.xml
+D:\projects_2018\POR\POR\bin\PagedList.Mvc.xml
+D:\projects_2018\POR\POR\obj\Debug\POR.dll
+D:\projects_2018\POR\POR\obj\Debug\POR.pdb
+D:\projects_2018\POR\POR\obj\Debug\POR.csprojResolveAssemblyReference.cache
+D:\TFS2017\PORNew\POR\bin\POR.dll.config
+D:\TFS2017\PORNew\POR\bin\POR.dll
+D:\TFS2017\PORNew\POR\bin\POR.pdb
+D:\TFS2017\PORNew\POR\bin\PagedList.dll
+D:\TFS2017\PORNew\POR\bin\PagedList.Mvc.dll
+D:\TFS2017\PORNew\POR\bin\PagedList.xml
+D:\TFS2017\PORNew\POR\bin\PagedList.Mvc.xml
+D:\TFS2017\PORNew\POR\obj\Debug\POR.csproj.CoreCompileInputs.cache
+D:\TFS2017\PORNew\POR\obj\Debug\POR.dll
+D:\TFS2017\PORNew\POR\obj\Debug\POR.pdb
+D:\TFS2017\PORNew\POR\obj\Debug\POR.csprojResolveAssemblyReference.cache
+D:\TFS2017\HRMS\PORNew\PORNEW\POR\bin\POR.dll.config
+D:\TFS2017\HRMS\PORNew\PORNEW\POR\bin\POR.dll
+D:\TFS2017\HRMS\PORNew\PORNEW\POR\bin\POR.pdb
+D:\TFS2017\HRMS\PORNew\PORNEW\POR\bin\PagedList.dll
+D:\TFS2017\HRMS\PORNew\PORNEW\POR\bin\PagedList.Mvc.dll
+D:\TFS2017\HRMS\PORNew\PORNEW\POR\bin\PagedList.xml
+D:\TFS2017\HRMS\PORNew\PORNEW\POR\bin\PagedList.Mvc.xml
+D:\TFS2017\HRMS\PORNew\PORNEW\POR\obj\Debug\POR.dll
+D:\TFS2017\HRMS\PORNew\PORNEW\POR\obj\Debug\POR.pdb
+D:\TFS2017\HRMS\PORNew\PORNEW\POR\obj\Debug\POR.csproj.CoreCompileInputs.cache
+F:\tfs\HRMS\PORNEW\POR\bin\POR.dll.config
+F:\tfs\HRMS\PORNEW\POR\bin\POR.dll
+F:\tfs\HRMS\PORNEW\POR\bin\POR.pdb
+F:\tfs\HRMS\PORNEW\POR\bin\PagedList.dll
+F:\tfs\HRMS\PORNEW\POR\bin\PagedList.Mvc.dll
+F:\tfs\HRMS\PORNEW\POR\bin\PagedList.xml
+F:\tfs\HRMS\PORNEW\POR\bin\PagedList.Mvc.xml
+F:\tfs\HRMS\PORNEW\POR\obj\Debug\POR.csprojResolveAssemblyReference.cache
+F:\tfs\HRMS\PORNEW\POR\obj\Debug\POR.dll
+F:\tfs\HRMS\PORNEW\POR\obj\Debug\POR.pdb
+C:\Users\Administrator\Desktop\PORNEW\POR\bin\POR.dll.config
+C:\Users\Administrator\Desktop\PORNEW\POR\bin\POR.dll
+C:\Users\Administrator\Desktop\PORNEW\POR\bin\POR.pdb
+C:\Users\Administrator\Desktop\PORNEW\POR\bin\PagedList.dll
+C:\Users\Administrator\Desktop\PORNEW\POR\bin\PagedList.Mvc.dll
+C:\Users\Administrator\Desktop\PORNEW\POR\bin\PagedList.xml
+C:\Users\Administrator\Desktop\PORNEW\POR\bin\PagedList.Mvc.xml
+C:\Users\Administrator\Desktop\PORNEW\POR\obj\Debug\POR.dll
+C:\Users\Administrator\Desktop\PORNEW\POR\obj\Debug\POR.pdb
+D:\TFS\HRMS\PORNEW\POR\bin\POR.dll.config
+D:\TFS\HRMS\PORNEW\POR\bin\POR.dll
+D:\TFS\HRMS\PORNEW\POR\bin\POR.pdb
+D:\TFS\HRMS\PORNEW\POR\bin\PagedList.dll
+D:\TFS\HRMS\PORNEW\POR\bin\PagedList.Mvc.dll
+D:\TFS\HRMS\PORNEW\POR\bin\ReportData.dll
+D:\TFS\HRMS\PORNEW\POR\bin\ReportData.pdb
+D:\TFS\HRMS\PORNEW\POR\bin\PagedList.xml
+D:\TFS\HRMS\PORNEW\POR\bin\PagedList.Mvc.xml
+D:\TFS\HRMS\PORNEW\POR\obj\Debug\POR.csprojResolveAssemblyReference.cache
+D:\TFS\HRMS\PORNEW\POR\obj\Debug\POR.dll
+D:\TFS\HRMS\PORNEW\POR\obj\Debug\POR.pdb
+D:\TFS\HRMS\PORNEW\POR\obj\Debug\RdlCompile.cache
+D:\TFS\HRMS\PORNEW\POR\obj\Debug\RdlCompile.compiled
+F:\TFS\PORNEW\POR\obj\Debug\POR.csprojResolveAssemblyReference.cache
+F:\TFS\PORNEW\POR\obj\Debug\POR.dll
+F:\TFS\PORNEW\POR\obj\Debug\POR.pdb
+F:\TFS\PORNEW\POR\bin\POR.dll.config
+F:\TFS\PORNEW\POR\bin\POR.dll
+F:\TFS\PORNEW\POR\bin\POR.pdb
+F:\TFS\PORNEW\POR\bin\Microsoft.ReportViewer.WebForms.dll
+F:\TFS\PORNEW\POR\bin\PagedList.dll
+F:\TFS\PORNEW\POR\bin\PagedList.Mvc.dll
+F:\TFS\PORNEW\POR\bin\ReportData.dll
+F:\TFS\PORNEW\POR\bin\ReportData.pdb
+F:\TFS\PORNEW\POR\bin\PagedList.xml
+F:\TFS\PORNEW\POR\bin\PagedList.Mvc.xml
+F:\TFS\PORNEW\POR\bin\de\Microsoft.ReportViewer.WebForms.resources.dll
+F:\TFS\PORNEW\POR\bin\es\Microsoft.ReportViewer.WebForms.resources.dll
+F:\TFS\PORNEW\POR\bin\fr\Microsoft.ReportViewer.WebForms.resources.dll
+F:\TFS\PORNEW\POR\bin\it\Microsoft.ReportViewer.WebForms.resources.dll
+F:\TFS\PORNEW\POR\bin\ja\Microsoft.ReportViewer.WebForms.resources.dll
+F:\TFS\PORNEW\POR\bin\ko\Microsoft.ReportViewer.WebForms.resources.dll
+F:\TFS\PORNEW\POR\bin\pt\Microsoft.ReportViewer.WebForms.resources.dll
+F:\TFS\PORNEW\POR\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
+F:\TFS\PORNEW\POR\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+F:\TFS\PORNEW\POR\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+E:\TFS\NPOR\PORNEW\POR\bin\POR.dll.config
+E:\TFS\NPOR\PORNEW\POR\bin\POR.dll
+E:\TFS\NPOR\PORNEW\POR\bin\POR.pdb
+E:\TFS\NPOR\PORNEW\POR\bin\Microsoft.ReportViewer.WebForms.dll
+E:\TFS\NPOR\PORNEW\POR\bin\PagedList.dll
+E:\TFS\NPOR\PORNEW\POR\bin\PagedList.Mvc.dll
+E:\TFS\NPOR\PORNEW\POR\bin\ReportData.dll
+E:\TFS\NPOR\PORNEW\POR\bin\ReportData.pdb
+E:\TFS\NPOR\PORNEW\POR\bin\PagedList.xml
+E:\TFS\NPOR\PORNEW\POR\bin\PagedList.Mvc.xml
+E:\TFS\NPOR\PORNEW\POR\bin\de\Microsoft.ReportViewer.WebForms.resources.dll
+E:\TFS\NPOR\PORNEW\POR\bin\es\Microsoft.ReportViewer.WebForms.resources.dll
+E:\TFS\NPOR\PORNEW\POR\bin\fr\Microsoft.ReportViewer.WebForms.resources.dll
+E:\TFS\NPOR\PORNEW\POR\bin\it\Microsoft.ReportViewer.WebForms.resources.dll
+E:\TFS\NPOR\PORNEW\POR\bin\ja\Microsoft.ReportViewer.WebForms.resources.dll
+E:\TFS\NPOR\PORNEW\POR\bin\ko\Microsoft.ReportViewer.WebForms.resources.dll
+E:\TFS\NPOR\PORNEW\POR\bin\pt\Microsoft.ReportViewer.WebForms.resources.dll
+E:\TFS\NPOR\PORNEW\POR\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
+E:\TFS\NPOR\PORNEW\POR\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+E:\TFS\NPOR\PORNEW\POR\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+E:\TFS\NPOR\PORNEW\POR\obj\Debug\POR.csprojResolveAssemblyReference.cache
+E:\TFS\NPOR\PORNEW\POR\obj\Debug\POR.dll
+E:\TFS\NPOR\PORNEW\POR\obj\Debug\POR.pdb
+D:\TFS2020\Backup\PORNEW\POR\bin\POR.dll.config
+D:\TFS2020\Backup\PORNEW\POR\bin\POR.dll
+D:\TFS2020\Backup\PORNEW\POR\bin\POR.pdb
+D:\TFS2020\Backup\PORNEW\POR\bin\Microsoft.ReportViewer.WebForms.dll
+D:\TFS2020\Backup\PORNEW\POR\bin\PagedList.dll
+D:\TFS2020\Backup\PORNEW\POR\bin\PagedList.Mvc.dll
+D:\TFS2020\Backup\PORNEW\POR\bin\ReportData.dll
+D:\TFS2020\Backup\PORNEW\POR\bin\Microsoft.ReportViewer.Common.dll
+D:\TFS2020\Backup\PORNEW\POR\bin\ReportData.pdb
+D:\TFS2020\Backup\PORNEW\POR\bin\Microsoft.ReportViewer.WebForms.xml
+D:\TFS2020\Backup\PORNEW\POR\bin\PagedList.xml
+D:\TFS2020\Backup\PORNEW\POR\bin\PagedList.Mvc.xml
+D:\TFS2020\Backup\PORNEW\POR\obj\Debug\POR.csprojResolveAssemblyReference.cache
+D:\TFS2020\Backup\PORNEW\POR\obj\Debug\RdlCompile.cache
+D:\TFS2020\Backup\PORNEW\POR\obj\Debug\RdlCompile.compiled
+D:\TFS2020\Backup\PORNEW\POR\obj\Debug\POR.dll
+D:\TFS2020\Backup\PORNEW\POR\obj\Debug\POR.pdb
+E:\Software Developments Source Codes\TFS 2020\PORNEW\POR\bin\POR.dll.config
+E:\Software Developments Source Codes\TFS 2020\PORNEW\POR\bin\POR.dll
+E:\Software Developments Source Codes\TFS 2020\PORNEW\POR\bin\POR.pdb
+E:\Software Developments Source Codes\TFS 2020\PORNEW\POR\bin\Microsoft.ReportViewer.WebForms.dll
+E:\Software Developments Source Codes\TFS 2020\PORNEW\POR\bin\PagedList.dll
+E:\Software Developments Source Codes\TFS 2020\PORNEW\POR\bin\PagedList.Mvc.dll
+E:\Software Developments Source Codes\TFS 2020\PORNEW\POR\bin\ReportData.dll
+E:\Software Developments Source Codes\TFS 2020\PORNEW\POR\bin\Microsoft.ReportViewer.Common.dll
+E:\Software Developments Source Codes\TFS 2020\PORNEW\POR\bin\ReportData.pdb
+E:\Software Developments Source Codes\TFS 2020\PORNEW\POR\bin\Microsoft.ReportViewer.WebForms.xml
+E:\Software Developments Source Codes\TFS 2020\PORNEW\POR\bin\PagedList.xml
+E:\Software Developments Source Codes\TFS 2020\PORNEW\POR\bin\PagedList.Mvc.xml
+E:\Software Developments Source Codes\TFS 2020\PORNEW\POR\obj\Debug\POR.csprojResolveAssemblyReference.cache
+E:\Software Developments Source Codes\TFS 2020\PORNEW\POR\obj\Debug\POR.dll
+E:\Software Developments Source Codes\TFS 2020\PORNEW\POR\obj\Debug\POR.pdb
+D:\TFS2020\HRMS\PORNEW\POR\bin\POR.dll.config
+D:\TFS2020\HRMS\PORNEW\POR\bin\POR.dll
+D:\TFS2020\HRMS\PORNEW\POR\bin\POR.pdb
+D:\TFS2020\HRMS\PORNEW\POR\bin\Microsoft.ReportViewer.WebForms.dll
+D:\TFS2020\HRMS\PORNEW\POR\bin\PagedList.dll
+D:\TFS2020\HRMS\PORNEW\POR\bin\PagedList.Mvc.dll
+D:\TFS2020\HRMS\PORNEW\POR\bin\ReportData.dll
+D:\TFS2020\HRMS\PORNEW\POR\bin\Microsoft.ReportViewer.Common.dll
+D:\TFS2020\HRMS\PORNEW\POR\bin\ReportData.pdb
+D:\TFS2020\HRMS\PORNEW\POR\bin\Microsoft.ReportViewer.WebForms.xml
+D:\TFS2020\HRMS\PORNEW\POR\bin\PagedList.xml
+D:\TFS2020\HRMS\PORNEW\POR\bin\PagedList.Mvc.xml
+D:\TFS2020\HRMS\PORNEW\POR\obj\Debug\POR.csprojResolveAssemblyReference.cache
+D:\TFS2020\HRMS\PORNEW\POR\obj\Debug\RdlCompile.cache
+D:\TFS2020\HRMS\PORNEW\POR\obj\Debug\RdlCompile.compiled
+D:\TFS2020\HRMS\PORNEW\POR\obj\Debug\POR.dll
+D:\TFS2020\HRMS\PORNEW\POR\obj\Debug\POR.pdb
+E:\POR new\por 2\PORNEW\POR\bin\POR.dll.config
+E:\POR new\por 2\PORNEW\POR\bin\POR.dll
+E:\POR new\por 2\PORNEW\POR\bin\POR.pdb
+E:\POR new\por 2\PORNEW\POR\bin\Microsoft.ReportViewer.WebForms.dll
+E:\POR new\por 2\PORNEW\POR\bin\PagedList.dll
+E:\POR new\por 2\PORNEW\POR\bin\PagedList.Mvc.dll
+E:\POR new\por 2\PORNEW\POR\bin\ReportData.dll
+E:\POR new\por 2\PORNEW\POR\bin\Microsoft.ReportViewer.Common.dll
+E:\POR new\por 2\PORNEW\POR\bin\ReportData.pdb
+E:\POR new\por 2\PORNEW\POR\bin\Microsoft.ReportViewer.WebForms.xml
+E:\POR new\por 2\PORNEW\POR\bin\PagedList.xml
+E:\POR new\por 2\PORNEW\POR\bin\PagedList.Mvc.xml
+E:\POR new\por 2\PORNEW\POR\obj\Debug\POR.csprojResolveAssemblyReference.cache
+E:\POR new\por 2\PORNEW\POR\obj\Debug\POR.dll
+E:\POR new\por 2\PORNEW\POR\obj\Debug\POR.pdb
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\POR.dll.config
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\POR.dll
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\POR.pdb
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\Microsoft.ReportViewer.WebForms.dll
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\PagedList.dll
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\PagedList.Mvc.dll
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\ReportData.dll
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\Microsoft.SqlServer.Types.dll
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\ReportData.pdb
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\PagedList.xml
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\PagedList.Mvc.xml
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\de\Microsoft.SqlServer.Types.resources.dll
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\es\Microsoft.SqlServer.Types.resources.dll
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\fr\Microsoft.SqlServer.Types.resources.dll
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\it\Microsoft.SqlServer.Types.resources.dll
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\ja\Microsoft.SqlServer.Types.resources.dll
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\ko\Microsoft.SqlServer.Types.resources.dll
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\pt\Microsoft.SqlServer.Types.resources.dll
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\ru\Microsoft.SqlServer.Types.resources.dll
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\bin\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\obj\Debug\POR.csprojResolveAssemblyReference.cache
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\obj\Debug\RdlCompile.cache
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\obj\Debug\RdlCompile.compiled
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\obj\Debug\POR.dll
+E:\Project BackUp\POR Backup\Morning\PORNEW 15-08-2022\POR\obj\Debug\POR.pdb
+D:\TFS2021\PORNEW\POR\bin\POR.dll.config
+D:\TFS2021\PORNEW\POR\bin\POR.dll
+D:\TFS2021\PORNEW\POR\bin\POR.pdb
+D:\TFS2021\PORNEW\POR\bin\Microsoft.ReportViewer.WebForms.dll
+D:\TFS2021\PORNEW\POR\bin\PagedList.dll
+D:\TFS2021\PORNEW\POR\bin\PagedList.Mvc.dll
+D:\TFS2021\PORNEW\POR\bin\ReportData.dll
+D:\TFS2021\PORNEW\POR\bin\Microsoft.SqlServer.Types.dll
+D:\TFS2021\PORNEW\POR\bin\ReportData.pdb
+D:\TFS2021\PORNEW\POR\bin\PagedList.xml
+D:\TFS2021\PORNEW\POR\bin\PagedList.Mvc.xml
+D:\TFS2021\PORNEW\POR\bin\de\Microsoft.SqlServer.Types.resources.dll
+D:\TFS2021\PORNEW\POR\bin\es\Microsoft.SqlServer.Types.resources.dll
+D:\TFS2021\PORNEW\POR\bin\fr\Microsoft.SqlServer.Types.resources.dll
+D:\TFS2021\PORNEW\POR\bin\it\Microsoft.SqlServer.Types.resources.dll
+D:\TFS2021\PORNEW\POR\bin\ja\Microsoft.SqlServer.Types.resources.dll
+D:\TFS2021\PORNEW\POR\bin\ko\Microsoft.SqlServer.Types.resources.dll
+D:\TFS2021\PORNEW\POR\bin\pt\Microsoft.SqlServer.Types.resources.dll
+D:\TFS2021\PORNEW\POR\bin\ru\Microsoft.SqlServer.Types.resources.dll
+D:\TFS2021\PORNEW\POR\bin\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+D:\TFS2021\PORNEW\POR\bin\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+D:\TFS2021\PORNEW\POR\obj\Debug\POR.csprojResolveAssemblyReference.cache
+D:\TFS2021\PORNEW\POR\obj\Debug\RdlCompile.cache
+D:\TFS2021\PORNEW\POR\obj\Debug\RdlCompile.compiled
+D:\TFS2021\PORNEW\POR\obj\Debug\POR.dll
+D:\TFS2021\PORNEW\POR\obj\Debug\POR.pdb
+D:\Projects\New folder (2)\PORNEW\POR\bin\POR.dll.config
+D:\Projects\New folder (2)\PORNEW\POR\bin\POR.dll
+D:\Projects\New folder (2)\PORNEW\POR\bin\POR.pdb
+D:\Projects\New folder (2)\PORNEW\POR\bin\Microsoft.ReportViewer.WebForms.dll
+D:\Projects\New folder (2)\PORNEW\POR\bin\PagedList.dll
+D:\Projects\New folder (2)\PORNEW\POR\bin\PagedList.Mvc.dll
+D:\Projects\New folder (2)\PORNEW\POR\bin\ReportData.dll
+D:\Projects\New folder (2)\PORNEW\POR\bin\Microsoft.SqlServer.Types.dll
+D:\Projects\New folder (2)\PORNEW\POR\bin\ReportData.pdb
+D:\Projects\New folder (2)\PORNEW\POR\bin\PagedList.xml
+D:\Projects\New folder (2)\PORNEW\POR\bin\PagedList.Mvc.xml
+D:\Projects\New folder (2)\PORNEW\POR\bin\de\Microsoft.SqlServer.Types.resources.dll
+D:\Projects\New folder (2)\PORNEW\POR\bin\es\Microsoft.SqlServer.Types.resources.dll
+D:\Projects\New folder (2)\PORNEW\POR\bin\fr\Microsoft.SqlServer.Types.resources.dll
+D:\Projects\New folder (2)\PORNEW\POR\bin\it\Microsoft.SqlServer.Types.resources.dll
+D:\Projects\New folder (2)\PORNEW\POR\bin\ja\Microsoft.SqlServer.Types.resources.dll
+D:\Projects\New folder (2)\PORNEW\POR\bin\ko\Microsoft.SqlServer.Types.resources.dll
+D:\Projects\New folder (2)\PORNEW\POR\bin\pt\Microsoft.SqlServer.Types.resources.dll
+D:\Projects\New folder (2)\PORNEW\POR\bin\ru\Microsoft.SqlServer.Types.resources.dll
+D:\Projects\New folder (2)\PORNEW\POR\bin\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+D:\Projects\New folder (2)\PORNEW\POR\bin\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+D:\Projects\New folder (2)\PORNEW\POR\obj\Debug\POR.csprojResolveAssemblyReference.cache
+D:\Projects\New folder (2)\PORNEW\POR\obj\Debug\RdlCompile.cache
+D:\Projects\New folder (2)\PORNEW\POR\obj\Debug\RdlCompile.compiled
+D:\Projects\New folder (2)\PORNEW\POR\obj\Debug\POR.dll
+D:\Projects\New folder (2)\PORNEW\POR\obj\Debug\POR.pdb
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\POR\bin\POR.dll.config
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\POR\bin\POR.dll
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\POR\bin\POR.pdb
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\POR\bin\PagedList.dll
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\POR\bin\PagedList.Mvc.dll
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\POR\bin\ReportData.dll
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\POR\bin\ReportData.pdb
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\POR\bin\PagedList.xml
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\POR\bin\PagedList.Mvc.xml
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\POR\obj\Debug\POR.csprojResolveAssemblyReference.cache
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\POR\obj\Debug\POR.dll
+C:\Users\SLAF\Desktop\PORNEW\PORNEW\POR\obj\Debug\POR.pdb

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "View And Print Data";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using POR.Models.PersonalContact;
+@model POR.Models.PsnContactHeader
+
+<section id="about"></section>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+
+        <div style="margin-top:50px">
+            @using (Html.BeginForm("PrintChildDetails", "PersonalContact", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="row">
+                    <iframe src="~/Report/Contact/frmChildDetails.aspx" width="1100" height="750"></iframe>
+                </div>
+            }
+        </div>
+
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+@section Scripts
+{
+
+}
+
+

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Forwerd_DS" targetNamespace="http://tempuri.org/Forwerd_DS.xsd" xmlns:mstns="http://tempuri.org/Forwerd_DS.xsd" xmlns="http://tempuri.org/Forwerd_DS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="PORConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="PORConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.PORConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="PORConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PORConnectionString1 (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.PORConnectionString1.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Vw_FixedAllowance_FLowStatusTableAdapter" GeneratorDataComponentClassName="Vw_FixedAllowance_FLowStatusTableAdapter" Name="Vw_FixedAllowance_FLowStatus" UserDataComponentName="Vw_FixedAllowance_FLowStatusTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PORConnectionString (Web.config)" DbObjectName="POR.dbo.Vw_FixedAllowance_FLowStatus" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ServiceNo, Rank, Name, AllowanceName, CreatedDate, EffectiveDate,EndDate,CampAuthority
+FROM            Vw_FixedAllowance_FLowStatus
+where CreatedDate between '@fromdate' and '@todate' and EstablishmentId = '@EstablishmentId'</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ServiceNo" DataSetColumn="ServiceNo" />
+              <Mapping SourceColumn="Rank" DataSetColumn="Rank" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="AllowanceName" DataSetColumn="AllowanceName" />
+              <Mapping SourceColumn="CreatedDate" DataSetColumn="CreatedDate" />
+              <Mapping SourceColumn="EffectiveDate" DataSetColumn="EffectiveDate" />
+              <Mapping SourceColumn="EndDate" DataSetColumn="EndDate" />
+              <Mapping SourceColumn="CampAuthority" DataSetColumn="CampAuthority" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Forwerd_DS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Forwerd_DS" msprop:Generator_UserDSName="Forwerd_DS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Vw_FixedAllowance_FLowStatus" msprop:Generator_TableClassName="Vw_FixedAllowance_FLowStatusDataTable" msprop:Generator_TableVarName="tableVw_FixedAllowance_FLowStatus" msprop:Generator_RowChangedName="Vw_FixedAllowance_FLowStatusRowChanged" msprop:Generator_TablePropName="Vw_FixedAllowance_FLowStatus" msprop:Generator_RowDeletingName="Vw_FixedAllowance_FLowStatusRowDeleting" msprop:Generator_RowChangingName="Vw_FixedAllowance_FLowStatusRowChanging" msprop:Generator_RowEvHandlerName="Vw_FixedAllowance_FLowStatusRowChangeEventHandler" msprop:Generator_RowDeletedName="Vw_FixedAllowance_FLowStatusRowDeleted" msprop:Generator_RowClassName="Vw_FixedAllowance_FLowStatusRow" msprop:Generator_UserTableName="Vw_FixedAllowance_FLowStatus" msprop:Generator_RowEvArgName="Vw_FixedAllowance_FLowStatusRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ServiceNo" msprop:Generator_ColumnVarNameInTable="columnServiceNo" msprop:Generator_ColumnPropNameInRow="ServiceNo" msprop:Generator_ColumnPropNameInTable="ServiceNoColumn" msprop:Generator_UserColumnName="ServiceNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Rank" msprop:Generator_ColumnVarNameInTable="columnRank" msprop:Generator_ColumnPropNameInRow="Rank" msprop:Generator_ColumnPropNameInTable="RankColumn" msprop:Generator_UserColumnName="Rank" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AllowanceName" msprop:Generator_ColumnVarNameInTable="columnAllowanceName" msprop:Generator_ColumnPropNameInRow="AllowanceName" msprop:Generator_ColumnPropNameInTable="AllowanceNameColumn" msprop:Generator_UserColumnName="AllowanceName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreatedDate" msprop:Generator_ColumnVarNameInTable="columnCreatedDate" msprop:Generator_ColumnPropNameInRow="CreatedDate" msprop:Generator_ColumnPropNameInTable="CreatedDateColumn" msprop:Generator_UserColumnName="CreatedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EffectiveDate" msprop:Generator_ColumnVarNameInTable="columnEffectiveDate" msprop:Generator_ColumnPropNameInRow="EffectiveDate" msprop:Generator_ColumnPropNameInTable="EffectiveDateColumn" msprop:Generator_UserColumnName="EffectiveDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" msprop:Generator_UserColumnName="EndDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CampAuthority" msprop:Generator_ColumnVarNameInTable="columnCampAuthority" msprop:Generator_ColumnPropNameInRow="CampAuthority" msprop:Generator_ColumnPropNameInTable="CampAuthorityColumn" msprop:Generator_UserColumnName="CampAuthority" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

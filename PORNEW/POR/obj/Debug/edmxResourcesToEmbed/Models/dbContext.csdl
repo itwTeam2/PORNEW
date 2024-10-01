@@ -1,0 +1,2532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PORModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="dbContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Allowances" EntityType="PORModel.Allowance" />
+    <EntitySet Name="AllowanceCategories" EntityType="PORModel.AllowanceCategory" />
+    <EntitySet Name="AllowanceItemCodes" EntityType="PORModel.AllowanceItemCode" />
+    <EntitySet Name="AllowancePaymentTypes" EntityType="PORModel.AllowancePaymentType" />
+    <EntitySet Name="AnnualLeavePlans" EntityType="PORModel.AnnualLeavePlan" />
+    <EntitySet Name="Appointments" EntityType="PORModel.Appointment" />
+    <EntitySet Name="CivilStatusCategories" EntityType="PORModel.CivilStatusCategory" />
+    <EntitySet Name="CivilStatusDivorceDetails" EntityType="PORModel.CivilStatusDivorceDetail" />
+    <EntitySet Name="CivilStatusHeaders" EntityType="PORModel.CivilStatusHeader" />
+    <EntitySet Name="CivilStatusMarriedDetails" EntityType="PORModel.CivilStatusMarriedDetail" />
+    <EntitySet Name="CivilStatusSpouseDetails" EntityType="PORModel.CivilStatusSpouseDetail" />
+    <EntitySet Name="CivilStatusWidowDetails" EntityType="PORModel.CivilStatusWidowDetail" />
+    <EntitySet Name="DirectItems" EntityType="PORModel.DirectItem" />
+    <EntitySet Name="EDCS_AllowanceValue" EntityType="PORModel.EDCS_AllowanceValue" />
+    <EntitySet Name="EDCS_AllowanceValueRank" EntityType="PORModel.EDCS_AllowanceValueRank" />
+    <EntitySet Name="EDCS_ProcessedTransactions" EntityType="PORModel.EDCS_ProcessedTransactions" />
+    <EntitySet Name="EDCS_ProcessHeader" EntityType="PORModel.EDCS_ProcessHeader" />
+    <EntitySet Name="EDCS_ProcessTypes" EntityType="PORModel.EDCS_ProcessTypes" />
+    <EntitySet Name="FixAllowanceDetailsFlowStatus" EntityType="PORModel.FixAllowanceDetailsFlowStatu" />
+    <EntitySet Name="FixedAllowanceCancels" EntityType="PORModel.FixedAllowanceCancel" />
+    <EntitySet Name="FixedAllowanceCancelManuals" EntityType="PORModel.FixedAllowanceCancelManual" />
+    <EntitySet Name="FixedAllowanceDetails" EntityType="PORModel.FixedAllowanceDetail" />
+    <EntitySet Name="FixedAllowanceEligibleLists" EntityType="PORModel.FixedAllowanceEligibleList" />
+    <EntitySet Name="FlowManagementStatus" EntityType="PORModel.FlowManagementStatu" />
+    <EntitySet Name="FlowStatusCivilStatusDetails" EntityType="PORModel.FlowStatusCivilStatusDetail" />
+    <EntitySet Name="FlowStatusGSQDetails" EntityType="PORModel.FlowStatusGSQDetail" />
+    <EntitySet Name="FlowStatusLivingInOutDetails" EntityType="PORModel.FlowStatusLivingInOutDetail" />
+    <EntitySet Name="FlowStatusNOKChangeDetails" EntityType="PORModel.FlowStatusNOKChangeDetail" />
+    <EntitySet Name="GSQDetails" EntityType="PORModel.GSQDetail" />
+    <EntitySet Name="GSQHeaders" EntityType="PORModel.GSQHeader" />
+    <EntitySet Name="GSQStatus" EntityType="PORModel.GSQStatu" />
+    <EntitySet Name="HolidayTypes" EntityType="PORModel.HolidayType" />
+    <EntitySet Name="LeaveCategories" EntityType="PORModel.LeaveCategory" />
+    <EntitySet Name="LeaveDetails" EntityType="PORModel.LeaveDetail" />
+    <EntitySet Name="LeaveFlowStatus" EntityType="PORModel.LeaveFlowStatu" />
+    <EntitySet Name="LeaveHeaders" EntityType="PORModel.LeaveHeader" />
+    <EntitySet Name="LeaveProcessHeadars" EntityType="PORModel.LeaveProcessHeadar" />
+    <EntitySet Name="LeaveTypes" EntityType="PORModel.LeaveType" />
+    <EntitySet Name="LivingInOutDetails" EntityType="PORModel.LivingInOutDetail" />
+    <EntitySet Name="LivingInOutHeaders" EntityType="PORModel.LivingInOutHeader" />
+    <EntitySet Name="LivingStatus" EntityType="PORModel.LivingStatu" />
+    <EntitySet Name="Locations" EntityType="PORModel.Location" />
+    <EntitySet Name="LocationTypes" EntityType="PORModel.LocationType" />
+    <EntitySet Name="MaritalStatus" EntityType="PORModel.MaritalStatu" />
+    <EntitySet Name="MovementConditions" EntityType="PORModel.MovementCondition" />
+    <EntitySet Name="MovementStatus" EntityType="PORModel.MovementStatu" />
+    <EntitySet Name="MPs" EntityType="PORModel.MP" />
+    <EntitySet Name="NOKChangeDetails" EntityType="PORModel.NOKChangeDetail" />
+    <EntitySet Name="NOKChangeDetails_1" EntityType="PORModel.NOKChangeDetails_1" />
+    <EntitySet Name="NOKChangeHeaders" EntityType="PORModel.NOKChangeHeader" />
+    <EntitySet Name="NOKChangeHeader_1" EntityType="PORModel.NOKChangeHeader_1" />
+    <EntitySet Name="NOKStatus" EntityType="PORModel.NOKStatu" />
+    <EntitySet Name="PaymentTypes" EntityType="PORModel.PaymentType" />
+    <EntitySet Name="PayStatus" EntityType="PORModel.PayStatu" />
+    <EntitySet Name="PORFlowGroups" EntityType="PORModel.PORFlowGroup" />
+    <EntitySet Name="PorModules" EntityType="PORModel.PorModule" />
+    <EntitySet Name="PublicHolidayCalenders" EntityType="PORModel.PublicHolidayCalender" />
+    <EntitySet Name="RationAllowenceCharges" EntityType="PORModel.RationAllowenceCharge" />
+    <EntitySet Name="RationStatus" EntityType="PORModel.RationStatu" />
+    <EntitySet Name="RecordStatus" EntityType="PORModel.RecordStatu" />
+    <EntitySet Name="RecordStatusNews" EntityType="PORModel.RecordStatusNew" />
+    <EntitySet Name="SecurityQuestions" EntityType="PORModel.SecurityQuestion" />
+    <EntitySet Name="ServiceCategories" EntityType="PORModel.ServiceCategory" />
+    <EntitySet Name="ServiceTypes" EntityType="PORModel.ServiceType" />
+    <EntitySet Name="SpouseStatusDetails" EntityType="PORModel.SpouseStatusDetail" />
+    <EntitySet Name="sysdiagrams" EntityType="PORModel.sysdiagram" />
+    <EntitySet Name="SystemLogs" EntityType="PORModel.SystemLog" />
+    <EntitySet Name="TableCategories" EntityType="PORModel.TableCategory" />
+    <EntitySet Name="tests" EntityType="PORModel.test" />
+    <EntitySet Name="UserDetails" EntityType="PORModel.UserDetail" />
+    <EntitySet Name="UserInfoes" EntityType="PORModel.UserInfo" />
+    <EntitySet Name="UserPermissions" EntityType="PORModel.UserPermission" />
+    <EntitySet Name="UserRoles" EntityType="PORModel.UserRole" />
+    <EntitySet Name="UserRoleNews" EntityType="PORModel.UserRoleNew" />
+    <EntitySet Name="ItemCodeLists" EntityType="PORModel.ItemCodeList" />
+    <EntitySet Name="PorObjects" EntityType="PORModel.PorObject" />
+    <EntitySet Name="PorYears" EntityType="PORModel.PorYear" />
+    <EntitySet Name="Service_Type" EntityType="PORModel.Service_Type" />
+    <EntitySet Name="F1250" EntityType="PORModel.F1250" />
+    <EntitySet Name="TESTMDATAs" EntityType="PORModel.TESTMDATA" />
+    <EntitySet Name="TestVws" EntityType="PORModel.TestVw" />
+    <EntitySet Name="Vw_AllNOK" EntityType="PORModel.Vw_AllNOK" />
+    <EntitySet Name="Vw_CurrentAttachment" EntityType="PORModel.Vw_CurrentAttachment" />
+    <EntitySet Name="Vw_CurrentPosting" EntityType="PORModel.Vw_CurrentPosting" />
+    <EntitySet Name="Vw_CurrentUserLiving" EntityType="PORModel.Vw_CurrentUserLiving" />
+    <EntitySet Name="Vw_CurrentUserRoleMarried" EntityType="PORModel.Vw_CurrentUserRoleMarried" />
+    <EntitySet Name="Vw_DirectItem" EntityType="PORModel.Vw_DirectItem" />
+    <EntitySet Name="Vw_FAEligibleList" EntityType="PORModel.Vw_FAEligibleList" />
+    <EntitySet Name="Vw_FixedAllowance_FLowStatus" EntityType="PORModel.Vw_FixedAllowance_FLowStatus" />
+    <EntitySet Name="Vw_FixedAllowanceDetail" EntityType="PORModel.Vw_FixedAllowanceDetail" />
+    <EntitySet Name="Vw_FixedAllowanceDetailReport" EntityType="PORModel.Vw_FixedAllowanceDetailReport" />
+    <EntitySet Name="Vw_FlowStatus" EntityType="PORModel.Vw_FlowStatus" />
+    <EntitySet Name="Vw_FlowStatusUser_ToolTip" EntityType="PORModel.Vw_FlowStatusUser_ToolTip" />
+    <EntitySet Name="Vw_GSQDetails" EntityType="PORModel.Vw_GSQDetails" />
+    <EntitySet Name="Vw_Holiday" EntityType="PORModel.Vw_Holiday" />
+    <EntitySet Name="Vw_Leave" EntityType="PORModel.Vw_Leave" />
+    <EntitySet Name="Vw_LeaveDetail" EntityType="PORModel.Vw_LeaveDetail" />
+    <EntitySet Name="Vw_LeaveFlow_FullDetails" EntityType="PORModel.Vw_LeaveFlow_FullDetails" />
+    <EntitySet Name="Vw_LeaveFlowToolTip" EntityType="PORModel.Vw_LeaveFlowToolTip" />
+    <EntitySet Name="Vw_LeavePlan" EntityType="PORModel.Vw_LeavePlan" />
+    <EntitySet Name="Vw_LeaveProcessDetails" EntityType="PORModel.Vw_LeaveProcessDetails" />
+    <EntitySet Name="VW_LeaveTest" EntityType="PORModel.VW_LeaveTest" />
+    <EntitySet Name="Vw_LivingINOutReject" EntityType="PORModel.Vw_LivingINOutReject" />
+    <EntitySet Name="Vw_MQDetails" EntityType="PORModel.Vw_MQDetails" />
+    <EntitySet Name="Vw_NOK_Details" EntityType="PORModel.Vw_NOK_Details" />
+    <EntitySet Name="Vw_NOKChangeDetails" EntityType="PORModel.Vw_NOKChangeDetails" />
+    <EntitySet Name="Vw_NokDetailsP2" EntityType="PORModel.Vw_NokDetailsP2" />
+    <EntitySet Name="Vw_OfficerNOK" EntityType="PORModel.Vw_OfficerNOK" />
+    <EntitySet Name="Vw_OtherNOK" EntityType="PORModel.Vw_OtherNOK" />
+    <EntitySet Name="Vw_P2PersonalDetail" EntityType="PORModel.Vw_P2PersonalDetail" />
+    <EntitySet Name="Vw_P3PersonalDetail" EntityType="PORModel.Vw_P3PersonalDetail" />
+    <EntitySet Name="Vw_PersonalDetail" EntityType="PORModel.Vw_PersonalDetail" />
+    <EntitySet Name="Vw_PorReport" EntityType="PORModel.Vw_PorReport" />
+    <EntitySet Name="VW_RANKS" EntityType="PORModel.VW_RANKS" />
+    <EntitySet Name="Vw_RejectLeave" EntityType="PORModel.Vw_RejectLeave" />
+    <EntitySet Name="Vw_SelectUserRole" EntityType="PORModel.Vw_SelectUserRole" />
+    <EntitySet Name="Vw_UpdateQuery" EntityType="PORModel.Vw_UpdateQuery" />
+    <EntitySet Name="Vw_UserFlowHistory" EntityType="PORModel.Vw_UserFlowHistory" />
+    <EntitySet Name="Vw_UserProfile" EntityType="PORModel.Vw_UserProfile" />
+    <AssociationSet Name="FK_Allowance_Section" Association="PORModel.FK_Allowance_Section">
+      <End Role="LocationType" EntitySet="LocationTypes" />
+      <End Role="Allowance" EntitySet="Allowances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AllowanceItemCode_Allowance" Association="PORModel.FK_AllowanceItemCode_Allowance">
+      <End Role="Allowance" EntitySet="Allowances" />
+      <End Role="AllowanceItemCode" EntitySet="AllowanceItemCodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AllowanceValue_Allowance" Association="PORModel.FK_AllowanceValue_Allowance">
+      <End Role="Allowance" EntitySet="Allowances" />
+      <End Role="EDCS_AllowanceValue" EntitySet="EDCS_AllowanceValue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FixedAllowanceDetail_Allowance" Association="PORModel.FK_FixedAllowanceDetail_Allowance">
+      <End Role="Allowance" EntitySet="Allowances" />
+      <End Role="FixedAllowanceDetail" EntitySet="FixedAllowanceDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FixedAllowanceCancel_FixedAllowanceDetail" Association="PORModel.FK_FixedAllowanceCancel_FixedAllowanceDetail">
+      <End Role="FixedAllowanceDetail" EntitySet="FixedAllowanceDetails" />
+      <End Role="FixedAllowanceCancel" EntitySet="FixedAllowanceCancels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FlowManagementStatus_UserRole" Association="PORModel.FK_FlowManagementStatus_UserRole">
+      <End Role="UserRole" EntitySet="UserRoles" />
+      <End Role="FlowManagementStatu" EntitySet="FlowManagementStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LeaveHeader_LeaveCategory" Association="PORModel.FK_LeaveHeader_LeaveCategory">
+      <End Role="LeaveCategory" EntitySet="LeaveCategories" />
+      <End Role="LeaveHeader" EntitySet="LeaveHeaders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LeaveHeader_UserInfo" Association="PORModel.FK_LeaveHeader_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+      <End Role="LeaveHeader" EntitySet="LeaveHeaders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LeaveHeader_UserInfo1" Association="PORModel.FK_LeaveHeader_UserInfo1">
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+      <End Role="LeaveHeader" EntitySet="LeaveHeaders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfo_SecurityQuestion" Association="PORModel.FK_UserInfo_SecurityQuestion">
+      <End Role="SecurityQuestion" EntitySet="SecurityQuestions" />
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemLog_UserInfo" Association="PORModel.FK_SystemLog_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+      <End Role="SystemLog" EntitySet="SystemLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetail_UserInfo" Association="PORModel.FK_UserDetail_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+      <End Role="UserDetail" EntitySet="UserDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfo_UserRole" Association="PORModel.FK_UserInfo_UserRole">
+      <End Role="UserRole" EntitySet="UserRoles" />
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+    </AssociationSet>
+    <EntitySet Name="Vw_CivliStatusReject" EntityType="PORModel.Vw_CivliStatusReject" />
+    <EntitySet Name="Vw_LivingStatusReject" EntityType="PORModel.Vw_LivingStatusReject" />
+  </EntityContainer>
+  <EntityType Name="Allowance">
+    <Key>
+      <PropertyRef Name="ALWID" />
+    </Key>
+    <Property Name="ALWID" Type="Int32" Nullable="false" />
+    <Property Name="SECID" Type="Int32" />
+    <Property Name="AllowanceName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AllowanceShortName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsOfficer" Type="Int32" />
+    <Property Name="IsOR" Type="Int32" />
+    <Property Name="AllowanceDuration" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CalculateType" Type="Int32" />
+    <Property Name="ProcessType" Type="Int32" />
+    <Property Name="ReferenceItem" Type="Int32" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="LocationType" Relationship="PORModel.FK_Allowance_Section" FromRole="Allowance" ToRole="LocationType" />
+    <NavigationProperty Name="AllowanceItemCodes" Relationship="PORModel.FK_AllowanceItemCode_Allowance" FromRole="Allowance" ToRole="AllowanceItemCode" />
+    <NavigationProperty Name="EDCS_AllowanceValue" Relationship="PORModel.FK_AllowanceValue_Allowance" FromRole="Allowance" ToRole="EDCS_AllowanceValue" />
+    <NavigationProperty Name="FixedAllowanceDetails" Relationship="PORModel.FK_FixedAllowanceDetail_Allowance" FromRole="Allowance" ToRole="FixedAllowanceDetail" />
+  </EntityType>
+  <EntityType Name="AllowanceCategory">
+    <Key>
+      <PropertyRef Name="ACID" />
+    </Key>
+    <Property Name="ACID" Type="Int32" Nullable="false" />
+    <Property Name="AllowanceId" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsShow" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AllowanceItemCode">
+    <Key>
+      <PropertyRef Name="AICID" />
+    </Key>
+    <Property Name="AICID" Type="Int32" Nullable="false" />
+    <Property Name="AllowanceId" Type="Int32" />
+    <Property Name="ItemCode" Type="Int32" />
+    <Property Name="CalculateType" Type="Int32" />
+    <Property Name="ItemMTypeId" Type="Int32" />
+    <NavigationProperty Name="Allowance" Relationship="PORModel.FK_AllowanceItemCode_Allowance" FromRole="AllowanceItemCode" ToRole="Allowance" />
+  </EntityType>
+  <EntityType Name="AllowancePaymentType">
+    <Key>
+      <PropertyRef Name="APID" />
+    </Key>
+    <Property Name="APID" Type="Int32" Nullable="false" />
+    <Property Name="AllowanceId" Type="Int32" />
+    <Property Name="PaymentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AnnualLeavePlan">
+    <Key>
+      <PropertyRef Name="ALPID" />
+    </Key>
+    <Property Name="ALPID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeaveCategoryID" Type="Int32" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="TotalLeaveMonth" Type="Int32" />
+    <Property Name="TotalLeaveDays" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="AID" />
+    </Key>
+    <Property Name="AID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppointmentName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CivilStatusCategory">
+    <Key>
+      <PropertyRef Name="CSCID" />
+    </Key>
+    <Property Name="CSCID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CivilStatusDivorceDetail">
+    <Key>
+      <PropertyRef Name="CSDDID" />
+    </Key>
+    <Property Name="CSDDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CivilStatusHeaderID" Type="Int32" />
+    <Property Name="DivorceDtae" Type="DateTime" Precision="0" />
+    <Property Name="Place" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CourseCaseNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfCase" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="CreateIpAddess" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CivilStatusHeader">
+    <Key>
+      <PropertyRef Name="CSHID" />
+    </Key>
+    <Property Name="CSHID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sno" Type="Int64" />
+    <Property Name="SubCategoryId" Type="Int32" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceTypeId" Type="Int32" />
+    <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Authority" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CivilStatusMarriedDetail">
+    <Key>
+      <PropertyRef Name="CSMDID" />
+    </Key>
+    <Property Name="CSMDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CivilStatusHeaderID" Type="Int32" />
+    <Property Name="MarriageDate" Type="DateTime" Precision="0" />
+    <Property Name="MarriageCertificateNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RegistarOfficeLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="CreateIpAddess" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CivilStatusSpouseDetail">
+    <Key>
+      <PropertyRef Name="CSSPDID" />
+    </Key>
+    <Property Name="CSSPDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CivilStatusHeaderID" Type="Int32" />
+    <Property Name="SpouseName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SpouseStatusId" Type="Int32" />
+    <Property Name="SpousNICNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SpousOccupation" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SpousOffcialAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreateIpAddess" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CivilStatusWidowDetail">
+    <Key>
+      <PropertyRef Name="CSWDID" />
+    </Key>
+    <Property Name="CSWDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CivilStatusHeaderID" Type="Int32" />
+    <Property Name="DeathCertificateNoOfSpouse" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LivingInAndOutStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NOKChangeTo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DateofDecease" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="CreateIpAddess" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DirectItem">
+    <Key>
+      <PropertyRef Name="ItemCode" />
+    </Key>
+    <Property Name="ItemCode" Type="Int32" Nullable="false" />
+    <Property Name="ShortName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LongName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EDCS_AllowanceValue">
+    <Key>
+      <PropertyRef Name="AVID" />
+    </Key>
+    <Property Name="AVID" Type="Int32" Nullable="false" />
+    <Property Name="AllowanceID" Type="Int32" />
+    <Property Name="AllowanceCategoryId" Type="Int32" />
+    <Property Name="OfficerAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ORAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EffectiveDate" Type="DateTime" Precision="0" />
+    <Property Name="Authority" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="Allowance" Relationship="PORModel.FK_AllowanceValue_Allowance" FromRole="EDCS_AllowanceValue" ToRole="Allowance" />
+  </EntityType>
+  <EntityType Name="EDCS_AllowanceValueRank">
+    <Key>
+      <PropertyRef Name="AVRID" />
+    </Key>
+    <Property Name="AVRID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AllowanceID" Type="Int32" />
+    <Property Name="AllowanceCategoryId" Type="Int32" />
+    <Property Name="RankID" Type="Int32" />
+    <Property Name="AllowanceValue" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="EffectiveDate" Type="DateTime" Precision="3" />
+    <Property Name="Authority" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="MonthlyDaily" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EDCS_ProcessedTransactions">
+    <Key>
+      <PropertyRef Name="ReferanceTableID" />
+      <PropertyRef Name="ItemCode" />
+    </Key>
+    <Property Name="AutoID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProcessTypeID" Type="Int32" Nullable="false" />
+    <Property Name="ProcessHeaderID" Type="Int64" Nullable="false" />
+    <Property Name="ReferanceTableID" Type="Int32" Nullable="false" />
+    <Property Name="ItemCode" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Authority" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="RecordOriginatedLocation" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ItemOrigin" Type="Int32" />
+    <Property Name="ProcessedUser" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ProcessedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="ProcessedMachine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsForwardedtoPayroll" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EDCS_ProcessHeader">
+    <Key>
+      <PropertyRef Name="ProcessHeaderID" />
+    </Key>
+    <Property Name="ProcessHeaderID" Type="Int32" Nullable="false" />
+    <Property Name="ProcessTypeID" Type="Int32" />
+    <Property Name="ProcessDate" Type="DateTime" Precision="0" />
+    <Property Name="PayYear" Type="Int32" />
+    <Property Name="PayMonth" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMachine" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EDCS_ProcessTypes">
+    <Key>
+      <PropertyRef Name="ProcessTypeID" />
+    </Key>
+    <Property Name="ProcessTypeID" Type="Int32" Nullable="false" />
+    <Property Name="PTName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FixAllowanceDetailsFlowStatu">
+    <Key>
+      <PropertyRef Name="FADFID" />
+    </Key>
+    <Property Name="FADFID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FADID" Type="Int32" />
+    <Property Name="FMSID" Type="Int32" />
+    <Property Name="RecordStatusId" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="FixedAllowanceCancel">
+    <Key>
+      <PropertyRef Name="FACID" />
+    </Key>
+    <Property Name="FACID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FixedAllowanceDetailId" Type="Int32" />
+    <Property Name="CancelAuthority" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CancelAuthorityDate" Type="DateTime" Precision="0" />
+    <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="CancelAuthorityEffectiveDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="FixedAllowanceDetail" Relationship="PORModel.FK_FixedAllowanceCancel_FixedAllowanceDetail" FromRole="FixedAllowanceCancel" ToRole="FixedAllowanceDetail" />
+  </EntityType>
+  <EntityType Name="FixedAllowanceCancelManual">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="FixedAllowanceDetail">
+    <Key>
+      <PropertyRef Name="FADID" />
+    </Key>
+    <Property Name="FADID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceCategoryId" Type="Int32" />
+    <Property Name="AllowanceCategoryID" Type="Int32" />
+    <Property Name="RankId" Type="Int32" />
+    <Property Name="ServiceType" Type="Int32" />
+    <Property Name="AllowanceId" Type="Int32" />
+    <Property Name="FullHalfPay" Type="Int32" />
+    <Property Name="Sno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EffectiveDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="CampAuthority" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CampAuthorityDate" Type="DateTime" Precision="0" />
+    <Property Name="CancelReferanceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CeasedId" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsProcessed" Type="Int32" />
+    <Property Name="EstablishmentId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <NavigationProperty Name="Allowance" Relationship="PORModel.FK_FixedAllowanceDetail_Allowance" FromRole="FixedAllowanceDetail" ToRole="Allowance" />
+    <NavigationProperty Name="FixedAllowanceCancels" Relationship="PORModel.FK_FixedAllowanceCancel_FixedAllowanceDetail" FromRole="FixedAllowanceDetail" ToRole="FixedAllowanceCancel" />
+  </EntityType>
+  <EntityType Name="FixedAllowanceEligibleList">
+    <Key>
+      <PropertyRef Name="ELFAID" />
+    </Key>
+    <Property Name="ELFAID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AllowanceId" Type="Int32" />
+    <Property Name="EffectiveDate" Type="DateTime" Precision="0" />
+    <Property Name="ReferanceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CancelReferanceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="FlowManagementStatu">
+    <Key>
+      <PropertyRef Name="FMSID" />
+    </Key>
+    <Property Name="FMSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserRoleID" Type="Int32" />
+    <Property Name="EstablishmentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DivisionId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DivisionId2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RejectStatus" Type="Int32" />
+    <Property Name="CurrentStatus" Type="Int32" />
+    <Property Name="SubmitStatus" Type="Int32" />
+    <Property Name="FlowGroup" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="UserRole" Relationship="PORModel.FK_FlowManagementStatus_UserRole" FromRole="FlowManagementStatu" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="FlowStatusCivilStatusDetail">
+    <Key>
+      <PropertyRef Name="FSCSID" />
+    </Key>
+    <Property Name="FSCSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CivilStatusHeaderID" Type="Int32" />
+    <Property Name="RecordStatusID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="FlowManagementStatusID" Type="Int32" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="FlowStatusGSQDetail">
+    <Key>
+      <PropertyRef Name="FSGSQID" />
+    </Key>
+    <Property Name="FSGSQID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GSQHeaderID" Type="Int32" />
+    <Property Name="RecordStatusID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="FlowManagementStatusID" Type="Int32" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="FlowStatusLivingInOutDetail">
+    <Key>
+      <PropertyRef Name="LFSID" />
+    </Key>
+    <Property Name="LFSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InOut_ID" Type="Int32" />
+    <Property Name="RSID" Type="Int32" />
+    <Property Name="UID" Type="Int32" />
+    <Property Name="FMSID" Type="Int32" />
+    <Property Name="RID" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="FlowStatusNOKChangeDetail">
+    <Key>
+      <PropertyRef Name="FSNOKCDID" />
+    </Key>
+    <Property Name="FSNOKCDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOKHeaderID" Type="Int32" />
+    <Property Name="RecordStatusID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="FlowManagementStatusID" Type="Int32" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="GSQDetail">
+    <Key>
+      <PropertyRef Name="GSQDID" />
+    </Key>
+    <Property Name="GSQDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSQNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSQStatus" Type="Int32" />
+    <Property Name="GSQLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Precision="0" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="GSQHeader">
+    <Key>
+      <PropertyRef Name="GSQHID" />
+    </Key>
+    <Property Name="GSQHID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceTypeId" Type="Int32" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSQLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSQNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSQStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AllocatedDate" Type="DateTime" Precision="0" />
+    <Property Name="VacantDate" Type="DateTime" Precision="0" />
+    <Property Name="PORDate" Type="DateTime" Precision="0" />
+    <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="CreateIpAddess" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="GSQStatu">
+    <Key>
+      <PropertyRef Name="GSQSID" />
+    </Key>
+    <Property Name="GSQSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HolidayType">
+    <Key>
+      <PropertyRef Name="HTID" />
+    </Key>
+    <Property Name="HTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HolidayTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="LeaveCategory">
+    <Key>
+      <PropertyRef Name="LCID" />
+    </Key>
+    <Property Name="LCID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeaveCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveCategoryShortName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <NavigationProperty Name="LeaveHeaders" Relationship="PORModel.FK_LeaveHeader_LeaveCategory" FromRole="LeaveCategory" ToRole="LeaveHeader" />
+  </EntityType>
+  <EntityType Name="LeaveDetail">
+    <Key>
+      <PropertyRef Name="LDID" />
+    </Key>
+    <Property Name="LDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeaveHeaderId" Type="Int32" />
+    <Property Name="PrivilegeLeave" Type="Int32" />
+    <Property Name="CasualLeave" Type="Int32" />
+    <Property Name="AnnualLeave" Type="Int32" />
+    <Property Name="LeaveLeave" Type="Int32" />
+    <Property Name="Weekend" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PublicHoliday" Type="Int32" />
+    <Property Name="ReEngagementLeave" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="LeaveFlowStatu">
+    <Key>
+      <PropertyRef Name="LFSID" />
+    </Key>
+    <Property Name="LFSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeaveHeaderId" Type="Int32" />
+    <Property Name="FMSID" Type="Int32" />
+    <Property Name="RecordStatusId" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="LeaveHeader">
+    <Key>
+      <PropertyRef Name="LHID" />
+    </Key>
+    <Property Name="LHID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceCategoryId" Type="Int32" />
+    <Property Name="Sno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveCategoryId" Type="Int32" />
+    <Property Name="EstablishmentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeivisionId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TotalDays" Type="Int32" />
+    <Property Name="PrivilegeLeave" Type="Int32" />
+    <Property Name="AnnualLeave" Type="Int32" />
+    <Property Name="PaymentTypeId" Type="Int32" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Precision="0" />
+    <Property Name="Authority" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PorStatus" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="IsProcessed" Type="Int32" />
+    <Property Name="LivingStatus" Type="Int32" />
+    <NavigationProperty Name="LeaveCategory" Relationship="PORModel.FK_LeaveHeader_LeaveCategory" FromRole="LeaveHeader" ToRole="LeaveCategory" />
+    <NavigationProperty Name="UserInfo" Relationship="PORModel.FK_LeaveHeader_UserInfo" FromRole="LeaveHeader" ToRole="UserInfo" />
+    <NavigationProperty Name="UserInfo1" Relationship="PORModel.FK_LeaveHeader_UserInfo1" FromRole="LeaveHeader" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="LeaveProcessHeadar">
+    <Key>
+      <PropertyRef Name="PDID" />
+    </Key>
+    <Property Name="PDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeaveHeaderId" Type="Int32" />
+    <Property Name="ItemsCode" Type="Int32" />
+    <Property Name="CalAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LeaveProcessDate" Type="DateTime" Precision="0" />
+    <Property Name="DaysCounts" Type="Int32" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="LeaveType">
+    <Key>
+      <PropertyRef Name="LTID" />
+    </Key>
+    <Property Name="LTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeaveTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LivingInOutDetail">
+    <Key>
+      <PropertyRef Name="LIUDID" />
+    </Key>
+    <Property Name="LIUDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FromDate" Type="DateTime" Precision="3" />
+    <Property Name="ToDate" Type="DateTime" Precision="3" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="LivingInOutHeader">
+    <Key>
+      <PropertyRef Name="LIOHID" />
+    </Key>
+    <Property Name="LIOHID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sno" Type="Int64" />
+    <Property Name="LivingStatusID" Type="Int32" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceTypeId" Type="Int32" />
+    <Property Name="RefNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Authority" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsNOKChange" Type="Int32" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Precision="0" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="LivingStatu">
+    <Key>
+      <PropertyRef Name="LSID" />
+    </Key>
+    <Property Name="LSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LivingStatusShortName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LivingStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LID" />
+    </Key>
+    <Property Name="LID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationTypeId" Type="Int32" />
+    <Property Name="LocationName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LocationType">
+    <Key>
+      <PropertyRef Name="LTID" />
+    </Key>
+    <Property Name="LTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <NavigationProperty Name="Allowances" Relationship="PORModel.FK_Allowance_Section" FromRole="LocationType" ToRole="Allowance" />
+  </EntityType>
+  <EntityType Name="MaritalStatu">
+    <Key>
+      <PropertyRef Name="MSID" />
+    </Key>
+    <Property Name="MSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaritalStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MovementCondition">
+    <Key>
+      <PropertyRef Name="MCID" />
+    </Key>
+    <Property Name="MCID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MovementConditionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MovementStatu">
+    <Key>
+      <PropertyRef Name="MSID" />
+    </Key>
+    <Property Name="MSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MovementStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MP">
+    <Key>
+      <PropertyRef Name="MPI" />
+    </Key>
+    <Property Name="MPI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LHID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="NOKChangeDetail">
+    <Key>
+      <PropertyRef Name="NOKCDID" />
+    </Key>
+    <Property Name="NOKCDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOKChangeHeadrerID" Type="Int32" />
+    <Property Name="NOKAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NOKName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NOKChangeTo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="District" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSDivision" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NearestTown" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Authority" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="CreateIpAddess" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="NOKChangeDetails_1">
+    <Key>
+      <PropertyRef Name="NOK_DTLS_ID" />
+    </Key>
+    <Property Name="NOK_DTLS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InOut_ID" Type="Int32" />
+    <Property Name="Relationship" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NOKAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Sno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="WithEffectDate" Type="DateTime" Precision="3" />
+    <Property Name="QurtersStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Qurter_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QuarterLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="District" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSDivision" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NearestTown" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RID" Type="Int32" />
+    <Property Name="UID" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="NOKChangeHeader">
+    <Key>
+      <PropertyRef Name="NOKCHID" />
+    </Key>
+    <Property Name="NOKCHID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CivilStatusHeaderID" Type="Int32" />
+    <Property Name="Sno" Type="Int64" />
+    <Property Name="SNumber" Type="Int64" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NOKStatus" Type="Int32" />
+    <Property Name="InOutHeaderID" Type="Int32" />
+    <Property Name="ServiceTypeId" Type="Int32" />
+    <Property Name="PORDate" Type="DateTime" Precision="0" />
+    <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="CreateIpAddess" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="NOKChangeHeader_1">
+    <Key>
+      <PropertyRef Name="NOKCHID" />
+    </Key>
+    <Property Name="NOKCHID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CivilStatusHeaderID" Type="Int32" />
+    <Property Name="Sno" Type="Int64" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NOKStatus" Type="Int32" />
+    <Property Name="InOutHeaderID" Type="Int32" />
+    <Property Name="ServiceTypeId" Type="Int32" />
+    <Property Name="PORDate" Type="DateTime" Precision="0" />
+    <Property Name="RefNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="CreateIpAddess" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="NOKStatu">
+    <Key>
+      <PropertyRef Name="NOKSID" />
+    </Key>
+    <Property Name="NOKSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubCatID" Type="Int32" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PaymentType">
+    <Key>
+      <PropertyRef Name="PTID" />
+    </Key>
+    <Property Name="PTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PaymentTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PayStatu">
+    <Key>
+      <PropertyRef Name="PSID" />
+    </Key>
+    <Property Name="PSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PayStatusName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PORFlowGroup">
+    <Key>
+      <PropertyRef Name="PFGUD" />
+    </Key>
+    <Property Name="PFGUD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PORCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PORName" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="FlowGroupP3" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FlowGroupP2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PorModule">
+    <Key>
+      <PropertyRef Name="MID" />
+    </Key>
+    <Property Name="MID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModuleName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PublicHolidayCalender">
+    <Key>
+      <PropertyRef Name="PHCID" />
+    </Key>
+    <Property Name="PHCID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HolidayTypeId" Type="Int32" />
+    <Property Name="ApplicableDate" Type="DateTime" Precision="3" />
+    <Property Name="Reason" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="RationAllowenceCharge">
+    <Key>
+      <PropertyRef Name="RAID" />
+    </Key>
+    <Property Name="RAID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OffAmmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OtherRankAmmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="RationStatu">
+    <Key>
+      <PropertyRef Name="RSID" />
+    </Key>
+    <Property Name="RSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RationStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RecordStatu">
+    <Key>
+      <PropertyRef Name="RSID" />
+    </Key>
+    <Property Name="RSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RecordStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RecordStatusNew">
+    <Key>
+      <PropertyRef Name="RS_ID" />
+    </Key>
+    <Property Name="RS_ID" Type="Int32" Nullable="false" />
+    <Property Name="RecordStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SecurityQuestion">
+    <Key>
+      <PropertyRef Name="SQID" />
+    </Key>
+    <Property Name="SQID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Question" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Active" Type="Int32" />
+    <NavigationProperty Name="UserInfoes" Relationship="PORModel.FK_UserInfo_SecurityQuestion" FromRole="SecurityQuestion" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="ServiceCategory">
+    <Key>
+      <PropertyRef Name="ServiceCategoryId" />
+    </Key>
+    <Property Name="ServiceCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceCategoryName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ServiceType">
+    <Key>
+      <PropertyRef Name="STID" />
+    </Key>
+    <Property Name="STID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SpouseStatusDetail">
+    <Key>
+      <PropertyRef Name="SPSDID" />
+    </Key>
+    <Property Name="SPSDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CSHID" Type="Int32" />
+    <Property Name="SpouseStatusId" Type="Int32" />
+    <Property Name="SpouseStausName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="SystemLog">
+    <Key>
+      <PropertyRef Name="LID" />
+    </Key>
+    <Property Name="LID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="LoginIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="LoginDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="UserInfo" Relationship="PORModel.FK_SystemLog_UserInfo" FromRole="SystemLog" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="TableCategory">
+    <Key>
+      <PropertyRef Name="Ref_TBL_ID" />
+    </Key>
+    <Property Name="Ref_TBL_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ref_TableName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="test">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserDetail">
+    <Key>
+      <PropertyRef Name="UDID" />
+    </Key>
+    <Property Name="UDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UID" Type="Int32" />
+    <Property Name="Sno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <NavigationProperty Name="UserInfo" Relationship="PORModel.FK_UserDetail_UserInfo" FromRole="UserDetail" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="LocationId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DivisionId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LocationType" Type="Int32" />
+    <Property Name="SecurityQuestionId" Type="Int32" />
+    <Property Name="SecurityQuestionAnswer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <NavigationProperty Name="LeaveHeaders" Relationship="PORModel.FK_LeaveHeader_UserInfo" FromRole="UserInfo" ToRole="LeaveHeader" />
+    <NavigationProperty Name="LeaveHeaders1" Relationship="PORModel.FK_LeaveHeader_UserInfo1" FromRole="UserInfo" ToRole="LeaveHeader" />
+    <NavigationProperty Name="SecurityQuestion" Relationship="PORModel.FK_UserInfo_SecurityQuestion" FromRole="UserInfo" ToRole="SecurityQuestion" />
+    <NavigationProperty Name="SystemLogs" Relationship="PORModel.FK_SystemLog_UserInfo" FromRole="UserInfo" ToRole="SystemLog" />
+    <NavigationProperty Name="UserDetails" Relationship="PORModel.FK_UserDetail_UserInfo" FromRole="UserInfo" ToRole="UserDetail" />
+    <NavigationProperty Name="UserRole" Relationship="PORModel.FK_UserInfo_UserRole" FromRole="UserInfo" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="UserPermission">
+    <Key>
+      <PropertyRef Name="UPID" />
+    </Key>
+    <Property Name="UPID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="AccessLocationId" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="AllowVAF" Type="Boolean" />
+    <Property Name="AllowRAF" Type="Boolean" />
+    <Property Name="CreateRecord" Type="Boolean" />
+    <Property Name="ForwardRecord" Type="Boolean" />
+    <Property Name="RejectRecord" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="Int32" Nullable="false" />
+    <Property Name="RoleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PorModuleId" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Active" Type="Int32" />
+    <NavigationProperty Name="FlowManagementStatus" Relationship="PORModel.FK_FlowManagementStatus_UserRole" FromRole="UserRole" ToRole="FlowManagementStatu" />
+    <NavigationProperty Name="UserInfoes" Relationship="PORModel.FK_UserInfo_UserRole" FromRole="UserRole" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="UserRoleNew">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="Int32" Nullable="false" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ItemCodeList">
+    <Key>
+      <PropertyRef Name="CID" />
+    </Key>
+    <Property Name="CID" Type="Int32" Nullable="false" />
+    <Property Name="IteamCode" Type="Int32" />
+    <Property Name="IteamShortName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IteamLongName" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="IteamType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PorObject">
+    <Key>
+      <PropertyRef Name="OID" />
+    </Key>
+    <Property Name="OID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RID" Type="Int32" />
+    <Property Name="Objects_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PorYear">
+    <Key>
+      <PropertyRef Name="YD" />
+    </Key>
+    <Property Name="YD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PorYear1" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Service_Type">
+    <Key>
+      <PropertyRef Name="SVCType" />
+    </Key>
+    <Property Name="SVCType" Type="Int32" Nullable="false" />
+    <Property Name="Service_TypeFull" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsOfficer" Type="Int32" />
+  </EntityType>
+  <EntityType Name="F1250">
+    <Key>
+      <PropertyRef Name="ActiveNo" />
+      <PropertyRef Name="SNo" />
+      <PropertyRef Name="Rank" />
+      <PropertyRef Name="SVCType" />
+    </Key>
+    <Property Name="ActiveNo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SNo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="Int32" Nullable="false" />
+    <Property Name="F12501" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Initials" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Branch_Trade" Type="Int32" />
+    <Property Name="NICNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Sex" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Feet" Type="Decimal" Precision="4" Scale="0" />
+    <Property Name="Inch" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="ColourofHair" Type="Int32" />
+    <Property Name="ColourofEyes" Type="Int32" />
+    <Property Name="BloodGroup" Type="Int32" />
+    <Property Name="BirthMark" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Expire_Date" Type="DateTime" Precision="3" />
+    <Property Name="EXPIRES_DTE" Type="DateTime" Precision="3" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="Service_Type" Type="Int32" />
+    <Property Name="Service_Status" Type="Int32" />
+    <Property Name="ServicingStatus" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="SVCType" Type="Int32" Nullable="false" />
+    <Property Name="Expr1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NICNo_New" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DTE_ISU" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BATCH_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SER_NO_CARD" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="NO_OF_CARDS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfEnlist" Type="DateTime" Precision="3" />
+    <Property Name="RNK_NAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="RptShortName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Posted_Location" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="ID_EXP_DAT" Type="DateTime" Precision="3" />
+    <Property Name="Posted_Formation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LivingIn_Out" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="DivisionName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TESTMDATA">
+    <Key>
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="SNo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RankID" Type="Int32" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Branch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BranchCode" Type="Int32" />
+    <Property Name="PostedLocation" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Division" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DischargeDate" Type="DateTime" Precision="3" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="Service_Status" Type="Int32" />
+    <Property Name="MarriageStatus" Type="Int32" />
+    <Property Name="service_type" Type="Int32" />
+    <Property Name="DateOfEnlist" Type="DateTime" Precision="3" />
+    <Property Name="Formation" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SubRank" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TestVw">
+    <Key>
+      <PropertyRef Name="FADID" />
+    </Key>
+    <Property Name="FADID" Type="Int32" Nullable="false" />
+    <Property Name="ServiceType" Type="Int32" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AllowanceId" Type="Int32" />
+    <Property Name="AllowanceCategoryID" Type="Int32" />
+    <Property Name="CampAuthority" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CampAuthorityDate" Type="DateTime" Precision="0" />
+    <Property Name="EffectiveDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="RecordStatusId" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="RankID" Type="Int32" />
+    <Property Name="AllowanceName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Service_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FMSID" Type="Int32" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="EstablishmentId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Vw_AllNOK">
+    <Key>
+      <PropertyRef Name="SNo" />
+    </Key>
+    <Property Name="SNo" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="NOKName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Relationship" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EffectiveDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ActiveNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_CurrentAttachment">
+    <Key>
+      <PropertyRef Name="Posted_Date" />
+      <PropertyRef Name="Location" />
+      <PropertyRef Name="DivisionName" />
+      <PropertyRef Name="AppointName" />
+    </Key>
+    <Property Name="Ser_No" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Branch" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Posted_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ToDate" Type="DateTime" Precision="3" />
+    <Property Name="Location" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DivisionName" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="AppointName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SENIORITY" Type="Int32" />
+    <Property Name="Expr1" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Vw_CurrentPosting">
+    <Key>
+      <PropertyRef Name="SNo" />
+      <PropertyRef Name="Location" />
+      <PropertyRef Name="Formation" />
+    </Key>
+    <Property Name="SNo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="Appointment" Type="String" MaxLength="251" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Formation" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_CurrentUserLiving">
+    <Key>
+      <PropertyRef Name="LFSID" />
+    </Key>
+    <Property Name="LFSID" Type="Int32" Nullable="false" />
+    <Property Name="InOut_ID" Type="Int32" />
+    <Property Name="RSID" Type="Int32" />
+    <Property Name="UID" Type="Int32" />
+    <Property Name="FMSID" Type="Int32" />
+    <Property Name="RID" Type="Int32" />
+    <Property Name="RejectStatus" Type="Int32" />
+    <Property Name="CurrentStatus" Type="Int32" />
+    <Property Name="SubmitStatus" Type="Int32" />
+    <Property Name="RoleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Authority" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RefNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LivingStatusShortName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_CurrentUserRoleMarried">
+    <Key>
+      <PropertyRef Name="FSCSID" />
+    </Key>
+    <Property Name="FSCSID" Type="Int32" Nullable="false" />
+    <Property Name="CivilStatusHeaderID" Type="Int32" />
+    <Property Name="RecordStatusID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="FlowManagementStatusID" Type="Int32" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="RejectStatus" Type="Int32" />
+    <Property Name="CurrentStatus" Type="Int32" />
+    <Property Name="SubmitStatus" Type="Int32" />
+    <Property Name="RoleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Authority" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_DirectItem">
+    <Key>
+      <PropertyRef Name="ItemCode" />
+      <PropertyRef Name="ShortName" />
+      <PropertyRef Name="LongName" />
+    </Key>
+    <Property Name="ItemCode" Type="Int32" Nullable="false" />
+    <Property Name="ShortName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LongName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_FAEligibleList">
+    <Key>
+      <PropertyRef Name="ELFAID" />
+    </Key>
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AllowanceName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EffectiveDate" Type="DateTime" Precision="0" />
+    <Property Name="SNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ELFAID" Type="Int32" Nullable="false" />
+    <Property Name="PostedLocation" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="RankID" Type="Int32" />
+    <Property Name="AllowanceId" Type="Int32" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Vw_FixedAllowance_FLowStatus">
+    <Key>
+      <PropertyRef Name="FADID" />
+    </Key>
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="RankID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Service_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AllowanceId" Type="Int32" />
+    <Property Name="AllowanceName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AllowanceCategoryID" Type="Int32" />
+    <Property Name="CampAuthority" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CampAuthorityDate" Type="DateTime" Precision="0" />
+    <Property Name="EffectiveDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="RecordStatusId" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="FMSID" Type="Int32" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="EstablishmentId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IsProcessed" Type="Int32" />
+    <Property Name="FADID" Type="Int32" Nullable="false" />
+    <Property Name="FADS_CreatedBy" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Sno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_FixedAllowanceDetail">
+    <Key>
+      <PropertyRef Name="FADID" />
+      <PropertyRef Name="ALWID" />
+      <PropertyRef Name="FADFID" />
+    </Key>
+    <Property Name="Service_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceType" Type="Int32" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AllowanceName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EffectiveDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="CampAuthority" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CampAuthorityDate" Type="DateTime" Precision="0" />
+    <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AllowanceId" Type="Int32" />
+    <Property Name="FADID" Type="Int32" Nullable="false" />
+    <Property Name="Sno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RankID" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="UserRoleID" Type="Int32" />
+    <Property Name="EstablishmentId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RejectStatus" Type="Int32" />
+    <Property Name="CurrentStatus" Type="Int32" />
+    <Property Name="SubmitStatus" Type="Int32" />
+    <Property Name="FullHalfPay" Type="Int32" />
+    <Property Name="FMSID" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ALWID" Type="Int32" Nullable="false" />
+    <Property Name="FADFID" Type="Int32" Nullable="false" />
+    <Property Name="RecordStatusId" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="FADFS_CreatedBy" Type="Int32" />
+    <Property Name="RoleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_FixedAllowanceDetailReport">
+    <Key>
+      <PropertyRef Name="FADID" />
+    </Key>
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EstablishmentId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AllowanceId" Type="Int32" />
+    <Property Name="EffectiveDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="CampAuthority" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CampAuthorityDate" Type="DateTime" Precision="0" />
+    <Property Name="PaymentTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FADID" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Vw_FlowStatus">
+    <Key>
+      <PropertyRef Name="RID" />
+      <PropertyRef Name="FMSID" />
+    </Key>
+    <Property Name="RoleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RID" Type="Int32" Nullable="false" />
+    <Property Name="EstablishmentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RejectStatus" Type="Int32" />
+    <Property Name="CurrentStatus" Type="Int32" />
+    <Property Name="SubmitStatus" Type="Int32" />
+    <Property Name="FMSID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vw_FlowStatusUser_ToolTip">
+    <Key>
+      <PropertyRef Name="FADFID" />
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="FADID" Type="Int32" />
+    <Property Name="RoleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FMSID" Type="Int32" />
+    <Property Name="FADFID" Type="Int32" Nullable="false" />
+    <Property Name="RID" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Vw_GSQDetails">
+    <Key>
+      <PropertyRef Name="GSQHID" />
+    </Key>
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Branch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PostedLocation" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Division" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="service_type" Type="Int32" />
+    <Property Name="RecordStatusID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="FlowManagementStatusID" Type="Int32" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="Expr1" Type="Int32" />
+    <Property Name="FSGSQID" Type="Int32" />
+    <Property Name="RejectStatus" Type="Int32" />
+    <Property Name="CurrentStatus" Type="Int32" />
+    <Property Name="SubmitStatus" Type="Int32" />
+    <Property Name="GSQHID" Type="Int32" Nullable="false" />
+    <Property Name="Sno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceTypeId" Type="Int32" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSQLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSQNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSQStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AllocatedDate" Type="DateTime" Precision="0" />
+    <Property Name="VacantDate" Type="DateTime" Precision="0" />
+    <Property Name="PORDate" Type="DateTime" Precision="0" />
+    <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_Holiday">
+    <Key>
+      <PropertyRef Name="PHCID" />
+    </Key>
+    <Property Name="HolidayTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PHCID" Type="Int32" Nullable="false" />
+    <Property Name="ApplicableDate" Type="DateTime" Precision="0" />
+    <Property Name="Reason" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Vw_Leave">
+    <Key>
+      <PropertyRef Name="LHID" />
+      <PropertyRef Name="LFSID" />
+    </Key>
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceCategoryName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LHID" Type="Int32" Nullable="false" />
+    <Property Name="ServiceCategoryId" Type="Int32" />
+    <Property Name="Sno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveCategoryId" Type="Int32" />
+    <Property Name="TotalDays" Type="Int32" />
+    <Property Name="PaymentTypeId" Type="Int32" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Precision="0" />
+    <Property Name="Authority" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PorStatus" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="Formation" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="EstablishmentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RankID" Type="Int32" />
+    <Property Name="LFSID" Type="Int32" Nullable="false" />
+    <Property Name="FMSID" Type="Int32" />
+    <Property Name="RecordStatusId" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CurrentStatus" Type="Int32" />
+    <Property Name="RejectStatus" Type="Int32" />
+    <Property Name="SubmitStatus" Type="Int32" />
+    <Property Name="Expr1" Type="Int32" />
+    <Property Name="DeivisionId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DivisionId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EstablishmentId_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PrivilegeLeave" Type="Int32" />
+    <Property Name="CasualLeave" Type="Int32" />
+    <Property Name="AnnualLeave" Type="Int32" />
+    <Property Name="LeaveLeave" Type="Int32" />
+    <Property Name="Weekend" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PublicHoliday" Type="Int32" />
+    <Property Name="ReEngagementLeave" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Vw_LeaveDetail">
+    <Key>
+      <PropertyRef Name="LDID" />
+      <PropertyRef Name="LHID" />
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="LDID" Type="Int32" Nullable="false" />
+    <Property Name="LeaveHeaderId" Type="Int32" />
+    <Property Name="PrivilegeLeave" Type="Int32" />
+    <Property Name="CasualLeave" Type="Int32" />
+    <Property Name="AnnualLeave" Type="Int32" />
+    <Property Name="LeaveLeave" Type="Int32" />
+    <Property Name="PublicHoliday" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="LHID" Type="Int32" Nullable="false" />
+    <Property Name="ServiceCategoryId" Type="Int32" />
+    <Property Name="Sno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveCategoryId" Type="Int32" />
+    <Property Name="TotalDays" Type="Int32" />
+    <Property Name="PaymentTypeId" Type="Int32" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Precision="0" />
+    <Property Name="Authority" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PorStatus" Type="Int32" />
+    <Property Name="Expr1" Type="Int32" />
+    <Property Name="Expr2" Type="DateTime" Precision="3" />
+    <Property Name="Expr3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Expr4" Type="Int32" />
+    <Property Name="Expr5" Type="DateTime" Precision="3" />
+    <Property Name="Expr6" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Expr7" Type="Int32" />
+    <Property Name="Expr8" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RankID" Type="Int32" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Branch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BranchCode" Type="Int32" />
+    <Property Name="PostedLocation" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Division" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DischargeDate" Type="DateTime" Precision="3" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="Service_Status" Type="Int32" />
+    <Property Name="service_type" Type="Int32" />
+    <Property Name="DateOfEnlist" Type="DateTime" Precision="3" />
+    <Property Name="Formation" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SubRank" Type="Int32" />
+    <Property Name="Weekend" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Vw_LeaveFlow_FullDetails">
+    <Key>
+      <PropertyRef Name="LHID" />
+    </Key>
+    <Property Name="LHID" Type="Int32" Nullable="false" />
+    <Property Name="Sno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EstablishmentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Precision="0" />
+    <Property Name="RoleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RID" Type="Int32" />
+    <Property Name="IsProcessed" Type="Int32" />
+    <Property Name="LeaveCategoryId" Type="Int32" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Authority" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentTypeId" Type="Int32" />
+    <Property Name="Expr1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="RecordStatusId" Type="Int32" />
+    <Property Name="RecordStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_LeaveFlowToolTip">
+    <Key>
+      <PropertyRef Name="LHID" />
+    </Key>
+    <Property Name="LHID" Type="Int32" Nullable="false" />
+    <Property Name="Sno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EstablishmentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Precision="0" />
+    <Property Name="RoleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RID" Type="Int32" />
+    <Property Name="IsProcessed" Type="Int32" />
+    <Property Name="LeaveCategoryId" Type="Int32" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Authority" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentTypeId" Type="Int32" />
+    <Property Name="Expr1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_LeavePlan">
+    <Key>
+      <PropertyRef Name="ALPID" />
+    </Key>
+    <Property Name="LeaveCategoryID" Type="Int32" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="TotalLeaveMonth" Type="Int32" />
+    <Property Name="TotalLeaveDays" Type="Int32" />
+    <Property Name="LeaveCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveCategoryShortName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="ALPID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vw_LeaveProcessDetails">
+    <Key>
+      <PropertyRef Name="LHID" />
+    </Key>
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EstablishmentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Precision="0" />
+    <Property Name="IteamShortName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CalAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IsProcessed" Type="Int32" />
+    <Property Name="ItemsCode" Type="Int32" />
+    <Property Name="LHID" Type="Int32" Nullable="false" />
+    <Property Name="service_type" Type="Int32" />
+    <Property Name="IteamCode" Type="Int32" />
+    <Property Name="DaysCounts" Type="Int32" />
+    <Property Name="Authority" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="LeaveProcessDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="VW_LeaveTest">
+    <Key>
+      <PropertyRef Name="LHID" />
+      <PropertyRef Name="LFSID" />
+    </Key>
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceCategoryName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LHID" Type="Int32" Nullable="false" />
+    <Property Name="ServiceCategoryId" Type="Int32" />
+    <Property Name="Sno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveCategoryId" Type="Int32" />
+    <Property Name="TotalDays" Type="Int32" />
+    <Property Name="PaymentTypeId" Type="Int32" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Precision="0" />
+    <Property Name="Authority" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PorStatus" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="Formation" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="EstablishmentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RankID" Type="Int32" />
+    <Property Name="LFSID" Type="Int32" Nullable="false" />
+    <Property Name="FMSID" Type="Int32" />
+    <Property Name="RecordStatusId" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CurrentStatus" Type="Int32" />
+    <Property Name="RejectStatus" Type="Int32" />
+    <Property Name="SubmitStatus" Type="Int32" />
+    <Property Name="Expr1" Type="Int32" />
+    <Property Name="DeivisionId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DivisionId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EstablishmentId_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PrivilegeLeave" Type="Int32" />
+    <Property Name="CasualLeave" Type="Int32" />
+    <Property Name="AnnualLeave" Type="Int32" />
+    <Property Name="LeaveLeave" Type="Int32" />
+    <Property Name="Weekend" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PublicHoliday" Type="Int32" />
+    <Property Name="ReEngagementLeave" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Vw_LivingINOutReject">
+    <Key>
+      <PropertyRef Name="LFSID" />
+    </Key>
+    <Property Name="LFSID" Type="Int32" Nullable="false" />
+    <Property Name="InOut_ID" Type="Int32" />
+    <Property Name="RSID" Type="Int32" />
+    <Property Name="UID" Type="Int32" />
+    <Property Name="FMSID" Type="Int32" />
+    <Property Name="RID" Type="Int32" />
+    <Property Name="CurrentStatus" Type="Int32" />
+    <Property Name="SubmitStatus" Type="Int32" />
+    <Property Name="RoleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Authority" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RefNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LivingStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_MQDetails">
+    <Key>
+      <PropertyRef Name="InOut_ID" />
+    </Key>
+    <Property Name="InOut_ID" Type="Int32" Nullable="false" />
+    <Property Name="Sno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FromDate" Type="DateTime" Precision="3" />
+    <Property Name="Location" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Qurter_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QurtersStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QuarterLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Vw_NOK_Details">
+    <Key>
+      <PropertyRef Name="NOKID" />
+      <PropertyRef Name="ActiveNo" />
+      <PropertyRef Name="SNo" />
+      <PropertyRef Name="NOKType" />
+    </Key>
+    <Property Name="NOKID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ActiveNo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SNo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="NOKType" Type="Int32" Nullable="false" />
+    <Property Name="Relationship" Type="Int32" />
+    <Property Name="RelationshipName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOKName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="NOKAddress" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="WEFDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Vw_NOKChangeDetails">
+    <Key>
+      <PropertyRef Name="NOKCHID" />
+    </Key>
+    <Property Name="RecordStatusID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="FlowManagementStatusID" Type="Int32" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="NOKAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NOKName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NOKChangeTo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="District" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSDivision" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NearestTown" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Authority" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EstablishmentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RejectStatus" Type="Int32" />
+    <Property Name="CurrentStatus" Type="Int32" />
+    <Property Name="SubmitStatus" Type="Int32" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Marriage_Status" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Sno" Type="Int64" />
+    <Property Name="NOKCHID" Type="Int32" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NOKStatus" Type="Int32" />
+    <Property Name="PORDate" Type="DateTime" Precision="0" />
+    <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Vw_NokDetailsP2">
+    <Key>
+      <PropertyRef Name="SNo" />
+    </Key>
+    <Property Name="SNo" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="NOKName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Relationship" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EffectiveDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ActiveNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_OfficerNOK">
+    <Key>
+      <PropertyRef Name="SNo" />
+    </Key>
+    <Property Name="SNo" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="NOKName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Relationship" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ActiveNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_OtherNOK">
+    <Key>
+      <PropertyRef Name="SNo" />
+      <PropertyRef Name="ActiveNo" />
+    </Key>
+    <Property Name="SNo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="NOKName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Relationship" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ActiveNo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_P2PersonalDetail">
+    <Key>
+      <PropertyRef Name="PostedLocation" />
+      <PropertyRef Name="Division" />
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="SNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RankID" Type="Int32" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Branch" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BranchCode" Type="Int32" />
+    <Property Name="PostedLocation" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Division" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="DischargeDate" Type="DateTime" Precision="3" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="Service_Status" Type="Int32" />
+    <Property Name="Service_Type" Type="Int32" />
+    <Property Name="DateOfEnlist" Type="DateTime" Precision="3" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Formation" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SubRank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CurrentLocation" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_P3PersonalDetail">
+    <Key>
+      <PropertyRef Name="SNo" />
+      <PropertyRef Name="ServiceNo" />
+      <PropertyRef Name="RankID" />
+      <PropertyRef Name="Branch" />
+      <PropertyRef Name="BranchCode" />
+      <PropertyRef Name="PostedLocation" />
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="SNo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceNo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RankID" Type="Int32" Nullable="false" />
+    <Property Name="Rank" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Branch" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BranchCode" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="PostedLocation" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Division" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="DischargeDate" Type="DateTime" Precision="3" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="Service_Status" Type="Int32" />
+    <Property Name="Service_Type" Type="Int32" />
+    <Property Name="DateOfEnlist" Type="DateTime" Precision="3" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Formation" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CurrentLocation" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_PersonalDetail">
+    <Key>
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="SNo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RankID" Type="Int32" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Branch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BranchCode" Type="Int32" />
+    <Property Name="PostedLocation" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Division" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DischargeDate" Type="DateTime" Precision="3" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="Service_Status" Type="Int32" />
+    <Property Name="Marriage_Status" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="service_type" Type="Int32" />
+    <Property Name="DateOfEnlist" Type="DateTime" Precision="3" />
+    <Property Name="Formation" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SubRank" Type="Int32" />
+    <Property Name="serTypeDescription" Type="String" MaxLength="22" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_PorReport">
+    <Key>
+      <PropertyRef Name="RID" />
+      <PropertyRef Name="LHID" />
+      <PropertyRef Name="LDID" />
+      <PropertyRef Name="LCID" />
+      <PropertyRef Name="LFSID" />
+      <PropertyRef Name="FMSID" />
+    </Key>
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Precision="0" />
+    <Property Name="TotalDays" Type="Int32" />
+    <Property Name="LivingStatusShortName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Weekend" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PublicHoliday" Type="Int32" />
+    <Property Name="AnnualLeave" Type="Int32" />
+    <Property Name="PrivilegeLeave" Type="Int32" />
+    <Property Name="CasualLeave" Type="Int32" />
+    <Property Name="LeaveLeave" Type="Int32" />
+    <Property Name="ReEngagementLeave" Type="Int32" />
+    <Property Name="Authority" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RID" Type="Int32" Nullable="false" />
+    <Property Name="RoleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="EstablishmentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="service_type" Type="Int32" />
+    <Property Name="LHID" Type="Int32" Nullable="false" />
+    <Property Name="LDID" Type="Int32" Nullable="false" />
+    <Property Name="LCID" Type="Int32" Nullable="false" />
+    <Property Name="LFSID" Type="Int32" Nullable="false" />
+    <Property Name="LSID" Type="Int32" />
+    <Property Name="FMSID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VW_RANKS">
+    <Key>
+      <PropertyRef Name="RANK" />
+    </Key>
+    <Property Name="RANK" Type="Int32" Nullable="false" />
+    <Property Name="RNK_NAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="RANK_TYPE" Type="Int32" />
+    <Property Name="SHORT_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LONG_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="SENIORITY" Type="Int32" />
+    <Property Name="PROMO_DURATION" Type="Int32" />
+    <Property Name="TOTAL_SERVICE_FOR_PROMOTION" Type="Int32" />
+    <Property Name="TOTAL_SERVICE_FOR_PROMOTION_DE_LAC" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="TOTAL_SERVICE_FOR_PROMOTION_DE_ACPL" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="TEMPORY_SUBSTANTIVE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="RankGroup" Type="Int32" />
+    <Property Name="AppProm" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="AppPromType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NextAppProm" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="PromPaid" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="TOTAL_SERVICE_FOR_PROMOTION_DE" Type="Decimal" Precision="18" Scale="1" />
+  </EntityType>
+  <EntityType Name="Vw_RejectLeave">
+    <Key>
+      <PropertyRef Name="LHID" />
+      <PropertyRef Name="LFSID" />
+    </Key>
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceCategoryName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LHID" Type="Int32" Nullable="false" />
+    <Property Name="ServiceCategoryId" Type="Int32" />
+    <Property Name="Sno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveCategoryId" Type="Int32" />
+    <Property Name="TotalDays" Type="Int32" />
+    <Property Name="PaymentTypeId" Type="Int32" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Precision="0" />
+    <Property Name="Authority" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PorStatus" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="Formation" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="EstablishmentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RankID" Type="Int32" />
+    <Property Name="LFSID" Type="Int32" Nullable="false" />
+    <Property Name="FMSID" Type="Int32" />
+    <Property Name="RecordStatusId" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CurrentStatus" Type="Int32" />
+    <Property Name="RejectStatus" Type="Int32" />
+    <Property Name="SubmitStatus" Type="Int32" />
+    <Property Name="Expr1" Type="Int32" />
+    <Property Name="DeivisionId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DivisionId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EstablishmentId_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PrivilegeLeave" Type="Int32" />
+    <Property Name="CasualLeave" Type="Int32" />
+    <Property Name="AnnualLeave" Type="Int32" />
+    <Property Name="LeaveLeave" Type="Int32" />
+    <Property Name="Weekend" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PublicHoliday" Type="Int32" />
+    <Property Name="ReEngagementLeave" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Vw_SelectUserRole">
+    <Key>
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="RoleName" />
+    </Key>
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LocationId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_UpdateQuery">
+    <Key>
+      <PropertyRef Name="LFSID" />
+      <PropertyRef Name="LHID" />
+    </Key>
+    <Property Name="LFSID" Type="Int32" Nullable="false" />
+    <Property Name="LeaveHeaderId" Type="Int32" />
+    <Property Name="FMSID" Type="Int32" />
+    <Property Name="RecordStatusId" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="LHID" Type="Int32" Nullable="false" />
+    <Property Name="ServiceCategoryId" Type="Int32" />
+    <Property Name="Sno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveCategoryId" Type="Int32" />
+    <Property Name="EstablishmentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeivisionId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TotalDays" Type="Int32" />
+    <Property Name="PrivilegeLeave" Type="Int32" />
+    <Property Name="AnnualLeave" Type="Int32" />
+    <Property Name="PaymentTypeId" Type="Int32" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Precision="0" />
+    <Property Name="Authority" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PorStatus" Type="Int32" />
+    <Property Name="Expr1" Type="Int32" />
+    <Property Name="Expr2" Type="DateTime" Precision="3" />
+    <Property Name="Expr3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Expr4" Type="Int32" />
+    <Property Name="Expr5" Type="DateTime" Precision="3" />
+    <Property Name="Expr6" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Expr7" Type="Int32" />
+    <Property Name="IsProcessed" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Vw_UserFlowHistory">
+    <Key>
+      <PropertyRef Name="RID" />
+      <PropertyRef Name="UID" />
+      <PropertyRef Name="UDID" />
+      <PropertyRef Name="FADFID" />
+    </Key>
+    <Property Name="RoleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PostedLocation" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Formation" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="FADID" Type="Int32" />
+    <Property Name="RID" Type="Int32" Nullable="false" />
+    <Property Name="UID" Type="Int32" Nullable="false" />
+    <Property Name="UDID" Type="Int32" Nullable="false" />
+    <Property Name="SNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="RecordStatusId" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="FADFID" Type="Int32" Nullable="false" />
+    <Property Name="FMSID" Type="Int32" />
+    <Property Name="EstablishmentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Expr1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_UserProfile">
+    <Key>
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="UID" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PostedLocation" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Formation" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="UID" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Allowance_Section">
+    <End Type="PORModel.LocationType" Role="LocationType" Multiplicity="0..1" />
+    <End Type="PORModel.Allowance" Role="Allowance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocationType">
+        <PropertyRef Name="LTID" />
+      </Principal>
+      <Dependent Role="Allowance">
+        <PropertyRef Name="SECID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AllowanceItemCode_Allowance">
+    <End Type="PORModel.Allowance" Role="Allowance" Multiplicity="0..1" />
+    <End Type="PORModel.AllowanceItemCode" Role="AllowanceItemCode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Allowance">
+        <PropertyRef Name="ALWID" />
+      </Principal>
+      <Dependent Role="AllowanceItemCode">
+        <PropertyRef Name="AllowanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AllowanceValue_Allowance">
+    <End Type="PORModel.Allowance" Role="Allowance" Multiplicity="0..1" />
+    <End Type="PORModel.EDCS_AllowanceValue" Role="EDCS_AllowanceValue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Allowance">
+        <PropertyRef Name="ALWID" />
+      </Principal>
+      <Dependent Role="EDCS_AllowanceValue">
+        <PropertyRef Name="AllowanceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FixedAllowanceDetail_Allowance">
+    <End Type="PORModel.Allowance" Role="Allowance" Multiplicity="0..1" />
+    <End Type="PORModel.FixedAllowanceDetail" Role="FixedAllowanceDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Allowance">
+        <PropertyRef Name="ALWID" />
+      </Principal>
+      <Dependent Role="FixedAllowanceDetail">
+        <PropertyRef Name="AllowanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FixedAllowanceCancel_FixedAllowanceDetail">
+    <End Type="PORModel.FixedAllowanceDetail" Role="FixedAllowanceDetail" Multiplicity="0..1" />
+    <End Type="PORModel.FixedAllowanceCancel" Role="FixedAllowanceCancel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FixedAllowanceDetail">
+        <PropertyRef Name="FADID" />
+      </Principal>
+      <Dependent Role="FixedAllowanceCancel">
+        <PropertyRef Name="FixedAllowanceDetailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FlowManagementStatus_UserRole">
+    <End Type="PORModel.UserRole" Role="UserRole" Multiplicity="0..1" />
+    <End Type="PORModel.FlowManagementStatu" Role="FlowManagementStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRole">
+        <PropertyRef Name="RID" />
+      </Principal>
+      <Dependent Role="FlowManagementStatu">
+        <PropertyRef Name="UserRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LeaveHeader_LeaveCategory">
+    <End Type="PORModel.LeaveCategory" Role="LeaveCategory" Multiplicity="0..1" />
+    <End Type="PORModel.LeaveHeader" Role="LeaveHeader" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeaveCategory">
+        <PropertyRef Name="LCID" />
+      </Principal>
+      <Dependent Role="LeaveHeader">
+        <PropertyRef Name="LeaveCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LeaveHeader_UserInfo">
+    <End Type="PORModel.UserInfo" Role="UserInfo" Multiplicity="0..1" />
+    <End Type="PORModel.LeaveHeader" Role="LeaveHeader" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="LeaveHeader">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LeaveHeader_UserInfo1">
+    <End Type="PORModel.UserInfo" Role="UserInfo" Multiplicity="0..1" />
+    <End Type="PORModel.LeaveHeader" Role="LeaveHeader" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="LeaveHeader">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfo_SecurityQuestion">
+    <End Type="PORModel.SecurityQuestion" Role="SecurityQuestion" Multiplicity="0..1" />
+    <End Type="PORModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SecurityQuestion">
+        <PropertyRef Name="SQID" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="SecurityQuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemLog_UserInfo">
+    <End Type="PORModel.UserInfo" Role="UserInfo" Multiplicity="0..1" />
+    <End Type="PORModel.SystemLog" Role="SystemLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="SystemLog">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetail_UserInfo">
+    <End Type="PORModel.UserInfo" Role="UserInfo" Multiplicity="0..1" />
+    <End Type="PORModel.UserDetail" Role="UserDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="UserDetail">
+        <PropertyRef Name="UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfo_UserRole">
+    <End Type="PORModel.UserRole" Role="UserRole" Multiplicity="1" />
+    <End Type="PORModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRole">
+        <PropertyRef Name="RID" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Vw_CivliStatusReject">
+    <Key>
+      <PropertyRef Name="CSHID" />
+      <PropertyRef Name="FMSID" />
+      <PropertyRef Name="FSCSID" />
+    </Key>
+    <Property Name="CSHID" Type="Int32" Nullable="false" />
+    <Property Name="CivilStatusHeaderID" Type="Int32" />
+    <Property Name="Sno" Type="Int64" />
+    <Property Name="SubCategoryId" Type="Int32" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceTypeId" Type="Int32" />
+    <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Authority" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="CategoryName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SpouseName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSMDID" Type="Int32" />
+    <Property Name="MarriageDate" Type="DateTime" Precision="0" />
+    <Property Name="MarriageCertificateNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RegistarOfficeLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Expr1" Type="Int32" />
+    <Property Name="DivorceDtae" Type="DateTime" Precision="0" />
+    <Property Name="Place" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CourseCaseNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfCase" Type="DateTime" Precision="0" />
+    <Property Name="Expr2" Type="Int32" />
+    <Property Name="CSWDID" Type="Int32" />
+    <Property Name="DateofDecease" Type="DateTime" Precision="0" />
+    <Property Name="DeathCertificateNoOfSpouse" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NOKAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NOKName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NOKChangeTo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="District" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSDivision" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NearestTown" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Expr3" Type="Int32" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CurrentStatus" Type="Int32" />
+    <Property Name="RejectStatus" Type="Int32" />
+    <Property Name="SubmitStatus" Type="Int32" />
+    <Property Name="FMSID" Type="Int32" Nullable="false" />
+    <Property Name="FSCSID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vw_LivingStatusReject">
+    <Key>
+      <PropertyRef Name="LIOHID" />
+      <PropertyRef Name="FMSID" />
+    </Key>
+    <Property Name="LIOHID" Type="Int32" Nullable="false" />
+    <Property Name="Sno" Type="Int64" />
+    <Property Name="LivingStatusID" Type="Int32" />
+    <Property Name="LivingStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceTypeId" Type="Int32" />
+    <Property Name="RefNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Authority" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsNOKChange" Type="Int32" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Precision="0" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LIActive" Type="Int32" />
+    <Property Name="NOKAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NOKName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NOKChangeTo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Expr1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="District" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSDivision" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NearestTown" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CurrentStatus" Type="Int32" />
+    <Property Name="RejectStatus" Type="Int32" />
+    <Property Name="SubmitStatus" Type="Int32" />
+    <Property Name="FMSID" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

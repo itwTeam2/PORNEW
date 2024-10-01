@@ -1,0 +1,157 @@
+﻿@model POR.Models.PersonalContact._PsnContactHeader
+
+
+<script src="~/Scripts/Jq.js"></script>
+@*<script src="~/Scripts/LivingInOut.js"></script>*@
+@{
+    ViewBag.Title = "Edit";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="content-wrapper">
+        <section class="content-header">
+
+            <h1 style="text-align:center"><span>Edit Personal Contact Details</span></h1>
+
+            <div id="ErrorMessage">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong> @TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong>@TempData["ErrMsg"]
+                    </div>
+                }
+            </div>
+        </section>
+        <br />
+        @{
+            int RejectStatus = Convert.ToInt32(TempData["Rejectstatus"]);
+            int MasSubCatId = Convert.ToInt32(TempData["massSubId"]);
+            <section class="col-lg-6 connectedSortable">
+                <div class="nav-tabs-custom">
+                    @Html.ValidationSummary(true)
+
+                    <div class="box-body">
+                        @*Service Number /Rank*@
+                        <div class="form-group">
+                            <div class="col-lg-6">
+                                @Html.Label("Service Number", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.ServiceNo, new { @class = "form-control ", autocomplete = "off", @readonly = "readonly" })
+                                @Html.HiddenFor(model => model.PCHID, new { @class = "form-control ", autocomplete = "off" })  
+                                @Html.HiddenFor(model => model.MasSubCatID, new { @class = "form-control ", autocomplete = "off" })                              
+                            </div>
+                            @*Rank*@
+                            <div class="col-lg-6">
+                                @Html.Label("Rank", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Rank, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            </div>
+
+                        </div>
+
+                        @*Name*@
+                        <div class="form-group">
+                            <div class="col-lg-12" style="margin-top:12px">
+                                @Html.Label("Name", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.FullName, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.FullName, string.Empty, new { @class = "label label-danger" })
+                            </div>
+                        </div>
+
+                        @*Location/Authority*@
+                        <div class="form-group">
+                            <div class="col-lg-6" style="margin-top:12px">
+                                @Html.Label("Location", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Location, new { @class = "form-control ", autocomplete = "off", placeholder = "" , @readonly = "readonly" })                               
+                            </div>
+                            <div class="col-lg-6" style="margin-top:12px">
+                                @Html.Label("Authority", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Authority, new { @class = "form-control ", autocomplete = "off", placeholder = "" })                               
+                            </div>                            
+                        </div>
+
+                        @*POR RefNo*@
+                        <div class="form-group">
+                            <div class="col-lg-12" style="margin-top:12px">
+                                @Html.Label("Ref No", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.RefNo, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })                               
+                            </div>
+                        </div>
+
+                        @*RejectStatus == 2 mean it's reject Record*@
+
+                        @if (RejectStatus == 2)
+                        {
+                            <div class="form-group">
+                                @Html.Label("Reject Ref No", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.RejectRefNo, new { @class = "form-control alert-danger", autocomplete = "off", @readonly = "readonly" })
+                            </div>
+                        }
+
+                        @{
+                            switch (MasSubCatId)
+                            {
+                                case (int)POR.Enum.PORMasterSubCategory.MobileNo:
+                                    @* Mobile No :*@
+                                    <div class="form-group">
+                                        <div class="col-lg-12" style="margin-top:12px">
+                                            @Html.Label("Mobile No", new { @class = "control-label" })
+                                            @Html.TextBoxFor(model => model.MobileNo, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                                        </div>
+                                    </div>                                             
+                                    break;
+                                case (int)POR.Enum.PORMasterSubCategory.ResidentialTeleNo:
+                                    @* ResidentialTeleNo :*@
+                                    <div class="form-group">
+                                        <div class="col-lg-12" style="margin-top:12px">
+                                            @Html.Label(" Residential Tele No", new { @class = "control-label" })
+                                            @Html.TextBoxFor(model => model.ResidentialTeleNo, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                                        </div>
+                                    </div>                                   
+                                    break;
+
+                                case (int)POR.Enum.PORMasterSubCategory.EMailAddress:               
+
+                                   @* Email Address :*@
+                                    <div class="form-group">
+                                        <div class="col-lg-12" style="margin-top:12px">
+                                            @Html.Label("Email Address", new { @class = "control-label" })
+                                            @Html.TextBoxFor(model => model.EmailAddress, new { @class = "form-control ", autocomplete = "off", placeholder = ""})
+                                        </div>
+                                    </div>
+                                    break;
+
+                                default:
+                                    break;
+                            }
+                         }                      
+                        <div class="form-group">
+                            <section class="col-lg-6" style="margin-top:20px">
+                                <button type="button" class="col-lg-4 btn btn-warning pull-right" id="btnYes" style="height:40px;width:200px" onclick="location.href='@Url.Action("Index", "PersonalContact", new { serviceStatus = 0})'">
+                                    <span class="info-box-text"><i class=" fa fa-hand-o-left"></i> Go to Pending List</span>
+                                </button>
+                            </section>
+
+                            <section class="col-lg-6" style="margin-top:20px">
+                                <button type="submit" class="col-lg-4 btn btn-success pull-right" style="height:40px;width:200px">
+                                    <span class="info-box-text"><i class=" fa fa-save"></i> Save</span>
+                                </button>
+                                @*<i class=" fa fa-hand-o-left"><input type="submit" value="Save" class="btn btn-success pull-right submitBtn"></i>*@
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>            
+        }
+    </div>
+}
+<script>
+
+</script>

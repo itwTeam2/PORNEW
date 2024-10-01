@@ -1,0 +1,263 @@
+﻿@using POR.Models
+@model IEnumerable<POR.Models.LivingInOut._LivingInOut>
+
+
+@{
+    ViewBag.Title = "IndividualMarriedDetails";
+}
+<div class="content-wrapper" style="height:900px !important;">
+    <section class="content-header">
+        <h1 style="margin-left:16px">
+            Record Current Flow Status
+            <small>View</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Record Current Flow Status</li>
+        </ol>
+        
+    </section>
+    <section class="col-lg-12 connectedSortable" style="margin-top:5px">
+        <div class="col-lg-8">
+            <div class="nav-tabs-custom">
+                <br />
+                <dl class="dl-horizontal">
+
+                    @foreach (var item in Model)
+                    {
+                        //Service No :
+                        <dt class="form-group">
+                            Service No :
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => item.Snumber)
+                        </dd>
+
+                        //Rank:
+                        <dt class="form-group">
+                            Rank :
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => item.Rank)
+                        </dd>
+
+                        //Name with Initials:
+                        <dt class="form-group">
+                            Name with Initials :
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => item.FullName)
+                        </dd>
+
+                        //Establishment
+                        <dt class="form-group">
+                            Establishment :
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => item.Location)
+                        </dd>
+
+                        //Authority
+                        <dt class="form-group">
+                            Authority :
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => item.Authority)
+                        </dd>
+
+                        //Ref No :
+                        <dt class="form-group">
+                            Ref No :
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => item.RefNo)
+                        </dd>
+
+                        // Record Update Date:
+                        <dt class="form-group">
+                                Record Update Date:
+                        </dt>
+
+                        <dd>
+                                @Html.DisplayFor(model => item.RecordCreatedDate)
+                            </dd>
+
+                        //Category Name :
+                        <dt class="form-group">
+                            Category Name :
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => item.CategoryName)
+                        </dd>
+
+                        {
+                            int? livingInCat = Convert.ToInt32(item.LSID);
+                            if (livingInCat == (int)POR.Enum.LivinInOutCategories.BLOut || livingInCat == (int)POR.Enum.LivinInOutCategories.BROut)
+                            {
+                                //From Date :
+                                <dt class="form-group">
+                                    From Date :
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.FromDate)
+                                </dd>
+
+                                //To Date :
+                                <dt class="form-group">
+                                    To Date :
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.ToDate)
+                                </dd>
+                            }
+                            if (livingInCat == (int)POR.Enum.LivinInOutCategories.MLOut || livingInCat == (int)POR.Enum.LivinInOutCategories.MROut)
+                            {
+                                //From Date :
+                                <dt class="form-group">
+                                    With Effect Date :
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.FromDate)
+                                </dd>
+                            }
+                        }
+
+                        <dt class="form-group">
+                            Current Status  :
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => item.UserRole)
+                        </dd>
+
+                        //Comment :
+                        {
+                            int? RecordStatusID = Convert.ToInt32(item.RSID);
+
+                            if (RecordStatusID == (int)POR.Enum.RecordStatus.Reject)
+                            {
+                                <dt class="form-group">
+                                    Reason for Reject :
+                                </dt>
+                                   <dd class="form-group" style="color:#FF0000">
+                                    @Html.DisplayFor(model => item.Comment)
+                                   </dd>
+                             }                              
+
+                                if (RecordStatusID == (int)POR.Enum.RecordStatus.Reject)
+                                {
+                                      <dt class="form-group">
+                                         Record Status :
+                                      </dt>
+
+                                    <dd class="form-group" style="color:#FF0000">
+                                       Record Rejected
+                                    </dd>
+                                }
+                            
+
+                            if (item.NOKchangeStatus == 1)
+                            {
+                                //NOKName :
+                                <dt class="form-group">
+                                    NOK Name:
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.NOKName)
+                                </dd>
+
+                                //NOKChangeTo:
+                                <dt class="form-group">
+                                    Relationship :
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.NOKChangeTo)
+                                </dd>
+
+                                //NOKaddress:
+                                <dt class="form-group">
+                                    NOK Address :
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.NOKaddress)
+                                </dd>
+
+                                //District1:
+                                <dt class="form-group">
+                                    District :
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.District1)
+                                </dd>
+
+                                //GSName:
+                                <dt class="form-group">
+                                    GS Name :
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.GSName)
+                                </dd>
+
+                                //NearestTown:
+                                <dt class="form-group">
+                                    Nearest Town :
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.NearestTown)
+                                </dd>
+
+                                //PoliceStation1:
+                                <dt class="form-group">
+                                    Police Station :
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.PoliceStation1)
+                                </dd>
+
+                                //PostOfficeName:
+                                <dt class="form-group">
+                                    Post Office Name :
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.PostOfficeName)
+                                </dd>
+
+                            }
+                        }
+                    }
+                </dl>
+            
+                <div class="form-group col-lg-offset-10">
+                    @Html.ActionLink("Back to List", "IndividualSearchLivingInOut", "LivingInOut", new { @class = "btn btn-info" })
+                </div>
+            </div>           
+        </div>
+        
+        
+    </section>
+</div>
+
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+
+<div id="dialog" style="display: none; position:relative;">
+</div>

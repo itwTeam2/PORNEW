@@ -1,0 +1,51 @@
+﻿@model IEnumerable<POR.Models.LivingInOut._LivingInOut>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    foreach (var item in Model)
+    {
+        <fieldset id="reject">
+            <div class="form-horizontal">
+                <div class="form-group col-md-12">
+                    @Html.TextAreaFor(model => item.Comment, new { @class = "form-control", autocomplete = "off", id = "txtComment" })
+                    @Html.ValidationMessageFor(model => item.Comment, string.Empty, new { @class = "label label-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <input type="button" value="Save Comments" class="btn btn-primary" id="btnSubmit" />
+                        @*@Html.ActionLink("Save Comments", "Index_Reject", "Married", new { CSHID = item.CSHID , FMSID = item.FMSID, Comment = item.Comment}, new { @class = "btn btn-info" })*@
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="hndLIOHID" value="@Html.DisplayFor(model => item.LIOHID)" />
+            <input type="hidden" id="hndFMSID" value="@Html.DisplayFor(model => item.FMSID)" />
+        </fieldset>
+    }
+}
+<script type="text/javascript">
+    $("#btnSubmit").click(function () {
+        debugger;
+        var obj_CivilStatus = {};
+        var Comment = $("#txtComment").val();
+        var LIHID = $("#hndLIOHID").val();
+        var FMID = $("#hndFMSID").val();
+
+        $.ajax({
+            type: "POST",
+            //url: "/POR/LivingInOut/Index_Reject", /// URL in Server side
+            url: "./Index_Reject", /// URL in Local Server
+            dataType : 'json',
+            data: { id: Comment, LIOHID: LIHID, FMSID: FMID },
+            success: function (result) {
+                alert(result.Message);
+                var url = '@Url.Action("IndexRejectLivingInOut", "LivingInOut")';
+                window.location.href = url;
+            }
+        })
+    })
+</script>
+@Scripts.Render("~/bundles/jquery")

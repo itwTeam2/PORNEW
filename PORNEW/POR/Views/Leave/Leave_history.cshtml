@@ -1,0 +1,99 @@
+﻿@model POR.Models.LeaveModel.Leave
+
+@{
+    ViewBag.Title = "Leave_history";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="content-wrapper" style="height:900px !important;">
+
+        <section class="content-header">
+            <h1>
+                Leave Detail
+                <small>Insert Leave Details</small>
+            </h1>
+
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+            </ol>
+
+            <div id="ErrorMessage">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert!</strong>&nbsp;@TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert!</strong>&nbsp;@TempData["ErrMsg"]
+                    </div>
+                }
+            </div>
+        </section>
+
+        <section class="col-lg-12 connectedSortable">
+            <div class="nav-tabs-custom">
+                @Html.ValidationSummary(true)
+
+                <div class="box-body">
+                    <div class="col-lg-6">
+                        @Html.ValidationSummary(true)
+
+                        <div class="form-group">
+                            @Html.Label("Year", new { @class = "control-label" })
+                            @Html.DropDownListFor(model => model.LeaveHeader_.HistoryYear, ViewBag.DDL_HistoryYear as SelectList, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.LeaveHeader_.HistoryYear, string.Empty, new { @class = "label label-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.Label("Service Category", new { @class = "control-label" })
+                            @Html.DropDownListFor(model => model.LeaveHeader_.ServiceCategoryId, ViewBag.DDL_ServiceCategory as SelectList, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.LeaveHeader_.ServiceCategoryId, string.Empty, new { @class = "label label-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.Label("Service No", new { @class = "control-label" })
+                            @Html.TextBox("SvcNo_", Session["ServiceNo"], new { @class = "form-control", autocomplete = "off", placeholder = "" })
+                            @Html.HiddenFor(model => model.LeaveHeader_.ServiceNo_, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.LeaveHeader_.ServiceNo_, string.Empty, new { @class = "label label-danger" })
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+
+                        <div class="form-group">
+                            @Html.Label("Accumulated Leave", new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.LeaveHeader_.AccumulatedLeave, new { @class = "form-control", id = "TotalDays", autocomplete = "off" })
+                            @Html.ValidationMessageFor(model => model.LeaveHeader_.TotalDays, string.Empty, new { @class = "label label-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.Label("Re-engagement", new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.LeaveHeader_.Reengagement, new { @class = "form-control", id = "TotalDays", autocomplete = "off" })
+                            @Html.ValidationMessageFor(model => model.LeaveHeader_.TotalDays, string.Empty, new { @class = "label label-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div>            
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" id="sd" value="Save & Forward" class="fa fa-arrow-circle-right btn btn-success pull-right" />
+                </div>
+            </div>
+        </div>
+    </div>   
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+

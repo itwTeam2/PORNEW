@@ -1,0 +1,49 @@
+﻿@model IEnumerable<POR.Models.Vw_FlowStatus>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstablishmentId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RejectStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubmitStatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstablishmentId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RejectStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubmitStatus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "FixedAllowanceEligibleList", "EditEligebleListPerson", new { /* id=item.PrimaryKey */ }) |          
+        </td>
+    </tr>
+}
+
+</table>

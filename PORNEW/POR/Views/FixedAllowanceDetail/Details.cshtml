@@ -1,0 +1,362 @@
+﻿@using POR.Models
+@model POR.Models.Vw_FixedAllowanceDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+<script src="~/Scripts/Jq.js"></script>
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<div class="content-wrapper" style="height:900px !important;">
+    <section class="content-header">
+        <h1>
+            Fixed Allowances Details
+            <small>View & Forwad to Next Authority</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+        </ol>
+        <div id="ErrorMessage">
+            @if (TempData["ScfMsg"] != null)
+            {
+            <div id="Msg" class="col-lg-12  alert alert-success">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Alert! </strong> @TempData["ScfMsg"]
+            </div>
+            }
+            else if (TempData["ErrMsg"] != null)
+            {
+            <div id="Msg" class="col-lg-12 alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Alert! </strong>@TempData["ErrMsg"]
+            </div>
+
+            }
+        </div>
+    </section>
+    <br />
+    <section class="col-lg-12 nav-tabs-custom connectedSortable">
+        <div class="col-lg-6">
+            <br />
+            <dl class="dl-horizontal">
+
+                <dt class="form-group">
+                    Service No
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ServiceNo)
+                </dd>
+
+                <dt class="form-group">
+                    Service Type
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Service_Type)
+                </dd>
+
+                <dt class="form-group">
+                    Rank
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Rank)
+                </dd>
+
+                <dt class="form-group">
+                    Name with Initials
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt class="form-group">
+                    Allowance
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AllowanceName)
+                </dd>
+                <dt class="form-group">
+                    Allowance Category
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+                <dt class="form-group">
+                    Payment Type
+                </dt>
+
+                <dd>
+                    @{
+                        int? PaymentTypeId = Convert.ToInt32(Model.FullHalfPay);
+                        string PaymentTypeName = null;
+                        if (PaymentTypeId == 1)
+                        {
+                            PaymentTypeName = "Half Pay";
+                        }
+                        else if (PaymentTypeId == 2)
+                        {
+                            PaymentTypeName = "Full Pay";
+                        }
+                        else if (PaymentTypeId == 0)
+                        {
+                            PaymentTypeName = "N/A";
+                        }
+                    }
+                    @PaymentTypeName
+                </dd>
+                <dt class="form-group">
+                    Effective Date
+                </dt>
+
+                <dd>
+                    @Html.ValueFor(model => model.EffectiveDate, "{0:dd/MM/yyyy}")
+                </dd>
+
+                <dt class="form-group">
+                    End Date
+                </dt>
+
+                <dd>
+                    @Html.ValueFor(model => model.EndDate, "{0:dd/MM/yyyy}")
+                </dd>
+
+                <dt class="form-group">
+                    Authority
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CampAuthority)
+                </dd>
+
+                <dt class="form-group">
+                    Authority Date
+                </dt>
+
+                <dd>
+                    @Html.ValueFor(model => model.CampAuthorityDate, "{0:dd/MM/yyyy}")
+
+                </dd>
+                <dt class="form-group">
+                    Remark
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Remark)
+                </dd>
+            </dl>
+        </div>
+
+        <div class="col-lg-6" style="padding-top: 100px; padding-bottom: 270px; font-size: 20px; ">
+
+            @{
+                string UserRole;
+                string Rdate;
+                if (TempData["RejectUserRole"] != null && TempData["RejectDate"] != null)
+                {
+                    UserRole = TempData["RejectUserRole"].ToString();
+                    Rdate = TempData["RejectDate"].ToString();
+                    <div class="alert alert-error">
+                        <span>@UserRole Rejected</span> <br />
+                        <span>Date : @Rdate</span><br />
+                        <span>Comment : @Html.DisplayFor(model => model.Comment)</span>
+                    </div>
+                }
+            }
+        </div>        
+    </section>
+
+    <section>
+
+        @{
+            int? URID = Convert.ToInt32(TempData["UserRoleId"]);
+            int? CurrentStatus = Convert.ToInt32(TempData["CurrentStatus"]);
+            int? SubmitStatus = Convert.ToInt32(TempData["SubmitStatus"]);
+
+            if (Model.RecordStatusId == 1000)
+            {
+                <div class="col-lg-12">
+                    @Html.ActionLink("Forward", "Forward", "FixedAllowanceDetail", new { id = Model.FADID }, new { @class = "btn btn-primary" })
+                    <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-warning" />
+                    @Html.ActionLink("Back to List", "index", "FixedAllowanceDetail", new { id = Model.FADID }, new { @class = "btn btn-info" })
+                </div>
+            }
+            else if (Model.RecordStatusId == 2000 && (URID == CurrentStatus || CurrentStatus == 0))
+            {
+                if (CurrentStatus == 8)
+                {
+                    <div class="col-lg-12">
+                        @Html.ActionLink("Certify to ED", "Forward", "FixedAllowanceDetail", new { id = Model.FADID }, new { @class = "btn btn-success" })
+                        <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-warning" />
+                        @Html.ActionLink("Back to List", "index", "FixedAllowanceDetail", new { id = Model.FADID }, new { @class = "btn btn-info" })
+           
+                    </div>
+                }
+                else
+                {
+                    <div class="col-lg-12">            
+                        @Html.ActionLink("Forward", "Forward", "FixedAllowanceDetail", new { id = Model.FADID }, new { @class = "btn btn-primary" })
+                        <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-warning" />
+                        @Html.ActionLink("Back to List", "index", "FixedAllowanceDetail", new { id = Model.FADID }, new { @class = "btn btn-info" })
+                        
+                     </div>
+                }
+            }
+            else if (Model.RecordStatusId == 2000 && (URID == CurrentStatus && CurrentStatus != 1))
+            {
+                <div class="col-lg-12">
+                    @Html.ActionLink("Forward", "Forward", "FixedAllowanceDetail", new { id = Model.FADID }, new { @class = "btn btn-primary" })
+                    <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-warning" />
+                    @Html.ActionLink("Back to List", "index", "FixedAllowanceDetail", new { id = Model.FADID }, new { @class = "btn btn-info" })
+                </div>
+
+            }
+            else if (Model.RecordStatusId == 3000 && URID == CurrentStatus && CurrentStatus != 1)
+            {
+                <div class="col-lg-12">
+                    @*@Html.ActionLink("Forward", "Forward", "FixedAllowanceDetail", new { id = Model.FADID }, new { @class = "btn btn-primary" })*@
+                    <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-warning" />
+                    @Html.ActionLink("Back to List", "RejectList", "FixedAllowanceDetail", new { id = Model.FADID }, new { @class = "btn btn-info" })
+                </div>
+            }
+            else if (Model.RecordStatusId == 3000 && URID == CurrentStatus && CurrentStatus == 1)
+            {
+                <div class="col-lg-12">
+                    @Html.ActionLink("Reject Confirm", "RejectConfirm", "FixedAllowanceDetail", new { id = Model.FADID }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Back to List", "RejectList", "FixedAllowanceDetail", new { id = Model.FADID }, new { @class = "btn btn-info" })
+                </div>
+            }
+            else
+            {   
+                <div class="col-lg-12">
+                    @Html.ActionLink("Back to List", "RejectList", "FixedAllowanceDetail", new { id = Model.FADID }, new { @class = "btn btn-info" })
+                </div>
+            }
+        }
+        @*Fixed Details Id popup Box value*@
+        <input type="hidden" id="hndFADID" value="@Html.DisplayFor(model => model.FADID)" />
+        <input type="hidden" id="hndFMSID" value="@Html.DisplayFor(model => model.FMSID)" />
+
+    </section>
+
+    <section class="col-lg-12 connectedSortable">
+        <br />
+        <ol class="breadcrumb">
+            @{ dbContext _db = new dbContext(); }
+
+            @if (ViewData["AllFlowStatus"] != null)
+            {
+                int? CurrentStatus_UserRole;
+                string User;
+                int? LogingUserRoleId = Convert.ToInt32(TempData["UserRoleId"]);
+
+                if (TempData["CurrentStatusUserRole"] != null)
+                {
+                    CurrentStatus_UserRole = Convert.ToInt32(TempData["CurrentStatusUserRole"]);
+                }
+                else
+                {
+                    CurrentStatus_UserRole = null;
+                }
+
+              
+                foreach (var DDR_1 in ViewData["UserFlow_ToolTip"] as IList<Vw_FlowStatusUser_ToolTip>)
+                {                  
+
+                    User = DDR_1.ServiceNo + " - " + DDR_1.Rank + " " + DDR_1.Name;
+                    
+                                   if(CurrentStatus_UserRole==DDR_1.RID)
+                                    {                                    
+                                  <li class="active text-bold"> <a class="text-danger" href="#" title="">@DDR_1.RoleName</a></li>
+                                    }
+                                   else
+                                   {
+                                      <li class="active"> <a href="#" title="@User">@DDR_1.RoleName</a></li>    
+                                   }
+                }
+                
+            }
+            <li class="active"><a class="details" href="javascript:;" id="details">...Flow History</a></li>
+        </ol>
+    </section>
+</div>
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="border-bottom:none !important;">
+                Reject Comments
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <hr style="margin-top: 0px !important; margin-bottom: 0px !important; padding-bottom: 0px !important; padding-top: 0px !important; " />
+            </div>
+
+
+            <div class="modal-body" >
+                <div id="partial">
+                 @*//@{
+                     if (true)
+                     {
+                        @Html.Partial("_RejectComment") ;
+                     }
+                     else
+                     {
+                         @Html.Partial("_Ceased");     
+                     }
+                 }*@
+                    @Html.Partial("_RejectComment") ;
+                </div>
+            </div>
+
+         
+
+        </div>
+    </div>
+</div>            
+
+<div id="dialog" style="display: none; position:relative;">
+</div>
+
+
+
+
+<script type="text/javascript">
+
+    $(function () {
+        //Evoid Conflict of the two version jqery
+        //$.noConflict();
+        $("#dialog").dialog({
+            autoOpen: false,
+            modal: true,
+            title: "User Flow History...", height: 350, width: 800
+        });
+       
+        $("#details").click(function () {           
+            var FADID = $("#hndFADID").val();            
+            $.ajax({
+                type: "POST",
+                url: '@Url.Content("~/FixedAllowanceDetail/UserFlowHistory")',
+                data: '{FADID:"'+ FADID +'" }',
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (response) {                    
+                    $('#dialog').html(response);
+                    $('#dialog').dialog('open');
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        });
+
+    });
+</script>

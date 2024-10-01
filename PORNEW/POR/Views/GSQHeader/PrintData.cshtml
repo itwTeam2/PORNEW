@@ -1,0 +1,66 @@
+﻿
+
+@{
+    ViewBag.Title = "View And Print Data";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using POR.Models.LivingInOut;
+@model POR.Models.LivingInOut._GSQHeader
+
+<section id="about"></section>
+<div class="content-wrapper">
+
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+        @{
+            int serviceType = Convert.ToInt32(TempData["ServiceType"]);
+
+            switch (serviceType)
+            {
+                case (int)POR.Enum.ServiceType.RegOfficer:
+                case (int)POR.Enum.ServiceType.RegLadyOfficer:
+                case (int)POR.Enum.ServiceType.VolOfficer:
+                case (int)POR.Enum.ServiceType.VolLadyOfficer:
+
+                    <div class="form-group">
+                        @*@Html.ActionLink("Back to List", "Index", "P2LivingInOut", new { @class = "btn btn-warning pull-right" })*@
+                        @Html.RouteLink("Back to List", new { action = "Index", controller = "P2GSQHeader", @class = "btn btn-warning pull-right" })                     
+                    </div>
+                    break;
+
+                default:
+
+                   <div class="form-group">
+                        @Html.RouteLink("Back to List", new { action = "IndexAllocateMQ", controller = "GSQHeader", @class = "btn btn-warning pull-right" })
+                        @*@Html.ActionLink("Back to List", "IndexLivingINOutStatus", "LivingInOut", new { @class = "btn btn-warning pull-right" })*@
+                    </div>
+                    break;
+            }
+
+        }        
+
+        <div style="margin-top:50px">
+            @using (Html.BeginForm("PrintData", "GSQHeader", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="row">
+                    <iframe src="~/Report/LivinInOut/GSQDetailPrint.aspx" width="1100" height="750"></iframe>
+                </div>
+            }
+        </div>
+
+
+
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+@section Scripts
+{
+
+}
+
+
+

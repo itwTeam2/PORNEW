@@ -1,0 +1,47 @@
+﻿@model POR.Models.LeaveModel.Leave
+@Scripts.Render("~/bundles/jquery")
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="col-lg-12 no-padding">
+        <div class="form-group">
+            @Html.Label("Weekend", new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.LeaveDetail_.Weekend_Disc, new { @class = "form-control", autocomplete = "off", @Readonly = "readonly", placeholder = "", MaxLength = "10" })
+            @Html.HiddenFor(model => model.LeaveDetail_.Weekend, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.LeaveDetail_.Weekend_Disc)
+        </div>
+        <div class="form-group">
+            @Html.Label("Public Holiday", new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.LeaveDetail_.PublicHoliday, new { @class = "form-control", autocomplete = "off", @Readonly = "readonly", placeholder = "", MaxLength = "10" })
+            @Html.ValidationMessageFor(model => model.LeaveDetail_.PublicHoliday)
+        </div>
+        <div class="form-group">
+            @Html.Label("Accumulated Leave", new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.LeaveDetail_.AnnualLeave, new { @class = "form-control", autocomplete = "off", placeholder = "", MaxLength = "10" })
+            @Html.ValidationMessageFor(model => model.LeaveDetail_.AnnualLeave)
+        </div>
+        <div class="form-group">
+            @Html.Label("Privilege Leave", new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.LeaveDetail_.PrivilegeLeave, new { @class = "form-control", autocomplete = "off", placeholder = "", MaxLength = "10" })
+            @Html.ValidationMessageFor(model => model.LeaveDetail_.PrivilegeLeave)
+        </div>
+        <div class="form-group">
+            @Html.Label("Casual Leave", new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.LeaveDetail_.CasualLeave, new { @class = "form-control", autocomplete = "off", placeholder = "", MaxLength = "10", id = "CasualLeaveId" })
+            @Html.ValidationMessageFor(model => model.LeaveDetail_.CasualLeave)
+        </div>  
+        <div class="form-group">
+            @Html.Label("Lieu Leave", new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.LeaveDetail_.LeaveLeave, new { @class = "form-control", autocomplete = "off", placeholder = "", MaxLength = "10", id = "LeaveLeaveId" })
+            @Html.ValidationMessageFor(model => model.LeaveHeader_.TotalDays)
+        </div>     
+        <div class="form-group">
+            @Html.Label("Re-engagement", new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.LeaveDetail_.Re_engagement, new { @class = "form-control", autocomplete = "off", placeholder = "", MaxLength = "10", id = "Re_engagementId" })
+            @Html.ValidationMessageFor(model => model.LeaveDetail_.Re_engagement)
+        </div>     
+       
+    </div>
+}

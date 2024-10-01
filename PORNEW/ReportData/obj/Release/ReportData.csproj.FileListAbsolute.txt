@@ -1,0 +1,5 @@
+D:\TFS2021\PORNEW\ReportData\bin\ReportData.dll.config
+D:\TFS2021\PORNEW\ReportData\bin\ReportData.dll
+D:\TFS2021\PORNEW\ReportData\bin\ReportData.pdb
+D:\TFS2021\PORNEW\ReportData\obj\Release\ReportData.dll
+D:\TFS2021\PORNEW\ReportData\obj\Release\ReportData.pdb

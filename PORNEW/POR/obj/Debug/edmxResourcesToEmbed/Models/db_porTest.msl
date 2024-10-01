@@ -1,0 +1,1072 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PORModel1StoreContainer" CdmEntityContainer="dbContext_">
+    <EntitySetMapping Name="Allowances">
+      <EntityTypeMapping TypeName="PORModel1.Allowance">
+        <MappingFragment StoreEntitySet="Allowance">
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ReferenceItem" ColumnName="ReferenceItem" />
+          <ScalarProperty Name="ProcessType" ColumnName="ProcessType" />
+          <ScalarProperty Name="CalculateType" ColumnName="CalculateType" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="AllowanceDuration" ColumnName="AllowanceDuration" />
+          <ScalarProperty Name="IsOR" ColumnName="IsOR" />
+          <ScalarProperty Name="IsOfficer" ColumnName="IsOfficer" />
+          <ScalarProperty Name="AllowanceShortName" ColumnName="AllowanceShortName" />
+          <ScalarProperty Name="AllowanceName" ColumnName="AllowanceName" />
+          <ScalarProperty Name="SECID" ColumnName="SECID" />
+          <ScalarProperty Name="ALWID" ColumnName="ALWID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllowanceCategories">
+      <EntityTypeMapping TypeName="PORModel1.AllowanceCategory">
+        <MappingFragment StoreEntitySet="AllowanceCategory">
+          <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AllowanceId" ColumnName="AllowanceId" />
+          <ScalarProperty Name="ACID" ColumnName="ACID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllowanceItemCodes">
+      <EntityTypeMapping TypeName="PORModel1.AllowanceItemCode">
+        <MappingFragment StoreEntitySet="AllowanceItemCode">
+          <ScalarProperty Name="CalculateType" ColumnName="CalculateType" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="AllowanceId" ColumnName="AllowanceId" />
+          <ScalarProperty Name="AICID" ColumnName="AICID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllowancePaymentTypes">
+      <EntityTypeMapping TypeName="PORModel1.AllowancePaymentType">
+        <MappingFragment StoreEntitySet="AllowancePaymentType">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+          <ScalarProperty Name="AllowanceId" ColumnName="AllowanceId" />
+          <ScalarProperty Name="APID" ColumnName="APID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllowanceValues">
+      <EntityTypeMapping TypeName="PORModel1.AllowanceValue">
+        <MappingFragment StoreEntitySet="AllowanceValue">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="ORAmount" ColumnName="ORAmount" />
+          <ScalarProperty Name="OfficerAmount" ColumnName="OfficerAmount" />
+          <ScalarProperty Name="AllowanceCategoryId" ColumnName="AllowanceCategoryId" />
+          <ScalarProperty Name="AllowanceID" ColumnName="AllowanceID" />
+          <ScalarProperty Name="AVID" ColumnName="AVID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllowanceValueRanks">
+      <EntityTypeMapping TypeName="PORModel1.AllowanceValueRank">
+        <MappingFragment StoreEntitySet="AllowanceValueRank">
+          <ScalarProperty Name="RankAllowanceValue" ColumnName="RankAllowanceValue" />
+          <ScalarProperty Name="RankID" ColumnName="RankID" />
+          <ScalarProperty Name="AllowanceValueID" ColumnName="AllowanceValueID" />
+          <ScalarProperty Name="AVRID" ColumnName="AVRID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnnualLeavePlans">
+      <EntityTypeMapping TypeName="PORModel1.AnnualLeavePlan">
+        <MappingFragment StoreEntitySet="AnnualLeavePlan">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="TotalLeaveDays" ColumnName="TotalLeaveDays" />
+          <ScalarProperty Name="TotalLeaveMonth" ColumnName="TotalLeaveMonth" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="LeaveCategoryID" ColumnName="LeaveCategoryID" />
+          <ScalarProperty Name="ALPID" ColumnName="ALPID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Appointments">
+      <EntityTypeMapping TypeName="PORModel1.Appointment">
+        <MappingFragment StoreEntitySet="Appointment">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AppointmentName" ColumnName="AppointmentName" />
+          <ScalarProperty Name="AID" ColumnName="AID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DirectItems">
+      <EntityTypeMapping TypeName="PORModel1.DirectItem">
+        <MappingFragment StoreEntitySet="DirectItem">
+          <ScalarProperty Name="LongName" ColumnName="LongName" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FixAllowanceDetailsFlowStatus">
+      <EntityTypeMapping TypeName="PORModel1.FixAllowanceDetailsFlowStatu">
+        <MappingFragment StoreEntitySet="FixAllowanceDetailsFlowStatus">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="RecordStatusId" ColumnName="RecordStatusId" />
+          <ScalarProperty Name="FMSID" ColumnName="FMSID" />
+          <ScalarProperty Name="FADID" ColumnName="FADID" />
+          <ScalarProperty Name="FADFID" ColumnName="FADFID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FixedAllowanceCancels">
+      <EntityTypeMapping TypeName="PORModel1.FixedAllowanceCancel">
+        <MappingFragment StoreEntitySet="FixedAllowanceCancel">
+          <ScalarProperty Name="CancelAuthorityEffectiveDate" ColumnName="CancelAuthorityEffectiveDate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="CancelAuthorityDate" ColumnName="CancelAuthorityDate" />
+          <ScalarProperty Name="CancelAuthority" ColumnName="CancelAuthority" />
+          <ScalarProperty Name="FixedAllowanceDetailId" ColumnName="FixedAllowanceDetailId" />
+          <ScalarProperty Name="FACID" ColumnName="FACID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FixedAllowanceCancelManuals">
+      <EntityTypeMapping TypeName="PORModel1.FixedAllowanceCancelManual">
+        <MappingFragment StoreEntitySet="FixedAllowanceCancelManual">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FixedAllowanceDetails">
+      <EntityTypeMapping TypeName="PORModel1.FixedAllowanceDetail">
+        <MappingFragment StoreEntitySet="FixedAllowanceDetail">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="EstablishmentId" ColumnName="EstablishmentId" />
+          <ScalarProperty Name="IsProcessed" ColumnName="IsProcessed" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="CampAuthorityDate" ColumnName="CampAuthorityDate" />
+          <ScalarProperty Name="CampAuthority" ColumnName="CampAuthority" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="FullHalfPay" ColumnName="FullHalfPay" />
+          <ScalarProperty Name="AllowanceId" ColumnName="AllowanceId" />
+          <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
+          <ScalarProperty Name="RankId" ColumnName="RankId" />
+          <ScalarProperty Name="AllowanceCategoryID" ColumnName="AllowanceCategoryID" />
+          <ScalarProperty Name="ServiceCategoryId" ColumnName="ServiceCategoryId" />
+          <ScalarProperty Name="FADID" ColumnName="FADID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FixedAllowanceEligibleLists">
+      <EntityTypeMapping TypeName="PORModel1.FixedAllowanceEligibleList">
+        <MappingFragment StoreEntitySet="FixedAllowanceEligibleList">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="AllowanceId" ColumnName="AllowanceId" />
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="ELFAID" ColumnName="ELFAID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FlowManagementStatus">
+      <EntityTypeMapping TypeName="PORModel1.FlowManagementStatu">
+        <MappingFragment StoreEntitySet="FlowManagementStatus">
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="SubmitStatus" ColumnName="SubmitStatus" />
+          <ScalarProperty Name="CurrentStatus" ColumnName="CurrentStatus" />
+          <ScalarProperty Name="RejectStatus" ColumnName="RejectStatus" />
+          <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
+          <ScalarProperty Name="EstablishmentId" ColumnName="EstablishmentId" />
+          <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+          <ScalarProperty Name="FMSID" ColumnName="FMSID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HolidayTypes">
+      <EntityTypeMapping TypeName="PORModel1.HolidayType">
+        <MappingFragment StoreEntitySet="HolidayType">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="HolidayTypeName" ColumnName="HolidayTypeName" />
+          <ScalarProperty Name="HTID" ColumnName="HTID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaveCategories">
+      <EntityTypeMapping TypeName="PORModel1.LeaveCategory">
+        <MappingFragment StoreEntitySet="LeaveCategory">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="LeaveCategoryShortName" ColumnName="LeaveCategoryShortName" />
+          <ScalarProperty Name="LeaveCategoryName" ColumnName="LeaveCategoryName" />
+          <ScalarProperty Name="LCID" ColumnName="LCID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaveDetails">
+      <EntityTypeMapping TypeName="PORModel1.LeaveDetail">
+        <MappingFragment StoreEntitySet="LeaveDetail">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="PublicHoliday" ColumnName="PublicHoliday" />
+          <ScalarProperty Name="Weekend" ColumnName="Weekend" />
+          <ScalarProperty Name="LeaveLeave" ColumnName="LeaveLeave" />
+          <ScalarProperty Name="AnnualLeave" ColumnName="AnnualLeave" />
+          <ScalarProperty Name="CasualLeave" ColumnName="CasualLeave" />
+          <ScalarProperty Name="PrivilegeLeave" ColumnName="PrivilegeLeave" />
+          <ScalarProperty Name="LeaveHeaderId" ColumnName="LeaveHeaderId" />
+          <ScalarProperty Name="LDID" ColumnName="LDID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaveFlowStatus">
+      <EntityTypeMapping TypeName="PORModel1.LeaveFlowStatu">
+        <MappingFragment StoreEntitySet="LeaveFlowStatus">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="RecordStatusId" ColumnName="RecordStatusId" />
+          <ScalarProperty Name="FMSID" ColumnName="FMSID" />
+          <ScalarProperty Name="LeaveHeaderId" ColumnName="LeaveHeaderId" />
+          <ScalarProperty Name="LFSID" ColumnName="LFSID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaveHeaders">
+      <EntityTypeMapping TypeName="PORModel1.LeaveHeader">
+        <MappingFragment StoreEntitySet="LeaveHeader">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="PorStatus" ColumnName="PorStatus" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="PaymentTypeId" ColumnName="PaymentTypeId" />
+          <ScalarProperty Name="TotalDays" ColumnName="TotalDays" />
+          <ScalarProperty Name="DeivisionId" ColumnName="DeivisionId" />
+          <ScalarProperty Name="EstablishmentId" ColumnName="EstablishmentId" />
+          <ScalarProperty Name="LeaveCategoryId" ColumnName="LeaveCategoryId" />
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="ServiceCategoryId" ColumnName="ServiceCategoryId" />
+          <ScalarProperty Name="LHID" ColumnName="LHID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaveTypes">
+      <EntityTypeMapping TypeName="PORModel1.LeaveType">
+        <MappingFragment StoreEntitySet="LeaveType">
+          <ScalarProperty Name="LeaveTypeName" ColumnName="LeaveTypeName" />
+          <ScalarProperty Name="LTID" ColumnName="LTID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LivingStatus">
+      <EntityTypeMapping TypeName="PORModel1.LivingStatu">
+        <MappingFragment StoreEntitySet="LivingStatus">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="LivingStatusName" ColumnName="LivingStatusName" />
+          <ScalarProperty Name="LivingStatusShortName" ColumnName="LivingStatusShortName" />
+          <ScalarProperty Name="LSID" ColumnName="LSID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="PORModel1.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="LocationTypeId" ColumnName="LocationTypeId" />
+          <ScalarProperty Name="LID" ColumnName="LID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationTypes">
+      <EntityTypeMapping TypeName="PORModel1.LocationType">
+        <MappingFragment StoreEntitySet="LocationType">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LocationTypeName" ColumnName="LocationTypeName" />
+          <ScalarProperty Name="LTID" ColumnName="LTID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaritalStatus">
+      <EntityTypeMapping TypeName="PORModel1.MaritalStatu">
+        <MappingFragment StoreEntitySet="MaritalStatus">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="MaritalStatusName" ColumnName="MaritalStatusName" />
+          <ScalarProperty Name="MSID" ColumnName="MSID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MovementConditions">
+      <EntityTypeMapping TypeName="PORModel1.MovementCondition">
+        <MappingFragment StoreEntitySet="MovementCondition">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="MovementConditionName" ColumnName="MovementConditionName" />
+          <ScalarProperty Name="MCID" ColumnName="MCID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MovementStatus">
+      <EntityTypeMapping TypeName="PORModel1.MovementStatu">
+        <MappingFragment StoreEntitySet="MovementStatus">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="MovementStatusName" ColumnName="MovementStatusName" />
+          <ScalarProperty Name="MSID" ColumnName="MSID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentTypes">
+      <EntityTypeMapping TypeName="PORModel1.PaymentType">
+        <MappingFragment StoreEntitySet="PaymentType">
+          <ScalarProperty Name="PaymentTypeName" ColumnName="PaymentTypeName" />
+          <ScalarProperty Name="PTID" ColumnName="PTID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayStatus">
+      <EntityTypeMapping TypeName="PORModel1.PayStatu">
+        <MappingFragment StoreEntitySet="PayStatus">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="PayStatusName" ColumnName="PayStatusName" />
+          <ScalarProperty Name="PSID" ColumnName="PSID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PorModules">
+      <EntityTypeMapping TypeName="PORModel1.PorModule">
+        <MappingFragment StoreEntitySet="PorModule">
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="MID" ColumnName="MID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProcessDetails">
+      <EntityTypeMapping TypeName="PORModel1.ProcessDetail">
+        <MappingFragment StoreEntitySet="ProcessDetail">
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="FixedAllowanceDetailId" ColumnName="FixedAllowanceDetailId" />
+          <ScalarProperty Name="ProcessHeaderId" ColumnName="ProcessHeaderId" />
+          <ScalarProperty Name="PDID" ColumnName="PDID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProcessHeaders">
+      <EntityTypeMapping TypeName="PORModel1.ProcessHeader">
+        <MappingFragment StoreEntitySet="ProcessHeader">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ProcessStatus" ColumnName="ProcessStatus" />
+          <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+          <ScalarProperty Name="PHID" ColumnName="PHID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PublicHolidayCalenders">
+      <EntityTypeMapping TypeName="PORModel1.PublicHolidayCalender">
+        <MappingFragment StoreEntitySet="PublicHolidayCalender">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="ApplicableDate" ColumnName="ApplicableDate" />
+          <ScalarProperty Name="HolidayTypeId" ColumnName="HolidayTypeId" />
+          <ScalarProperty Name="PHCID" ColumnName="PHCID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RationStatus">
+      <EntityTypeMapping TypeName="PORModel1.RationStatu">
+        <MappingFragment StoreEntitySet="RationStatus">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="RationStatusName" ColumnName="RationStatusName" />
+          <ScalarProperty Name="RSID" ColumnName="RSID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecordStatus">
+      <EntityTypeMapping TypeName="PORModel1.RecordStatu">
+        <MappingFragment StoreEntitySet="RecordStatus">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="RecordStatusName" ColumnName="RecordStatusName" />
+          <ScalarProperty Name="RSID" ColumnName="RSID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecurityQuestions">
+      <EntityTypeMapping TypeName="PORModel1.SecurityQuestion">
+        <MappingFragment StoreEntitySet="SecurityQuestion">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="SQID" ColumnName="SQID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceCategories">
+      <EntityTypeMapping TypeName="PORModel1.ServiceCategory">
+        <MappingFragment StoreEntitySet="ServiceCategory">
+          <ScalarProperty Name="ServiceCategoryName" ColumnName="ServiceCategoryName" />
+          <ScalarProperty Name="ServiceCategoryId" ColumnName="ServiceCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceTypes">
+      <EntityTypeMapping TypeName="PORModel1.ServiceType">
+        <MappingFragment StoreEntitySet="ServiceType">
+          <ScalarProperty Name="ServiceTypeName" ColumnName="ServiceTypeName" />
+          <ScalarProperty Name="STID" ColumnName="STID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="PORModel1.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemLogs">
+      <EntityTypeMapping TypeName="PORModel1.SystemLog">
+        <MappingFragment StoreEntitySet="SystemLog">
+          <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+          <ScalarProperty Name="LoginIP" ColumnName="LoginIP" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LID" ColumnName="LID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tests">
+      <EntityTypeMapping TypeName="PORModel1.test">
+        <MappingFragment StoreEntitySet="test">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDetails">
+      <EntityTypeMapping TypeName="PORModel1.UserDetail">
+        <MappingFragment StoreEntitySet="UserDetail">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="UDID" ColumnName="UDID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfoes">
+      <EntityTypeMapping TypeName="PORModel1.UserInfo">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="SecurityQuestionAnswer" ColumnName="SecurityQuestionAnswer" />
+          <ScalarProperty Name="SecurityQuestionId" ColumnName="SecurityQuestionId" />
+          <ScalarProperty Name="LocationType" ColumnName="LocationType" />
+          <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="UID" ColumnName="UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPermissions">
+      <EntityTypeMapping TypeName="PORModel1.UserPermission">
+        <MappingFragment StoreEntitySet="UserPermission">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="RejectRecord" ColumnName="RejectRecord" />
+          <ScalarProperty Name="ForwardRecord" ColumnName="ForwardRecord" />
+          <ScalarProperty Name="CreateRecord" ColumnName="CreateRecord" />
+          <ScalarProperty Name="AllowRAF" ColumnName="AllowRAF" />
+          <ScalarProperty Name="AllowVAF" ColumnName="AllowVAF" />
+          <ScalarProperty Name="AccessLocationId" ColumnName="AccessLocationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UPID" ColumnName="UPID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="PORModel1.UserRole">
+        <MappingFragment StoreEntitySet="UserRole">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="PorModuleId" ColumnName="PorModuleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RID" ColumnName="RID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PorObjects">
+      <EntityTypeMapping TypeName="PORModel1.PorObject">
+        <MappingFragment StoreEntitySet="PorObject">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Objects_Name" ColumnName="Objects_Name" />
+          <ScalarProperty Name="RID" ColumnName="RID" />
+          <ScalarProperty Name="OID" ColumnName="OID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PorYears">
+      <EntityTypeMapping TypeName="PORModel1.PorYear">
+        <MappingFragment StoreEntitySet="PorYear">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PorYear1" ColumnName="PorYear" />
+          <ScalarProperty Name="YD" ColumnName="YD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProcessDetail_History">
+      <EntityTypeMapping TypeName="PORModel1.ProcessDetail_History">
+        <MappingFragment StoreEntitySet="ProcessDetail_History">
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="FixedAllowanceDetailId" ColumnName="FixedAllowanceDetailId" />
+          <ScalarProperty Name="ProcessHeaderId" ColumnName="ProcessHeaderId" />
+          <ScalarProperty Name="PDID" ColumnName="PDID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F1250">
+      <EntityTypeMapping TypeName="PORModel1.F1250">
+        <MappingFragment StoreEntitySet="F1250">
+          <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
+          <ScalarProperty Name="LivingIn_Out" ColumnName="LivingIn_Out" />
+          <ScalarProperty Name="Posted_Formation" ColumnName="Posted_Formation" />
+          <ScalarProperty Name="ID_EXP_DAT" ColumnName="ID_EXP_DAT" />
+          <ScalarProperty Name="Posted_Location" ColumnName="Posted_Location" />
+          <ScalarProperty Name="RptShortName" ColumnName="RptShortName" />
+          <ScalarProperty Name="RNK_NAME" ColumnName="RNK_NAME" />
+          <ScalarProperty Name="DateOfEnlist" ColumnName="DateOfEnlist" />
+          <ScalarProperty Name="NO_OF_CARDS" ColumnName="NO_OF_CARDS" />
+          <ScalarProperty Name="SER_NO_CARD" ColumnName="SER_NO_CARD" />
+          <ScalarProperty Name="BATCH_NO" ColumnName="BATCH_NO" />
+          <ScalarProperty Name="DTE_ISU" ColumnName="DTE_ISU" />
+          <ScalarProperty Name="NICNo_New" ColumnName="NICNo_New" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="SVCType" ColumnName="SVCType" />
+          <ScalarProperty Name="ServicingStatus" ColumnName="ServicingStatus" />
+          <ScalarProperty Name="Service_Status" ColumnName="Service_Status" />
+          <ScalarProperty Name="Service_Type" ColumnName="Service_Type" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="EXPIRES_DTE" ColumnName="EXPIRES_DTE" />
+          <ScalarProperty Name="Expire_Date" ColumnName="Expire_Date" />
+          <ScalarProperty Name="BirthMark" ColumnName="BirthMark" />
+          <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+          <ScalarProperty Name="ColourofEyes" ColumnName="ColourofEyes" />
+          <ScalarProperty Name="ColourofHair" ColumnName="ColourofHair" />
+          <ScalarProperty Name="Inch" ColumnName="Inch" />
+          <ScalarProperty Name="Feet" ColumnName="Feet" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="NICNo" ColumnName="NICNo" />
+          <ScalarProperty Name="Branch_Trade" ColumnName="Branch_Trade" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Initials" ColumnName="Initials" />
+          <ScalarProperty Name="F12501" ColumnName="F1250" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="ActiveNo" ColumnName="ActiveNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_DirectItem">
+      <EntityTypeMapping TypeName="PORModel1.Vw_DirectItem">
+        <MappingFragment StoreEntitySet="Vw_DirectItem">
+          <ScalarProperty Name="LongName" ColumnName="LongName" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_FAEligibleList">
+      <EntityTypeMapping TypeName="PORModel1.Vw_FAEligibleList">
+        <MappingFragment StoreEntitySet="Vw_FAEligibleList">
+          <ScalarProperty Name="RankID" ColumnName="RankID" />
+          <ScalarProperty Name="PostedLocation" ColumnName="PostedLocation" />
+          <ScalarProperty Name="ELFAID" ColumnName="ELFAID" />
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="AllowanceName" ColumnName="AllowanceName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_FixedAllowance_FLowStatus">
+      <EntityTypeMapping TypeName="PORModel1.Vw_FixedAllowance_FLowStatus">
+        <MappingFragment StoreEntitySet="Vw_FixedAllowance_FLowStatus">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="FMSID" ColumnName="FMSID" />
+          <ScalarProperty Name="Service_Type" ColumnName="Service_Type" />
+          <ScalarProperty Name="AllowanceName" ColumnName="AllowanceName" />
+          <ScalarProperty Name="RankID" ColumnName="RankID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="RecordStatusId" ColumnName="RecordStatusId" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="CampAuthorityDate" ColumnName="CampAuthorityDate" />
+          <ScalarProperty Name="CampAuthority" ColumnName="CampAuthority" />
+          <ScalarProperty Name="AllowanceCategoryID" ColumnName="AllowanceCategoryID" />
+          <ScalarProperty Name="AllowanceId" ColumnName="AllowanceId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+          <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
+          <ScalarProperty Name="FADID" ColumnName="FADID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_FixedAllowanceDetail">
+      <EntityTypeMapping TypeName="PORModel1.Vw_FixedAllowanceDetail">
+        <MappingFragment StoreEntitySet="Vw_FixedAllowanceDetail">
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="RecordStatusId" ColumnName="RecordStatusId" />
+          <ScalarProperty Name="FADFID" ColumnName="FADFID" />
+          <ScalarProperty Name="ALWID" ColumnName="ALWID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="FMSID" ColumnName="FMSID" />
+          <ScalarProperty Name="FullHalfPay" ColumnName="FullHalfPay" />
+          <ScalarProperty Name="SubmitStatus" ColumnName="SubmitStatus" />
+          <ScalarProperty Name="CurrentStatus" ColumnName="CurrentStatus" />
+          <ScalarProperty Name="RejectStatus" ColumnName="RejectStatus" />
+          <ScalarProperty Name="EstablishmentId" ColumnName="EstablishmentId" />
+          <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RankID" ColumnName="RankID" />
+          <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="FADID" ColumnName="FADID" />
+          <ScalarProperty Name="AllowanceId" ColumnName="AllowanceId" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="CampAuthorityDate" ColumnName="CampAuthorityDate" />
+          <ScalarProperty Name="CampAuthority" ColumnName="CampAuthority" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="AllowanceName" ColumnName="AllowanceName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
+          <ScalarProperty Name="Service_Type" ColumnName="Service_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_FlowStatus">
+      <EntityTypeMapping TypeName="PORModel1.Vw_FlowStatus">
+        <MappingFragment StoreEntitySet="Vw_FlowStatus">
+          <ScalarProperty Name="FMSID" ColumnName="FMSID" />
+          <ScalarProperty Name="SubmitStatus" ColumnName="SubmitStatus" />
+          <ScalarProperty Name="CurrentStatus" ColumnName="CurrentStatus" />
+          <ScalarProperty Name="RejectStatus" ColumnName="RejectStatus" />
+          <ScalarProperty Name="EstablishmentId" ColumnName="EstablishmentId" />
+          <ScalarProperty Name="RID" ColumnName="RID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_FlowStatusUser_ToolTip">
+      <EntityTypeMapping TypeName="PORModel1.Vw_FlowStatusUser_ToolTip">
+        <MappingFragment StoreEntitySet="Vw_FlowStatusUser_ToolTip">
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="RID" ColumnName="RID" />
+          <ScalarProperty Name="FADFID" ColumnName="FADFID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+          <ScalarProperty Name="FADID" ColumnName="FADID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_Holiday">
+      <EntityTypeMapping TypeName="PORModel1.Vw_Holiday">
+        <MappingFragment StoreEntitySet="Vw_Holiday">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="ApplicableDate" ColumnName="ApplicableDate" />
+          <ScalarProperty Name="PHCID" ColumnName="PHCID" />
+          <ScalarProperty Name="HolidayTypeName" ColumnName="HolidayTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_Leave">
+      <EntityTypeMapping TypeName="PORModel1.Vw_Leave">
+        <MappingFragment StoreEntitySet="Vw_Leave">
+          <ScalarProperty Name="EstablishmentId_" ColumnName="EstablishmentId_" />
+          <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
+          <ScalarProperty Name="DeivisionId" ColumnName="DeivisionId" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="SubmitStatus" ColumnName="SubmitStatus" />
+          <ScalarProperty Name="RejectStatus" ColumnName="RejectStatus" />
+          <ScalarProperty Name="CurrentStatus" ColumnName="CurrentStatus" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="RecordStatusId" ColumnName="RecordStatusId" />
+          <ScalarProperty Name="FMSID" ColumnName="FMSID" />
+          <ScalarProperty Name="LFSID" ColumnName="LFSID" />
+          <ScalarProperty Name="RankID" ColumnName="RankID" />
+          <ScalarProperty Name="EstablishmentId" ColumnName="EstablishmentId" />
+          <ScalarProperty Name="Formation" ColumnName="Formation" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="PorStatus" ColumnName="PorStatus" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="PaymentTypeId" ColumnName="PaymentTypeId" />
+          <ScalarProperty Name="TotalDays" ColumnName="TotalDays" />
+          <ScalarProperty Name="LeaveCategoryId" ColumnName="LeaveCategoryId" />
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="ServiceCategoryId" ColumnName="ServiceCategoryId" />
+          <ScalarProperty Name="LHID" ColumnName="LHID" />
+          <ScalarProperty Name="LeaveCategoryName" ColumnName="LeaveCategoryName" />
+          <ScalarProperty Name="ServiceCategoryName" ColumnName="ServiceCategoryName" />
+          <ScalarProperty Name="PaymentTypeName" ColumnName="PaymentTypeName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_LeaveDetail">
+      <EntityTypeMapping TypeName="PORModel1.Vw_LeaveDetail">
+        <MappingFragment StoreEntitySet="Vw_LeaveDetail">
+          <ScalarProperty Name="SubRank" ColumnName="SubRank" />
+          <ScalarProperty Name="Formation" ColumnName="Formation" />
+          <ScalarProperty Name="DateOfEnlist" ColumnName="DateOfEnlist" />
+          <ScalarProperty Name="service_type" ColumnName="service_type" />
+          <ScalarProperty Name="Service_Status" ColumnName="Service_Status" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="DischargeDate" ColumnName="DischargeDate" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="PostedLocation" ColumnName="PostedLocation" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="RankID" ColumnName="RankID" />
+          <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+          <ScalarProperty Name="Expr8" ColumnName="Expr8" />
+          <ScalarProperty Name="Expr7" ColumnName="Expr7" />
+          <ScalarProperty Name="Expr6" ColumnName="Expr6" />
+          <ScalarProperty Name="Expr5" ColumnName="Expr5" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="PorStatus" ColumnName="PorStatus" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="PaymentTypeId" ColumnName="PaymentTypeId" />
+          <ScalarProperty Name="TotalDays" ColumnName="TotalDays" />
+          <ScalarProperty Name="LeaveCategoryId" ColumnName="LeaveCategoryId" />
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="ServiceCategoryId" ColumnName="ServiceCategoryId" />
+          <ScalarProperty Name="LHID" ColumnName="LHID" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ModifiedMac" ColumnName="ModifiedMac" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedMac" ColumnName="CreatedMac" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="PublicHoliday" ColumnName="PublicHoliday" />
+          <ScalarProperty Name="Weekend" ColumnName="Weekend" />
+          <ScalarProperty Name="LeaveLeave" ColumnName="LeaveLeave" />
+          <ScalarProperty Name="AnnualLeave" ColumnName="AnnualLeave" />
+          <ScalarProperty Name="CasualLeave" ColumnName="CasualLeave" />
+          <ScalarProperty Name="PrivilegeLeave" ColumnName="PrivilegeLeave" />
+          <ScalarProperty Name="LeaveHeaderId" ColumnName="LeaveHeaderId" />
+          <ScalarProperty Name="LDID" ColumnName="LDID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_LeavePlan">
+      <EntityTypeMapping TypeName="PORModel1.Vw_LeavePlan">
+        <MappingFragment StoreEntitySet="Vw_LeavePlan">
+          <ScalarProperty Name="ALPID" ColumnName="ALPID" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="LeaveCategoryShortName" ColumnName="LeaveCategoryShortName" />
+          <ScalarProperty Name="LeaveCategoryName" ColumnName="LeaveCategoryName" />
+          <ScalarProperty Name="TotalLeaveDays" ColumnName="TotalLeaveDays" />
+          <ScalarProperty Name="TotalLeaveMonth" ColumnName="TotalLeaveMonth" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="LeaveCategoryID" ColumnName="LeaveCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_P2PersonalDetail">
+      <EntityTypeMapping TypeName="PORModel1.Vw_P2PersonalDetail">
+        <MappingFragment StoreEntitySet="Vw_P2PersonalDetail">
+          <ScalarProperty Name="CurrentLocation" ColumnName="CurrentLocation" />
+          <ScalarProperty Name="SubRank" ColumnName="SubRank" />
+          <ScalarProperty Name="Formation" ColumnName="Formation" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="DateOfEnlist" ColumnName="DateOfEnlist" />
+          <ScalarProperty Name="Service_Type" ColumnName="Service_Type" />
+          <ScalarProperty Name="Service_Status" ColumnName="Service_Status" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="DischargeDate" ColumnName="DischargeDate" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="PostedLocation" ColumnName="PostedLocation" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="RankID" ColumnName="RankID" />
+          <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_P3PersonalDetail">
+      <EntityTypeMapping TypeName="PORModel1.Vw_P3PersonalDetail">
+        <MappingFragment StoreEntitySet="Vw_P3PersonalDetail">
+          <ScalarProperty Name="CurrentLocation" ColumnName="CurrentLocation" />
+          <ScalarProperty Name="Formation" ColumnName="Formation" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="DateOfEnlist" ColumnName="DateOfEnlist" />
+          <ScalarProperty Name="Service_Type" ColumnName="Service_Type" />
+          <ScalarProperty Name="Service_Status" ColumnName="Service_Status" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="DischargeDate" ColumnName="DischargeDate" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="PostedLocation" ColumnName="PostedLocation" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="RankID" ColumnName="RankID" />
+          <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_PersonalDetail">
+      <EntityTypeMapping TypeName="PORModel1.Vw_PersonalDetail">
+        <MappingFragment StoreEntitySet="Vw_PersonalDetail">
+          <ScalarProperty Name="SubRank" ColumnName="SubRank" />
+          <ScalarProperty Name="Formation" ColumnName="Formation" />
+          <ScalarProperty Name="DateOfEnlist" ColumnName="DateOfEnlist" />
+          <ScalarProperty Name="service_type" ColumnName="service_type" />
+          <ScalarProperty Name="Service_Status" ColumnName="Service_Status" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="DischargeDate" ColumnName="DischargeDate" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="PostedLocation" ColumnName="PostedLocation" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="RankID" ColumnName="RankID" />
+          <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_RANKS">
+      <EntityTypeMapping TypeName="PORModel1.VW_RANKS">
+        <MappingFragment StoreEntitySet="VW_RANKS">
+          <ScalarProperty Name="TOTAL_SERVICE_FOR_PROMOTION_DE" ColumnName="TOTAL_SERVICE_FOR_PROMOTION_DE" />
+          <ScalarProperty Name="PromPaid" ColumnName="PromPaid" />
+          <ScalarProperty Name="NextAppProm" ColumnName="NextAppProm" />
+          <ScalarProperty Name="AppPromType" ColumnName="AppPromType" />
+          <ScalarProperty Name="AppProm" ColumnName="AppProm" />
+          <ScalarProperty Name="RankGroup" ColumnName="RankGroup" />
+          <ScalarProperty Name="TEMPORY_SUBSTANTIVE" ColumnName="TEMPORY_SUBSTANTIVE" />
+          <ScalarProperty Name="TOTAL_SERVICE_FOR_PROMOTION_DE_ACPL" ColumnName="TOTAL_SERVICE_FOR_PROMOTION_DE_ACPL" />
+          <ScalarProperty Name="TOTAL_SERVICE_FOR_PROMOTION_DE_LAC" ColumnName="TOTAL_SERVICE_FOR_PROMOTION_DE_LAC" />
+          <ScalarProperty Name="TOTAL_SERVICE_FOR_PROMOTION" ColumnName="TOTAL_SERVICE_FOR_PROMOTION" />
+          <ScalarProperty Name="PROMO_DURATION" ColumnName="PROMO_DURATION" />
+          <ScalarProperty Name="SENIORITY" ColumnName="SENIORITY" />
+          <ScalarProperty Name="LONG_NAME" ColumnName="LONG_NAME" />
+          <ScalarProperty Name="SHORT_NAME" ColumnName="SHORT_NAME" />
+          <ScalarProperty Name="RANK_TYPE" ColumnName="RANK_TYPE" />
+          <ScalarProperty Name="RNK_NAME" ColumnName="RNK_NAME" />
+          <ScalarProperty Name="RANK" ColumnName="RANK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_SelectUserRole">
+      <EntityTypeMapping TypeName="PORModel1.Vw_SelectUserRole">
+        <MappingFragment StoreEntitySet="Vw_SelectUserRole">
+          <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_UserFlowHistory">
+      <EntityTypeMapping TypeName="PORModel1.Vw_UserFlowHistory">
+        <MappingFragment StoreEntitySet="Vw_UserFlowHistory">
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="EstablishmentId" ColumnName="EstablishmentId" />
+          <ScalarProperty Name="FMSID" ColumnName="FMSID" />
+          <ScalarProperty Name="FADFID" ColumnName="FADFID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="RecordStatusId" ColumnName="RecordStatusId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="UDID" ColumnName="UDID" />
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="RID" ColumnName="RID" />
+          <ScalarProperty Name="FADID" ColumnName="FADID" />
+          <ScalarProperty Name="Formation" ColumnName="Formation" />
+          <ScalarProperty Name="PostedLocation" ColumnName="PostedLocation" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_UserProfile">
+      <EntityTypeMapping TypeName="PORModel1.Vw_UserProfile">
+        <MappingFragment StoreEntitySet="Vw_UserProfile">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="Formation" ColumnName="Formation" />
+          <ScalarProperty Name="PostedLocation" ColumnName="PostedLocation" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

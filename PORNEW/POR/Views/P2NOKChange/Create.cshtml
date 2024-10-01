@@ -1,0 +1,245 @@
+﻿@model POR.Models.Nok._NOKChangeHeader
+
+<link href="~/Content/CustomeStyle.css" rel="stylesheet" />
+<script src="~/Scripts/Jq.js"></script>
+<script src="~/Scripts/NOKChange.js"></script>
+@{
+    ViewBag.Title = "P2-NOK Change ";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1 style="text-align:center"><span>P2-NOK Change</span></h1>
+
+            <div id="ErrorMessage" style="margin-top:5px">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong> @TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong>@TempData["ErrMsg"]
+                    </div>
+                }
+            </div>
+
+        </section>
+        <br />
+
+        <section class="col-lg-6 connectedSortable">
+            <div class="nav-tabs-custom">
+                <div class="box-body">
+                    <div style="margin-top:-10px">
+                        <div class="box-body">
+                            <div>
+                                @*Service No and  @*Rank*@
+                                <div class="form-group">
+                                    <div class="col-lg-6">
+                                        @Html.Label("Service Number", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.ServiceNo, new { @class = "form-control ", autocomplete = "off" })
+                                        @Html.ValidationMessageFor(model => model.ServiceNo, string.Empty, new { @class = "label label-danger" })
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        @Html.Label("Rank", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.Rank, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                                    </div>
+                                </div>
+
+                                @*Name No and  Branch/Trade*@
+                                <div class="form-group">
+                                    <div class="col-lg-6">
+                                        @Html.Label("Name", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.FullName, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        @Html.Label("Branch/Trade", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.Trade, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+
+                                    </div>
+                                </div>
+
+                                @*NOK Name*@
+                                <div class="form-group">
+                                    @Html.Label("NOK Name", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.NOKName, new { @class = "form-control ", autocomplete = "off" })
+                                    @Html.ValidationMessageFor(model => model.NOKName, string.Empty, new { @class = "label label-danger" })
+                                </div>
+
+                                @*NOK Change Category*@
+                                <div class="form-group">
+                                    <div class="col-lg-5">
+                                        @Html.Label("NOK Change Category", new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.NOKChangeTo, ViewBag.DDL_Relationship as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                        @Html.HiddenFor(model => model.NOKChangeTo)
+                                        @Html.ValidationMessageFor(model => model.NOKChangeTo, string.Empty, new { @class = "label label-danger" })
+                                    </div>
+                                    <div class="col-lg-7">
+                                        @Html.Label("Authority", new { @class = "control-label" })
+                                        @Html.TextAreaFor(model => model.Authority, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                                        @Html.ValidationMessageFor(model => model.Authority, string.Empty, new { @class = "label label-danger" })
+                                    </div>
+
+                                </div>
+
+                                @*With Effect Date*@
+                                <div class="form-group">
+                                    @Html.Label("NOK With Effect Date", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.WFDate, new { @class = "form-control", @type = "date" })
+                                    @Html.ValidationMessageFor(model => model.WFDate, string.Empty, new { @class = "label label-danger" })
+                                </div>
+
+                                @*NOK Address*@
+                                <div class="form-group">
+                                    @Html.Label("NOK Address", new { @class = "control-label" })
+                                    @Html.TextAreaFor(model => model.NOKAddress, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                                    @Html.ValidationMessageFor(model => model.NOKAddress, string.Empty, new { @class = "label label-danger" })
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="col-lg-6 connectedSortable">
+            <div class="nav-tabs-custom">
+                <div class="box-body">
+                    <div class="box-body">
+                        @*District and GS*@
+                        <div class="form-group">
+                            @*District*@
+                            @Html.Label("Select District", new { @class = "control-label" })
+                            @Html.DropDownListFor(model => model.District, ViewBag.DDL_DistricSelectAll_Result as SelectList, "SELECT", htmlAttributes: new { @class = "form-control",@id = "DistId" })
+                            @Html.HiddenFor(model => model.DESCRIPTION, new { @class = "form-control ", autocomplete = "off" })
+                            @Html.ValidationMessageFor(model => model.District, string.Empty, new { @class = "label label-danger" })
+                        </div>
+
+                        @*GS Division*@
+                        <div class="form-group">
+                            @Html.Label("Select GS Division", new { @class = "control-label" })
+                            @Html.DropDownListFor(model => model.GSDivision, ViewBag.DDL_GSDivisionSelectAll_Result as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })                           
+                            @Html.ValidationMessageFor(model => model.GSDivision, string.Empty, new { @class = "label label-danger" })
+                        </div>
+
+                        @*Nearest Town*@
+                        <div class="form-group">
+                            @Html.Label("Select Nearest Town", new { @class = "control-label" })
+                            @Html.DropDownListFor(model => model.NearestTown, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.NearestTown, string.Empty, new { @class = "label label-danger" })
+                        </div>
+
+                        @*Police Station*@
+                        <div class="form-group">
+                            @Html.Label("Select Police Station", new { @class = "control-label" })
+                            @Html.DropDownListFor(model => model.PoliceStation, ViewBag.DDL_PoliceStation as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.PoliceStation, string.Empty, new { @class = "label label-danger" })
+                        </div>
+
+                        @*Post Office*@
+                        <div class="form-group">
+                            @Html.Label("Select Post Office", new { @class = "control-label" })
+                            @Html.DropDownListFor(model => model.PostOffice, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.PostOffice, string.Empty, new { @class = "label label-danger" })
+                        </div>
+
+                        @*Remarks*@
+                        <div class="form-group">
+                            @Html.Label("Remarks", new { @class = "control-label" })
+                            @Html.TextAreaFor(model => model.Remarks, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                            @Html.ValidationMessageFor(model => model.Remarks, string.Empty, new { @class = "label label-danger" })
+                        </div>
+
+                        <div>
+                            <div class="form-group">
+                                <section class="col-lg-6">
+                                    <button type="button" class="col-lg-4 btn btn-warning pull-right" id="btnYes" style="height:40px;width:200px" onclick="location.href='@Url.Action("Index", "P2NOKChange")'">
+                                        <span class="info-box-text"><i class=" fa fa-hand-o-left"></i> Go to Pending List</span>
+                                    </button>
+                                </section>
+
+                                <section class="col-lg-6">
+                                    <button type="submit" class="col-lg-4 btn btn-success pull-right" style="height:40px;width:200px">
+                                        <span class="info-box-text"><i class=" fa fa-save"></i> Save</span>
+                                    </button>
+                                    @*<i class=" fa fa-hand-o-left"><input type="submit" value="Save" class="btn btn-success pull-right submitBtn"></i>*@
+                                </section>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+}
+<script type="text/javascript">
+    //////////// P2 Section
+    //Select Town Relevant to the Distric this selection done using P2 HRMS include town related table
+    $(function () {
+        //DDL for Select
+        $("#DistId").change(function () {
+            //DDL Automaticaly Bind
+
+            $("#Town1").empty();
+            $.ajax({
+                type: 'POST',
+                dataType: "json",
+                url: '@Url.Content("~/P2NOKChange/FromTown")',
+                data: { id: $("#DistId").val() },
+                success: function (FromTown) {
+                    var items = '<option>SELECT</option>';
+                    $('#NearestTown').html(items);
+                    $.each(FromTown, function (i, FromTown) {
+                        $("#NearestTown").append('<option value="' + FromTown.Value + '">' +
+                           FromTown.Text + '</option>');
+                    });
+                },
+                error: function (ex) {
+                    alert('Failed to retrieve Make.' + ex);
+                }
+            });
+            return false;
+        })
+    });
+
+    //Select Post Office Relevant to the Distric
+    $(function () {
+        //DDL for Select
+        $("#DistId").change(function () {
+            //DDL Automaticaly Bind
+
+            $("#PostOfficeName").empty();
+            $.ajax({
+                type: 'POST',
+                dataType: "json",
+                url:'@Url.Content("~/P2NOKChange/FromPostOffice")',
+                data: { id: $("#DistId").val() },
+                success: function (FromTown) {
+                    var items = '<option>SELECT</option>';
+                    $('#PostOffice').html(items);
+                    $.each(FromTown, function (i, FromTown) {
+                        $("#PostOffice").append('<option value="' + FromTown.Value + '">' +
+                           FromTown.Text + '</option>');
+                    });
+                },
+                error: function (ex) {
+                    alert('Failed to retrieve Make.' + ex);
+                }
+            });
+            return false;
+        })
+    });
+
+</script>

@@ -1,0 +1,390 @@
+﻿@using POR.Models
+@model IEnumerable<POR.Models.F121._F121>
+
+@{
+    ViewBag.Title = "Details";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="content-wrapper" style="height:900px !important;">
+        <section class="content-header">
+            <h1>
+                F121
+                <small>View Added Details</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+            </ol>
+            <div id="ErrorMessage">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong> @TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong>@TempData["ErrMsg"]
+                    </div>
+
+                }
+
+            </div>
+        </section>
+        <br />
+
+
+        @foreach (var item in Model)
+        {
+
+
+            <section class="col-lg-6 connectedSortable">
+                <div class="nav-tabs-custom">
+                    @Html.ValidationSummary(true)
+                    <div class="box-body">
+                        <div>
+
+                            <dl class="dl-horizontal">
+                                @*Service No*@
+                                <dt class="form-group">
+                                    @Html.Label("Service No :", new { @class = "control-label" })
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.ServiceNo)
+
+                                </dd>
+
+                                @*Rank*@
+                                <dt class="form-group">
+                                    @Html.Label("Rank :", new { @class = "control-label" })
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.Rank)
+                                </dd>
+
+                                @*Full Name*@
+                                <dt class="form-group">
+                                    @Html.Label("Name :", new { @class = "control-label" })
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.Name)
+                                </dd>
+
+                                @*Location*@
+                                <dt class="form-group">
+                                    @Html.Label("Offence Place:", new { @class = "control-label" })
+
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.OffencePlace)
+                                </dd>
+
+                                @*From Date*@
+                                <dt class="form-group">
+                                    @Html.Label("Charge Date :", new { @class = "control-label" })
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.ChargeDate, "{dd/MM/yyyy}")
+                                </dd>
+
+                                @*To Date*@
+                                <dt class="form-group">
+                                    @Html.Label("Offence Name :", new { @class = "control-label" })
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.OffenceName, "{dd/MM/yyyy}")
+                                </dd>
+
+                                @*Authority*@
+                                <dt class="form-group">
+                                    @Html.Label("Offence WASO :", new { @class = "control-label" })
+
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.OffenceWASO)
+                                </dd>
+
+                                @*Category Name*@
+
+                                <dt class="form-group">
+                                    @Html.Label("Charge No :", new { @class = "control-label" })
+                                </dt>
+
+                                <dd>
+
+                                    @Html.DisplayFor(model => item.ChargeNo)
+                                </dd>
+
+                                @*Refference No*@
+                                <dt class="form-group">
+                                    @Html.Label("Offence Date  :", new { @class = "control-label" })
+
+                                </dt>
+
+                                <dd>
+
+                                    @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.OffenceDate))
+                                </dd>
+                                @*NOKName*@
+                                <dt class="form-group">
+                                    @Html.Label("Appointment :", new { @class = "control-label" })
+
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.Appointment)
+
+                                </dd>
+
+                                @*NOK Change to*@
+                                <dt class="form-group">
+                                    @Html.Label("Punishment :", new { @class = "control-label" })
+
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.Punishment)
+
+                                </dd>
+
+                                @*NOKaddress*@
+                                <dt class="form-group">
+                                    @Html.Label(" Punishment Description :", new { @class = "control-label" })
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.PunishmentDescription)
+                                </dd>
+                                @*With Effice Date*@
+                                <dt class="form-group">
+                                    @Html.Label("Punish Date :", new { @class = "control-label" })
+                                </dt>
+
+                                <dd>
+
+                                    @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.PunishDate))
+                                </dd>
+                                @*Comment*@
+                                <dt class="form-group">
+                                    @Html.Label("Comment :", new { @class = "control-label" })
+                                </dt>
+
+                                <dd>
+
+                                    @Html.DisplayFor(model => item.Comment)
+                                </dd>
+                            </dl>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+            <section class="col-lg-6">
+                <div class="nav-tabs-custom  alert alert-info" col-lg-12">
+                    <div class="box-body">
+                        <div style="margin-top:-10px">
+                            <div><p style="font-size:15px;text-align:center"><b><u>Wittness Persons Details</u></b></p></div>
+                            <table class="table">
+                                <tr>
+                                    <th style="display:none"></th>
+                                    <th>Service Number</th>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th></th>
+                                </tr>
+
+
+                                @foreach (var WittnessPerson in ViewBag.F252WittnessPerson)
+                                {
+                                    int WHID = WittnessPerson.WHID;
+
+                                    <tr>
+                                        <td style="display:none">@WittnessPerson.WHID</td>
+                                        <td>@WittnessPerson.Sno</td>
+                                        <td>@WittnessPerson.Title</td>
+                                        <td>@WittnessPerson.FullName</td>
+
+                                    </tr>
+
+                                }
+
+                            </table>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <div class="nav-tabs-custom alert alert-success" col-lg-12">
+
+                    <div class="box-body">
+                        <div style="margin-top:-10px">
+                            <div><p style="font-size:15px;text-align:center"><b><u>Document Details</u></b></p></div>
+                            <table class="table">
+                                <tr>
+                                    <th style="display:none"></th>
+                                    <th>Document Name</th>
+                                    <th></th>
+                                </tr>
+
+
+                                @foreach (var WitnessDocuments in ViewBag.WitnessDocuments)
+                                {
+                                    int WHID = WitnessDocuments.WHID;
+
+                                    <tr>
+                                        <td style="display:none">@WitnessDocuments.WHID</td>
+                                        <td>@WitnessDocuments.DetailsOfDocument</td>
+
+                                    </tr>
+
+                                }
+
+                            </table>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </section>
+                <section>
+
+                    @{
+                        int? URID = Convert.ToInt32(TempData["UserRoleId"]);
+                        int? CurrentStatus = Convert.ToInt32(TempData["CurrentStatus"]);
+                        int? SubmitStatus = Convert.ToInt32(TempData["SubmitStatus"]);
+
+                        if (item.RSID == (int)POR.Enum.RecordStatus.Insert)
+                        {
+                            <div class="col-lg-12">
+                                @Html.ActionLink("Forward", "Forward", "F121", new { id = item.CHID }, new { @class = "btn btn-primary" })
+                                @*<input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-danger" />*@
+                                @Html.ActionLink("Back to List", "IndexF121", "F121", new { id = item.CHID }, new { @class = "btn btn-info" })
+                            </div>
+                        }
+                        else if (item.RSID == (int)POR.Enum.RecordStatus.Forward && (URID == CurrentStatus || CurrentStatus == 0))
+                        {
+                            if (CurrentStatus == 23)
+                            {
+                                <div class="col-lg-12">
+                                    @Html.ActionLink("Certify", "Forward", "F121", new { id = item.CHID, Sno = item.Snumber }, new { @class = "btn btn-success" })
+                                    <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-danger" />
+                                    @Html.ActionLink("Back to List", "IndexF121", "F121", new { id = item.CHID }, new { @class = "btn btn-info" })
+
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="col-lg-12">
+                                    @Html.ActionLink("Forward", "Forward", "F121", new { id = item.CHID }, new { @class = "btn btn-primary" })
+                                    <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-danger" />
+                                    @Html.ActionLink("Back to List", "IndexF121", "F121", new { id = item.CHID }, new { @class = "btn btn-info" })
+
+                                </div>
+                            }
+                        }
+                        else if (item.RSID == (int)POR.Enum.RecordStatus.Forward && (URID == CurrentStatus && CurrentStatus != 1))
+                        {
+                            <div class="col-lg-12">
+                                @Html.ActionLink("Forward", "Forward", "F121", new { id = item.CHID }, new { @class = "btn btn-primary" })
+                                <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-danger" />
+                                @Html.ActionLink("Back to List", "IndexF121", "F121", new { id = item.CHID }, new { @class = "btn btn-info" })
+                            </div>
+
+                        }
+
+                        else if (item.RSID == (int)POR.Enum.RecordStatus.Reject && URID == CurrentStatus && CurrentStatus == 24)
+                        {
+                            <div class="col-lg-12">
+                                @Html.ActionLink("Reject Confirm", "RejectConfirm", "F121", new { id = item.CHID }, new { @class = "btn btn-danger" })
+                                @Html.ActionLink("Back to List", "RejectList", "F121", new { id = item.CHID }, new { @class = "btn btn-info" })
+                            </div>
+                        }
+                        else if (item.RSID == (int)POR.Enum.RecordStatus.Reject && URID == CurrentStatus && CurrentStatus != 1)
+                        {
+                            <div class="col-lg-12">
+                                @*@Html.ActionLink("Forward", "Forward", "Married", new { id = item.LIOHID }, new { @class = "btn btn-primary" })*@
+                                <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-danger" />
+                                @Html.ActionLink("Back to List", "RejectIndex", "F121", new { @class = "btn btn-info" })
+                            </div>
+                        }
+                        else if (item.RSID == (int)POR.Enum.RecordStatus.Reject && URID == 12 && CurrentStatus != 1)
+                        {
+                            <div class="col-lg-12">
+                                @Html.ActionLink("Forward", "Forward", "F121", new { id = item.CHID }, new { @class = "btn btn-primary" })
+                                <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-danger" />
+                                @Html.ActionLink("Back to List", "RejectIndex", "F121", new { @class = "btn btn-info" })
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-lg-12">
+                                @Html.ActionLink("Back to List", "IndexRejectF121", "F121", new { id = item.CHID }, new { @class = "btn btn-info" })
+                            </div>
+                        }
+                    }
+                    @*Fixed Details Id popup Box value*@
+                    <input type="hidden" id="CHID" value="@Html.DisplayFor(model => item.CHID)" />
+                    <input type="hidden" id="FMSID" value="@Html.DisplayFor(model => item.FMSID)" />
+
+                </section>
+                        }
+    </div>
+
+                        }
+
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="border-bottom:none !important;">
+                Reject Comments
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <hr style="margin-top: 0px !important; margin-bottom: 0px !important; padding-bottom: 0px !important; padding-top: 0px !important;" />
+            </div>
+            <div class="modal-body" id="partial2">
+                @{
+                    <div>
+                        @Html.Partial("_RejectCommentF121")
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<script type="text/javascript">
+        $(function () {
+            $('#btnReject').click(function () {
+                var CSHID = $("#CHID").val();
+                var FMSID = $("#FMSID").val();
+
+                var route = '@Url.Action("Reject", "F121")?CSHID=' + CSHID + '&FMSID=' + FMSID;
+                $('#partial2').load(route);
+            });
+        });
+    </script>*@
+

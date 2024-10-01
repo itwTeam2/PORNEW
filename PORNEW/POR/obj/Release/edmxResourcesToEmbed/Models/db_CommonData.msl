@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CommonDataModelStoreContainer" CdmEntityContainer="dbContextCommonData">
+    <EntitySetMapping Name="Directorates">
+      <EntityTypeMapping TypeName="CommonDataModel.Directorate">
+        <MappingFragment StoreEntitySet="Directorate">
+          <ScalarProperty Name="directCode" ColumnName="directCode" />
+          <ScalarProperty Name="directorateName" ColumnName="directorateName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Districts">
+      <EntityTypeMapping TypeName="CommonDataModel.District">
+        <MappingFragment StoreEntitySet="District">
+          <ScalarProperty Name="DIST_CODE" ColumnName="DIST_CODE" />
+          <ScalarProperty Name="PROV_CODE" ColumnName="PROV_CODE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Divisions">
+      <EntityTypeMapping TypeName="CommonDataModel.Division">
+        <MappingFragment StoreEntitySet="Division">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="DivisionType" ColumnName="DivisionType" />
+          <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
+          <ScalarProperty Name="OfficeCommand" ColumnName="OfficeCommand" />
+          <ScalarProperty Name="NoOfPersonnel" ColumnName="NoOfPersonnel" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Establishments">
+      <EntityTypeMapping TypeName="CommonDataModel.Establishment">
+        <MappingFragment StoreEntitySet="Establishment">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="LocShortName" ColumnName="LocShortName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstablishmentNews">
+      <EntityTypeMapping TypeName="CommonDataModel.EstablishmentNew">
+        <MappingFragment StoreEntitySet="EstablishmentNew">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="LocShortName" ColumnName="LocShortName" />
+          <ScalarProperty Name="HelpDeskStatus" ColumnName="HelpDeskStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GSDivisions">
+      <EntityTypeMapping TypeName="CommonDataModel.GSDivision">
+        <MappingFragment StoreEntitySet="GSDivision">
+          <ScalarProperty Name="GSDivisionID" ColumnName="GSDivisionID" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="GSName" ColumnName="GSName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PoliceStations">
+      <EntityTypeMapping TypeName="CommonDataModel.PoliceStation">
+        <MappingFragment StoreEntitySet="PoliceStation">
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="PoliceStationCode" ColumnName="PoliceStationCode" />
+          <ScalarProperty Name="PoliceStation1" ColumnName="PoliceStation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostOffices">
+      <EntityTypeMapping TypeName="CommonDataModel.PostOffice">
+        <MappingFragment StoreEntitySet="PostOffice">
+          <ScalarProperty Name="PostOfficeCode" ColumnName="PostOfficeCode" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="PostOfficeName" ColumnName="PostOfficeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProvinceNews">
+      <EntityTypeMapping TypeName="CommonDataModel.ProvinceNew">
+        <MappingFragment StoreEntitySet="ProvinceNew">
+          <ScalarProperty Name="PROV_CODE" ColumnName="PROV_CODE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ranks">
+      <EntityTypeMapping TypeName="CommonDataModel.Rank">
+        <MappingFragment StoreEntitySet="Rank">
+          <ScalarProperty Name="RANK1" ColumnName="RANK" />
+          <ScalarProperty Name="RNK_NAME" ColumnName="RNK_NAME" />
+          <ScalarProperty Name="RANK_TYPE" ColumnName="RANK_TYPE" />
+          <ScalarProperty Name="SHORT_NAME" ColumnName="SHORT_NAME" />
+          <ScalarProperty Name="LONG_NAME" ColumnName="LONG_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Towns">
+      <EntityTypeMapping TypeName="CommonDataModel.Town">
+        <MappingFragment StoreEntitySet="Town">
+          <ScalarProperty Name="TownCOde" ColumnName="TownCOde" />
+          <ScalarProperty Name="DIST_CODE" ColumnName="DIST_CODE" />
+          <ScalarProperty Name="Town1" ColumnName="Town" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trades">
+      <EntityTypeMapping TypeName="CommonDataModel.Trade">
+        <MappingFragment StoreEntitySet="Trade">
+          <ScalarProperty Name="TRADE1" ColumnName="TRADE" />
+          <ScalarProperty Name="TRD_NAME" ColumnName="TRD_NAME" />
+          <ScalarProperty Name="DIRECTOR" ColumnName="DIRECTOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceTypes">
+      <EntityTypeMapping TypeName="CommonDataModel.ServiceType">
+        <MappingFragment StoreEntitySet="ServiceType">
+          <ScalarProperty Name="IsOfficer" ColumnName="IsOfficer" />
+          <ScalarProperty Name="Service_Type" ColumnName="Service_Type" />
+          <ScalarProperty Name="SVCType" ColumnName="SVCType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

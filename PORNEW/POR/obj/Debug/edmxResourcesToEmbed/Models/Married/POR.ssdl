@@ -1,0 +1,3549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PORModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Allowance">
+    <Key>
+      <PropertyRef Name="ALWID" />
+    </Key>
+    <Property Name="ALWID" Type="int" Nullable="false" />
+    <Property Name="SECID" Type="int" />
+    <Property Name="AllowanceName" Type="varchar" MaxLength="100" />
+    <Property Name="AllowanceShortName" Type="varchar" MaxLength="50" />
+    <Property Name="IsOfficer" Type="int" />
+    <Property Name="IsOR" Type="int" />
+    <Property Name="AllowanceDuration" Type="int" />
+    <Property Name="Remark" Type="varchar" MaxLength="100" />
+    <Property Name="CalculateType" Type="int" />
+    <Property Name="ProcessType" Type="int" />
+    <Property Name="ReferenceItem" Type="int" />
+    <Property Name="Active" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="AllowanceCategory">
+    <Key>
+      <PropertyRef Name="ACID" />
+    </Key>
+    <Property Name="ACID" Type="int" Nullable="false" />
+    <Property Name="AllowanceId" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="100" />
+    <Property Name="IsShow" Type="int" />
+  </EntityType>
+  <EntityType Name="AllowanceItemCode">
+    <Key>
+      <PropertyRef Name="AICID" />
+    </Key>
+    <Property Name="AICID" Type="int" Nullable="false" />
+    <Property Name="AllowanceId" Type="int" />
+    <Property Name="ItemCode" Type="int" />
+    <Property Name="CalculateType" Type="int" />
+    <Property Name="ItemMTypeId" Type="int" />
+  </EntityType>
+  <EntityType Name="AllowancePaymentType">
+    <Key>
+      <PropertyRef Name="APID" />
+    </Key>
+    <Property Name="APID" Type="int" Nullable="false" />
+    <Property Name="AllowanceId" Type="int" />
+    <Property Name="PaymentType" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AnnualLeavePlan">
+    <Key>
+      <PropertyRef Name="ALPID" />
+    </Key>
+    <Property Name="ALPID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LeaveCategoryID" Type="int" />
+    <Property Name="Year" Type="int" />
+    <Property Name="TotalLeaveMonth" Type="int" />
+    <Property Name="TotalLeaveDays" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="AID" />
+    </Key>
+    <Property Name="AID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AppointmentName" Type="varchar" MaxLength="200" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="CivilStatusCategory">
+    <Key>
+      <PropertyRef Name="CSCID" />
+    </Key>
+    <Property Name="CSCID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="20" />
+    <Property Name="CategoryCode" Type="varchar" MaxLength="20" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="CivilStatusDivorceDetails">
+    <Key>
+      <PropertyRef Name="CSDDID" />
+    </Key>
+    <Property Name="CSDDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CivilStatusHeaderID" Type="int" />
+    <Property Name="DivorceDtae" Type="date" />
+    <Property Name="Place" Type="varchar" MaxLength="50" />
+    <Property Name="CourseCaseNo" Type="varchar" MaxLength="200" />
+    <Property Name="DateOfCase" Type="date" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+    <Property Name="CreateIpAddess" Type="varchar" MaxLength="16" />
+  </EntityType>
+  <EntityType Name="CivilStatusHeader">
+    <Key>
+      <PropertyRef Name="CSHID" />
+    </Key>
+    <Property Name="CSHID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sno" Type="bigint" />
+    <Property Name="SubCategoryId" Type="int" />
+    <Property Name="Location" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceTypeId" Type="int" />
+    <Property Name="RefNo" Type="varchar" MaxLength="50" />
+    <Property Name="Authority" Type="varchar" MaxLength="200" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="CivilStatusMarriedDetails">
+    <Key>
+      <PropertyRef Name="CSMDID" />
+    </Key>
+    <Property Name="CSMDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CivilStatusHeaderID" Type="int" />
+    <Property Name="MarriageDate" Type="date" />
+    <Property Name="MarriageCertificateNo" Type="varchar" MaxLength="50" />
+    <Property Name="RegistarOfficeLocation" Type="varchar" MaxLength="50" />
+    <Property Name="WithEffectDate" Type="date" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+    <Property Name="CreateIpAddess" Type="varchar" MaxLength="16" />
+  </EntityType>
+  <EntityType Name="CivilStatusSpouseDetails">
+    <Key>
+      <PropertyRef Name="CSSPDID" />
+    </Key>
+    <Property Name="CSSPDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CivilStatusHeaderID" Type="int" />
+    <Property Name="SpouseName" Type="varchar(max)" />
+    <Property Name="SpouseStatusId" Type="int" />
+    <Property Name="SpousNICNo" Type="varchar" MaxLength="30" />
+    <Property Name="SpousOccupation" Type="varchar" MaxLength="80" />
+    <Property Name="SpousOffcialAddress" Type="varchar" MaxLength="150" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="CreateIpAddess" Type="varchar" MaxLength="16" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="CivilStatusWidowDetails">
+    <Key>
+      <PropertyRef Name="CSWDID" />
+    </Key>
+    <Property Name="CSWDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CivilStatusHeaderID" Type="int" />
+    <Property Name="DeathCertificateNoOfSpouse" Type="varchar" MaxLength="20" />
+    <Property Name="LivingInAndOutStatus" Type="varchar" MaxLength="20" />
+    <Property Name="NOKChangeTo" Type="varchar" MaxLength="20" />
+    <Property Name="DateofDecease" Type="date" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+    <Property Name="CreateIpAddess" Type="varchar" MaxLength="16" />
+  </EntityType>
+  <EntityType Name="DirectItem">
+    <Key>
+      <PropertyRef Name="ItemCode" />
+    </Key>
+    <Property Name="ItemCode" Type="int" Nullable="false" />
+    <Property Name="ShortName" Type="varchar" MaxLength="50" />
+    <Property Name="LongName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="EDCS_AllowanceValue">
+    <Key>
+      <PropertyRef Name="AVID" />
+    </Key>
+    <Property Name="AVID" Type="int" Nullable="false" />
+    <Property Name="AllowanceID" Type="int" />
+    <Property Name="AllowanceCategoryId" Type="int" />
+    <Property Name="OfficerAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ORAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="EffectiveDate" Type="date" />
+    <Property Name="Authority" Type="varchar" MaxLength="200" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="EDCS_AllowanceValueRank">
+    <Key>
+      <PropertyRef Name="AVRID" />
+    </Key>
+    <Property Name="AVRID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AllowanceID" Type="int" />
+    <Property Name="AllowanceCategoryId" Type="int" />
+    <Property Name="RankID" Type="int" />
+    <Property Name="AllowanceValue" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="EffectiveDate" Type="datetime" />
+    <Property Name="Authority" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="MonthlyDaily" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="EDCS_ProcessedTransactions">
+    <Key>
+      <PropertyRef Name="ReferanceTableID" />
+      <PropertyRef Name="ItemCode" />
+    </Key>
+    <Property Name="AutoID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProcessTypeID" Type="int" Nullable="false" />
+    <Property Name="ProcessHeaderID" Type="bigint" Nullable="false" />
+    <Property Name="ReferanceTableID" Type="int" Nullable="false" />
+    <Property Name="ItemCode" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Authority" Type="nvarchar" MaxLength="100" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="RecordOriginatedLocation" Type="nvarchar" MaxLength="10" />
+    <Property Name="ItemOrigin" Type="int" />
+    <Property Name="ProcessedUser" Type="nvarchar" MaxLength="25" />
+    <Property Name="ProcessedDateTime" Type="datetime" />
+    <Property Name="ProcessedMachine" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsForwardedtoPayroll" Type="int" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="EDCS_ProcessHeader">
+    <Key>
+      <PropertyRef Name="ProcessHeaderID" />
+    </Key>
+    <Property Name="ProcessHeaderID" Type="int" Nullable="false" />
+    <Property Name="ProcessTypeID" Type="int" />
+    <Property Name="ProcessDate" Type="date" />
+    <Property Name="PayYear" Type="int" />
+    <Property Name="PayMonth" Type="int" />
+    <Property Name="Remarks" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMachine" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="EDCS_ProcessTypes">
+    <Key>
+      <PropertyRef Name="ProcessTypeID" />
+    </Key>
+    <Property Name="ProcessTypeID" Type="int" Nullable="false" />
+    <Property Name="PTName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FixAllowanceDetailsFlowStatus">
+    <Key>
+      <PropertyRef Name="FADFID" />
+    </Key>
+    <Property Name="FADFID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FADID" Type="int" />
+    <Property Name="FMSID" Type="int" />
+    <Property Name="RecordStatusId" Type="int" />
+    <Property Name="Comment" Type="varchar" MaxLength="500" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="FixedAllowanceCancel">
+    <Key>
+      <PropertyRef Name="FACID" />
+    </Key>
+    <Property Name="FACID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FixedAllowanceDetailId" Type="int" />
+    <Property Name="CancelAuthority" Type="varchar" MaxLength="200" />
+    <Property Name="CancelAuthorityDate" Type="date" />
+    <Property Name="Remark" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+    <Property Name="CancelAuthorityEffectiveDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FixedAllowanceCancelManual">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="FixedAllowanceDetail">
+    <Key>
+      <PropertyRef Name="FADID" />
+    </Key>
+    <Property Name="FADID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceCategoryId" Type="int" />
+    <Property Name="AllowanceCategoryID" Type="int" />
+    <Property Name="RankId" Type="int" />
+    <Property Name="ServiceType" Type="int" />
+    <Property Name="AllowanceId" Type="int" />
+    <Property Name="FullHalfPay" Type="int" />
+    <Property Name="Sno" Type="varchar" MaxLength="50" />
+    <Property Name="EffectiveDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="CampAuthority" Type="varchar" MaxLength="100" />
+    <Property Name="CampAuthorityDate" Type="date" />
+    <Property Name="CancelReferanceNo" Type="varchar" MaxLength="50" />
+    <Property Name="CeasedId" Type="int" />
+    <Property Name="Remark" Type="varchar" MaxLength="100" />
+    <Property Name="IsProcessed" Type="int" />
+    <Property Name="EstablishmentId" Type="varchar" MaxLength="10" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="FixedAllowanceEligibleList">
+    <Key>
+      <PropertyRef Name="ELFAID" />
+    </Key>
+    <Property Name="ELFAID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SNo" Type="varchar" MaxLength="50" />
+    <Property Name="AllowanceId" Type="int" />
+    <Property Name="EffectiveDate" Type="date" />
+    <Property Name="ReferanceNo" Type="varchar" MaxLength="50" />
+    <Property Name="CancelReferanceNo" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="FlowManagementStatus">
+    <Key>
+      <PropertyRef Name="FMSID" />
+    </Key>
+    <Property Name="FMSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserRoleID" Type="int" />
+    <Property Name="EstablishmentId" Type="varchar" MaxLength="50" />
+    <Property Name="DivisionId" Type="varchar" MaxLength="50" />
+    <Property Name="DivisionId2" Type="varchar" MaxLength="50" />
+    <Property Name="DivisionId3" Type="varchar" MaxLength="25" />
+    <Property Name="RejectStatus" Type="int" />
+    <Property Name="CurrentStatus" Type="int" />
+    <Property Name="SubmitStatus" Type="int" />
+    <Property Name="FlowGroup" Type="varchar" MaxLength="8" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="FlowStatusCivilStatusDetails">
+    <Key>
+      <PropertyRef Name="FSCSID" />
+    </Key>
+    <Property Name="FSCSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CivilStatusHeaderID" Type="int" />
+    <Property Name="RecordStatusID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="FlowManagementStatusID" Type="int" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="Comment" Type="varchar(max)" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="FlowStatusGSQDetails">
+    <Key>
+      <PropertyRef Name="FSGSQID" />
+    </Key>
+    <Property Name="FSGSQID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GSQHeaderID" Type="int" />
+    <Property Name="RecordStatusID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="FlowManagementStatusID" Type="int" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="FlowStatusLivingInOutDetails">
+    <Key>
+      <PropertyRef Name="LFSID" />
+    </Key>
+    <Property Name="LFSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InOut_ID" Type="int" />
+    <Property Name="RSID" Type="int" />
+    <Property Name="UID" Type="int" />
+    <Property Name="FMSID" Type="int" />
+    <Property Name="RID" Type="int" />
+    <Property Name="Comment" Type="varchar(max)" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="FlowStatusNOKChangeDetails">
+    <Key>
+      <PropertyRef Name="FSNOKCDID" />
+    </Key>
+    <Property Name="FSNOKCDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOKHeaderID" Type="int" />
+    <Property Name="RecordStatusID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="FlowManagementStatusID" Type="int" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="GSQDetail">
+    <Key>
+      <PropertyRef Name="GSQDID" />
+    </Key>
+    <Property Name="GSQDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sno" Type="varchar" MaxLength="50" />
+    <Property Name="GSQNo" Type="varchar" MaxLength="50" />
+    <Property Name="GSQStatus" Type="int" />
+    <Property Name="GSQLocation" Type="varchar" MaxLength="50" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="ToDate" Type="date" />
+    <Property Name="Active" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="GSQHeader">
+    <Key>
+      <PropertyRef Name="GSQHID" />
+    </Key>
+    <Property Name="GSQHID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sno" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceTypeId" Type="int" />
+    <Property Name="Location" Type="varchar" MaxLength="50" />
+    <Property Name="GSQLocation" Type="varchar" MaxLength="50" />
+    <Property Name="GSQNo" Type="varchar" MaxLength="50" />
+    <Property Name="GSQStatus" Type="varchar" MaxLength="50" />
+    <Property Name="AllocatedDate" Type="date" />
+    <Property Name="VacantDate" Type="date" />
+    <Property Name="PORDate" Type="date" />
+    <Property Name="RefNo" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+    <Property Name="CreateIpAddess" Type="varchar" MaxLength="16" />
+  </EntityType>
+  <EntityType Name="GSQStatus">
+    <Key>
+      <PropertyRef Name="GSQSID" />
+    </Key>
+    <Property Name="GSQSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusName" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="HolidayType">
+    <Key>
+      <PropertyRef Name="HTID" />
+    </Key>
+    <Property Name="HTID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HolidayTypeName" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.ItemCodeList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ItemCodeList">
+    <Key>
+      <PropertyRef Name="CID" />
+    </Key>
+    <Property Name="CID" Type="int" Nullable="false" />
+    <Property Name="IteamCode" Type="int" />
+    <Property Name="IteamShortName" Type="varchar" MaxLength="50" />
+    <Property Name="IteamLongName" Type="varchar" MaxLength="70" />
+    <Property Name="IteamType" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="LeaveCategory">
+    <Key>
+      <PropertyRef Name="LCID" />
+    </Key>
+    <Property Name="LCID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LeaveCategoryName" Type="varchar" MaxLength="50" />
+    <Property Name="LeaveCategoryShortName" Type="varchar" MaxLength="10" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="LeaveDetail">
+    <Key>
+      <PropertyRef Name="LDID" />
+    </Key>
+    <Property Name="LDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LeaveHeaderId" Type="int" />
+    <Property Name="PrivilegeLeave" Type="int" />
+    <Property Name="CasualLeave" Type="int" />
+    <Property Name="AnnualLeave" Type="int" />
+    <Property Name="LeaveLeave" Type="int" />
+    <Property Name="Weekend" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PublicHoliday" Type="int" />
+    <Property Name="ReEngagementLeave" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="LeaveFlowStatus">
+    <Key>
+      <PropertyRef Name="LFSID" />
+    </Key>
+    <Property Name="LFSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LeaveHeaderId" Type="int" />
+    <Property Name="FMSID" Type="int" />
+    <Property Name="RecordStatusId" Type="int" />
+    <Property Name="Comment" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="LeaveHeader">
+    <Key>
+      <PropertyRef Name="LHID" />
+    </Key>
+    <Property Name="LHID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceCategoryId" Type="int" />
+    <Property Name="Sno" Type="varchar" MaxLength="50" />
+    <Property Name="LeaveCategoryId" Type="int" />
+    <Property Name="EstablishmentId" Type="varchar" MaxLength="50" />
+    <Property Name="DeivisionId" Type="varchar" MaxLength="10" />
+    <Property Name="TotalDays" Type="int" />
+    <Property Name="PrivilegeLeave" Type="int" />
+    <Property Name="AnnualLeave" Type="int" />
+    <Property Name="PaymentTypeId" Type="int" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="ToDate" Type="date" />
+    <Property Name="Authority" Type="varchar" MaxLength="100" />
+    <Property Name="PorStatus" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+    <Property Name="IsProcessed" Type="int" />
+    <Property Name="LivingStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="LeaveProcessHeadar">
+    <Key>
+      <PropertyRef Name="PDID" />
+    </Key>
+    <Property Name="PDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LeaveHeaderId" Type="int" />
+    <Property Name="ItemsCode" Type="int" />
+    <Property Name="CalAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="LeaveProcessDate" Type="date" />
+    <Property Name="DaysCounts" Type="int" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="LeaveType">
+    <Key>
+      <PropertyRef Name="LTID" />
+    </Key>
+    <Property Name="LTID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LeaveTypeName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="LivingInOutDetail">
+    <Key>
+      <PropertyRef Name="LIUDID" />
+    </Key>
+    <Property Name="LIUDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FromDate" Type="datetime" />
+    <Property Name="ToDate" Type="datetime" />
+    <Property Name="Remarks" Type="varchar(max)" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="LivingInOutHeader">
+    <Key>
+      <PropertyRef Name="LIOHID" />
+    </Key>
+    <Property Name="LIOHID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sno" Type="bigint" />
+    <Property Name="LivingStatusID" Type="int" />
+    <Property Name="Location" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceTypeId" Type="int" />
+    <Property Name="RefNo" Type="varchar(max)" />
+    <Property Name="Authority" Type="varchar" MaxLength="200" />
+    <Property Name="IsNOKChange" Type="int" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="ToDate" Type="date" />
+    <Property Name="Remarks" Type="varchar(max)" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="LivingStatus">
+    <Key>
+      <PropertyRef Name="LSID" />
+    </Key>
+    <Property Name="LSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LivingStatusShortName" Type="varchar" MaxLength="100" />
+    <Property Name="LivingStatusName" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LID" />
+    </Key>
+    <Property Name="LID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationTypeId" Type="int" />
+    <Property Name="LocationName" Type="varchar" MaxLength="100" />
+    <Property Name="Remark" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="LocationType">
+    <Key>
+      <PropertyRef Name="LTID" />
+    </Key>
+    <Property Name="LTID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationTypeName" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="MaritalStatus">
+    <Key>
+      <PropertyRef Name="MSID" />
+    </Key>
+    <Property Name="MSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaritalStatusName" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MovementCondition">
+    <Key>
+      <PropertyRef Name="MCID" />
+    </Key>
+    <Property Name="MCID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MovementConditionName" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MovementStatus">
+    <Key>
+      <PropertyRef Name="MSID" />
+    </Key>
+    <Property Name="MSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MovementStatusName" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MP">
+    <Key>
+      <PropertyRef Name="MPI" />
+    </Key>
+    <Property Name="MPI" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LHID" Type="int" />
+  </EntityType>
+  <EntityType Name="NOKChangeDetails">
+    <Key>
+      <PropertyRef Name="NOKCDID" />
+    </Key>
+    <Property Name="NOKCDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOKChangeHeadrerID" Type="int" />
+    <Property Name="NOKAddress" Type="varchar(max)" />
+    <Property Name="NOKName" Type="varchar(max)" />
+    <Property Name="NOKChangeTo" Type="varchar" MaxLength="50" />
+    <Property Name="District" Type="varchar" MaxLength="50" />
+    <Property Name="GSDivision" Type="varchar" MaxLength="50" />
+    <Property Name="NearestTown" Type="varchar" MaxLength="50" />
+    <Property Name="PoliceStation" Type="varchar" MaxLength="50" />
+    <Property Name="Authority" Type="varchar" MaxLength="50" />
+    <Property Name="Remarks" Type="varchar(max)" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+    <Property Name="CreateIpAddess" Type="varchar" MaxLength="16" />
+  </EntityType>
+  <EntityType Name="NOKChangeHeader">
+    <Key>
+      <PropertyRef Name="NOKCHID" />
+    </Key>
+    <Property Name="NOKCHID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CivilStatusHeaderID" Type="int" />
+    <Property Name="Sno" Type="bigint" />
+    <Property Name="SNumber" Type="bigint" />
+    <Property Name="Location" Type="varchar" MaxLength="50" />
+    <Property Name="NOKStatus" Type="int" />
+    <Property Name="InOutHeaderID" Type="int" />
+    <Property Name="ServiceTypeId" Type="int" />
+    <Property Name="WFDate" Type="date" />
+    <Property Name="RefNo" Type="varchar" MaxLength="100" />
+    <Property Name="Authority" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+    <Property Name="CreateIpAddess" Type="varchar" MaxLength="16" />
+  </EntityType>
+  <EntityType Name="NOKStatus">
+    <Key>
+      <PropertyRef Name="NOKSID" />
+    </Key>
+    <Property Name="NOKSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusName" Type="varchar" MaxLength="50" />
+    <Property Name="SubCatID" Type="int" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="PaymentType">
+    <Key>
+      <PropertyRef Name="PTID" />
+    </Key>
+    <Property Name="PTID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentTypeName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PayStatus">
+    <Key>
+      <PropertyRef Name="PSID" />
+    </Key>
+    <Property Name="PSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PayStatusName" Type="varchar" MaxLength="20" />
+    <Property Name="Remark" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PORFlowGroup">
+    <Key>
+      <PropertyRef Name="PFGUD" />
+    </Key>
+    <Property Name="PFGUD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PORCode" Type="varchar" MaxLength="20" />
+    <Property Name="PORName" Type="varchar" MaxLength="80" />
+    <Property Name="FlowGroupP3" Type="varchar" MaxLength="10" />
+    <Property Name="FlowGroupP2" Type="varchar" MaxLength="10" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="PorModule">
+    <Key>
+      <PropertyRef Name="MID" />
+    </Key>
+    <Property Name="MID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModuleName" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.PorObject' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PorObject">
+    <Key>
+      <PropertyRef Name="OID" />
+    </Key>
+    <Property Name="OID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RID" Type="int" />
+    <Property Name="Objects_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.PorYear' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PorYear">
+    <Key>
+      <PropertyRef Name="YD" />
+    </Key>
+    <Property Name="YD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PorYear" Type="int" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="PublicHolidayCalender">
+    <Key>
+      <PropertyRef Name="PHCID" />
+    </Key>
+    <Property Name="PHCID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HolidayTypeId" Type="int" />
+    <Property Name="ApplicableDate" Type="datetime" />
+    <Property Name="Reason" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="RationAllowenceCharge">
+    <Key>
+      <PropertyRef Name="RAID" />
+    </Key>
+    <Property Name="RAID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OffAmmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OtherRankAmmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Year" Type="int" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="RationStatus">
+    <Key>
+      <PropertyRef Name="RSID" />
+    </Key>
+    <Property Name="RSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RationStatusName" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RecordStatus">
+    <Key>
+      <PropertyRef Name="RSID" />
+    </Key>
+    <Property Name="RSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RecordStatusName" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RecordStatusNew">
+    <Key>
+      <PropertyRef Name="RS_ID" />
+    </Key>
+    <Property Name="RS_ID" Type="int" Nullable="false" />
+    <Property Name="RecordStatusName" Type="varchar" MaxLength="50" />
+    <Property Name="Remarks" Type="varchar(max)" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="SecurityQuestion">
+    <Key>
+      <PropertyRef Name="SQID" />
+    </Key>
+    <Property Name="SQID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Question" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Service_Type' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Service_Type">
+    <Key>
+      <PropertyRef Name="SVCType" />
+    </Key>
+    <Property Name="SVCType" Type="int" Nullable="false" />
+    <Property Name="Service_TypeFull" Type="varchar" MaxLength="50" />
+    <Property Name="IsOfficer" Type="int" />
+  </EntityType>
+  <EntityType Name="ServiceCategory">
+    <Key>
+      <PropertyRef Name="ServiceCategoryId" />
+    </Key>
+    <Property Name="ServiceCategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceCategoryName" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ServiceType">
+    <Key>
+      <PropertyRef Name="STID" />
+    </Key>
+    <Property Name="STID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceTypeName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SpouseStatusDetail">
+    <Key>
+      <PropertyRef Name="SPSDID" />
+    </Key>
+    <Property Name="SPSDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CSHID" Type="int" />
+    <Property Name="SpouseStatusId" Type="int" />
+    <Property Name="SpouseStausName" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="SystemLog">
+    <Key>
+      <PropertyRef Name="LID" />
+    </Key>
+    <Property Name="LID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="LoginIP" Type="varchar" MaxLength="15" />
+    <Property Name="LoginDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TableCategories">
+    <Key>
+      <PropertyRef Name="Ref_TBL_ID" />
+    </Key>
+    <Property Name="Ref_TBL_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ref_TableName" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="test">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceNo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'POR.dbo.TestTable' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TestTable">
+          <Property Name="SNo" Type="varchar" MaxLength="50" />
+          <Property Name="AllowanceId" Type="int" />
+          <Property Name="EfcetiveDate" Type="date" />
+        </EntityType>-->
+  <EntityType Name="UserDetail">
+    <Key>
+      <PropertyRef Name="UDID" />
+    </Key>
+    <Property Name="UDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UID" Type="int" />
+    <Property Name="Sno" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="LocationId" Type="varchar" MaxLength="10" />
+    <Property Name="DivisionId" Type="varchar" MaxLength="10" />
+    <Property Name="LocationType" Type="int" />
+    <Property Name="SecurityQuestionId" Type="int" />
+    <Property Name="SecurityQuestionAnswer" Type="varchar" MaxLength="50" />
+    <Property Name="UserName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Password" Type="text" Nullable="false" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="UserPermission">
+    <Key>
+      <PropertyRef Name="UPID" />
+    </Key>
+    <Property Name="UPID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="AccessLocationId" Type="varchar" MaxLength="4" />
+    <Property Name="AllowVAF" Type="bit" />
+    <Property Name="AllowRAF" Type="bit" />
+    <Property Name="CreateRecord" Type="bit" />
+    <Property Name="ForwardRecord" Type="bit" />
+    <Property Name="RejectRecord" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="int" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="20" />
+    <Property Name="PorModuleId" Type="nchar" MaxLength="10" />
+    <Property Name="Remark" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="UserRoleNew">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="int" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="50" />
+    <Property Name="Remarks" Type="varchar(max)" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.F1250' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="F1250">
+    <Key>
+      <PropertyRef Name="ActiveNo" />
+      <PropertyRef Name="SNo" />
+      <PropertyRef Name="Rank" />
+      <PropertyRef Name="SVCType" />
+    </Key>
+    <Property Name="ActiveNo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="SNo" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Rank" Type="int" Nullable="false" />
+    <Property Name="F1250" Type="varchar" MaxLength="10" />
+    <Property Name="Initials" Type="varchar" MaxLength="50" />
+    <Property Name="Surname" Type="varchar(max)" />
+    <Property Name="Branch_Trade" Type="int" />
+    <Property Name="NICNo" Type="varchar" MaxLength="15" />
+    <Property Name="Sex" Type="char" MaxLength="1" />
+    <Property Name="Feet" Type="decimal" Precision="4" Scale="0" />
+    <Property Name="Inch" Type="decimal" Precision="4" Scale="2" />
+    <Property Name="ColourofHair" Type="int" />
+    <Property Name="ColourofEyes" Type="int" />
+    <Property Name="BloodGroup" Type="int" />
+    <Property Name="BirthMark" Type="varchar" MaxLength="255" />
+    <Property Name="Expire_Date" Type="datetime" />
+    <Property Name="EXPIRES_DTE" Type="datetime" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="Service_Type" Type="int" />
+    <Property Name="Service_Status" Type="int" />
+    <Property Name="ServicingStatus" Type="varchar" MaxLength="40" />
+    <Property Name="SVCType" Type="int" Nullable="false" />
+    <Property Name="Expr1" Type="varchar" MaxLength="50" />
+    <Property Name="NICNo_New" Type="varchar" MaxLength="15" />
+    <Property Name="DTE_ISU" Type="varchar" MaxLength="100" />
+    <Property Name="BATCH_NO" Type="varchar" MaxLength="10" />
+    <Property Name="SER_NO_CARD" Type="varchar" MaxLength="25" />
+    <Property Name="NO_OF_CARDS" Type="varchar" MaxLength="100" />
+    <Property Name="DateOfEnlist" Type="datetime" />
+    <Property Name="RNK_NAME" Type="varchar" MaxLength="15" />
+    <Property Name="RptShortName" Type="varchar" MaxLength="50" />
+    <Property Name="Posted_Location" Type="varchar" MaxLength="5" />
+    <Property Name="ID_EXP_DAT" Type="datetime" />
+    <Property Name="Posted_Formation" Type="varchar" MaxLength="50" />
+    <Property Name="LivingIn_Out" Type="varchar" MaxLength="3" />
+    <Property Name="DivisionName" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.TESTMDATA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TESTMDATA">
+    <Key>
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="SNo" Type="varchar" MaxLength="25" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="RankID" Type="int" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Branch" Type="varchar" MaxLength="50" />
+    <Property Name="BranchCode" Type="int" />
+    <Property Name="PostedLocation" Type="varchar" MaxLength="5" />
+    <Property Name="Division" Type="varchar" MaxLength="50" />
+    <Property Name="DischargeDate" Type="datetime" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="Service_Status" Type="int" />
+    <Property Name="MarriageStatus" Type="int" />
+    <Property Name="service_type" Type="int" />
+    <Property Name="DateOfEnlist" Type="datetime" />
+    <Property Name="Formation" Type="varchar" MaxLength="60" />
+    <Property Name="SubRank" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.TestVw' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TestVw">
+    <Key>
+      <PropertyRef Name="FADID" />
+    </Key>
+    <Property Name="FADID" Type="int" Nullable="false" />
+    <Property Name="ServiceType" Type="int" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="AllowanceId" Type="int" />
+    <Property Name="AllowanceCategoryID" Type="int" />
+    <Property Name="CampAuthority" Type="varchar" MaxLength="100" />
+    <Property Name="CampAuthorityDate" Type="date" />
+    <Property Name="EffectiveDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="RecordStatusId" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="RankID" Type="int" />
+    <Property Name="AllowanceName" Type="varchar" MaxLength="100" />
+    <Property Name="Service_Type" Type="varchar" MaxLength="50" />
+    <Property Name="FMSID" Type="int" />
+    <Property Name="Active" Type="int" />
+    <Property Name="EstablishmentId" Type="varchar" MaxLength="10" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_AllNOK' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_AllNOK">
+    <Key>
+      <PropertyRef Name="SNo" />
+    </Key>
+    <Property Name="SNo" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="NOKName" Type="varchar" MaxLength="150" />
+    <Property Name="Relationship" Type="varchar" MaxLength="50" />
+    <Property Name="EffectiveDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ActiveNo" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_CivliStatusReject' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_CivliStatusReject">
+    <Key>
+      <PropertyRef Name="CSHID" />
+      <PropertyRef Name="FMSID" />
+      <PropertyRef Name="FSCSID" />
+    </Key>
+    <Property Name="CSHID" Type="int" Nullable="false" />
+    <Property Name="CivilStatusHeaderID" Type="int" />
+    <Property Name="Sno" Type="bigint" />
+    <Property Name="SubCategoryId" Type="int" />
+    <Property Name="Location" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceTypeId" Type="int" />
+    <Property Name="RefNo" Type="varchar" MaxLength="50" />
+    <Property Name="Authority" Type="varchar" MaxLength="200" />
+    <Property Name="Active" Type="int" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="20" />
+    <Property Name="CategoryCode" Type="varchar" MaxLength="20" />
+    <Property Name="SpouseName" Type="varchar(max)" />
+    <Property Name="CSMDID" Type="int" />
+    <Property Name="MarriageDate" Type="date" />
+    <Property Name="MarriageCertificateNo" Type="varchar" MaxLength="50" />
+    <Property Name="RegistarOfficeLocation" Type="varchar" MaxLength="50" />
+    <Property Name="Expr1" Type="int" />
+    <Property Name="DivorceDtae" Type="date" />
+    <Property Name="Place" Type="varchar" MaxLength="50" />
+    <Property Name="CourseCaseNo" Type="varchar" MaxLength="200" />
+    <Property Name="DateOfCase" Type="date" />
+    <Property Name="Expr2" Type="int" />
+    <Property Name="CSWDID" Type="int" />
+    <Property Name="DateofDecease" Type="date" />
+    <Property Name="DeathCertificateNoOfSpouse" Type="varchar" MaxLength="20" />
+    <Property Name="NOKAddress" Type="varchar(max)" />
+    <Property Name="NOKName" Type="varchar(max)" />
+    <Property Name="NOKChangeTo" Type="varchar" MaxLength="50" />
+    <Property Name="Remarks" Type="varchar(max)" />
+    <Property Name="District" Type="varchar" MaxLength="50" />
+    <Property Name="GSDivision" Type="varchar" MaxLength="50" />
+    <Property Name="NearestTown" Type="varchar" MaxLength="50" />
+    <Property Name="PoliceStation" Type="varchar" MaxLength="50" />
+    <Property Name="Expr3" Type="int" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="CurrentStatus" Type="int" />
+    <Property Name="RejectStatus" Type="int" />
+    <Property Name="SubmitStatus" Type="int" />
+    <Property Name="FMSID" Type="int" Nullable="false" />
+    <Property Name="FSCSID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_CurrentAttachment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_CurrentAttachment">
+    <Key>
+      <PropertyRef Name="Posted Date" />
+      <PropertyRef Name="Location" />
+      <PropertyRef Name="DivisionName" />
+      <PropertyRef Name="AppointName" />
+    </Key>
+    <Property Name="Ser No" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Branch" Type="varchar" MaxLength="30" />
+    <Property Name="Posted Date" Type="datetime" Nullable="false" />
+    <Property Name="ToDate" Type="datetime" />
+    <Property Name="Location" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="DivisionName" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="AppointName" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="SENIORITY" Type="int" />
+    <Property Name="Expr1" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_CurrentPosting' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_CurrentPosting">
+    <Key>
+      <PropertyRef Name="SNo" />
+      <PropertyRef Name="Location" />
+      <PropertyRef Name="Formation" />
+    </Key>
+    <Property Name="SNo" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="15" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Date" Type="varchar" MaxLength="11" />
+    <Property Name="Appointment" Type="varchar" MaxLength="251" />
+    <Property Name="Location" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Formation" Type="varchar" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_CurrentUserLiving' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_CurrentUserLiving">
+    <Key>
+      <PropertyRef Name="LFSID" />
+    </Key>
+    <Property Name="LFSID" Type="int" Nullable="false" />
+    <Property Name="InOut_ID" Type="int" />
+    <Property Name="RSID" Type="int" />
+    <Property Name="UID" Type="int" />
+    <Property Name="FMSID" Type="int" />
+    <Property Name="RID" Type="int" />
+    <Property Name="RejectStatus" Type="int" />
+    <Property Name="CurrentStatus" Type="int" />
+    <Property Name="SubmitStatus" Type="int" />
+    <Property Name="RoleName" Type="varchar" MaxLength="20" />
+    <Property Name="Location" Type="varchar" MaxLength="50" />
+    <Property Name="Authority" Type="varchar" MaxLength="200" />
+    <Property Name="RefNo" Type="varchar(max)" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Comment" Type="varchar(max)" />
+    <Property Name="LivingStatusShortName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_CurrentUserRoleMarried' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_CurrentUserRoleMarried">
+    <Key>
+      <PropertyRef Name="FSCSID" />
+    </Key>
+    <Property Name="FSCSID" Type="int" Nullable="false" />
+    <Property Name="CivilStatusHeaderID" Type="int" />
+    <Property Name="RecordStatusID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="FlowManagementStatusID" Type="int" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="RejectStatus" Type="int" />
+    <Property Name="CurrentStatus" Type="int" />
+    <Property Name="SubmitStatus" Type="int" />
+    <Property Name="RoleName" Type="varchar" MaxLength="20" />
+    <Property Name="Location" Type="varchar" MaxLength="50" />
+    <Property Name="Authority" Type="varchar" MaxLength="200" />
+    <Property Name="RefNo" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Comment" Type="varchar(max)" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_DirectItem' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_DirectItem">
+    <Key>
+      <PropertyRef Name="ItemCode" />
+      <PropertyRef Name="ShortName" />
+      <PropertyRef Name="LongName" />
+    </Key>
+    <Property Name="ItemCode" Type="int" Nullable="false" />
+    <Property Name="ShortName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LongName" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_FAEligibleList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_FAEligibleList">
+    <Key>
+      <PropertyRef Name="ELFAID" />
+    </Key>
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="AllowanceName" Type="varchar" MaxLength="100" />
+    <Property Name="EffectiveDate" Type="date" />
+    <Property Name="SNo" Type="varchar" MaxLength="15" />
+    <Property Name="ELFAID" Type="int" Nullable="false" />
+    <Property Name="PostedLocation" Type="varchar" MaxLength="5" />
+    <Property Name="RankID" Type="int" />
+    <Property Name="AllowanceId" Type="int" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_FixedAllowance_FLowStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_FixedAllowance_FLowStatus">
+    <Key>
+      <PropertyRef Name="FADID" />
+    </Key>
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="RankID" Type="int" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Service_Type" Type="varchar" MaxLength="50" />
+    <Property Name="AllowanceId" Type="int" />
+    <Property Name="AllowanceName" Type="varchar" MaxLength="100" />
+    <Property Name="AllowanceCategoryID" Type="int" />
+    <Property Name="CampAuthority" Type="varchar" MaxLength="100" />
+    <Property Name="CampAuthorityDate" Type="date" />
+    <Property Name="EffectiveDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="RecordStatusId" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="FMSID" Type="int" />
+    <Property Name="Active" Type="int" />
+    <Property Name="EstablishmentId" Type="varchar" MaxLength="10" />
+    <Property Name="IsProcessed" Type="int" />
+    <Property Name="FADID" Type="int" Nullable="false" />
+    <Property Name="FADS_CreatedBy" Type="int" />
+    <Property Name="Comment" Type="varchar" MaxLength="500" />
+    <Property Name="Sno" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_FixedAllowanceDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_FixedAllowanceDetail">
+    <Key>
+      <PropertyRef Name="FADID" />
+      <PropertyRef Name="ALWID" />
+      <PropertyRef Name="FADFID" />
+    </Key>
+    <Property Name="Service_Type" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceType" Type="int" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="AllowanceName" Type="varchar" MaxLength="100" />
+    <Property Name="EffectiveDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="CampAuthority" Type="varchar" MaxLength="100" />
+    <Property Name="CampAuthorityDate" Type="date" />
+    <Property Name="Remark" Type="varchar" MaxLength="100" />
+    <Property Name="AllowanceId" Type="int" />
+    <Property Name="FADID" Type="int" Nullable="false" />
+    <Property Name="Sno" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="RankID" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+    <Property Name="UserRoleID" Type="int" />
+    <Property Name="EstablishmentId" Type="varchar" MaxLength="10" />
+    <Property Name="RejectStatus" Type="int" />
+    <Property Name="CurrentStatus" Type="int" />
+    <Property Name="SubmitStatus" Type="int" />
+    <Property Name="FullHalfPay" Type="int" />
+    <Property Name="FMSID" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ALWID" Type="int" Nullable="false" />
+    <Property Name="FADFID" Type="int" Nullable="false" />
+    <Property Name="RecordStatusId" Type="int" />
+    <Property Name="Comment" Type="varchar" MaxLength="500" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="FADFS_CreatedBy" Type="int" />
+    <Property Name="RoleName" Type="varchar" MaxLength="20" />
+    <Property Name="IsProcessed" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_FixedAllowanceDetailReport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_FixedAllowanceDetailReport">
+    <Key>
+      <PropertyRef Name="FADID" />
+    </Key>
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="EstablishmentId" Type="varchar" MaxLength="10" />
+    <Property Name="AllowanceId" Type="int" />
+    <Property Name="EffectiveDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="CampAuthority" Type="varchar" MaxLength="100" />
+    <Property Name="CampAuthorityDate" Type="date" />
+    <Property Name="PaymentTypeName" Type="varchar" MaxLength="100" />
+    <Property Name="Remark" Type="varchar" MaxLength="100" />
+    <Property Name="FADID" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_FlowStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_FlowStatus">
+    <Key>
+      <PropertyRef Name="RID" />
+      <PropertyRef Name="FMSID" />
+    </Key>
+    <Property Name="RoleName" Type="varchar" MaxLength="20" />
+    <Property Name="RID" Type="int" Nullable="false" />
+    <Property Name="EstablishmentId" Type="varchar" MaxLength="50" />
+    <Property Name="RejectStatus" Type="int" />
+    <Property Name="CurrentStatus" Type="int" />
+    <Property Name="SubmitStatus" Type="int" />
+    <Property Name="FMSID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_FlowStatusUser_ToolTip' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_FlowStatusUser_ToolTip">
+    <Key>
+      <PropertyRef Name="FADFID" />
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="FADID" Type="int" />
+    <Property Name="RoleName" Type="varchar" MaxLength="20" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="FMSID" Type="int" />
+    <Property Name="FADFID" Type="int" Nullable="false" />
+    <Property Name="RID" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_GSQDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_GSQDetails">
+    <Key>
+      <PropertyRef Name="GSQHID" />
+    </Key>
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Branch" Type="varchar" MaxLength="50" />
+    <Property Name="PostedLocation" Type="varchar" MaxLength="5" />
+    <Property Name="Division" Type="varchar" MaxLength="50" />
+    <Property Name="service_type" Type="int" />
+    <Property Name="RecordStatusID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="FlowManagementStatusID" Type="int" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="Expr1" Type="int" />
+    <Property Name="FSGSQID" Type="int" />
+    <Property Name="RejectStatus" Type="int" />
+    <Property Name="CurrentStatus" Type="int" />
+    <Property Name="SubmitStatus" Type="int" />
+    <Property Name="GSQHID" Type="int" Nullable="false" />
+    <Property Name="Sno" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceTypeId" Type="int" />
+    <Property Name="Location" Type="varchar" MaxLength="50" />
+    <Property Name="GSQLocation" Type="varchar" MaxLength="50" />
+    <Property Name="GSQNo" Type="varchar" MaxLength="50" />
+    <Property Name="GSQStatus" Type="varchar" MaxLength="50" />
+    <Property Name="AllocatedDate" Type="date" />
+    <Property Name="VacantDate" Type="date" />
+    <Property Name="PORDate" Type="date" />
+    <Property Name="RefNo" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="int" />
+    <Property Name="StatusName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_Holiday' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_Holiday">
+    <Key>
+      <PropertyRef Name="PHCID" />
+    </Key>
+    <Property Name="HolidayTypeName" Type="varchar" MaxLength="100" />
+    <Property Name="PHCID" Type="int" Nullable="false" />
+    <Property Name="ApplicableDate" Type="date" />
+    <Property Name="Reason" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_Leave' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_Leave">
+    <Key>
+      <PropertyRef Name="LHID" />
+      <PropertyRef Name="LFSID" />
+    </Key>
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="PaymentTypeName" Type="varchar" MaxLength="100" />
+    <Property Name="ServiceCategoryName" Type="varchar" MaxLength="500" />
+    <Property Name="LeaveCategoryName" Type="varchar" MaxLength="50" />
+    <Property Name="LHID" Type="int" Nullable="false" />
+    <Property Name="ServiceCategoryId" Type="int" />
+    <Property Name="Sno" Type="varchar" MaxLength="50" />
+    <Property Name="LeaveCategoryId" Type="int" />
+    <Property Name="TotalDays" Type="int" />
+    <Property Name="PaymentTypeId" Type="int" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="ToDate" Type="date" />
+    <Property Name="Authority" Type="varchar" MaxLength="100" />
+    <Property Name="PorStatus" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+    <Property Name="Formation" Type="varchar" MaxLength="60" />
+    <Property Name="EstablishmentId" Type="varchar" MaxLength="50" />
+    <Property Name="RankID" Type="int" />
+    <Property Name="LFSID" Type="int" Nullable="false" />
+    <Property Name="FMSID" Type="int" />
+    <Property Name="RecordStatusId" Type="int" />
+    <Property Name="Comment" Type="varchar" MaxLength="50" />
+    <Property Name="CurrentStatus" Type="int" />
+    <Property Name="RejectStatus" Type="int" />
+    <Property Name="SubmitStatus" Type="int" />
+    <Property Name="Expr1" Type="int" />
+    <Property Name="DeivisionId" Type="varchar" MaxLength="10" />
+    <Property Name="DivisionId" Type="varchar" MaxLength="50" />
+    <Property Name="EstablishmentId_" Type="varchar" MaxLength="50" />
+    <Property Name="PrivilegeLeave" Type="int" />
+    <Property Name="CasualLeave" Type="int" />
+    <Property Name="AnnualLeave" Type="int" />
+    <Property Name="LeaveLeave" Type="int" />
+    <Property Name="Weekend" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PublicHoliday" Type="int" />
+    <Property Name="ReEngagementLeave" Type="int" />
+    <Property Name="RoleName" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_LeaveDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_LeaveDetail">
+    <Key>
+      <PropertyRef Name="LDID" />
+      <PropertyRef Name="LHID" />
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="LDID" Type="int" Nullable="false" />
+    <Property Name="LeaveHeaderId" Type="int" />
+    <Property Name="PrivilegeLeave" Type="int" />
+    <Property Name="CasualLeave" Type="int" />
+    <Property Name="AnnualLeave" Type="int" />
+    <Property Name="LeaveLeave" Type="int" />
+    <Property Name="PublicHoliday" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="int" />
+    <Property Name="LHID" Type="int" Nullable="false" />
+    <Property Name="ServiceCategoryId" Type="int" />
+    <Property Name="Sno" Type="varchar" MaxLength="50" />
+    <Property Name="LeaveCategoryId" Type="int" />
+    <Property Name="TotalDays" Type="int" />
+    <Property Name="PaymentTypeId" Type="int" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="ToDate" Type="date" />
+    <Property Name="Authority" Type="varchar" MaxLength="100" />
+    <Property Name="PorStatus" Type="int" />
+    <Property Name="Expr1" Type="int" />
+    <Property Name="Expr2" Type="datetime" />
+    <Property Name="Expr3" Type="varchar" MaxLength="100" />
+    <Property Name="Expr4" Type="int" />
+    <Property Name="Expr5" Type="datetime" />
+    <Property Name="Expr6" Type="varchar" MaxLength="100" />
+    <Property Name="Expr7" Type="int" />
+    <Property Name="Expr8" Type="varchar" MaxLength="15" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="RankID" Type="int" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Branch" Type="varchar" MaxLength="50" />
+    <Property Name="BranchCode" Type="int" />
+    <Property Name="PostedLocation" Type="varchar" MaxLength="5" />
+    <Property Name="Division" Type="varchar" MaxLength="50" />
+    <Property Name="DischargeDate" Type="datetime" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="Service_Status" Type="int" />
+    <Property Name="service_type" Type="int" />
+    <Property Name="DateOfEnlist" Type="datetime" />
+    <Property Name="Formation" Type="varchar" MaxLength="60" />
+    <Property Name="SubRank" Type="int" />
+    <Property Name="Weekend" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_LeaveFlow_FullDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_LeaveFlow_FullDetails">
+    <Key>
+      <PropertyRef Name="LHID" />
+    </Key>
+    <Property Name="LHID" Type="int" Nullable="false" />
+    <Property Name="Sno" Type="varchar" MaxLength="50" />
+    <Property Name="EstablishmentId" Type="varchar" MaxLength="50" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="ToDate" Type="date" />
+    <Property Name="RoleName" Type="varchar" MaxLength="20" />
+    <Property Name="RID" Type="int" />
+    <Property Name="IsProcessed" Type="int" />
+    <Property Name="LeaveCategoryId" Type="int" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Authority" Type="varchar" MaxLength="100" />
+    <Property Name="PaymentTypeId" Type="int" />
+    <Property Name="Expr1" Type="varchar" MaxLength="15" />
+    <Property Name="RecordStatusId" Type="int" />
+    <Property Name="RecordStatusName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_LeaveFlowToolTip' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_LeaveFlowToolTip">
+    <Key>
+      <PropertyRef Name="LHID" />
+    </Key>
+    <Property Name="LHID" Type="int" Nullable="false" />
+    <Property Name="Sno" Type="varchar" MaxLength="50" />
+    <Property Name="EstablishmentId" Type="varchar" MaxLength="50" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="ToDate" Type="date" />
+    <Property Name="RoleName" Type="varchar" MaxLength="20" />
+    <Property Name="RID" Type="int" />
+    <Property Name="IsProcessed" Type="int" />
+    <Property Name="LeaveCategoryId" Type="int" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Authority" Type="varchar" MaxLength="100" />
+    <Property Name="PaymentTypeId" Type="int" />
+    <Property Name="Expr1" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_LeavePlan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_LeavePlan">
+    <Key>
+      <PropertyRef Name="ALPID" />
+    </Key>
+    <Property Name="LeaveCategoryID" Type="int" />
+    <Property Name="Year" Type="int" />
+    <Property Name="TotalLeaveMonth" Type="int" />
+    <Property Name="TotalLeaveDays" Type="int" />
+    <Property Name="LeaveCategoryName" Type="varchar" MaxLength="50" />
+    <Property Name="LeaveCategoryShortName" Type="varchar" MaxLength="10" />
+    <Property Name="Active" Type="int" />
+    <Property Name="ALPID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_LeaveProcessDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_LeaveProcessDetails">
+    <Key>
+      <PropertyRef Name="LHID" />
+    </Key>
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="EstablishmentId" Type="varchar" MaxLength="50" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="ToDate" Type="date" />
+    <Property Name="IteamShortName" Type="varchar" MaxLength="50" />
+    <Property Name="CalAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IsProcessed" Type="int" />
+    <Property Name="ItemsCode" Type="int" />
+    <Property Name="LHID" Type="int" Nullable="false" />
+    <Property Name="service_type" Type="int" />
+    <Property Name="IteamCode" Type="int" />
+    <Property Name="DaysCounts" Type="int" />
+    <Property Name="Authority" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+    <Property Name="LeaveProcessDate" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.VW_LeaveTest' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_LeaveTest">
+    <Key>
+      <PropertyRef Name="LHID" />
+      <PropertyRef Name="LFSID" />
+    </Key>
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="PaymentTypeName" Type="varchar" MaxLength="100" />
+    <Property Name="ServiceCategoryName" Type="varchar" MaxLength="500" />
+    <Property Name="LeaveCategoryName" Type="varchar" MaxLength="50" />
+    <Property Name="LHID" Type="int" Nullable="false" />
+    <Property Name="ServiceCategoryId" Type="int" />
+    <Property Name="Sno" Type="varchar" MaxLength="50" />
+    <Property Name="LeaveCategoryId" Type="int" />
+    <Property Name="TotalDays" Type="int" />
+    <Property Name="PaymentTypeId" Type="int" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="ToDate" Type="date" />
+    <Property Name="Authority" Type="varchar" MaxLength="100" />
+    <Property Name="PorStatus" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+    <Property Name="Formation" Type="varchar" MaxLength="60" />
+    <Property Name="EstablishmentId" Type="varchar" MaxLength="50" />
+    <Property Name="RankID" Type="int" />
+    <Property Name="LFSID" Type="int" Nullable="false" />
+    <Property Name="FMSID" Type="int" />
+    <Property Name="RecordStatusId" Type="int" />
+    <Property Name="Comment" Type="varchar" MaxLength="50" />
+    <Property Name="CurrentStatus" Type="int" />
+    <Property Name="RejectStatus" Type="int" />
+    <Property Name="SubmitStatus" Type="int" />
+    <Property Name="Expr1" Type="int" />
+    <Property Name="DeivisionId" Type="varchar" MaxLength="10" />
+    <Property Name="DivisionId" Type="varchar" MaxLength="50" />
+    <Property Name="EstablishmentId_" Type="varchar" MaxLength="50" />
+    <Property Name="PrivilegeLeave" Type="int" />
+    <Property Name="CasualLeave" Type="int" />
+    <Property Name="AnnualLeave" Type="int" />
+    <Property Name="LeaveLeave" Type="int" />
+    <Property Name="Weekend" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PublicHoliday" Type="int" />
+    <Property Name="ReEngagementLeave" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_LivingINOutReject' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_LivingINOutReject">
+    <Key>
+      <PropertyRef Name="LFSID" />
+    </Key>
+    <Property Name="LFSID" Type="int" Nullable="false" />
+    <Property Name="InOut_ID" Type="int" />
+    <Property Name="RSID" Type="int" />
+    <Property Name="UID" Type="int" />
+    <Property Name="FMSID" Type="int" />
+    <Property Name="RID" Type="int" />
+    <Property Name="CurrentStatus" Type="int" />
+    <Property Name="SubmitStatus" Type="int" />
+    <Property Name="RoleName" Type="varchar" MaxLength="20" />
+    <Property Name="Location" Type="varchar" MaxLength="50" />
+    <Property Name="Authority" Type="varchar" MaxLength="200" />
+    <Property Name="RefNo" Type="varchar(max)" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Comment" Type="varchar(max)" />
+    <Property Name="LivingStatusName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_LivingStatusReject' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_LivingStatusReject">
+    <Key>
+      <PropertyRef Name="LIOHID" />
+      <PropertyRef Name="FMSID" />
+    </Key>
+    <Property Name="LIOHID" Type="int" Nullable="false" />
+    <Property Name="Sno" Type="bigint" />
+    <Property Name="LivingStatusID" Type="int" />
+    <Property Name="LivingStatusName" Type="varchar" MaxLength="50" />
+    <Property Name="Location" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceTypeId" Type="int" />
+    <Property Name="RefNo" Type="varchar(max)" />
+    <Property Name="Authority" Type="varchar" MaxLength="200" />
+    <Property Name="IsNOKChange" Type="int" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="ToDate" Type="date" />
+    <Property Name="Remarks" Type="varchar(max)" />
+    <Property Name="LIActive" Type="int" />
+    <Property Name="NOKAddress" Type="varchar(max)" />
+    <Property Name="NOKName" Type="varchar(max)" />
+    <Property Name="NOKChangeTo" Type="varchar" MaxLength="50" />
+    <Property Name="Expr1" Type="varchar(max)" />
+    <Property Name="District" Type="varchar" MaxLength="50" />
+    <Property Name="GSDivision" Type="varchar" MaxLength="50" />
+    <Property Name="NearestTown" Type="varchar" MaxLength="50" />
+    <Property Name="PoliceStation" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="int" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="CurrentStatus" Type="int" />
+    <Property Name="RejectStatus" Type="int" />
+    <Property Name="SubmitStatus" Type="int" />
+    <Property Name="FMSID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_MQDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_MQDetails">
+    <Key>
+      <PropertyRef Name="InOut_ID" />
+    </Key>
+    <Property Name="InOut_ID" Type="int" Nullable="false" />
+    <Property Name="Sno" Type="varchar(max)" />
+    <Property Name="FromDate" Type="datetime" />
+    <Property Name="Location" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Qurter_ID" Type="varchar" MaxLength="50" />
+    <Property Name="QurtersStatus" Type="varchar" MaxLength="50" />
+    <Property Name="QuarterLocation" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_NOK_Details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_NOK_Details">
+    <Key>
+      <PropertyRef Name="NOKID" />
+      <PropertyRef Name="ActiveNo" />
+      <PropertyRef Name="SNo" />
+      <PropertyRef Name="NOKType" />
+    </Key>
+    <Property Name="NOKID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ActiveNo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="SNo" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="NOKType" Type="int" Nullable="false" />
+    <Property Name="Relationship" Type="int" />
+    <Property Name="RelationshipName" Type="varchar" MaxLength="30" />
+    <Property Name="NOKName" Type="varchar" MaxLength="150" />
+    <Property Name="NOKAddress" Type="varchar" MaxLength="350" />
+    <Property Name="WEFDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_NOKChangeDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_NOKChangeDetails">
+    <Key>
+      <PropertyRef Name="NOKCHID" />
+    </Key>
+    <Property Name="RecordStatusID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="FlowManagementStatusID" Type="int" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="NOKAddress" Type="varchar(max)" />
+    <Property Name="NOKName" Type="varchar(max)" />
+    <Property Name="NOKChangeTo" Type="varchar" MaxLength="50" />
+    <Property Name="District" Type="varchar" MaxLength="50" />
+    <Property Name="GSDivision" Type="varchar" MaxLength="50" />
+    <Property Name="NearestTown" Type="varchar" MaxLength="50" />
+    <Property Name="PoliceStation" Type="varchar" MaxLength="50" />
+    <Property Name="Authority" Type="varchar" MaxLength="50" />
+    <Property Name="Remarks" Type="varchar(max)" />
+    <Property Name="EstablishmentId" Type="varchar" MaxLength="50" />
+    <Property Name="RejectStatus" Type="int" />
+    <Property Name="CurrentStatus" Type="int" />
+    <Property Name="SubmitStatus" Type="int" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Marriage_Status" Type="char" MaxLength="3" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Sno" Type="bigint" />
+    <Property Name="NOKCHID" Type="int" Nullable="false" />
+    <Property Name="Location" Type="varchar" MaxLength="50" />
+    <Property Name="NOKStatus" Type="int" />
+    <Property Name="PORDate" Type="date" />
+    <Property Name="RefNo" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_NokDetailsP2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_NokDetailsP2">
+    <Key>
+      <PropertyRef Name="SNo" />
+    </Key>
+    <Property Name="SNo" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="NOKName" Type="varchar" MaxLength="100" />
+    <Property Name="Relationship" Type="varchar" MaxLength="50" />
+    <Property Name="EffectiveDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ActiveNo" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_OfficerNOK' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_OfficerNOK">
+    <Key>
+      <PropertyRef Name="SNo" />
+    </Key>
+    <Property Name="SNo" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="NOKName" Type="varchar" MaxLength="100" />
+    <Property Name="Relationship" Type="varchar" MaxLength="50" />
+    <Property Name="ActiveNo" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_OtherNOK' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_OtherNOK">
+    <Key>
+      <PropertyRef Name="SNo" />
+      <PropertyRef Name="ActiveNo" />
+    </Key>
+    <Property Name="SNo" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="NOKName" Type="varchar" MaxLength="150" />
+    <Property Name="Relationship" Type="varchar" MaxLength="30" />
+    <Property Name="ActiveNo" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_P2PersonalDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_P2PersonalDetail">
+    <Key>
+      <PropertyRef Name="PostedLocation" />
+      <PropertyRef Name="Division" />
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="SNo" Type="varchar" MaxLength="15" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="RankID" Type="int" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Branch" Type="varchar" MaxLength="30" />
+    <Property Name="BranchCode" Type="int" />
+    <Property Name="PostedLocation" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Division" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="DischargeDate" Type="datetime" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="Service_Status" Type="int" />
+    <Property Name="Service_Type" Type="int" />
+    <Property Name="DateOfEnlist" Type="datetime" />
+    <Property Name="Picture" Type="varbinary(max)" />
+    <Property Name="Formation" Type="varchar" MaxLength="60" />
+    <Property Name="SubRank" Type="varchar" MaxLength="50" />
+    <Property Name="CurrentLocation" Type="varchar" MaxLength="5" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_P3PersonalDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_P3PersonalDetail">
+    <Key>
+      <PropertyRef Name="SNo" />
+      <PropertyRef Name="ServiceNo" />
+      <PropertyRef Name="RankID" />
+      <PropertyRef Name="Branch" />
+      <PropertyRef Name="BranchCode" />
+      <PropertyRef Name="PostedLocation" />
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="SNo" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="RankID" Type="int" Nullable="false" />
+    <Property Name="Rank" Type="varchar" MaxLength="15" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Branch" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BranchCode" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="PostedLocation" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="Division" Type="char" MaxLength="5" />
+    <Property Name="DischargeDate" Type="datetime" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="Service_Status" Type="int" />
+    <Property Name="Service_Type" Type="int" />
+    <Property Name="DateOfEnlist" Type="datetime" />
+    <Property Name="Picture" Type="varbinary(max)" />
+    <Property Name="Formation" Type="varchar" MaxLength="60" />
+    <Property Name="CurrentLocation" Type="char" MaxLength="3" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_PersonalDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_PersonalDetail">
+    <Key>
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="SNo" Type="varchar" MaxLength="25" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="RankID" Type="int" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Branch" Type="varchar" MaxLength="50" />
+    <Property Name="BranchCode" Type="int" />
+    <Property Name="PostedLocation" Type="varchar" MaxLength="5" />
+    <Property Name="Division" Type="varchar" MaxLength="50" />
+    <Property Name="DischargeDate" Type="datetime" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="Service_Status" Type="int" />
+    <Property Name="Marriage_Status" Type="char" MaxLength="3" />
+    <Property Name="service_type" Type="int" />
+    <Property Name="DateOfEnlist" Type="datetime" />
+    <Property Name="Formation" Type="varchar" MaxLength="60" />
+    <Property Name="SubRank" Type="int" />
+    <Property Name="serTypeDescription" Type="varchar" MaxLength="22" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'POR.dbo.Vw_PersonalNOK' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Vw_PersonalNOK">
+          <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+          <Property Name="Rank" Type="varchar" MaxLength="255" />
+          <Property Name="Name" Type="varchar(max)" />
+          <Property Name="NOKName" Type="varchar" MaxLength="100" />
+          <Property Name="Relationship" Type="varchar" MaxLength="50" />
+          <Property Name="EffectiveDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_PorReport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_PorReport">
+    <Key>
+      <PropertyRef Name="RID" />
+      <PropertyRef Name="LHID" />
+      <PropertyRef Name="LDID" />
+      <PropertyRef Name="LCID" />
+      <PropertyRef Name="LFSID" />
+      <PropertyRef Name="FMSID" />
+    </Key>
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="LeaveCategoryName" Type="varchar" MaxLength="50" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="ToDate" Type="date" />
+    <Property Name="TotalDays" Type="int" />
+    <Property Name="LivingStatusShortName" Type="varchar" MaxLength="100" />
+    <Property Name="Weekend" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PublicHoliday" Type="int" />
+    <Property Name="AnnualLeave" Type="int" />
+    <Property Name="PrivilegeLeave" Type="int" />
+    <Property Name="CasualLeave" Type="int" />
+    <Property Name="LeaveLeave" Type="int" />
+    <Property Name="ReEngagementLeave" Type="int" />
+    <Property Name="Authority" Type="varchar" MaxLength="100" />
+    <Property Name="RID" Type="int" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="EstablishmentId" Type="varchar" MaxLength="50" />
+    <Property Name="service_type" Type="int" />
+    <Property Name="LHID" Type="int" Nullable="false" />
+    <Property Name="LDID" Type="int" Nullable="false" />
+    <Property Name="LCID" Type="int" Nullable="false" />
+    <Property Name="LFSID" Type="int" Nullable="false" />
+    <Property Name="LSID" Type="int" />
+    <Property Name="FMSID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.VW_RANKS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_RANKS">
+    <Key>
+      <PropertyRef Name="RANK" />
+    </Key>
+    <Property Name="RANK" Type="int" Nullable="false" />
+    <Property Name="RNK_NAME" Type="varchar" MaxLength="15" />
+    <Property Name="RANK_TYPE" Type="int" />
+    <Property Name="SHORT_NAME" Type="varchar" MaxLength="255" />
+    <Property Name="LONG_NAME" Type="varchar" MaxLength="255" />
+    <Property Name="SENIORITY" Type="int" />
+    <Property Name="PROMO_DURATION" Type="int" />
+    <Property Name="TOTAL_SERVICE_FOR_PROMOTION" Type="int" />
+    <Property Name="TOTAL_SERVICE_FOR_PROMOTION_DE_LAC" Type="numeric" Precision="18" Scale="1" />
+    <Property Name="TOTAL_SERVICE_FOR_PROMOTION_DE_ACPL" Type="numeric" Precision="18" Scale="1" />
+    <Property Name="TEMPORY_SUBSTANTIVE" Type="varchar" MaxLength="1" />
+    <Property Name="RankGroup" Type="int" />
+    <Property Name="AppProm" Type="varchar" MaxLength="150" />
+    <Property Name="AppPromType" Type="varchar" MaxLength="50" />
+    <Property Name="NextAppProm" Type="varchar" MaxLength="150" />
+    <Property Name="PromPaid" Type="varchar" MaxLength="150" />
+    <Property Name="TOTAL_SERVICE_FOR_PROMOTION_DE" Type="numeric" Precision="18" Scale="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_RejectLeave' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_RejectLeave">
+    <Key>
+      <PropertyRef Name="LHID" />
+      <PropertyRef Name="LFSID" />
+    </Key>
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="PaymentTypeName" Type="varchar" MaxLength="100" />
+    <Property Name="ServiceCategoryName" Type="varchar" MaxLength="500" />
+    <Property Name="LeaveCategoryName" Type="varchar" MaxLength="50" />
+    <Property Name="LHID" Type="int" Nullable="false" />
+    <Property Name="ServiceCategoryId" Type="int" />
+    <Property Name="Sno" Type="varchar" MaxLength="50" />
+    <Property Name="LeaveCategoryId" Type="int" />
+    <Property Name="TotalDays" Type="int" />
+    <Property Name="PaymentTypeId" Type="int" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="ToDate" Type="date" />
+    <Property Name="Authority" Type="varchar" MaxLength="100" />
+    <Property Name="PorStatus" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="int" />
+    <Property Name="Formation" Type="varchar" MaxLength="60" />
+    <Property Name="EstablishmentId" Type="varchar" MaxLength="50" />
+    <Property Name="RankID" Type="int" />
+    <Property Name="LFSID" Type="int" Nullable="false" />
+    <Property Name="FMSID" Type="int" />
+    <Property Name="RecordStatusId" Type="int" />
+    <Property Name="Comment" Type="varchar" MaxLength="50" />
+    <Property Name="CurrentStatus" Type="int" />
+    <Property Name="RejectStatus" Type="int" />
+    <Property Name="SubmitStatus" Type="int" />
+    <Property Name="Expr1" Type="int" />
+    <Property Name="DeivisionId" Type="varchar" MaxLength="10" />
+    <Property Name="DivisionId" Type="varchar" MaxLength="50" />
+    <Property Name="EstablishmentId_" Type="varchar" MaxLength="50" />
+    <Property Name="PrivilegeLeave" Type="int" />
+    <Property Name="CasualLeave" Type="int" />
+    <Property Name="AnnualLeave" Type="int" />
+    <Property Name="LeaveLeave" Type="int" />
+    <Property Name="Weekend" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PublicHoliday" Type="int" />
+    <Property Name="ReEngagementLeave" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_SelectUserRole' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_SelectUserRole">
+    <Key>
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="RoleName" />
+    </Key>
+    <Property Name="UserName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="LocationId" Type="varchar" MaxLength="10" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_UpdateQuery' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_UpdateQuery">
+    <Key>
+      <PropertyRef Name="LFSID" />
+      <PropertyRef Name="LHID" />
+    </Key>
+    <Property Name="LFSID" Type="int" Nullable="false" />
+    <Property Name="LeaveHeaderId" Type="int" />
+    <Property Name="FMSID" Type="int" />
+    <Property Name="RecordStatusId" Type="int" />
+    <Property Name="Comment" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMac" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMac" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="int" />
+    <Property Name="LHID" Type="int" Nullable="false" />
+    <Property Name="ServiceCategoryId" Type="int" />
+    <Property Name="Sno" Type="varchar" MaxLength="50" />
+    <Property Name="LeaveCategoryId" Type="int" />
+    <Property Name="EstablishmentId" Type="varchar" MaxLength="50" />
+    <Property Name="DeivisionId" Type="varchar" MaxLength="10" />
+    <Property Name="TotalDays" Type="int" />
+    <Property Name="PrivilegeLeave" Type="int" />
+    <Property Name="AnnualLeave" Type="int" />
+    <Property Name="PaymentTypeId" Type="int" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="ToDate" Type="date" />
+    <Property Name="Authority" Type="varchar" MaxLength="100" />
+    <Property Name="PorStatus" Type="int" />
+    <Property Name="Expr1" Type="int" />
+    <Property Name="Expr2" Type="datetime" />
+    <Property Name="Expr3" Type="varchar" MaxLength="100" />
+    <Property Name="Expr4" Type="int" />
+    <Property Name="Expr5" Type="datetime" />
+    <Property Name="Expr6" Type="varchar" MaxLength="100" />
+    <Property Name="Expr7" Type="int" />
+    <Property Name="IsProcessed" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_UserFlowHistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_UserFlowHistory">
+    <Key>
+      <PropertyRef Name="RID" />
+      <PropertyRef Name="UID" />
+      <PropertyRef Name="UDID" />
+      <PropertyRef Name="FADFID" />
+    </Key>
+    <Property Name="RoleName" Type="varchar" MaxLength="20" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="PostedLocation" Type="varchar" MaxLength="5" />
+    <Property Name="Formation" Type="varchar" MaxLength="60" />
+    <Property Name="FADID" Type="int" />
+    <Property Name="RID" Type="int" Nullable="false" />
+    <Property Name="UID" Type="int" Nullable="false" />
+    <Property Name="UDID" Type="int" Nullable="false" />
+    <Property Name="SNo" Type="varchar" MaxLength="15" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="RecordStatusId" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="FADFID" Type="int" Nullable="false" />
+    <Property Name="FMSID" Type="int" />
+    <Property Name="EstablishmentId" Type="varchar" MaxLength="50" />
+    <Property Name="Expr1" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POR.dbo.Vw_UserProfile' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_UserProfile">
+    <Key>
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="UID" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleName" Type="varchar" MaxLength="20" />
+    <Property Name="UserName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="10" />
+    <Property Name="Rank" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="PostedLocation" Type="varchar" MaxLength="5" />
+    <Property Name="Formation" Type="varchar" MaxLength="60" />
+    <Property Name="UID" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Allowance_Section">
+    <End Role="LocationType" Type="Self.LocationType" Multiplicity="0..1" />
+    <End Role="Allowance" Type="Self.Allowance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocationType">
+        <PropertyRef Name="LTID" />
+      </Principal>
+      <Dependent Role="Allowance">
+        <PropertyRef Name="SECID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AllowanceItemCode_Allowance">
+    <End Role="Allowance" Type="Self.Allowance" Multiplicity="0..1" />
+    <End Role="AllowanceItemCode" Type="Self.AllowanceItemCode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Allowance">
+        <PropertyRef Name="ALWID" />
+      </Principal>
+      <Dependent Role="AllowanceItemCode">
+        <PropertyRef Name="AllowanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AllowanceValue_Allowance">
+    <End Role="Allowance" Type="Self.Allowance" Multiplicity="0..1" />
+    <End Role="EDCS_AllowanceValue" Type="Self.EDCS_AllowanceValue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Allowance">
+        <PropertyRef Name="ALWID" />
+      </Principal>
+      <Dependent Role="EDCS_AllowanceValue">
+        <PropertyRef Name="AllowanceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FixedAllowanceCancel_FixedAllowanceDetail">
+    <End Role="FixedAllowanceDetail" Type="Self.FixedAllowanceDetail" Multiplicity="0..1" />
+    <End Role="FixedAllowanceCancel" Type="Self.FixedAllowanceCancel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FixedAllowanceDetail">
+        <PropertyRef Name="FADID" />
+      </Principal>
+      <Dependent Role="FixedAllowanceCancel">
+        <PropertyRef Name="FixedAllowanceDetailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FixedAllowanceDetail_Allowance">
+    <End Role="Allowance" Type="Self.Allowance" Multiplicity="0..1" />
+    <End Role="FixedAllowanceDetail" Type="Self.FixedAllowanceDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Allowance">
+        <PropertyRef Name="ALWID" />
+      </Principal>
+      <Dependent Role="FixedAllowanceDetail">
+        <PropertyRef Name="AllowanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FlowManagementStatus_UserRole">
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="0..1" />
+    <End Role="FlowManagementStatus" Type="Self.FlowManagementStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRole">
+        <PropertyRef Name="RID" />
+      </Principal>
+      <Dependent Role="FlowManagementStatus">
+        <PropertyRef Name="UserRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LeaveHeader_LeaveCategory">
+    <End Role="LeaveCategory" Type="Self.LeaveCategory" Multiplicity="0..1" />
+    <End Role="LeaveHeader" Type="Self.LeaveHeader" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeaveCategory">
+        <PropertyRef Name="LCID" />
+      </Principal>
+      <Dependent Role="LeaveHeader">
+        <PropertyRef Name="LeaveCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LeaveHeader_UserInfo">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="LeaveHeader" Type="Self.LeaveHeader" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="LeaveHeader">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LeaveHeader_UserInfo1">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="LeaveHeader" Type="Self.LeaveHeader" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="LeaveHeader">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemLog_UserInfo">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="SystemLog" Type="Self.SystemLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="SystemLog">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetail_UserInfo">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <End Role="UserDetail" Type="Self.UserDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UID" />
+      </Principal>
+      <Dependent Role="UserDetail">
+        <PropertyRef Name="UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfo_SecurityQuestion">
+    <End Role="SecurityQuestion" Type="Self.SecurityQuestion" Multiplicity="0..1" />
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SecurityQuestion">
+        <PropertyRef Name="SQID" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="SecurityQuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfo_UserRole">
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="1" />
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRole">
+        <PropertyRef Name="RID" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PORModelStoreContainer">
+    <EntitySet Name="Allowance" EntityType="Self.Allowance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AllowanceCategory" EntityType="Self.AllowanceCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AllowanceItemCode" EntityType="Self.AllowanceItemCode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AllowancePaymentType" EntityType="Self.AllowancePaymentType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnnualLeavePlan" EntityType="Self.AnnualLeavePlan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Appointment" EntityType="Self.Appointment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CivilStatusCategory" EntityType="Self.CivilStatusCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CivilStatusDivorceDetails" EntityType="Self.CivilStatusDivorceDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CivilStatusHeader" EntityType="Self.CivilStatusHeader" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CivilStatusMarriedDetails" EntityType="Self.CivilStatusMarriedDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CivilStatusSpouseDetails" EntityType="Self.CivilStatusSpouseDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CivilStatusWidowDetails" EntityType="Self.CivilStatusWidowDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DirectItem" EntityType="Self.DirectItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EDCS_AllowanceValue" EntityType="Self.EDCS_AllowanceValue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EDCS_AllowanceValueRank" EntityType="Self.EDCS_AllowanceValueRank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EDCS_ProcessedTransactions" EntityType="Self.EDCS_ProcessedTransactions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EDCS_ProcessHeader" EntityType="Self.EDCS_ProcessHeader" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EDCS_ProcessTypes" EntityType="Self.EDCS_ProcessTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FixAllowanceDetailsFlowStatus" EntityType="Self.FixAllowanceDetailsFlowStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FixedAllowanceCancel" EntityType="Self.FixedAllowanceCancel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FixedAllowanceCancelManual" EntityType="Self.FixedAllowanceCancelManual" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FixedAllowanceDetail" EntityType="Self.FixedAllowanceDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FixedAllowanceEligibleList" EntityType="Self.FixedAllowanceEligibleList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FlowManagementStatus" EntityType="Self.FlowManagementStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FlowStatusCivilStatusDetails" EntityType="Self.FlowStatusCivilStatusDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FlowStatusGSQDetails" EntityType="Self.FlowStatusGSQDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FlowStatusLivingInOutDetails" EntityType="Self.FlowStatusLivingInOutDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FlowStatusNOKChangeDetails" EntityType="Self.FlowStatusNOKChangeDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GSQDetail" EntityType="Self.GSQDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GSQHeader" EntityType="Self.GSQHeader" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GSQStatus" EntityType="Self.GSQStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HolidayType" EntityType="Self.HolidayType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeaveCategory" EntityType="Self.LeaveCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeaveDetail" EntityType="Self.LeaveDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeaveFlowStatus" EntityType="Self.LeaveFlowStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeaveHeader" EntityType="Self.LeaveHeader" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeaveProcessHeadar" EntityType="Self.LeaveProcessHeadar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeaveType" EntityType="Self.LeaveType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LivingInOutDetail" EntityType="Self.LivingInOutDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LivingInOutHeader" EntityType="Self.LivingInOutHeader" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LivingStatus" EntityType="Self.LivingStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LocationType" EntityType="Self.LocationType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MaritalStatus" EntityType="Self.MaritalStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MovementCondition" EntityType="Self.MovementCondition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MovementStatus" EntityType="Self.MovementStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MP" EntityType="Self.MP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NOKChangeDetails" EntityType="Self.NOKChangeDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NOKChangeHeader" EntityType="Self.NOKChangeHeader" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NOKStatus" EntityType="Self.NOKStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentType" EntityType="Self.PaymentType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayStatus" EntityType="Self.PayStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PORFlowGroup" EntityType="Self.PORFlowGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PorModule" EntityType="Self.PorModule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PublicHolidayCalender" EntityType="Self.PublicHolidayCalender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RationAllowenceCharge" EntityType="Self.RationAllowenceCharge" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RationStatus" EntityType="Self.RationStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RecordStatus" EntityType="Self.RecordStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RecordStatusNew" EntityType="Self.RecordStatusNew" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SecurityQuestion" EntityType="Self.SecurityQuestion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceCategory" EntityType="Self.ServiceCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceType" EntityType="Self.ServiceType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SpouseStatusDetail" EntityType="Self.SpouseStatusDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SystemLog" EntityType="Self.SystemLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TableCategories" EntityType="Self.TableCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="test" EntityType="Self.test" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserDetail" EntityType="Self.UserDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserPermission" EntityType="Self.UserPermission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRoleNew" EntityType="Self.UserRoleNew" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ItemCodeList" EntityType="Self.ItemCodeList" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ItemCodeList].[CID] AS [CID], 
+    [ItemCodeList].[IteamCode] AS [IteamCode], 
+    [ItemCodeList].[IteamShortName] AS [IteamShortName], 
+    [ItemCodeList].[IteamLongName] AS [IteamLongName], 
+    [ItemCodeList].[IteamType] AS [IteamType]
+    FROM [dbo].[ItemCodeList] AS [ItemCodeList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PorObject" EntityType="Self.PorObject" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PorObject].[OID] AS [OID], 
+    [PorObject].[RID] AS [RID], 
+    [PorObject].[Objects_Name] AS [Objects_Name], 
+    [PorObject].[Active] AS [Active]
+    FROM [dbo].[PorObject] AS [PorObject]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PorYear" EntityType="Self.PorYear" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PorYear].[YD] AS [YD], 
+    [PorYear].[PorYear] AS [PorYear], 
+    [PorYear].[Status] AS [Status]
+    FROM [dbo].[PorYear] AS [PorYear]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Service_Type" EntityType="Self.Service_Type" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Service_Type].[SVCType] AS [SVCType], 
+    [Service_Type].[Service_TypeFull] AS [Service_TypeFull], 
+    [Service_Type].[IsOfficer] AS [IsOfficer]
+    FROM [dbo].[Service_Type] AS [Service_Type]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="F1250" EntityType="Self.F1250" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [F1250].[ActiveNo] AS [ActiveNo], 
+    [F1250].[SNo] AS [SNo], 
+    [F1250].[Rank] AS [Rank], 
+    [F1250].[F1250] AS [F1250], 
+    [F1250].[Initials] AS [Initials], 
+    [F1250].[Surname] AS [Surname], 
+    [F1250].[Branch_Trade] AS [Branch_Trade], 
+    [F1250].[NICNo] AS [NICNo], 
+    [F1250].[Sex] AS [Sex], 
+    [F1250].[Feet] AS [Feet], 
+    [F1250].[Inch] AS [Inch], 
+    [F1250].[ColourofHair] AS [ColourofHair], 
+    [F1250].[ColourofEyes] AS [ColourofEyes], 
+    [F1250].[BloodGroup] AS [BloodGroup], 
+    [F1250].[BirthMark] AS [BirthMark], 
+    [F1250].[Expire_Date] AS [Expire_Date], 
+    [F1250].[EXPIRES_DTE] AS [EXPIRES_DTE], 
+    [F1250].[DateOfBirth] AS [DateOfBirth], 
+    [F1250].[Service_Type] AS [Service_Type], 
+    [F1250].[Service_Status] AS [Service_Status], 
+    [F1250].[ServicingStatus] AS [ServicingStatus], 
+    [F1250].[SVCType] AS [SVCType], 
+    [F1250].[Expr1] AS [Expr1], 
+    [F1250].[NICNo_New] AS [NICNo_New], 
+    [F1250].[DTE_ISU] AS [DTE_ISU], 
+    [F1250].[BATCH_NO] AS [BATCH_NO], 
+    [F1250].[SER_NO_CARD] AS [SER_NO_CARD], 
+    [F1250].[NO_OF_CARDS] AS [NO_OF_CARDS], 
+    [F1250].[DateOfEnlist] AS [DateOfEnlist], 
+    [F1250].[RNK_NAME] AS [RNK_NAME], 
+    [F1250].[RptShortName] AS [RptShortName], 
+    [F1250].[Posted_Location] AS [Posted_Location], 
+    [F1250].[ID_EXP_DAT] AS [ID_EXP_DAT], 
+    [F1250].[Posted_Formation] AS [Posted_Formation], 
+    [F1250].[LivingIn_Out] AS [LivingIn_Out], 
+    [F1250].[DivisionName] AS [DivisionName]
+    FROM [dbo].[F1250] AS [F1250]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TESTMDATA" EntityType="Self.TESTMDATA" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TESTMDATA].[SNo] AS [SNo], 
+    [TESTMDATA].[ServiceNo] AS [ServiceNo], 
+    [TESTMDATA].[RankID] AS [RankID], 
+    [TESTMDATA].[Rank] AS [Rank], 
+    [TESTMDATA].[Name] AS [Name], 
+    [TESTMDATA].[Branch] AS [Branch], 
+    [TESTMDATA].[BranchCode] AS [BranchCode], 
+    [TESTMDATA].[PostedLocation] AS [PostedLocation], 
+    [TESTMDATA].[Division] AS [Division], 
+    [TESTMDATA].[DischargeDate] AS [DischargeDate], 
+    [TESTMDATA].[type] AS [type], 
+    [TESTMDATA].[Service_Status] AS [Service_Status], 
+    [TESTMDATA].[MarriageStatus] AS [MarriageStatus], 
+    [TESTMDATA].[service_type] AS [service_type], 
+    [TESTMDATA].[DateOfEnlist] AS [DateOfEnlist], 
+    [TESTMDATA].[Formation] AS [Formation], 
+    [TESTMDATA].[SubRank] AS [SubRank]
+    FROM [dbo].[TESTMDATA] AS [TESTMDATA]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TestVw" EntityType="Self.TestVw" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TestVw].[FADID] AS [FADID], 
+    [TestVw].[ServiceType] AS [ServiceType], 
+    [TestVw].[ServiceNo] AS [ServiceNo], 
+    [TestVw].[Rank] AS [Rank], 
+    [TestVw].[Name] AS [Name], 
+    [TestVw].[AllowanceId] AS [AllowanceId], 
+    [TestVw].[AllowanceCategoryID] AS [AllowanceCategoryID], 
+    [TestVw].[CampAuthority] AS [CampAuthority], 
+    [TestVw].[CampAuthorityDate] AS [CampAuthorityDate], 
+    [TestVw].[EffectiveDate] AS [EffectiveDate], 
+    [TestVw].[EndDate] AS [EndDate], 
+    [TestVw].[RecordStatusId] AS [RecordStatusId], 
+    [TestVw].[CreatedBy] AS [CreatedBy], 
+    [TestVw].[RankID] AS [RankID], 
+    [TestVw].[AllowanceName] AS [AllowanceName], 
+    [TestVw].[Service_Type] AS [Service_Type], 
+    [TestVw].[FMSID] AS [FMSID], 
+    [TestVw].[Active] AS [Active], 
+    [TestVw].[EstablishmentId] AS [EstablishmentId], 
+    [TestVw].[CreatedDate] AS [CreatedDate]
+    FROM [dbo].[TestVw] AS [TestVw]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_AllNOK" EntityType="Self.Vw_AllNOK" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_AllNOK].[SNo] AS [SNo], 
+    [Vw_AllNOK].[NOKName] AS [NOKName], 
+    [Vw_AllNOK].[Relationship] AS [Relationship], 
+    [Vw_AllNOK].[EffectiveDate] AS [EffectiveDate], 
+    [Vw_AllNOK].[ModifiedDate] AS [ModifiedDate], 
+    [Vw_AllNOK].[ActiveNo] AS [ActiveNo]
+    FROM [dbo].[Vw_AllNOK] AS [Vw_AllNOK]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_CivliStatusReject" EntityType="Self.Vw_CivliStatusReject" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_CivliStatusReject].[CSHID] AS [CSHID], 
+    [Vw_CivliStatusReject].[CivilStatusHeaderID] AS [CivilStatusHeaderID], 
+    [Vw_CivliStatusReject].[Sno] AS [Sno], 
+    [Vw_CivliStatusReject].[SubCategoryId] AS [SubCategoryId], 
+    [Vw_CivliStatusReject].[Location] AS [Location], 
+    [Vw_CivliStatusReject].[ServiceTypeId] AS [ServiceTypeId], 
+    [Vw_CivliStatusReject].[RefNo] AS [RefNo], 
+    [Vw_CivliStatusReject].[Authority] AS [Authority], 
+    [Vw_CivliStatusReject].[Active] AS [Active], 
+    [Vw_CivliStatusReject].[CategoryName] AS [CategoryName], 
+    [Vw_CivliStatusReject].[CategoryCode] AS [CategoryCode], 
+    [Vw_CivliStatusReject].[SpouseName] AS [SpouseName], 
+    [Vw_CivliStatusReject].[CSMDID] AS [CSMDID], 
+    [Vw_CivliStatusReject].[MarriageDate] AS [MarriageDate], 
+    [Vw_CivliStatusReject].[MarriageCertificateNo] AS [MarriageCertificateNo], 
+    [Vw_CivliStatusReject].[RegistarOfficeLocation] AS [RegistarOfficeLocation], 
+    [Vw_CivliStatusReject].[Expr1] AS [Expr1], 
+    [Vw_CivliStatusReject].[DivorceDtae] AS [DivorceDtae], 
+    [Vw_CivliStatusReject].[Place] AS [Place], 
+    [Vw_CivliStatusReject].[CourseCaseNo] AS [CourseCaseNo], 
+    [Vw_CivliStatusReject].[DateOfCase] AS [DateOfCase], 
+    [Vw_CivliStatusReject].[Expr2] AS [Expr2], 
+    [Vw_CivliStatusReject].[CSWDID] AS [CSWDID], 
+    [Vw_CivliStatusReject].[DateofDecease] AS [DateofDecease], 
+    [Vw_CivliStatusReject].[DeathCertificateNoOfSpouse] AS [DeathCertificateNoOfSpouse], 
+    [Vw_CivliStatusReject].[NOKAddress] AS [NOKAddress], 
+    [Vw_CivliStatusReject].[NOKName] AS [NOKName], 
+    [Vw_CivliStatusReject].[NOKChangeTo] AS [NOKChangeTo], 
+    [Vw_CivliStatusReject].[Remarks] AS [Remarks], 
+    [Vw_CivliStatusReject].[District] AS [District], 
+    [Vw_CivliStatusReject].[GSDivision] AS [GSDivision], 
+    [Vw_CivliStatusReject].[NearestTown] AS [NearestTown], 
+    [Vw_CivliStatusReject].[PoliceStation] AS [PoliceStation], 
+    [Vw_CivliStatusReject].[Expr3] AS [Expr3], 
+    [Vw_CivliStatusReject].[ServiceNo] AS [ServiceNo], 
+    [Vw_CivliStatusReject].[Rank] AS [Rank], 
+    [Vw_CivliStatusReject].[Name] AS [Name], 
+    [Vw_CivliStatusReject].[CurrentStatus] AS [CurrentStatus], 
+    [Vw_CivliStatusReject].[RejectStatus] AS [RejectStatus], 
+    [Vw_CivliStatusReject].[SubmitStatus] AS [SubmitStatus], 
+    [Vw_CivliStatusReject].[FMSID] AS [FMSID], 
+    [Vw_CivliStatusReject].[FSCSID] AS [FSCSID]
+    FROM [dbo].[Vw_CivliStatusReject] AS [Vw_CivliStatusReject]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_CurrentAttachment" EntityType="Self.Vw_CurrentAttachment" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_CurrentAttachment].[Ser No] AS [Ser No], 
+    [Vw_CurrentAttachment].[Rank] AS [Rank], 
+    [Vw_CurrentAttachment].[Name] AS [Name], 
+    [Vw_CurrentAttachment].[Branch] AS [Branch], 
+    [Vw_CurrentAttachment].[Posted Date] AS [Posted Date], 
+    [Vw_CurrentAttachment].[ToDate] AS [ToDate], 
+    [Vw_CurrentAttachment].[Location] AS [Location], 
+    [Vw_CurrentAttachment].[DivisionName] AS [DivisionName], 
+    [Vw_CurrentAttachment].[AppointName] AS [AppointName], 
+    [Vw_CurrentAttachment].[SENIORITY] AS [SENIORITY], 
+    [Vw_CurrentAttachment].[Expr1] AS [Expr1]
+    FROM [dbo].[Vw_CurrentAttachment] AS [Vw_CurrentAttachment]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_CurrentPosting" EntityType="Self.Vw_CurrentPosting" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_CurrentPosting].[SNo] AS [SNo], 
+    [Vw_CurrentPosting].[ServiceNo] AS [ServiceNo], 
+    [Vw_CurrentPosting].[Rank] AS [Rank], 
+    [Vw_CurrentPosting].[Name] AS [Name], 
+    [Vw_CurrentPosting].[Date] AS [Date], 
+    [Vw_CurrentPosting].[Appointment] AS [Appointment], 
+    [Vw_CurrentPosting].[Location] AS [Location], 
+    [Vw_CurrentPosting].[Formation] AS [Formation]
+    FROM [dbo].[Vw_CurrentPosting] AS [Vw_CurrentPosting]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_CurrentUserLiving" EntityType="Self.Vw_CurrentUserLiving" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_CurrentUserLiving].[LFSID] AS [LFSID], 
+    [Vw_CurrentUserLiving].[InOut_ID] AS [InOut_ID], 
+    [Vw_CurrentUserLiving].[RSID] AS [RSID], 
+    [Vw_CurrentUserLiving].[UID] AS [UID], 
+    [Vw_CurrentUserLiving].[FMSID] AS [FMSID], 
+    [Vw_CurrentUserLiving].[RID] AS [RID], 
+    [Vw_CurrentUserLiving].[RejectStatus] AS [RejectStatus], 
+    [Vw_CurrentUserLiving].[CurrentStatus] AS [CurrentStatus], 
+    [Vw_CurrentUserLiving].[SubmitStatus] AS [SubmitStatus], 
+    [Vw_CurrentUserLiving].[RoleName] AS [RoleName], 
+    [Vw_CurrentUserLiving].[Location] AS [Location], 
+    [Vw_CurrentUserLiving].[Authority] AS [Authority], 
+    [Vw_CurrentUserLiving].[RefNo] AS [RefNo], 
+    [Vw_CurrentUserLiving].[ServiceNo] AS [ServiceNo], 
+    [Vw_CurrentUserLiving].[Rank] AS [Rank], 
+    [Vw_CurrentUserLiving].[Name] AS [Name], 
+    [Vw_CurrentUserLiving].[Comment] AS [Comment], 
+    [Vw_CurrentUserLiving].[LivingStatusShortName] AS [LivingStatusShortName]
+    FROM [dbo].[Vw_CurrentUserLiving] AS [Vw_CurrentUserLiving]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_CurrentUserRoleMarried" EntityType="Self.Vw_CurrentUserRoleMarried" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_CurrentUserRoleMarried].[FSCSID] AS [FSCSID], 
+    [Vw_CurrentUserRoleMarried].[CivilStatusHeaderID] AS [CivilStatusHeaderID], 
+    [Vw_CurrentUserRoleMarried].[RecordStatusID] AS [RecordStatusID], 
+    [Vw_CurrentUserRoleMarried].[UserID] AS [UserID], 
+    [Vw_CurrentUserRoleMarried].[FlowManagementStatusID] AS [FlowManagementStatusID], 
+    [Vw_CurrentUserRoleMarried].[RoleID] AS [RoleID], 
+    [Vw_CurrentUserRoleMarried].[RejectStatus] AS [RejectStatus], 
+    [Vw_CurrentUserRoleMarried].[CurrentStatus] AS [CurrentStatus], 
+    [Vw_CurrentUserRoleMarried].[SubmitStatus] AS [SubmitStatus], 
+    [Vw_CurrentUserRoleMarried].[RoleName] AS [RoleName], 
+    [Vw_CurrentUserRoleMarried].[Location] AS [Location], 
+    [Vw_CurrentUserRoleMarried].[Authority] AS [Authority], 
+    [Vw_CurrentUserRoleMarried].[RefNo] AS [RefNo], 
+    [Vw_CurrentUserRoleMarried].[ServiceNo] AS [ServiceNo], 
+    [Vw_CurrentUserRoleMarried].[Rank] AS [Rank], 
+    [Vw_CurrentUserRoleMarried].[Name] AS [Name], 
+    [Vw_CurrentUserRoleMarried].[Comment] AS [Comment], 
+    [Vw_CurrentUserRoleMarried].[CategoryName] AS [CategoryName]
+    FROM [dbo].[Vw_CurrentUserRoleMarried] AS [Vw_CurrentUserRoleMarried]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_DirectItem" EntityType="Self.Vw_DirectItem" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_DirectItem].[ItemCode] AS [ItemCode], 
+    [Vw_DirectItem].[ShortName] AS [ShortName], 
+    [Vw_DirectItem].[LongName] AS [LongName]
+    FROM [dbo].[Vw_DirectItem] AS [Vw_DirectItem]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_FAEligibleList" EntityType="Self.Vw_FAEligibleList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_FAEligibleList].[ServiceNo] AS [ServiceNo], 
+    [Vw_FAEligibleList].[Rank] AS [Rank], 
+    [Vw_FAEligibleList].[Name] AS [Name], 
+    [Vw_FAEligibleList].[AllowanceName] AS [AllowanceName], 
+    [Vw_FAEligibleList].[EffectiveDate] AS [EffectiveDate], 
+    [Vw_FAEligibleList].[SNo] AS [SNo], 
+    [Vw_FAEligibleList].[ELFAID] AS [ELFAID], 
+    [Vw_FAEligibleList].[PostedLocation] AS [PostedLocation], 
+    [Vw_FAEligibleList].[RankID] AS [RankID], 
+    [Vw_FAEligibleList].[AllowanceId] AS [AllowanceId], 
+    [Vw_FAEligibleList].[Active] AS [Active]
+    FROM [dbo].[Vw_FAEligibleList] AS [Vw_FAEligibleList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_FixedAllowance_FLowStatus" EntityType="Self.Vw_FixedAllowance_FLowStatus" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_FixedAllowance_FLowStatus].[ServiceNo] AS [ServiceNo], 
+    [Vw_FixedAllowance_FLowStatus].[Rank] AS [Rank], 
+    [Vw_FixedAllowance_FLowStatus].[RankID] AS [RankID], 
+    [Vw_FixedAllowance_FLowStatus].[Name] AS [Name], 
+    [Vw_FixedAllowance_FLowStatus].[Service_Type] AS [Service_Type], 
+    [Vw_FixedAllowance_FLowStatus].[AllowanceId] AS [AllowanceId], 
+    [Vw_FixedAllowance_FLowStatus].[AllowanceName] AS [AllowanceName], 
+    [Vw_FixedAllowance_FLowStatus].[AllowanceCategoryID] AS [AllowanceCategoryID], 
+    [Vw_FixedAllowance_FLowStatus].[CampAuthority] AS [CampAuthority], 
+    [Vw_FixedAllowance_FLowStatus].[CampAuthorityDate] AS [CampAuthorityDate], 
+    [Vw_FixedAllowance_FLowStatus].[EffectiveDate] AS [EffectiveDate], 
+    [Vw_FixedAllowance_FLowStatus].[EndDate] AS [EndDate], 
+    [Vw_FixedAllowance_FLowStatus].[RecordStatusId] AS [RecordStatusId], 
+    [Vw_FixedAllowance_FLowStatus].[CreatedBy] AS [CreatedBy], 
+    [Vw_FixedAllowance_FLowStatus].[CreatedDate] AS [CreatedDate], 
+    [Vw_FixedAllowance_FLowStatus].[FMSID] AS [FMSID], 
+    [Vw_FixedAllowance_FLowStatus].[Active] AS [Active], 
+    [Vw_FixedAllowance_FLowStatus].[EstablishmentId] AS [EstablishmentId], 
+    [Vw_FixedAllowance_FLowStatus].[IsProcessed] AS [IsProcessed], 
+    [Vw_FixedAllowance_FLowStatus].[FADID] AS [FADID], 
+    [Vw_FixedAllowance_FLowStatus].[FADS_CreatedBy] AS [FADS_CreatedBy], 
+    [Vw_FixedAllowance_FLowStatus].[Comment] AS [Comment], 
+    [Vw_FixedAllowance_FLowStatus].[Sno] AS [Sno]
+    FROM [dbo].[Vw_FixedAllowance_FLowStatus] AS [Vw_FixedAllowance_FLowStatus]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_FixedAllowanceDetail" EntityType="Self.Vw_FixedAllowanceDetail" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_FixedAllowanceDetail].[Service_Type] AS [Service_Type], 
+    [Vw_FixedAllowanceDetail].[ServiceType] AS [ServiceType], 
+    [Vw_FixedAllowanceDetail].[Rank] AS [Rank], 
+    [Vw_FixedAllowanceDetail].[Name] AS [Name], 
+    [Vw_FixedAllowanceDetail].[AllowanceName] AS [AllowanceName], 
+    [Vw_FixedAllowanceDetail].[EffectiveDate] AS [EffectiveDate], 
+    [Vw_FixedAllowanceDetail].[EndDate] AS [EndDate], 
+    [Vw_FixedAllowanceDetail].[CampAuthority] AS [CampAuthority], 
+    [Vw_FixedAllowanceDetail].[CampAuthorityDate] AS [CampAuthorityDate], 
+    [Vw_FixedAllowanceDetail].[Remark] AS [Remark], 
+    [Vw_FixedAllowanceDetail].[AllowanceId] AS [AllowanceId], 
+    [Vw_FixedAllowanceDetail].[FADID] AS [FADID], 
+    [Vw_FixedAllowanceDetail].[Sno] AS [Sno], 
+    [Vw_FixedAllowanceDetail].[ServiceNo] AS [ServiceNo], 
+    [Vw_FixedAllowanceDetail].[RankID] AS [RankID], 
+    [Vw_FixedAllowanceDetail].[Description] AS [Description], 
+    [Vw_FixedAllowanceDetail].[Active] AS [Active], 
+    [Vw_FixedAllowanceDetail].[UserRoleID] AS [UserRoleID], 
+    [Vw_FixedAllowanceDetail].[EstablishmentId] AS [EstablishmentId], 
+    [Vw_FixedAllowanceDetail].[RejectStatus] AS [RejectStatus], 
+    [Vw_FixedAllowanceDetail].[CurrentStatus] AS [CurrentStatus], 
+    [Vw_FixedAllowanceDetail].[SubmitStatus] AS [SubmitStatus], 
+    [Vw_FixedAllowanceDetail].[FullHalfPay] AS [FullHalfPay], 
+    [Vw_FixedAllowanceDetail].[FMSID] AS [FMSID], 
+    [Vw_FixedAllowanceDetail].[CreatedBy] AS [CreatedBy], 
+    [Vw_FixedAllowanceDetail].[ALWID] AS [ALWID], 
+    [Vw_FixedAllowanceDetail].[FADFID] AS [FADFID], 
+    [Vw_FixedAllowanceDetail].[RecordStatusId] AS [RecordStatusId], 
+    [Vw_FixedAllowanceDetail].[Comment] AS [Comment], 
+    [Vw_FixedAllowanceDetail].[CreatedDate] AS [CreatedDate], 
+    [Vw_FixedAllowanceDetail].[FADFS_CreatedBy] AS [FADFS_CreatedBy], 
+    [Vw_FixedAllowanceDetail].[RoleName] AS [RoleName], 
+    [Vw_FixedAllowanceDetail].[IsProcessed] AS [IsProcessed]
+    FROM [dbo].[Vw_FixedAllowanceDetail] AS [Vw_FixedAllowanceDetail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_FixedAllowanceDetailReport" EntityType="Self.Vw_FixedAllowanceDetailReport" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_FixedAllowanceDetailReport].[ServiceNo] AS [ServiceNo], 
+    [Vw_FixedAllowanceDetailReport].[Rank] AS [Rank], 
+    [Vw_FixedAllowanceDetailReport].[Name] AS [Name], 
+    [Vw_FixedAllowanceDetailReport].[EstablishmentId] AS [EstablishmentId], 
+    [Vw_FixedAllowanceDetailReport].[AllowanceId] AS [AllowanceId], 
+    [Vw_FixedAllowanceDetailReport].[EffectiveDate] AS [EffectiveDate], 
+    [Vw_FixedAllowanceDetailReport].[EndDate] AS [EndDate], 
+    [Vw_FixedAllowanceDetailReport].[CampAuthority] AS [CampAuthority], 
+    [Vw_FixedAllowanceDetailReport].[CampAuthorityDate] AS [CampAuthorityDate], 
+    [Vw_FixedAllowanceDetailReport].[PaymentTypeName] AS [PaymentTypeName], 
+    [Vw_FixedAllowanceDetailReport].[Remark] AS [Remark], 
+    [Vw_FixedAllowanceDetailReport].[FADID] AS [FADID], 
+    [Vw_FixedAllowanceDetailReport].[CreatedDate] AS [CreatedDate]
+    FROM [dbo].[Vw_FixedAllowanceDetailReport] AS [Vw_FixedAllowanceDetailReport]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_FlowStatus" EntityType="Self.Vw_FlowStatus" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_FlowStatus].[RoleName] AS [RoleName], 
+    [Vw_FlowStatus].[RID] AS [RID], 
+    [Vw_FlowStatus].[EstablishmentId] AS [EstablishmentId], 
+    [Vw_FlowStatus].[RejectStatus] AS [RejectStatus], 
+    [Vw_FlowStatus].[CurrentStatus] AS [CurrentStatus], 
+    [Vw_FlowStatus].[SubmitStatus] AS [SubmitStatus], 
+    [Vw_FlowStatus].[FMSID] AS [FMSID]
+    FROM [dbo].[Vw_FlowStatus] AS [Vw_FlowStatus]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_FlowStatusUser_ToolTip" EntityType="Self.Vw_FlowStatusUser_ToolTip" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_FlowStatusUser_ToolTip].[FADID] AS [FADID], 
+    [Vw_FlowStatusUser_ToolTip].[RoleName] AS [RoleName], 
+    [Vw_FlowStatusUser_ToolTip].[ServiceNo] AS [ServiceNo], 
+    [Vw_FlowStatusUser_ToolTip].[Rank] AS [Rank], 
+    [Vw_FlowStatusUser_ToolTip].[Name] AS [Name], 
+    [Vw_FlowStatusUser_ToolTip].[FMSID] AS [FMSID], 
+    [Vw_FlowStatusUser_ToolTip].[FADFID] AS [FADFID], 
+    [Vw_FlowStatusUser_ToolTip].[RID] AS [RID], 
+    [Vw_FlowStatusUser_ToolTip].[CreatedBy] AS [CreatedBy]
+    FROM [dbo].[Vw_FlowStatusUser_ToolTip] AS [Vw_FlowStatusUser_ToolTip]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_GSQDetails" EntityType="Self.Vw_GSQDetails" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_GSQDetails].[Rank] AS [Rank], 
+    [Vw_GSQDetails].[Name] AS [Name], 
+    [Vw_GSQDetails].[Branch] AS [Branch], 
+    [Vw_GSQDetails].[PostedLocation] AS [PostedLocation], 
+    [Vw_GSQDetails].[Division] AS [Division], 
+    [Vw_GSQDetails].[service_type] AS [service_type], 
+    [Vw_GSQDetails].[RecordStatusID] AS [RecordStatusID], 
+    [Vw_GSQDetails].[UserID] AS [UserID], 
+    [Vw_GSQDetails].[FlowManagementStatusID] AS [FlowManagementStatusID], 
+    [Vw_GSQDetails].[RoleID] AS [RoleID], 
+    [Vw_GSQDetails].[Expr1] AS [Expr1], 
+    [Vw_GSQDetails].[FSGSQID] AS [FSGSQID], 
+    [Vw_GSQDetails].[RejectStatus] AS [RejectStatus], 
+    [Vw_GSQDetails].[CurrentStatus] AS [CurrentStatus], 
+    [Vw_GSQDetails].[SubmitStatus] AS [SubmitStatus], 
+    [Vw_GSQDetails].[GSQHID] AS [GSQHID], 
+    [Vw_GSQDetails].[Sno] AS [Sno], 
+    [Vw_GSQDetails].[ServiceTypeId] AS [ServiceTypeId], 
+    [Vw_GSQDetails].[Location] AS [Location], 
+    [Vw_GSQDetails].[GSQLocation] AS [GSQLocation], 
+    [Vw_GSQDetails].[GSQNo] AS [GSQNo], 
+    [Vw_GSQDetails].[GSQStatus] AS [GSQStatus], 
+    [Vw_GSQDetails].[AllocatedDate] AS [AllocatedDate], 
+    [Vw_GSQDetails].[VacantDate] AS [VacantDate], 
+    [Vw_GSQDetails].[PORDate] AS [PORDate], 
+    [Vw_GSQDetails].[RefNo] AS [RefNo], 
+    [Vw_GSQDetails].[Active] AS [Active], 
+    [Vw_GSQDetails].[StatusName] AS [StatusName]
+    FROM [dbo].[Vw_GSQDetails] AS [Vw_GSQDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_Holiday" EntityType="Self.Vw_Holiday" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_Holiday].[HolidayTypeName] AS [HolidayTypeName], 
+    [Vw_Holiday].[PHCID] AS [PHCID], 
+    [Vw_Holiday].[ApplicableDate] AS [ApplicableDate], 
+    [Vw_Holiday].[Reason] AS [Reason], 
+    [Vw_Holiday].[Active] AS [Active]
+    FROM [dbo].[Vw_Holiday] AS [Vw_Holiday]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_Leave" EntityType="Self.Vw_Leave" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_Leave].[ServiceNo] AS [ServiceNo], 
+    [Vw_Leave].[Rank] AS [Rank], 
+    [Vw_Leave].[Name] AS [Name], 
+    [Vw_Leave].[PaymentTypeName] AS [PaymentTypeName], 
+    [Vw_Leave].[ServiceCategoryName] AS [ServiceCategoryName], 
+    [Vw_Leave].[LeaveCategoryName] AS [LeaveCategoryName], 
+    [Vw_Leave].[LHID] AS [LHID], 
+    [Vw_Leave].[ServiceCategoryId] AS [ServiceCategoryId], 
+    [Vw_Leave].[Sno] AS [Sno], 
+    [Vw_Leave].[LeaveCategoryId] AS [LeaveCategoryId], 
+    [Vw_Leave].[TotalDays] AS [TotalDays], 
+    [Vw_Leave].[PaymentTypeId] AS [PaymentTypeId], 
+    [Vw_Leave].[FromDate] AS [FromDate], 
+    [Vw_Leave].[ToDate] AS [ToDate], 
+    [Vw_Leave].[Authority] AS [Authority], 
+    [Vw_Leave].[PorStatus] AS [PorStatus], 
+    [Vw_Leave].[CreatedBy] AS [CreatedBy], 
+    [Vw_Leave].[CreatedDate] AS [CreatedDate], 
+    [Vw_Leave].[CreatedMac] AS [CreatedMac], 
+    [Vw_Leave].[ModifiedBy] AS [ModifiedBy], 
+    [Vw_Leave].[ModifiedDate] AS [ModifiedDate], 
+    [Vw_Leave].[ModifiedMac] AS [ModifiedMac], 
+    [Vw_Leave].[Active] AS [Active], 
+    [Vw_Leave].[Formation] AS [Formation], 
+    [Vw_Leave].[EstablishmentId] AS [EstablishmentId], 
+    [Vw_Leave].[RankID] AS [RankID], 
+    [Vw_Leave].[LFSID] AS [LFSID], 
+    [Vw_Leave].[FMSID] AS [FMSID], 
+    [Vw_Leave].[RecordStatusId] AS [RecordStatusId], 
+    [Vw_Leave].[Comment] AS [Comment], 
+    [Vw_Leave].[CurrentStatus] AS [CurrentStatus], 
+    [Vw_Leave].[RejectStatus] AS [RejectStatus], 
+    [Vw_Leave].[SubmitStatus] AS [SubmitStatus], 
+    [Vw_Leave].[Expr1] AS [Expr1], 
+    [Vw_Leave].[DeivisionId] AS [DeivisionId], 
+    [Vw_Leave].[DivisionId] AS [DivisionId], 
+    [Vw_Leave].[EstablishmentId_] AS [EstablishmentId_], 
+    [Vw_Leave].[PrivilegeLeave] AS [PrivilegeLeave], 
+    [Vw_Leave].[CasualLeave] AS [CasualLeave], 
+    [Vw_Leave].[AnnualLeave] AS [AnnualLeave], 
+    [Vw_Leave].[LeaveLeave] AS [LeaveLeave], 
+    [Vw_Leave].[Weekend] AS [Weekend], 
+    [Vw_Leave].[PublicHoliday] AS [PublicHoliday], 
+    [Vw_Leave].[ReEngagementLeave] AS [ReEngagementLeave], 
+    [Vw_Leave].[RoleName] AS [RoleName]
+    FROM [dbo].[Vw_Leave] AS [Vw_Leave]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_LeaveDetail" EntityType="Self.Vw_LeaveDetail" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_LeaveDetail].[LDID] AS [LDID], 
+    [Vw_LeaveDetail].[LeaveHeaderId] AS [LeaveHeaderId], 
+    [Vw_LeaveDetail].[PrivilegeLeave] AS [PrivilegeLeave], 
+    [Vw_LeaveDetail].[CasualLeave] AS [CasualLeave], 
+    [Vw_LeaveDetail].[AnnualLeave] AS [AnnualLeave], 
+    [Vw_LeaveDetail].[LeaveLeave] AS [LeaveLeave], 
+    [Vw_LeaveDetail].[PublicHoliday] AS [PublicHoliday], 
+    [Vw_LeaveDetail].[CreatedBy] AS [CreatedBy], 
+    [Vw_LeaveDetail].[CreatedDate] AS [CreatedDate], 
+    [Vw_LeaveDetail].[CreatedMac] AS [CreatedMac], 
+    [Vw_LeaveDetail].[ModifiedBy] AS [ModifiedBy], 
+    [Vw_LeaveDetail].[ModifiedDate] AS [ModifiedDate], 
+    [Vw_LeaveDetail].[ModifiedMac] AS [ModifiedMac], 
+    [Vw_LeaveDetail].[Active] AS [Active], 
+    [Vw_LeaveDetail].[LHID] AS [LHID], 
+    [Vw_LeaveDetail].[ServiceCategoryId] AS [ServiceCategoryId], 
+    [Vw_LeaveDetail].[Sno] AS [Sno], 
+    [Vw_LeaveDetail].[LeaveCategoryId] AS [LeaveCategoryId], 
+    [Vw_LeaveDetail].[TotalDays] AS [TotalDays], 
+    [Vw_LeaveDetail].[PaymentTypeId] AS [PaymentTypeId], 
+    [Vw_LeaveDetail].[FromDate] AS [FromDate], 
+    [Vw_LeaveDetail].[ToDate] AS [ToDate], 
+    [Vw_LeaveDetail].[Authority] AS [Authority], 
+    [Vw_LeaveDetail].[PorStatus] AS [PorStatus], 
+    [Vw_LeaveDetail].[Expr1] AS [Expr1], 
+    [Vw_LeaveDetail].[Expr2] AS [Expr2], 
+    [Vw_LeaveDetail].[Expr3] AS [Expr3], 
+    [Vw_LeaveDetail].[Expr4] AS [Expr4], 
+    [Vw_LeaveDetail].[Expr5] AS [Expr5], 
+    [Vw_LeaveDetail].[Expr6] AS [Expr6], 
+    [Vw_LeaveDetail].[Expr7] AS [Expr7], 
+    [Vw_LeaveDetail].[Expr8] AS [Expr8], 
+    [Vw_LeaveDetail].[ServiceNo] AS [ServiceNo], 
+    [Vw_LeaveDetail].[RankID] AS [RankID], 
+    [Vw_LeaveDetail].[Rank] AS [Rank], 
+    [Vw_LeaveDetail].[Name] AS [Name], 
+    [Vw_LeaveDetail].[Branch] AS [Branch], 
+    [Vw_LeaveDetail].[BranchCode] AS [BranchCode], 
+    [Vw_LeaveDetail].[PostedLocation] AS [PostedLocation], 
+    [Vw_LeaveDetail].[Division] AS [Division], 
+    [Vw_LeaveDetail].[DischargeDate] AS [DischargeDate], 
+    [Vw_LeaveDetail].[type] AS [type], 
+    [Vw_LeaveDetail].[Service_Status] AS [Service_Status], 
+    [Vw_LeaveDetail].[service_type] AS [service_type], 
+    [Vw_LeaveDetail].[DateOfEnlist] AS [DateOfEnlist], 
+    [Vw_LeaveDetail].[Formation] AS [Formation], 
+    [Vw_LeaveDetail].[SubRank] AS [SubRank], 
+    [Vw_LeaveDetail].[Weekend] AS [Weekend]
+    FROM [dbo].[Vw_LeaveDetail] AS [Vw_LeaveDetail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_LeaveFlow_FullDetails" EntityType="Self.Vw_LeaveFlow_FullDetails" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_LeaveFlow_FullDetails].[LHID] AS [LHID], 
+    [Vw_LeaveFlow_FullDetails].[Sno] AS [Sno], 
+    [Vw_LeaveFlow_FullDetails].[EstablishmentId] AS [EstablishmentId], 
+    [Vw_LeaveFlow_FullDetails].[FromDate] AS [FromDate], 
+    [Vw_LeaveFlow_FullDetails].[ToDate] AS [ToDate], 
+    [Vw_LeaveFlow_FullDetails].[RoleName] AS [RoleName], 
+    [Vw_LeaveFlow_FullDetails].[RID] AS [RID], 
+    [Vw_LeaveFlow_FullDetails].[IsProcessed] AS [IsProcessed], 
+    [Vw_LeaveFlow_FullDetails].[LeaveCategoryId] AS [LeaveCategoryId], 
+    [Vw_LeaveFlow_FullDetails].[ServiceNo] AS [ServiceNo], 
+    [Vw_LeaveFlow_FullDetails].[Rank] AS [Rank], 
+    [Vw_LeaveFlow_FullDetails].[Name] AS [Name], 
+    [Vw_LeaveFlow_FullDetails].[Authority] AS [Authority], 
+    [Vw_LeaveFlow_FullDetails].[PaymentTypeId] AS [PaymentTypeId], 
+    [Vw_LeaveFlow_FullDetails].[Expr1] AS [Expr1], 
+    [Vw_LeaveFlow_FullDetails].[RecordStatusId] AS [RecordStatusId], 
+    [Vw_LeaveFlow_FullDetails].[RecordStatusName] AS [RecordStatusName]
+    FROM [dbo].[Vw_LeaveFlow_FullDetails] AS [Vw_LeaveFlow_FullDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_LeaveFlowToolTip" EntityType="Self.Vw_LeaveFlowToolTip" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_LeaveFlowToolTip].[LHID] AS [LHID], 
+    [Vw_LeaveFlowToolTip].[Sno] AS [Sno], 
+    [Vw_LeaveFlowToolTip].[EstablishmentId] AS [EstablishmentId], 
+    [Vw_LeaveFlowToolTip].[FromDate] AS [FromDate], 
+    [Vw_LeaveFlowToolTip].[ToDate] AS [ToDate], 
+    [Vw_LeaveFlowToolTip].[RoleName] AS [RoleName], 
+    [Vw_LeaveFlowToolTip].[RID] AS [RID], 
+    [Vw_LeaveFlowToolTip].[IsProcessed] AS [IsProcessed], 
+    [Vw_LeaveFlowToolTip].[LeaveCategoryId] AS [LeaveCategoryId], 
+    [Vw_LeaveFlowToolTip].[ServiceNo] AS [ServiceNo], 
+    [Vw_LeaveFlowToolTip].[Rank] AS [Rank], 
+    [Vw_LeaveFlowToolTip].[Name] AS [Name], 
+    [Vw_LeaveFlowToolTip].[Authority] AS [Authority], 
+    [Vw_LeaveFlowToolTip].[PaymentTypeId] AS [PaymentTypeId], 
+    [Vw_LeaveFlowToolTip].[Expr1] AS [Expr1]
+    FROM [dbo].[Vw_LeaveFlowToolTip] AS [Vw_LeaveFlowToolTip]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_LeavePlan" EntityType="Self.Vw_LeavePlan" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_LeavePlan].[LeaveCategoryID] AS [LeaveCategoryID], 
+    [Vw_LeavePlan].[Year] AS [Year], 
+    [Vw_LeavePlan].[TotalLeaveMonth] AS [TotalLeaveMonth], 
+    [Vw_LeavePlan].[TotalLeaveDays] AS [TotalLeaveDays], 
+    [Vw_LeavePlan].[LeaveCategoryName] AS [LeaveCategoryName], 
+    [Vw_LeavePlan].[LeaveCategoryShortName] AS [LeaveCategoryShortName], 
+    [Vw_LeavePlan].[Active] AS [Active], 
+    [Vw_LeavePlan].[ALPID] AS [ALPID]
+    FROM [dbo].[Vw_LeavePlan] AS [Vw_LeavePlan]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_LeaveProcessDetails" EntityType="Self.Vw_LeaveProcessDetails" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_LeaveProcessDetails].[ServiceNo] AS [ServiceNo], 
+    [Vw_LeaveProcessDetails].[Rank] AS [Rank], 
+    [Vw_LeaveProcessDetails].[Name] AS [Name], 
+    [Vw_LeaveProcessDetails].[EstablishmentId] AS [EstablishmentId], 
+    [Vw_LeaveProcessDetails].[FromDate] AS [FromDate], 
+    [Vw_LeaveProcessDetails].[ToDate] AS [ToDate], 
+    [Vw_LeaveProcessDetails].[IteamShortName] AS [IteamShortName], 
+    [Vw_LeaveProcessDetails].[CalAmount] AS [CalAmount], 
+    [Vw_LeaveProcessDetails].[IsProcessed] AS [IsProcessed], 
+    [Vw_LeaveProcessDetails].[ItemsCode] AS [ItemsCode], 
+    [Vw_LeaveProcessDetails].[LHID] AS [LHID], 
+    [Vw_LeaveProcessDetails].[service_type] AS [service_type], 
+    [Vw_LeaveProcessDetails].[IteamCode] AS [IteamCode], 
+    [Vw_LeaveProcessDetails].[DaysCounts] AS [DaysCounts], 
+    [Vw_LeaveProcessDetails].[Authority] AS [Authority], 
+    [Vw_LeaveProcessDetails].[Active] AS [Active], 
+    [Vw_LeaveProcessDetails].[LeaveProcessDate] AS [LeaveProcessDate]
+    FROM [dbo].[Vw_LeaveProcessDetails] AS [Vw_LeaveProcessDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_LeaveTest" EntityType="Self.VW_LeaveTest" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VW_LeaveTest].[ServiceNo] AS [ServiceNo], 
+    [VW_LeaveTest].[Rank] AS [Rank], 
+    [VW_LeaveTest].[Name] AS [Name], 
+    [VW_LeaveTest].[PaymentTypeName] AS [PaymentTypeName], 
+    [VW_LeaveTest].[ServiceCategoryName] AS [ServiceCategoryName], 
+    [VW_LeaveTest].[LeaveCategoryName] AS [LeaveCategoryName], 
+    [VW_LeaveTest].[LHID] AS [LHID], 
+    [VW_LeaveTest].[ServiceCategoryId] AS [ServiceCategoryId], 
+    [VW_LeaveTest].[Sno] AS [Sno], 
+    [VW_LeaveTest].[LeaveCategoryId] AS [LeaveCategoryId], 
+    [VW_LeaveTest].[TotalDays] AS [TotalDays], 
+    [VW_LeaveTest].[PaymentTypeId] AS [PaymentTypeId], 
+    [VW_LeaveTest].[FromDate] AS [FromDate], 
+    [VW_LeaveTest].[ToDate] AS [ToDate], 
+    [VW_LeaveTest].[Authority] AS [Authority], 
+    [VW_LeaveTest].[PorStatus] AS [PorStatus], 
+    [VW_LeaveTest].[CreatedBy] AS [CreatedBy], 
+    [VW_LeaveTest].[CreatedDate] AS [CreatedDate], 
+    [VW_LeaveTest].[CreatedMac] AS [CreatedMac], 
+    [VW_LeaveTest].[ModifiedBy] AS [ModifiedBy], 
+    [VW_LeaveTest].[ModifiedDate] AS [ModifiedDate], 
+    [VW_LeaveTest].[ModifiedMac] AS [ModifiedMac], 
+    [VW_LeaveTest].[Active] AS [Active], 
+    [VW_LeaveTest].[Formation] AS [Formation], 
+    [VW_LeaveTest].[EstablishmentId] AS [EstablishmentId], 
+    [VW_LeaveTest].[RankID] AS [RankID], 
+    [VW_LeaveTest].[LFSID] AS [LFSID], 
+    [VW_LeaveTest].[FMSID] AS [FMSID], 
+    [VW_LeaveTest].[RecordStatusId] AS [RecordStatusId], 
+    [VW_LeaveTest].[Comment] AS [Comment], 
+    [VW_LeaveTest].[CurrentStatus] AS [CurrentStatus], 
+    [VW_LeaveTest].[RejectStatus] AS [RejectStatus], 
+    [VW_LeaveTest].[SubmitStatus] AS [SubmitStatus], 
+    [VW_LeaveTest].[Expr1] AS [Expr1], 
+    [VW_LeaveTest].[DeivisionId] AS [DeivisionId], 
+    [VW_LeaveTest].[DivisionId] AS [DivisionId], 
+    [VW_LeaveTest].[EstablishmentId_] AS [EstablishmentId_], 
+    [VW_LeaveTest].[PrivilegeLeave] AS [PrivilegeLeave], 
+    [VW_LeaveTest].[CasualLeave] AS [CasualLeave], 
+    [VW_LeaveTest].[AnnualLeave] AS [AnnualLeave], 
+    [VW_LeaveTest].[LeaveLeave] AS [LeaveLeave], 
+    [VW_LeaveTest].[Weekend] AS [Weekend], 
+    [VW_LeaveTest].[PublicHoliday] AS [PublicHoliday], 
+    [VW_LeaveTest].[ReEngagementLeave] AS [ReEngagementLeave]
+    FROM [dbo].[VW_LeaveTest] AS [VW_LeaveTest]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_LivingINOutReject" EntityType="Self.Vw_LivingINOutReject" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_LivingINOutReject].[LFSID] AS [LFSID], 
+    [Vw_LivingINOutReject].[InOut_ID] AS [InOut_ID], 
+    [Vw_LivingINOutReject].[RSID] AS [RSID], 
+    [Vw_LivingINOutReject].[UID] AS [UID], 
+    [Vw_LivingINOutReject].[FMSID] AS [FMSID], 
+    [Vw_LivingINOutReject].[RID] AS [RID], 
+    [Vw_LivingINOutReject].[CurrentStatus] AS [CurrentStatus], 
+    [Vw_LivingINOutReject].[SubmitStatus] AS [SubmitStatus], 
+    [Vw_LivingINOutReject].[RoleName] AS [RoleName], 
+    [Vw_LivingINOutReject].[Location] AS [Location], 
+    [Vw_LivingINOutReject].[Authority] AS [Authority], 
+    [Vw_LivingINOutReject].[RefNo] AS [RefNo], 
+    [Vw_LivingINOutReject].[ServiceNo] AS [ServiceNo], 
+    [Vw_LivingINOutReject].[Rank] AS [Rank], 
+    [Vw_LivingINOutReject].[Name] AS [Name], 
+    [Vw_LivingINOutReject].[Comment] AS [Comment], 
+    [Vw_LivingINOutReject].[LivingStatusName] AS [LivingStatusName]
+    FROM [dbo].[Vw_LivingINOutReject] AS [Vw_LivingINOutReject]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_LivingStatusReject" EntityType="Self.Vw_LivingStatusReject" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_LivingStatusReject].[LIOHID] AS [LIOHID], 
+    [Vw_LivingStatusReject].[Sno] AS [Sno], 
+    [Vw_LivingStatusReject].[LivingStatusID] AS [LivingStatusID], 
+    [Vw_LivingStatusReject].[LivingStatusName] AS [LivingStatusName], 
+    [Vw_LivingStatusReject].[Location] AS [Location], 
+    [Vw_LivingStatusReject].[ServiceTypeId] AS [ServiceTypeId], 
+    [Vw_LivingStatusReject].[RefNo] AS [RefNo], 
+    [Vw_LivingStatusReject].[Authority] AS [Authority], 
+    [Vw_LivingStatusReject].[IsNOKChange] AS [IsNOKChange], 
+    [Vw_LivingStatusReject].[FromDate] AS [FromDate], 
+    [Vw_LivingStatusReject].[ToDate] AS [ToDate], 
+    [Vw_LivingStatusReject].[Remarks] AS [Remarks], 
+    [Vw_LivingStatusReject].[LIActive] AS [LIActive], 
+    [Vw_LivingStatusReject].[NOKAddress] AS [NOKAddress], 
+    [Vw_LivingStatusReject].[NOKName] AS [NOKName], 
+    [Vw_LivingStatusReject].[NOKChangeTo] AS [NOKChangeTo], 
+    [Vw_LivingStatusReject].[Expr1] AS [Expr1], 
+    [Vw_LivingStatusReject].[District] AS [District], 
+    [Vw_LivingStatusReject].[GSDivision] AS [GSDivision], 
+    [Vw_LivingStatusReject].[NearestTown] AS [NearestTown], 
+    [Vw_LivingStatusReject].[PoliceStation] AS [PoliceStation], 
+    [Vw_LivingStatusReject].[Active] AS [Active], 
+    [Vw_LivingStatusReject].[ServiceNo] AS [ServiceNo], 
+    [Vw_LivingStatusReject].[Rank] AS [Rank], 
+    [Vw_LivingStatusReject].[Name] AS [Name], 
+    [Vw_LivingStatusReject].[CurrentStatus] AS [CurrentStatus], 
+    [Vw_LivingStatusReject].[RejectStatus] AS [RejectStatus], 
+    [Vw_LivingStatusReject].[SubmitStatus] AS [SubmitStatus], 
+    [Vw_LivingStatusReject].[FMSID] AS [FMSID]
+    FROM [dbo].[Vw_LivingStatusReject] AS [Vw_LivingStatusReject]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_MQDetails" EntityType="Self.Vw_MQDetails" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_MQDetails].[InOut_ID] AS [InOut_ID], 
+    [Vw_MQDetails].[Sno] AS [Sno], 
+    [Vw_MQDetails].[FromDate] AS [FromDate], 
+    [Vw_MQDetails].[Location] AS [Location], 
+    [Vw_MQDetails].[Rank] AS [Rank], 
+    [Vw_MQDetails].[Name] AS [Name], 
+    [Vw_MQDetails].[Qurter_ID] AS [Qurter_ID], 
+    [Vw_MQDetails].[QurtersStatus] AS [QurtersStatus], 
+    [Vw_MQDetails].[QuarterLocation] AS [QuarterLocation], 
+    [Vw_MQDetails].[Active] AS [Active]
+    FROM [dbo].[Vw_MQDetails] AS [Vw_MQDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_NOK_Details" EntityType="Self.Vw_NOK_Details" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_NOK_Details].[NOKID] AS [NOKID], 
+    [Vw_NOK_Details].[ActiveNo] AS [ActiveNo], 
+    [Vw_NOK_Details].[SNo] AS [SNo], 
+    [Vw_NOK_Details].[NOKType] AS [NOKType], 
+    [Vw_NOK_Details].[Relationship] AS [Relationship], 
+    [Vw_NOK_Details].[RelationshipName] AS [RelationshipName], 
+    [Vw_NOK_Details].[NOKName] AS [NOKName], 
+    [Vw_NOK_Details].[NOKAddress] AS [NOKAddress], 
+    [Vw_NOK_Details].[WEFDate] AS [WEFDate], 
+    [Vw_NOK_Details].[ModifiedDate] AS [ModifiedDate]
+    FROM [dbo].[Vw_NOK_Details] AS [Vw_NOK_Details]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_NOKChangeDetails" EntityType="Self.Vw_NOKChangeDetails" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_NOKChangeDetails].[RecordStatusID] AS [RecordStatusID], 
+    [Vw_NOKChangeDetails].[UserID] AS [UserID], 
+    [Vw_NOKChangeDetails].[FlowManagementStatusID] AS [FlowManagementStatusID], 
+    [Vw_NOKChangeDetails].[RoleID] AS [RoleID], 
+    [Vw_NOKChangeDetails].[NOKAddress] AS [NOKAddress], 
+    [Vw_NOKChangeDetails].[NOKName] AS [NOKName], 
+    [Vw_NOKChangeDetails].[NOKChangeTo] AS [NOKChangeTo], 
+    [Vw_NOKChangeDetails].[District] AS [District], 
+    [Vw_NOKChangeDetails].[GSDivision] AS [GSDivision], 
+    [Vw_NOKChangeDetails].[NearestTown] AS [NearestTown], 
+    [Vw_NOKChangeDetails].[PoliceStation] AS [PoliceStation], 
+    [Vw_NOKChangeDetails].[Authority] AS [Authority], 
+    [Vw_NOKChangeDetails].[Remarks] AS [Remarks], 
+    [Vw_NOKChangeDetails].[EstablishmentId] AS [EstablishmentId], 
+    [Vw_NOKChangeDetails].[RejectStatus] AS [RejectStatus], 
+    [Vw_NOKChangeDetails].[CurrentStatus] AS [CurrentStatus], 
+    [Vw_NOKChangeDetails].[SubmitStatus] AS [SubmitStatus], 
+    [Vw_NOKChangeDetails].[Rank] AS [Rank], 
+    [Vw_NOKChangeDetails].[Name] AS [Name], 
+    [Vw_NOKChangeDetails].[Marriage_Status] AS [Marriage_Status], 
+    [Vw_NOKChangeDetails].[ServiceNo] AS [ServiceNo], 
+    [Vw_NOKChangeDetails].[Sno] AS [Sno], 
+    [Vw_NOKChangeDetails].[NOKCHID] AS [NOKCHID], 
+    [Vw_NOKChangeDetails].[Location] AS [Location], 
+    [Vw_NOKChangeDetails].[NOKStatus] AS [NOKStatus], 
+    [Vw_NOKChangeDetails].[PORDate] AS [PORDate], 
+    [Vw_NOKChangeDetails].[RefNo] AS [RefNo], 
+    [Vw_NOKChangeDetails].[CreatedDate] AS [CreatedDate], 
+    [Vw_NOKChangeDetails].[Active] AS [Active]
+    FROM [dbo].[Vw_NOKChangeDetails] AS [Vw_NOKChangeDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_NokDetailsP2" EntityType="Self.Vw_NokDetailsP2" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_NokDetailsP2].[SNo] AS [SNo], 
+    [Vw_NokDetailsP2].[NOKName] AS [NOKName], 
+    [Vw_NokDetailsP2].[Relationship] AS [Relationship], 
+    [Vw_NokDetailsP2].[EffectiveDate] AS [EffectiveDate], 
+    [Vw_NokDetailsP2].[ModifiedDate] AS [ModifiedDate], 
+    [Vw_NokDetailsP2].[ActiveNo] AS [ActiveNo]
+    FROM [dbo].[Vw_NokDetailsP2] AS [Vw_NokDetailsP2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_OfficerNOK" EntityType="Self.Vw_OfficerNOK" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_OfficerNOK].[SNo] AS [SNo], 
+    [Vw_OfficerNOK].[NOKName] AS [NOKName], 
+    [Vw_OfficerNOK].[Relationship] AS [Relationship], 
+    [Vw_OfficerNOK].[ActiveNo] AS [ActiveNo]
+    FROM [dbo].[Vw_OfficerNOK] AS [Vw_OfficerNOK]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_OtherNOK" EntityType="Self.Vw_OtherNOK" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_OtherNOK].[SNo] AS [SNo], 
+    [Vw_OtherNOK].[NOKName] AS [NOKName], 
+    [Vw_OtherNOK].[Relationship] AS [Relationship], 
+    [Vw_OtherNOK].[ActiveNo] AS [ActiveNo]
+    FROM [dbo].[Vw_OtherNOK] AS [Vw_OtherNOK]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_P2PersonalDetail" EntityType="Self.Vw_P2PersonalDetail" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_P2PersonalDetail].[SNo] AS [SNo], 
+    [Vw_P2PersonalDetail].[ServiceNo] AS [ServiceNo], 
+    [Vw_P2PersonalDetail].[RankID] AS [RankID], 
+    [Vw_P2PersonalDetail].[Rank] AS [Rank], 
+    [Vw_P2PersonalDetail].[Name] AS [Name], 
+    [Vw_P2PersonalDetail].[Branch] AS [Branch], 
+    [Vw_P2PersonalDetail].[BranchCode] AS [BranchCode], 
+    [Vw_P2PersonalDetail].[PostedLocation] AS [PostedLocation], 
+    [Vw_P2PersonalDetail].[Division] AS [Division], 
+    [Vw_P2PersonalDetail].[DischargeDate] AS [DischargeDate], 
+    [Vw_P2PersonalDetail].[type] AS [type], 
+    [Vw_P2PersonalDetail].[Service_Status] AS [Service_Status], 
+    [Vw_P2PersonalDetail].[Service_Type] AS [Service_Type], 
+    [Vw_P2PersonalDetail].[DateOfEnlist] AS [DateOfEnlist], 
+    [Vw_P2PersonalDetail].[Picture] AS [Picture], 
+    [Vw_P2PersonalDetail].[Formation] AS [Formation], 
+    [Vw_P2PersonalDetail].[SubRank] AS [SubRank], 
+    [Vw_P2PersonalDetail].[CurrentLocation] AS [CurrentLocation]
+    FROM [dbo].[Vw_P2PersonalDetail] AS [Vw_P2PersonalDetail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_P3PersonalDetail" EntityType="Self.Vw_P3PersonalDetail" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_P3PersonalDetail].[SNo] AS [SNo], 
+    [Vw_P3PersonalDetail].[ServiceNo] AS [ServiceNo], 
+    [Vw_P3PersonalDetail].[RankID] AS [RankID], 
+    [Vw_P3PersonalDetail].[Rank] AS [Rank], 
+    [Vw_P3PersonalDetail].[Name] AS [Name], 
+    [Vw_P3PersonalDetail].[Branch] AS [Branch], 
+    [Vw_P3PersonalDetail].[BranchCode] AS [BranchCode], 
+    [Vw_P3PersonalDetail].[PostedLocation] AS [PostedLocation], 
+    [Vw_P3PersonalDetail].[Division] AS [Division], 
+    [Vw_P3PersonalDetail].[DischargeDate] AS [DischargeDate], 
+    [Vw_P3PersonalDetail].[type] AS [type], 
+    [Vw_P3PersonalDetail].[Service_Status] AS [Service_Status], 
+    [Vw_P3PersonalDetail].[Service_Type] AS [Service_Type], 
+    [Vw_P3PersonalDetail].[DateOfEnlist] AS [DateOfEnlist], 
+    [Vw_P3PersonalDetail].[Picture] AS [Picture], 
+    [Vw_P3PersonalDetail].[Formation] AS [Formation], 
+    [Vw_P3PersonalDetail].[CurrentLocation] AS [CurrentLocation]
+    FROM [dbo].[Vw_P3PersonalDetail] AS [Vw_P3PersonalDetail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_PersonalDetail" EntityType="Self.Vw_PersonalDetail" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_PersonalDetail].[SNo] AS [SNo], 
+    [Vw_PersonalDetail].[ServiceNo] AS [ServiceNo], 
+    [Vw_PersonalDetail].[RankID] AS [RankID], 
+    [Vw_PersonalDetail].[Rank] AS [Rank], 
+    [Vw_PersonalDetail].[Name] AS [Name], 
+    [Vw_PersonalDetail].[Branch] AS [Branch], 
+    [Vw_PersonalDetail].[BranchCode] AS [BranchCode], 
+    [Vw_PersonalDetail].[PostedLocation] AS [PostedLocation], 
+    [Vw_PersonalDetail].[Division] AS [Division], 
+    [Vw_PersonalDetail].[DischargeDate] AS [DischargeDate], 
+    [Vw_PersonalDetail].[type] AS [type], 
+    [Vw_PersonalDetail].[Service_Status] AS [Service_Status], 
+    [Vw_PersonalDetail].[Marriage_Status] AS [Marriage_Status], 
+    [Vw_PersonalDetail].[service_type] AS [service_type], 
+    [Vw_PersonalDetail].[DateOfEnlist] AS [DateOfEnlist], 
+    [Vw_PersonalDetail].[Formation] AS [Formation], 
+    [Vw_PersonalDetail].[SubRank] AS [SubRank], 
+    [Vw_PersonalDetail].[serTypeDescription] AS [serTypeDescription]
+    FROM [dbo].[Vw_PersonalDetail] AS [Vw_PersonalDetail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_PorReport" EntityType="Self.Vw_PorReport" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_PorReport].[ServiceNo] AS [ServiceNo], 
+    [Vw_PorReport].[Rank] AS [Rank], 
+    [Vw_PorReport].[Name] AS [Name], 
+    [Vw_PorReport].[LeaveCategoryName] AS [LeaveCategoryName], 
+    [Vw_PorReport].[FromDate] AS [FromDate], 
+    [Vw_PorReport].[ToDate] AS [ToDate], 
+    [Vw_PorReport].[TotalDays] AS [TotalDays], 
+    [Vw_PorReport].[LivingStatusShortName] AS [LivingStatusShortName], 
+    [Vw_PorReport].[Weekend] AS [Weekend], 
+    [Vw_PorReport].[PublicHoliday] AS [PublicHoliday], 
+    [Vw_PorReport].[AnnualLeave] AS [AnnualLeave], 
+    [Vw_PorReport].[PrivilegeLeave] AS [PrivilegeLeave], 
+    [Vw_PorReport].[CasualLeave] AS [CasualLeave], 
+    [Vw_PorReport].[LeaveLeave] AS [LeaveLeave], 
+    [Vw_PorReport].[ReEngagementLeave] AS [ReEngagementLeave], 
+    [Vw_PorReport].[Authority] AS [Authority], 
+    [Vw_PorReport].[RID] AS [RID], 
+    [Vw_PorReport].[RoleName] AS [RoleName], 
+    [Vw_PorReport].[CreatedDate] AS [CreatedDate], 
+    [Vw_PorReport].[EstablishmentId] AS [EstablishmentId], 
+    [Vw_PorReport].[service_type] AS [service_type], 
+    [Vw_PorReport].[LHID] AS [LHID], 
+    [Vw_PorReport].[LDID] AS [LDID], 
+    [Vw_PorReport].[LCID] AS [LCID], 
+    [Vw_PorReport].[LFSID] AS [LFSID], 
+    [Vw_PorReport].[LSID] AS [LSID], 
+    [Vw_PorReport].[FMSID] AS [FMSID]
+    FROM [dbo].[Vw_PorReport] AS [Vw_PorReport]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_RANKS" EntityType="Self.VW_RANKS" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VW_RANKS].[RANK] AS [RANK], 
+    [VW_RANKS].[RNK_NAME] AS [RNK_NAME], 
+    [VW_RANKS].[RANK_TYPE] AS [RANK_TYPE], 
+    [VW_RANKS].[SHORT_NAME] AS [SHORT_NAME], 
+    [VW_RANKS].[LONG_NAME] AS [LONG_NAME], 
+    [VW_RANKS].[SENIORITY] AS [SENIORITY], 
+    [VW_RANKS].[PROMO_DURATION] AS [PROMO_DURATION], 
+    [VW_RANKS].[TOTAL_SERVICE_FOR_PROMOTION] AS [TOTAL_SERVICE_FOR_PROMOTION], 
+    [VW_RANKS].[TOTAL_SERVICE_FOR_PROMOTION_DE_LAC] AS [TOTAL_SERVICE_FOR_PROMOTION_DE_LAC], 
+    [VW_RANKS].[TOTAL_SERVICE_FOR_PROMOTION_DE_ACPL] AS [TOTAL_SERVICE_FOR_PROMOTION_DE_ACPL], 
+    [VW_RANKS].[TEMPORY_SUBSTANTIVE] AS [TEMPORY_SUBSTANTIVE], 
+    [VW_RANKS].[RankGroup] AS [RankGroup], 
+    [VW_RANKS].[AppProm] AS [AppProm], 
+    [VW_RANKS].[AppPromType] AS [AppPromType], 
+    [VW_RANKS].[NextAppProm] AS [NextAppProm], 
+    [VW_RANKS].[PromPaid] AS [PromPaid], 
+    [VW_RANKS].[TOTAL_SERVICE_FOR_PROMOTION_DE] AS [TOTAL_SERVICE_FOR_PROMOTION_DE]
+    FROM [dbo].[VW_RANKS] AS [VW_RANKS]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_RejectLeave" EntityType="Self.Vw_RejectLeave" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_RejectLeave].[ServiceNo] AS [ServiceNo], 
+    [Vw_RejectLeave].[Rank] AS [Rank], 
+    [Vw_RejectLeave].[Name] AS [Name], 
+    [Vw_RejectLeave].[PaymentTypeName] AS [PaymentTypeName], 
+    [Vw_RejectLeave].[ServiceCategoryName] AS [ServiceCategoryName], 
+    [Vw_RejectLeave].[LeaveCategoryName] AS [LeaveCategoryName], 
+    [Vw_RejectLeave].[LHID] AS [LHID], 
+    [Vw_RejectLeave].[ServiceCategoryId] AS [ServiceCategoryId], 
+    [Vw_RejectLeave].[Sno] AS [Sno], 
+    [Vw_RejectLeave].[LeaveCategoryId] AS [LeaveCategoryId], 
+    [Vw_RejectLeave].[TotalDays] AS [TotalDays], 
+    [Vw_RejectLeave].[PaymentTypeId] AS [PaymentTypeId], 
+    [Vw_RejectLeave].[FromDate] AS [FromDate], 
+    [Vw_RejectLeave].[ToDate] AS [ToDate], 
+    [Vw_RejectLeave].[Authority] AS [Authority], 
+    [Vw_RejectLeave].[PorStatus] AS [PorStatus], 
+    [Vw_RejectLeave].[CreatedBy] AS [CreatedBy], 
+    [Vw_RejectLeave].[CreatedDate] AS [CreatedDate], 
+    [Vw_RejectLeave].[CreatedMac] AS [CreatedMac], 
+    [Vw_RejectLeave].[ModifiedBy] AS [ModifiedBy], 
+    [Vw_RejectLeave].[ModifiedDate] AS [ModifiedDate], 
+    [Vw_RejectLeave].[ModifiedMac] AS [ModifiedMac], 
+    [Vw_RejectLeave].[Active] AS [Active], 
+    [Vw_RejectLeave].[Formation] AS [Formation], 
+    [Vw_RejectLeave].[EstablishmentId] AS [EstablishmentId], 
+    [Vw_RejectLeave].[RankID] AS [RankID], 
+    [Vw_RejectLeave].[LFSID] AS [LFSID], 
+    [Vw_RejectLeave].[FMSID] AS [FMSID], 
+    [Vw_RejectLeave].[RecordStatusId] AS [RecordStatusId], 
+    [Vw_RejectLeave].[Comment] AS [Comment], 
+    [Vw_RejectLeave].[CurrentStatus] AS [CurrentStatus], 
+    [Vw_RejectLeave].[RejectStatus] AS [RejectStatus], 
+    [Vw_RejectLeave].[SubmitStatus] AS [SubmitStatus], 
+    [Vw_RejectLeave].[Expr1] AS [Expr1], 
+    [Vw_RejectLeave].[DeivisionId] AS [DeivisionId], 
+    [Vw_RejectLeave].[DivisionId] AS [DivisionId], 
+    [Vw_RejectLeave].[EstablishmentId_] AS [EstablishmentId_], 
+    [Vw_RejectLeave].[PrivilegeLeave] AS [PrivilegeLeave], 
+    [Vw_RejectLeave].[CasualLeave] AS [CasualLeave], 
+    [Vw_RejectLeave].[AnnualLeave] AS [AnnualLeave], 
+    [Vw_RejectLeave].[LeaveLeave] AS [LeaveLeave], 
+    [Vw_RejectLeave].[Weekend] AS [Weekend], 
+    [Vw_RejectLeave].[PublicHoliday] AS [PublicHoliday], 
+    [Vw_RejectLeave].[ReEngagementLeave] AS [ReEngagementLeave]
+    FROM [dbo].[Vw_RejectLeave] AS [Vw_RejectLeave]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_SelectUserRole" EntityType="Self.Vw_SelectUserRole" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_SelectUserRole].[UserName] AS [UserName], 
+    [Vw_SelectUserRole].[RoleName] AS [RoleName], 
+    [Vw_SelectUserRole].[LocationId] AS [LocationId], 
+    [Vw_SelectUserRole].[ServiceNo] AS [ServiceNo]
+    FROM [dbo].[Vw_SelectUserRole] AS [Vw_SelectUserRole]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_UpdateQuery" EntityType="Self.Vw_UpdateQuery" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_UpdateQuery].[LFSID] AS [LFSID], 
+    [Vw_UpdateQuery].[LeaveHeaderId] AS [LeaveHeaderId], 
+    [Vw_UpdateQuery].[FMSID] AS [FMSID], 
+    [Vw_UpdateQuery].[RecordStatusId] AS [RecordStatusId], 
+    [Vw_UpdateQuery].[Comment] AS [Comment], 
+    [Vw_UpdateQuery].[CreatedBy] AS [CreatedBy], 
+    [Vw_UpdateQuery].[CreatedDate] AS [CreatedDate], 
+    [Vw_UpdateQuery].[CreatedMac] AS [CreatedMac], 
+    [Vw_UpdateQuery].[ModifiedBy] AS [ModifiedBy], 
+    [Vw_UpdateQuery].[ModifiedDate] AS [ModifiedDate], 
+    [Vw_UpdateQuery].[ModifiedMac] AS [ModifiedMac], 
+    [Vw_UpdateQuery].[Active] AS [Active], 
+    [Vw_UpdateQuery].[LHID] AS [LHID], 
+    [Vw_UpdateQuery].[ServiceCategoryId] AS [ServiceCategoryId], 
+    [Vw_UpdateQuery].[Sno] AS [Sno], 
+    [Vw_UpdateQuery].[LeaveCategoryId] AS [LeaveCategoryId], 
+    [Vw_UpdateQuery].[EstablishmentId] AS [EstablishmentId], 
+    [Vw_UpdateQuery].[DeivisionId] AS [DeivisionId], 
+    [Vw_UpdateQuery].[TotalDays] AS [TotalDays], 
+    [Vw_UpdateQuery].[PrivilegeLeave] AS [PrivilegeLeave], 
+    [Vw_UpdateQuery].[AnnualLeave] AS [AnnualLeave], 
+    [Vw_UpdateQuery].[PaymentTypeId] AS [PaymentTypeId], 
+    [Vw_UpdateQuery].[FromDate] AS [FromDate], 
+    [Vw_UpdateQuery].[ToDate] AS [ToDate], 
+    [Vw_UpdateQuery].[Authority] AS [Authority], 
+    [Vw_UpdateQuery].[PorStatus] AS [PorStatus], 
+    [Vw_UpdateQuery].[Expr1] AS [Expr1], 
+    [Vw_UpdateQuery].[Expr2] AS [Expr2], 
+    [Vw_UpdateQuery].[Expr3] AS [Expr3], 
+    [Vw_UpdateQuery].[Expr4] AS [Expr4], 
+    [Vw_UpdateQuery].[Expr5] AS [Expr5], 
+    [Vw_UpdateQuery].[Expr6] AS [Expr6], 
+    [Vw_UpdateQuery].[Expr7] AS [Expr7], 
+    [Vw_UpdateQuery].[IsProcessed] AS [IsProcessed]
+    FROM [dbo].[Vw_UpdateQuery] AS [Vw_UpdateQuery]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_UserFlowHistory" EntityType="Self.Vw_UserFlowHistory" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_UserFlowHistory].[RoleName] AS [RoleName], 
+    [Vw_UserFlowHistory].[ServiceNo] AS [ServiceNo], 
+    [Vw_UserFlowHistory].[Rank] AS [Rank], 
+    [Vw_UserFlowHistory].[Name] AS [Name], 
+    [Vw_UserFlowHistory].[PostedLocation] AS [PostedLocation], 
+    [Vw_UserFlowHistory].[Formation] AS [Formation], 
+    [Vw_UserFlowHistory].[FADID] AS [FADID], 
+    [Vw_UserFlowHistory].[RID] AS [RID], 
+    [Vw_UserFlowHistory].[UID] AS [UID], 
+    [Vw_UserFlowHistory].[UDID] AS [UDID], 
+    [Vw_UserFlowHistory].[SNo] AS [SNo], 
+    [Vw_UserFlowHistory].[CreatedDate] AS [CreatedDate], 
+    [Vw_UserFlowHistory].[RecordStatusId] AS [RecordStatusId], 
+    [Vw_UserFlowHistory].[CreatedBy] AS [CreatedBy], 
+    [Vw_UserFlowHistory].[FADFID] AS [FADFID], 
+    [Vw_UserFlowHistory].[FMSID] AS [FMSID], 
+    [Vw_UserFlowHistory].[EstablishmentId] AS [EstablishmentId], 
+    [Vw_UserFlowHistory].[Expr1] AS [Expr1]
+    FROM [dbo].[Vw_UserFlowHistory] AS [Vw_UserFlowHistory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_UserProfile" EntityType="Self.Vw_UserProfile" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_UserProfile].[RoleName] AS [RoleName], 
+    [Vw_UserProfile].[UserName] AS [UserName], 
+    [Vw_UserProfile].[ServiceNo] AS [ServiceNo], 
+    [Vw_UserProfile].[Rank] AS [Rank], 
+    [Vw_UserProfile].[Name] AS [Name], 
+    [Vw_UserProfile].[PostedLocation] AS [PostedLocation], 
+    [Vw_UserProfile].[Formation] AS [Formation], 
+    [Vw_UserProfile].[UID] AS [UID], 
+    [Vw_UserProfile].[RoleId] AS [RoleId]
+    FROM [dbo].[Vw_UserProfile] AS [Vw_UserProfile]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Allowance_Section" Association="Self.FK_Allowance_Section">
+      <End Role="LocationType" EntitySet="LocationType" />
+      <End Role="Allowance" EntitySet="Allowance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AllowanceItemCode_Allowance" Association="Self.FK_AllowanceItemCode_Allowance">
+      <End Role="Allowance" EntitySet="Allowance" />
+      <End Role="AllowanceItemCode" EntitySet="AllowanceItemCode" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AllowanceValue_Allowance" Association="Self.FK_AllowanceValue_Allowance">
+      <End Role="Allowance" EntitySet="Allowance" />
+      <End Role="EDCS_AllowanceValue" EntitySet="EDCS_AllowanceValue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FixedAllowanceCancel_FixedAllowanceDetail" Association="Self.FK_FixedAllowanceCancel_FixedAllowanceDetail">
+      <End Role="FixedAllowanceDetail" EntitySet="FixedAllowanceDetail" />
+      <End Role="FixedAllowanceCancel" EntitySet="FixedAllowanceCancel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FixedAllowanceDetail_Allowance" Association="Self.FK_FixedAllowanceDetail_Allowance">
+      <End Role="Allowance" EntitySet="Allowance" />
+      <End Role="FixedAllowanceDetail" EntitySet="FixedAllowanceDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FlowManagementStatus_UserRole" Association="Self.FK_FlowManagementStatus_UserRole">
+      <End Role="UserRole" EntitySet="UserRole" />
+      <End Role="FlowManagementStatus" EntitySet="FlowManagementStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LeaveHeader_LeaveCategory" Association="Self.FK_LeaveHeader_LeaveCategory">
+      <End Role="LeaveCategory" EntitySet="LeaveCategory" />
+      <End Role="LeaveHeader" EntitySet="LeaveHeader" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LeaveHeader_UserInfo" Association="Self.FK_LeaveHeader_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="LeaveHeader" EntitySet="LeaveHeader" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LeaveHeader_UserInfo1" Association="Self.FK_LeaveHeader_UserInfo1">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="LeaveHeader" EntitySet="LeaveHeader" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemLog_UserInfo" Association="Self.FK_SystemLog_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="SystemLog" EntitySet="SystemLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetail_UserInfo" Association="Self.FK_UserDetail_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserDetail" EntitySet="UserDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfo_SecurityQuestion" Association="Self.FK_UserInfo_SecurityQuestion">
+      <End Role="SecurityQuestion" EntitySet="SecurityQuestion" />
+      <End Role="UserInfo" EntitySet="UserInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfo_UserRole" Association="Self.FK_UserInfo_UserRole">
+      <End Role="UserRole" EntitySet="UserRole" />
+      <End Role="UserInfo" EntitySet="UserInfo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

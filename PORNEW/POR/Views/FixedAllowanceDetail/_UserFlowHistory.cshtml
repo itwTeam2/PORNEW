@@ -1,0 +1,56 @@
+﻿@model IEnumerable<POR.Models.Vw_UserFlowHistory>
+
+@{
+    ViewBag.Title = "UserFlowHistory";
+}
+<table id="history" class="table table-striped" style="font-size:11px;">
+    <tr>
+        <th>
+            Record Status
+        </th>
+        <th>
+            Rank & Name
+        </th>
+        <th>
+            Posted Location fuck
+        </th>
+        <th>
+            Record Date
+        </th>      
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{
+                    string RecordStatus = null;
+                    if (item.RecordStatusId == 1000)
+                    {
+                        RecordStatus = "Created";
+                    }
+                    else if (item.RecordStatusId == 2000)
+                    {
+                        RecordStatus = "Forwarded";
+                    }
+                    else if (item.RecordStatusId == 3000)
+                    {
+                        RecordStatus = "Rejected";
+                    }
+                }
+                @RecordStatus by @Html.DisplayFor(modelItem => item.RoleName)
+            </td>        
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceNo) - @Html.DisplayFor(modelItem => item.Rank) &nbsp; @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostedLocation) - @Html.DisplayFor(modelItem => item.Formation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+        </tr>
+    }
+
+</table>
+

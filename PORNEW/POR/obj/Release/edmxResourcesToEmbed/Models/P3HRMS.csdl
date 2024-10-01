@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="P3HRMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Marriage">
+    <Key>
+      <PropertyRef Name="MarriageID" />
+    </Key>
+    <Property Name="MarriageID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MarriedCertificateID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SpouseName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="SpouseNICNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SpouseOccupation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SpouseOffAdress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MarriedDate" Type="DateTime" Precision="3" />
+    <Property Name="MarriedPlace" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="MarriedStatus" Type="Int32" />
+    <Property Name="IsArmedService" Type="Int32" />
+    <Property Name="ArmedService" Type="Int32" />
+    <Property Name="SpouseRank" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SpouseServiceNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AuthRef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="MarriagePOR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="POROccuranceNo" Type="Int32" />
+    <Property Name="DivorceDate" Type="DateTime" Precision="3" />
+    <Property Name="DivorcePOR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfDeath" Type="DateTime" Precision="3" />
+    <Property Name="DeathPOR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="IsServiceWedding" Type="Int32" />
+    <Property Name="CreatedUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMachine" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMachine" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MarriedCertificateUpdateStatus" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Relationship">
+    <Key>
+      <PropertyRef Name="RelationshipID" />
+    </Key>
+    <Property Name="RelationshipID" Type="Int32" Nullable="false" />
+    <Property Name="RelationshipName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ServicePersonnelProfile">
+    <Key>
+      <PropertyRef Name="SNo" />
+    </Key>
+    <Property Name="SNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SvcID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FingerID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TANo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ActiveNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="F1250" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RR_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="Int32" Nullable="false" />
+    <Property Name="IntakeType" Type="Int32" />
+    <Property Name="Intake" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Branch_Trade" Type="Int32" />
+    <Property Name="Trade_Group" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="OtherNames" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Initials" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Service_Type" Type="Int32" />
+    <Property Name="Service_Status" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ProfilePicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="Date_of_Enlist" Type="DateTime" Precision="3" />
+    <Property Name="Expire_Date" Type="DateTime" Precision="3" />
+    <Property Name="Date_of_PresentRank" Type="DateTime" Precision="3" />
+    <Property Name="Posted_Location" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Posted_Formation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Current_Location" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Current_Formation" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Posted_Status" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="LivingIn_Out" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Sex" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NICNo_New" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Marriage_Status" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="MedCat" Type="Int32" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMachine" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedMachine" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="NICNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="HashSno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Appoinment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MedicalBoardStatus" Type="Int32" />
+    <Property Name="SvcDocLocation" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LivingIn_Out_PorNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="P3HRMS" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Marriages" EntityType="Self.Marriage" />
+    <EntitySet Name="Relationships" EntityType="Self.Relationship" />
+    <EntitySet Name="ServicePersonnelProfiles" EntityType="Self.ServicePersonnelProfile" />
+    <EntitySet Name="NOK_Change_Details" EntityType="P3HRMSModel.NOK_Change_Details" />
+  </EntityContainer>
+  <EntityType Name="NOK_Change_Details">
+    <Key>
+      <PropertyRef Name="NOKID" />
+    </Key>
+    <Property Name="NOKID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOKType" Type="Int32" Nullable="false" />
+    <Property Name="Relationship" Type="Int32" />
+    <Property Name="NOKName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="NOKAddress" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="District" Type="Int32" />
+    <Property Name="GramaseDiv" Type="Int32" />
+    <Property Name="NearPoliceSta" Type="Int32" />
+    <Property Name="NearTown" Type="Int32" />
+    <Property Name="NearPostOff" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WEFDate" Type="DateTime" Precision="3" />
+    <Property Name="AuthRefNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PORRefNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LivingStatus" Type="Int32" />
+    <Property Name="CreatedUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedMachine" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedMachine" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="GsqStatus" Type="Int32" />
+  </EntityType>
+</Schema>

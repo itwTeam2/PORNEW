@@ -1,0 +1,99 @@
+﻿@model POR.Models._Vw_FAEligibleList
+
+@{
+    ViewBag.Title = "DeleteEligibleListPerson";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="content-wrapper" style="height:900px !important;">
+
+        <section class="content-header">
+            <h1>
+                Eligible Person Details
+                <small>Cancel Eligibility </small>
+            </h1>
+
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+            </ol>
+
+            <div id="ErrorMessage">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert!</strong>&nbsp;@TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert!</strong>&nbsp;@TempData["ErrMsg"]
+                    </div>
+                }
+            </div>
+        </section>
+
+        <section class="col-sm-12 connectedSortable">
+            <div class="nav-tabs-custom">
+                @Html.ValidationSummary(true)
+                <div class="box-body">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            @Html.HiddenFor(model => model.ELFAID, new { @class = "form-control ", @Readonly = "readonly", autocomplete = "off", placeholder = "", MaxLength = "25" })
+                            @Html.ValidationMessageFor(model => model.ELFAID, string.Empty, new { @class = "label label-danger" })
+                        </div>
+                        <div class="col-sm-6" style="margin-left: 0px !important; padding-left: 0px !important; ">
+                            @Html.Label("Service No", new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.ServiceNo, new { @class = "form-control ", @Readonly = "readonly", autocomplete = "off", placeholder = "", MaxLength = "25" })
+                            @Html.ValidationMessageFor(model => model.ServiceNo, string.Empty, new { @class = "label label-danger" })
+                        </div>
+                        <div class="col-sm-6" style="margin-left: 0px !important; padding-left: 0px !important; ">
+                            <div class="form-group">
+                                @Html.Label("Rank", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Rank, new { @class = "form-control ", @Readonly = "readonly", autocomplete = "off", placeholder = "", MaxLength = "25" })
+                                @Html.ValidationMessageFor(model => model.Rank, string.Empty, new { @class = "label label-danger" })
+                            </div>
+                        </div>
+                        <div class="col-sm-6" style="margin-left: 0px !important; padding-left: 0px !important; ">
+                            <div class="form-group">
+                                @Html.Label("Name", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Name, new { @class = "form-control ", @Readonly = "readonly", autocomplete = "off", placeholder = "", MaxLength = "25" })
+                                @Html.ValidationMessageFor(model => model.Name, string.Empty, new { @class = "label label-danger" })
+                            </div>
+                        </div>
+                        <div class="col-sm-6" style="margin-left: 0px !important; padding-left: 0px !important; ">
+                            <div class="form-group">
+                                @Html.Label("Allowance Name", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.AllowanceName, new { @class = "form-control ", @Readonly = "readonly", autocomplete = "off", placeholder = "", MaxLength = "25" })
+                                @Html.ValidationMessageFor(model => model.AllowanceName, string.Empty, new { @class = "label label-danger" })
+                            </div>
+                        </div>
+                        <div class="col-sm-6" style="margin-left: 0px !important; padding-left: 0px !important; ">
+                            <div class="form-group">
+                                @Html.Label("Effective Date", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.EffectiveDate, new { @class = "form-control", @Readonly = "readonly", autocomplete = "off", placeholder = "", MaxLength = "10" })
+                                @Html.ValidationMessageFor(model => model.EffectiveDate, string.Empty, new { @class = "label label-danger " })
+                            </div>
+                        </div>
+                        <div class="col-sm-6" style="margin-left: 0px !important; padding-left: 0px !important; ">
+                            <div class="form-group">
+                                @Html.Label("Cancel Referance No", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.CancelReferanceNo, new { @class = "form-control ", autocomplete = "off", placeholder = "", MaxLength = "25" })
+                                @Html.ValidationMessageFor(model => model.CancelReferanceNo, string.Empty, new { @class = "label label-danger" })
+                            </div>
+                        </div>
+                            <div class="col-sm-12" style="margin-left: 0px !important; padding-left: 0px !important; ">
+                                <div class="form-group">
+                                    <input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Save &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" class="fa fa-arrow-circle-right btn btn-danger pull-right" />
+                                </div>
+                            </div>
+                    </div>
+            </div>
+        </section>
+    </div>
+}

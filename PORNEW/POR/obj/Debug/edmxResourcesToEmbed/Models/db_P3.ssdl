@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="P3HRMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Posting">
+    <Key>
+      <PropertyRef Name="PostingID" />
+    </Key>
+    <Property Name="PostingID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SNo" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="OccuranceNo" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="PORLocation" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="PORDate" Type="datetime" Nullable="false" />
+    <Property Name="NoOfOccurances" Type="int" Nullable="false" />
+    <Property Name="FromLocationID" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="FromDivisionID" Type="char" MaxLength="5" />
+    <Property Name="ToLocationID" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="ToDivisionID" Type="char" MaxLength="5" />
+    <Property Name="EffectiveDate" Type="datetime" Nullable="false" />
+    <Property Name="PORAuthority" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PORAuthorityDate" Type="datetime" Nullable="false" />
+    <Property Name="P3Authority" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Directorate" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DirectorateAuthority" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DirectorateAuthorityDate" Type="datetime" Nullable="false" />
+    <Property Name="PostingType" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ApprovedStatus" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TravelMode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="InOut" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="P3AuthorityDate" Type="datetime" Nullable="false" />
+    <Property Name="DateReported" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedUser" Type="varchar" MaxLength="30" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedMachine" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedUser" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedMachine" Type="varchar" MaxLength="50" />
+    <Property Name="FromSection" Type="varchar" MaxLength="50" />
+    <Property Name="FromSectionInfo" Type="varchar" MaxLength="50" />
+    <Property Name="ToSection" Type="varchar" MaxLength="50" />
+    <Property Name="ToSectionInfo" Type="varchar" MaxLength="50" />
+    <Property Name="Reference" Type="varchar" MaxLength="50" />
+    <Property Name="Reason" Type="varchar(max)" />
+    <Property Name="Duty" Type="varchar" MaxLength="30" />
+    <Property Name="RptStatus" Type="varchar" MaxLength="5" />
+    <Property Name="SvcDocStatus" Type="int" />
+  </EntityType>
+  <EntityContainer Name="P3HRMSModelStoreContainer">
+    <EntitySet Name="Posting" EntityType="Self.Posting" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

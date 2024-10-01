@@ -1,0 +1,92 @@
+﻿@model POR.Models._FixedAllowanceEligibleList
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="content-wrapper" style="height:900px !important;">
+
+        <section class="content-header">
+            <h1>
+                Assign Persons For Fixed Allowances
+                <small>Assign Persons </small>
+            </h1>
+
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+            </ol>
+
+            <div id="ErrorMessage">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert!</strong>&nbsp;@TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert!</strong>&nbsp;@TempData["ErrMsg"]
+                    </div>
+                }
+            </div>
+        </section>
+
+        <section class="col-lg-12 connectedSortable">
+            <div class="nav-tabs-custom">
+                @Html.ValidationSummary(true)
+
+                <div class="box-body">
+                    <div class="form-horizontal">
+                        <div class="col-lg-5">
+                            @Html.ValidationSummary(true)
+
+                            <div class="form-group">
+                                @Html.Label("Service Category", new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.ServiceCategoryId, ViewBag.DDL_ServiceCategory as SelectList, "Select", htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ServiceCategoryId, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("Service No", new { @class = "control-label" })
+                                @Html.TextBox("SvcNo", string.Empty, new { @class = "form-control", autocomplete = "off", placeholder = "" })
+                                @Html.HiddenFor(model => model.ServiceNo_, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ServiceNo_, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("Allowance", new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.AllowanceId, ViewBag.DDL_Allowance as SelectList, "Select", htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.AllowanceId, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("Effective Date", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.EffectiveDate, new { @class = "form-control datepicker", autocomplete = "off", placeholder = "", MaxLength = "10" })
+                                @Html.ValidationMessageFor(model => model.EffectiveDate, string.Empty, new { @class = "label label-danger" })
+                            </div>                
+
+                            <div class="form-group">
+                                <input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Save &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" class="fa fa-arrow-circle-right btn btn-success pull-right" />
+                            </div>
+                        </div>
+                   </div>
+                </div>
+            </div>
+        </section>
+    </div>
+}
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

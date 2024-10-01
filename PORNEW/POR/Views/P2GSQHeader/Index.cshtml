@@ -1,0 +1,238 @@
+﻿
+@model PagedList.IPagedList<POR.Models.LivingInOut._GSQHeader>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+<div class="content-wrapper" style="height:900px !important;">
+
+    <section class="content-header">
+        <h1>
+            P2 GSQ Details
+            <small>View Allocation of GSQ Details</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+        </ol>
+
+        <div id="ErrorMessage">
+            @if (TempData["ScfMsg"] != null)
+            {
+                <div id="Msg" class="col-lg-12  alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Alert!</strong> @TempData["ScfMsg"]
+                </div>
+            }
+            else if (TempData["ErrMsg"] != null)
+            {
+                <div id="Msg" class="col-lg-12 alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Alert!</strong>@TempData["ErrMsg"]
+                </div>
+
+            }
+        </div>
+
+    </section>
+
+    <section class="col-lg-12 connectedSortable">
+        <div class="nav-tabs-custom">
+            @Html.ValidationSummary(true)
+
+            <div class="box-body">
+                @using (Html.BeginForm("Index", "P2GSQHeader", FormMethod.Get))
+                {
+                    <div class="input-group">
+                        @Html.TextBox("searchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-success"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                }
+
+                <p style="margin-top:6px">
+                    @{
+                        int RId = Convert.ToInt32(TempData["CurrentUserRole"]);
+                        if (RId != (int)POR.Enum.UserRole.ACCOUNTS01)
+                        {
+                            <input type="button" id="forward" value="Forward" class="btn btn-primary" />
+                        }
+                    }
+                    <br />
+
+                </p>
+
+                <table id="example" class="table table-responsive table-striped table-hover">
+                    @{
+
+                        int RoleId = Convert.ToInt32(TempData["CurrentUserRole"]);
+
+                        if (RoleId == (int)POR.Enum.UserRole.ACCOUNTS01)
+                        {
+                            <tr>
+                                <th>
+                                    @Html.ActionLink("Service No", "Index", "P2GSQHeader", new { sortOrder = "Sno" }, null)
+                                </th>
+                                <th>
+                                    @Html.ActionLink("Rank", "Index", "P2GSQHeader", new { sortOrder = "Rank" }, null)
+                                </th>
+                                <th>
+                                    @Html.ActionLink("Name", "Index", "P2GSQHeader", new { sortOrder = "Name" }, null)
+                                </th>
+                                <th>
+                                    @Html.ActionLink("GSQ Location", "Index", "P2GSQHeader", new { sortOrder = "GSQLocation" }, null)
+                                </th>
+
+                                <th>
+                                    @Html.ActionLink("GSQ Status", "Index", "P2GSQHeader", new { sortOrder = "GSQ Status" }, null)
+                                </th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <th>
+                                    <input type="checkbox" id="checkAll" />
+                                </th>
+                                <th>
+                                    @Html.ActionLink("Service No", "Index", "P2GSQHeader", new { sortOrder = "Sno" }, null)
+                                </th>
+                                <th>
+                                    @Html.ActionLink("Rank", "Index", "P2GSQHeader", new { sortOrder = "Rank" }, null)
+                                </th>
+                                <th>
+                                    @Html.ActionLink("Name", "Index", "P2GSQHeader", new { sortOrder = "Name" }, null)
+                                </th>
+                                <th>
+                                    @Html.ActionLink("GSQ Location", "Index", "P2GSQHeader", new { sortOrder = "GSQLocation" }, null)
+                                </th>
+
+                                <th>
+                                    @Html.ActionLink("GSQ Status", "Index", "GSQHeader", new { sortOrder = "GSQ Status" }, null)
+                                </th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        }
+                    }
+
+
+                    @foreach (var item in Model)
+                    {
+                        if (item.CurrentUserRole == (int)POR.Enum.UserRole.ACCOUNTS01)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ServiceNo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Rank)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GSQLocation)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GSQStatusName)
+                                </td>
+
+                                <td>
+                                    @Html.ActionLink("Details", "Details", new { GSQHID = item.GSQHID, Rejectstatus = 0 }, new { @class = "btn btn-primary" })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Print", "PrintData", "GSQHeader", new { GSQHID = item.GSQHID, }, new { @class = "btn btn-warning" })
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="checkBox" value="@item.GSQHID" />
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ServiceNo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Rank)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GSQLocation)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GSQStatusName)
+                                </td>
+
+                                <td>
+                                    @Html.ActionLink("Details", "Details", new { GSQHID = item.GSQHID, Rejectstatus = 0 }, new { @class = "btn btn-primary" })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Print", "PrintData", "GSQHeader", new { GSQHID = item.GSQHID, }, new { @class = "btn btn-warning" })
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                </table>
+                <br />
+                @*Paging for Data Table *use only MVC no Javascript*@
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                @Html.PagedListPager(Model, page => Url.Action("Index",
+                 new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+
+<script>
+
+    //------------------------------All Forward
+
+    $(document).ready(function () {
+
+        $("#checkAll").click(function () {
+            $(".checkBox").prop('checked',
+                $(this).prop('checked'));
+        });
+
+        $("#forward").click(function () {
+            var selectedIDs = new Array();
+            $('input:checkbox.checkBox').each(function () {
+                if ($(this).prop('checked')) {
+                    selectedIDs.push($(this).val());
+                }
+            });
+
+            var options = {};
+            options.url = '@Url.Content("~/P2GSQHeader/Forward")',
+            options.type = 'POST';
+            options.data = JSON.stringify(selectedIDs);
+            options.contentType = 'application/json';
+            options.dataType = 'json';
+            options.success = function (msg) {
+                location.reload();
+            };
+            options.error = function () {
+               // alert('Error while deleting the records!');
+            };
+            $.ajax(options);
+
+        });
+    });
+
+</script>
+

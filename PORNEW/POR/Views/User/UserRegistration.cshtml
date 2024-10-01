@@ -1,0 +1,187 @@
+﻿@model POR.Models._UserInfo
+@{
+    ViewBag.Title = "UserRegistration";
+}
+@using (Html.BeginForm())
+{
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/business-casual.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/CustomScript.js"></script>
+
+    @Html.AntiForgeryToken()
+
+    if (TempData["notice"] != null)
+    {
+        <div id="Msg" class="col-lg-12  alert alert-warning text-center">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>Alert!</strong> @TempData["notice"]
+        </div>
+
+    }
+    else if (TempData["Error"] != null)
+    {
+        <div id="Msg" class="col-lg-12  alert alert-danger text-center ">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>Alert!</strong> @TempData["Error"]
+        </div>
+    }
+    <div class="content-wrapper">
+        <section class="content-header">
+            <div style="font-size:30px; float:left" class="glyphicon glyphicon-user">                
+            </div>
+            <h1 style="margin-top: 6px; margin-left: 52px">User Registering</h1>           
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+            </ol>
+            <div id="ErrorMessage">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert!</strong>&nbsp;@TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert!</strong>&nbsp;@TempData["ErrMsg"]
+                    </div>
+                }
+            </div>
+        </section>
+        <br />
+        <section class="col-lg-7 connectedSortable">
+            <div class="nav-tabs-custom">
+                @Html.ValidationSummary(true)
+                @Html.AntiForgeryToken()
+                <div class="box-body">
+                    
+                    @Html.ValidationSummary(true)
+                    <div class="form-group">
+                        @Html.DropDownListFor(model => model.RoleId, ViewBag.DDL_UserRole as SelectList, "Select", htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.RoleId)
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(model => model.ServiceNo, new { @class = "form-control ", autocomplete = "off", placeholder = "Service No", MaxLength = "8" })
+                        @Html.ValidationMessageFor(model => model.ServiceNo)
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(model => model.UserName, new { @class = "form-control ", autocomplete = "off", placeholder = "User Name", MaxLength = "15" })
+                        @Html.ValidationMessageFor(model => model.UserName)
+                    </div>
+                    <div class="form-group">
+                        @Html.PasswordFor(model => model.Password, new { @class = "form-control ", autocomplete = "off", placeholder = "Password", MaxLength = "12" })
+                        @Html.ValidationMessageFor(model => model.Password)
+                    </div>
+                    <div class="form-group">
+                        @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control ", autocomplete = "off", placeholder = "Confirm Password", MaxLength = "12" })
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                    </div>
+                    <div class="form-group">
+                        @Html.DropDownListFor(model => model.LocationId, ViewBag.DDL_Establishment as SelectList, "Select Location", htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.LocationId)
+                    </div>
+                    <div class="form-group">
+                        @Html.DropDownListFor(model => model.SecurityQuestionId, ViewBag.DDL_SecQuestion as SelectList, "Security Question ?", htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.SecurityQuestionId)
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(model => model.SecurityQuestionAnswer, new { @class = "form-control ", autocomplete = "off", placeholder = "Answere For Security Question", MaxLength = "25" })
+                        @Html.ValidationMessageFor(model => model.SecurityQuestionAnswer)
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="User Register" class="btn btn-primary btn-block" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="col-lg-5 connectedSortable">
+            <!-- Map box -->
+            <div class="box box-solid bg-light-blue-gradient">
+                <div class="box-header">
+                    <!-- tools box -->
+                    <div class="pull-right box-tools">
+                        @*<button type="button" class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip"
+                                    title="Date range">
+                                <i class="fa fa-calendar"></i>
+                            </button>*@
+                        <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse"
+                                data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /. tools -->
+                    <i class="fa fa-group"></i>
+                    <h3 class="box-title">
+                        Personal Details
+                    </h3>
+                </div>
+                <div class="box-body">
+                    <div id="world-map" style="height: 250px; width: 100%;">
+                        @*<div id="ProfileImg" style="vertical-align:middle;width:50px;height:50px;border-radius:50%">
+                            
+                        </div>*@
+                        <div id="PersonNumber" style="border-radius:40%">
+
+                        </div>
+                        <div id="PersonRank">
+
+                        </div>
+                        <div id="PersonName">
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body-->
+                @*<div class="box-footer no-border">
+                        <div class="row">
+                            <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                                <div id="sparkline-1"></div>
+                                <div class="knob-label">Visitors</div>
+                            </div>
+                            <!-- ./col -->
+                            <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                                <div id="sparkline-2"></div>
+                                <div class="knob-label">Online</div>
+                            </div>
+                            <!-- ./col -->
+                            <div class="col-xs-4 text-center">
+                                <div id="sparkline-3"></div>
+                                <div class="knob-label">Exists</div>
+                            </div>
+                            <!-- ./col -->
+                        </div>
+                        <!-- /.row -->
+                    </div>*@
+            </div>
+            <!-- /.box -->
+            <!-- solid sales graph -->
+            @*<div class="box box-solid bg-teal-gradient">
+                    <div class="box-header">
+                        <i class="fa fa-th"></i>
+                        <h3 class="box-title">Sales Graph</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn bg-teal btn-sm" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn bg-teal btn-sm" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body border-radius-none">
+                        <div class="chart" id="line-chart" style="height: 250px;"></div>
+                    </div>
+                </div>*@
+
+        </section>
+    </div>
+}
+
+@*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@

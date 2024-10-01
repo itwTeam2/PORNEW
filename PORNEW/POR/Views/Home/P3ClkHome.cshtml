@@ -1,0 +1,185 @@
+﻿<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Dashboard
+            <small>Control panel</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="nav-tabs-custom">
+                
+                <!-- Leave -->
+                <div class="col-lg-3 col-xs-6">
+
+                    <div class="small-box bg-yellow">
+                        <div class="inner">
+                            <h3 style="font-size:25px"><u>Leave</u></h3>
+                            <p><a href="@Url.Action("Create", "Leave")" style="color:white">Add Leave Record <i class="fa fa-arrow-circle-right"></i></a></p>
+                            <p><a href="@Url.Action("Leave_history", "Leave")" style="color:white">Leave History  <i class="fa fa-arrow-circle-right"></i></a></p>
+                            <p><a href="@Url.Action("Index", "Leave")" style="color:white">Pending Forward List  <i class="fa fa-arrow-circle-right"></i></a></p>
+                            <p><a href="@Url.Action("RejectIndex", "Leave")" style="color:white">Reject List  <i class="fa fa-arrow-circle-right"></i></a></p>
+
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-ios-partlysunny"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!--  AJ- Civil Status BOX-->
+                <div class="col-lg-3 col-xs-6">
+                    <!--  AJ- Civil Status BOX-->
+                    <div class="small-box bg-maroon-active">
+                        @{
+                            int rejectRecorfCount = (int)TempData["RejectCivilStatusCount"];
+
+                            <div class="inner">
+                                <h3 style="font-size:25px"><u>AJ- Civil Status</u></h3>
+                                <p><a href="@Url.Action("Create", "Married")" style="color:white">Add New Record <i class="fa fa-arrow-circle-right"></i></a></p>
+                                <p><a href="@Url.Action("IndexCivilStatus", "Married")" style="color:white">Pending Forward List <i class="fa fa-arrow-circle-right"></i></a></p>
+                                <p class="alert-danger" style="border-radius:5px;font-weight:bold"><a href="@Url.Action("RejectIndex", "Married")" style="color:white">Reject Records : @rejectRecorfCount</a></p>
+                                <p><a href="@Url.Action("IndividualSearchMarried", "Married")" style="color:white">Search <i class="fa fa-arrow-circle-right"></i></a></p>
+
+                            </div>
+                        }
+                       
+                        <div class="icon">
+                            <i class="ion ion-heart"></i>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- AK Living In Out -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-green">
+                        @{
+                            int rejectRecorfCountLiving = (int)TempData["rejectRecorfCountLiving"];
+
+                            <div class="inner">
+                                <h3 style="font-size:25px"><u>AK- Living In/Out</u></h3>
+                                <p><a href="@Url.Action("CreateBechelorsInOut", "LivingInOut")" style="color:white">Add Bachelor In/out  <i class="fa fa-arrow-circle-right"></i></a></p>
+                                <p><a href="@Url.Action("IndexLivingINOutStatus", "LivingInOut")" style="color:white">Pending Forward List  <i class="fa fa-arrow-circle-right"></i></a></p>
+                                <p class="alert-danger" style="border-radius:5px;font-weight:bold"><a href="@Url.Action("IndexRejectLivingInOut", "LivingInOut")" style="color:white">Reject Records : @rejectRecorfCountLiving</a></p>
+                                <p><a href="@Url.Action("IndividualSearchLivingInOut", "LivingInOut")" style="color:white">Search  <i class="fa fa-arrow-circle-right"></i></a></p>
+
+                            </div>
+                        }
+                        
+                        <div class="icon">
+                            <i class="ion ion-android-bookmark"></i>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- GSQ -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-orange">
+                        <div class="inner">
+                            <h3 style="font-size:25px"><u>AMQ</u></h3>
+                            <p><a href="@Url.Action("CreateAllocateMQ", "GSQHeader")" style="color:white">Allocate/Vacant MQ  <i class="fa fa-arrow-circle-right"></i></a></p>
+                            <p><a href="@Url.Action("IndexAllocateMQ", "GSQHeader")" style="color:white">Pending Forward List  <i class="fa fa-arrow-circle-right"></i></a></p>
+                            <p><a href="@Url.Action("RejectIndex", "GSQHeader")" style="color:white">Reject List  <i class="fa fa-arrow-circle-right"></i></a></p>
+                            <p><a href="@Url.Action("IndividualSearchGSQ", "GSQHeader")" style="color:white">Search  <i class="fa fa-arrow-circle-right"></i></a></p>
+
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-home"></i>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- NOK Change -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-navy-active">
+                        <div class="inner">
+                            <h3 style="font-size:25px"><u>NOK Change</u></h3>
+                            <p><a href="@Url.Action("CreateNok", "NOKChange")" style="color:white">Add New Record  <i class="fa fa-arrow-circle-right"></i></a></p>
+                            <p><a href="@Url.Action("Index", "NOKChange")" style="color:white">Pending Forward List  <i class="fa fa-arrow-circle-right"></i></a></p>
+                            <p><a href="@Url.Action("IndexRejectNOKChange", "NOKChange")" style="color:white">Reject List  <i class="fa fa-arrow-circle-right"></i></a></p>
+                            <p><a href="@Url.Action("IndividualSearchNOK", "NOKChange")" style="color:white">Search  <i class="fa fa-arrow-circle-right"></i></a></p>
+
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-android-document"></i>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- Personal Contact Details-->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-maroon">
+                        <div class="inner">
+                            <h3 style="font-size:25px"><u>Personal Detail</u></h3>
+                            <p><a href="@Url.Action("CreatePsnContact", "PersonalContact")" style="color:white">Create Record <i class="fa fa-arrow-circle-right"></i></a></p>
+                            <p><a href="@Url.Action("Index", "PersonalContact")" style="color:white">Pending Contact List  <i class="fa fa-arrow-circle-right"></i></a></p>
+                            <p><a href="@Url.Action("IndexChildInfo", "PersonalContact")" style="color:white">Pending Child List  <i class="fa fa-arrow-circle-right"></i></a></p>
+                            <p><a href="@Url.Action("IndexRejectPsnContact", "PersonalContact")" style="color:white">Reject Contact List  <i class="fa fa-arrow-circle-right"></i></a></p>
+                            <p><a href="@Url.Action("IndexRejectPsnChild", "PersonalContact")" style="color:white">Reject Child List  <i class="fa fa-arrow-circle-right"></i></a></p>
+                            <p><a href="@Url.Action("IndividualSearchPsn", "PersonalContact")" style="color:white">Search <i class="fa fa-arrow-circle-right"></i></a></p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-green">
+                        <div class="inner">
+                            <h3 style="font-size:25px"><u>Secondary Duty</u></h3>
+                            <p><a href="@Url.Action("Create", "SecondaryDuty")" style="color:white">Create Record <i class="fa fa-arrow-circle-right"></i></a></p>
+                            <p><a href="@Url.Action("Index", "SecondaryDuty")" style="color:white">Secondary Duty List  <i class="fa fa-arrow-circle-right"></i></a></p>
+                            <p><a href="@Url.Action("IndexConfirm", "SecondaryDuty")" style="color:white">Confirm Secondary Duty List  <i class="fa fa-arrow-circle-right"></i></a></p>
+                            <p><a href="@Url.Action("IndexRejectPsnContact", "SecondaryDuty")" style="color:white">Reject Secondary Duty List  <i class="fa fa-arrow-circle-right"></i></a></p>
+                            
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="visibility:hidden">
+            <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
+                <div class="toast-header">
+                    <strong class="mr-auto">Civil Status Reject Count</strong>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="toast-body">
+                    You got @TempData["RejectCivilStatusCount"]
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+            <!-- Left col -->
+            <section class="col-lg-7 connectedSortable"></section>
+        </div>
+    </section>
+</div>

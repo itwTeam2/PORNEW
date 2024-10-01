@@ -1,0 +1,216 @@
+﻿@model POR.Models.PersonalContact._PsnContactHeader
+
+
+<script src="~/Scripts/Jq.js"></script>
+@*<script src="~/Scripts/LivingInOut.js"></script>*@
+@{
+    ViewBag.Title = "Edit";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="content-wrapper">
+        <section class="content-header">
+
+            <h1 style="text-align:center"><span>Edit Personal Child Details</span></h1>
+
+            <div id="ErrorMessage">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong> @TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong>@TempData["ErrMsg"]
+                    </div>
+                }
+            </div>
+        </section>
+        <br />
+        @{
+            int RejectStatus = Convert.ToInt32(TempData["Rejectstatus"]);
+            int childLiveStatus = Convert.ToInt32(TempData["childLiveStatus"]);
+            <section class="col-lg-6 connectedSortable">
+                <div class="nav-tabs-custom">
+                    @Html.ValidationSummary(true)
+
+                    <div class="box-body">
+                        @*Service Number /Rank*@
+                        <div class="form-group">
+                            <div class="col-lg-6">
+                                @Html.Label("Service Number", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.ServiceNo, new { @class = "form-control ", autocomplete = "off", @readonly = "readonly" })
+                                @Html.HiddenFor(model => model.PCHID, new { @class = "form-control ", autocomplete = "off" })
+                                @Html.HiddenFor(model => model.SCID, new { @class = "form-control ", autocomplete = "off" })
+                                
+                            </div>
+                            @*Rank*@
+                            <div class="col-lg-6">
+                                @Html.Label("Rank", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Rank, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            </div>
+
+                        </div>
+
+                        @*Name*@
+                        <div class="form-group">
+                            <div class="col-lg-12" style="margin-top:12px">
+                                @Html.Label("Name", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.FullName, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.FullName, string.Empty, new { @class = "label label-danger" })
+                            </div>
+                        </div>
+
+                        @*Location/Authority*@
+                        <div class="form-group">
+                            <div class="col-lg-6" style="margin-top:12px">
+                                @Html.Label("Location", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Location, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            </div>
+                            <div class="col-lg-6" style="margin-top:12px">
+                                @Html.Label("Authority", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Authority, new { @class = "form-control ", autocomplete = "off", placeholder = ""})
+                            </div>
+                        </div>
+
+                        @*POR RefNo*@
+                        <div class="form-group">
+                            <div class="col-lg-12" style="margin-top:12px">
+                                @Html.Label("Ref No", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.RefNo, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            </div>
+                        </div>
+
+                        @*RejectStatus == 2 mean it's reject Record*@
+
+                        @if (RejectStatus == 2)
+                        {
+                            <div class="form-group">
+                                @Html.Label("Reject Ref No", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.RejectRefNo, new { @class = "form-control alert-danger", autocomplete = "off", @readonly = "readonly"})
+                            </div>
+                        }
+
+                        @{
+                            switch (childLiveStatus)
+                            {
+                                case (int)POR.Enum.PorSubCategory.Live:
+                                    @*ChildFullName :*@
+                                    <div class="form-group">
+                                        @Html.Label("Child Full Name", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.ChildFullName, new { @class = "form-control", autocomplete = "off"})
+                                    </div>                                  
+
+                                    @*Child FullName With Initial :*@
+                                    <div class="form-group">
+                                        @Html.Label("Child Name with Initial", new { @class = "control-label" })
+                                        @Html.TextAreaFor(model => model.ChildFullNameWithInitial, new { @class = "form-control", autocomplete = "off" })
+                                    </div>
+
+                                    @*Child FullName With Initial :*@
+                                    <div class="form-group">
+                                        <div class="col-lg-6">
+                                            @Html.Label("Child Birth Place", new { @class = "control-label" })
+                                            @Html.TextBoxFor(model => model.BirthPlace, new { @class = "form-control", autocomplete = "off" })
+                                        </div>
+                                        <div class="col-lg-6">
+                                            @Html.Label("Child Birth Certificate No", new { @class = "control-label" })
+                                            @Html.TextBoxFor(model => model.BirthCertificateNo, new { @class = "form-control", autocomplete = "off" })
+                                        </div>
+                                       
+                                    </div>
+                                   
+
+                                    @*Disrict :*@
+                                    <div class="form-group">
+                                        <div class="col-lg-6">
+                                            @Html.Label("District", new { @class = "control-label" })
+                                            @Html.TextBoxFor(model => model.Disrict2, new { @class = "form-control", autocomplete = "off", @readonly = "readonly" })
+                                        </div>
+                                        <div class="col-lg-6">
+                                            @Html.Label("Select District", new { @class = "control-label" })
+                                            @Html.DropDownListFor(model => model.Disrict3, ViewBag.DDL_DistricSelectAll_Result as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                            @Html.HiddenFor(model => model.DESCRIPTION, new { @class = "form-control ", autocomplete = "off" })                                          
+                                        </div>                                       
+                                    </div>                                        
+
+                                    @*BirthCertificateNo/Birth place:*@
+                                                                           
+                                    @*DateOfBirth/GenderType :*@
+                                    <div class="form-group">
+                                        <div class="col-lg-6">
+                                            @Html.Label("Date Of Birth", new { @class = "control-label" })
+                                            @Html.TextBoxFor(model => model.DateOfBirth, new { @class = "form-control", autocomplete = "off"})
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            @Html.Label("Gender", new { @class = "control-label" })
+                                            @Html.TextBoxFor(model => model.GenderType, new { @class = "form-control", autocomplete = "off" ,@readonly = "readonly" })
+                                        </div>                                        
+                                    </div>                                                        
+                                    break;
+                                case (int)POR.Enum.PorSubCategory.Death:
+                                    @*ChildFullName :*@
+                                    <div class="form-group">
+                                        @Html.Label("Child Full Name", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.ChildFullName, new { @class = "form-control", autocomplete = "off", @readonly = "readonly" })
+                                    </div>
+
+
+                                    @*Child FullName With Initial :*@
+                                    <div class="form-group">
+                                        @Html.Label("Child Name with Initial", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.ChildFullNameWithInitial, new { @class = "form-control", autocomplete = "off", @readonly = "readonly" })
+                                    </div>
+
+                                    @*DeathCertificateNo :*@
+                                    <div class="form-group">
+                                        @Html.Label("Death Certificate No", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.DeathCertificateNo, new { @class = "form-control", autocomplete = "off" })
+                                    </div>
+                                      
+                                    @*DateOfDeath :*@
+                                   
+                                    <div class="form-group">
+                                        @Html.Label("Date Of Death", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.DateOfDeath, new { @class = "form-control", autocomplete = "off" })
+                                    </div>
+                                        
+                                    @*GenderType :*@
+                                    <div class="form-group">
+                                        @Html.Label("GenderType", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.GenderType, new { @class = "form-control", autocomplete = "off", @readonly = "readonly"})
+                                    </div>
+                                       
+                                    break;
+                            }
+                        }
+                        <div class="form-group">
+                            <section class="col-lg-6" style="margin-top:20px">
+                                <button type="button" class="col-lg-4 btn btn-warning pull-right" id="btnYes" style="height:40px;width:200px" onclick="location.href='@Url.Action("IndexChildInfo", "PersonalContact", new { serviceStatus = 0})'">
+                                    <span class="info-box-text"><i class=" fa fa-hand-o-left"></i> Go to Pending List</span>
+                                </button>
+                            </section>
+
+                            <section class="col-lg-6" style="margin-top:20px">
+                                <button type="submit" class="col-lg-4 btn btn-success pull-right" style="height:40px;width:200px">
+                                    <span class="info-box-text"><i class=" fa fa-save"></i> Save</span>
+                                </button>
+                                @*<i class=" fa fa-hand-o-left"><input type="submit" value="Save" class="btn btn-success pull-right submitBtn"></i>*@
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        }
+    </div>
+}
+<script>
+
+</script>
+

@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Vw_FixedAllowanceDetail_DS" targetNamespace="http://tempuri.org/Vw_FixedAllowanceDetail_DS.xsd" xmlns:mstns="http://tempuri.org/Vw_FixedAllowanceDetail_DS.xsd" xmlns="http://tempuri.org/Vw_FixedAllowanceDetail_DS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="PORConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PORConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.PORConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Vw_FixedAllowanceDetailTableAdapter" GeneratorDataComponentClassName="Vw_FixedAllowanceDetailTableAdapter" Name="Vw_FixedAllowanceDetail" UserDataComponentName="Vw_FixedAllowanceDetailTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PORConnectionString (Web.config)" DbObjectName="POR.dbo.Vw_FixedAllowanceDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Service_Type, ServiceType, Rank, Name, AllowanceName, EffectiveDate, EndDate, CampAuthority, CampAuthorityDate, Remark, AllowanceId, FADID, Sno, ServiceNo, RankID, Description, Active, UserRoleID, EstablishmentId, RejectStatus, CurrentStatus, SubmitStatus, FullHalfPay, FMSID, CreatedBy, ALWID, FADFID, RecordStatusId FROM dbo.Vw_FixedAllowanceDetail</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Service_Type" DataSetColumn="Service_Type" />
+              <Mapping SourceColumn="ServiceType" DataSetColumn="ServiceType" />
+              <Mapping SourceColumn="Rank" DataSetColumn="Rank" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="AllowanceName" DataSetColumn="AllowanceName" />
+              <Mapping SourceColumn="EffectiveDate" DataSetColumn="EffectiveDate" />
+              <Mapping SourceColumn="EndDate" DataSetColumn="EndDate" />
+              <Mapping SourceColumn="CampAuthority" DataSetColumn="CampAuthority" />
+              <Mapping SourceColumn="CampAuthorityDate" DataSetColumn="CampAuthorityDate" />
+              <Mapping SourceColumn="Remark" DataSetColumn="Remark" />
+              <Mapping SourceColumn="AllowanceId" DataSetColumn="AllowanceId" />
+              <Mapping SourceColumn="FADID" DataSetColumn="FADID" />
+              <Mapping SourceColumn="Sno" DataSetColumn="Sno" />
+              <Mapping SourceColumn="ServiceNo" DataSetColumn="ServiceNo" />
+              <Mapping SourceColumn="RankID" DataSetColumn="RankID" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="Active" DataSetColumn="Active" />
+              <Mapping SourceColumn="UserRoleID" DataSetColumn="UserRoleID" />
+              <Mapping SourceColumn="EstablishmentId" DataSetColumn="EstablishmentId" />
+              <Mapping SourceColumn="RejectStatus" DataSetColumn="RejectStatus" />
+              <Mapping SourceColumn="CurrentStatus" DataSetColumn="CurrentStatus" />
+              <Mapping SourceColumn="SubmitStatus" DataSetColumn="SubmitStatus" />
+              <Mapping SourceColumn="FullHalfPay" DataSetColumn="FullHalfPay" />
+              <Mapping SourceColumn="FMSID" DataSetColumn="FMSID" />
+              <Mapping SourceColumn="CreatedBy" DataSetColumn="CreatedBy" />
+              <Mapping SourceColumn="ALWID" DataSetColumn="ALWID" />
+              <Mapping SourceColumn="FADFID" DataSetColumn="FADFID" />
+              <Mapping SourceColumn="RecordStatusId" DataSetColumn="RecordStatusId" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Vw_FixedAllowanceDetail_DS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Vw_FixedAllowanceDetail_DS" msprop:Generator_UserDSName="Vw_FixedAllowanceDetail_DS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Vw_FixedAllowanceDetail" msprop:Generator_TableClassName="Vw_FixedAllowanceDetailDataTable" msprop:Generator_TableVarName="tableVw_FixedAllowanceDetail" msprop:Generator_TablePropName="Vw_FixedAllowanceDetail" msprop:Generator_RowDeletingName="Vw_FixedAllowanceDetailRowDeleting" msprop:Generator_RowChangingName="Vw_FixedAllowanceDetailRowChanging" msprop:Generator_RowEvHandlerName="Vw_FixedAllowanceDetailRowChangeEventHandler" msprop:Generator_RowDeletedName="Vw_FixedAllowanceDetailRowDeleted" msprop:Generator_UserTableName="Vw_FixedAllowanceDetail" msprop:Generator_RowChangedName="Vw_FixedAllowanceDetailRowChanged" msprop:Generator_RowEvArgName="Vw_FixedAllowanceDetailRowChangeEvent" msprop:Generator_RowClassName="Vw_FixedAllowanceDetailRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Service_Type" msprop:Generator_ColumnVarNameInTable="columnService_Type" msprop:Generator_ColumnPropNameInRow="Service_Type" msprop:Generator_ColumnPropNameInTable="Service_TypeColumn" msprop:Generator_UserColumnName="Service_Type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ServiceType" msprop:Generator_ColumnVarNameInTable="columnServiceType" msprop:Generator_ColumnPropNameInRow="ServiceType" msprop:Generator_ColumnPropNameInTable="ServiceTypeColumn" msprop:Generator_UserColumnName="ServiceType" type="xs:int" minOccurs="0" />
+              <xs:element name="Rank" msprop:Generator_ColumnVarNameInTable="columnRank" msprop:Generator_ColumnPropNameInRow="Rank" msprop:Generator_ColumnPropNameInTable="RankColumn" msprop:Generator_UserColumnName="Rank" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AllowanceName" msprop:Generator_ColumnVarNameInTable="columnAllowanceName" msprop:Generator_ColumnPropNameInRow="AllowanceName" msprop:Generator_ColumnPropNameInTable="AllowanceNameColumn" msprop:Generator_UserColumnName="AllowanceName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EffectiveDate" msprop:Generator_ColumnVarNameInTable="columnEffectiveDate" msprop:Generator_ColumnPropNameInRow="EffectiveDate" msprop:Generator_ColumnPropNameInTable="EffectiveDateColumn" msprop:Generator_UserColumnName="EffectiveDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" msprop:Generator_UserColumnName="EndDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CampAuthority" msprop:Generator_ColumnVarNameInTable="columnCampAuthority" msprop:Generator_ColumnPropNameInRow="CampAuthority" msprop:Generator_ColumnPropNameInTable="CampAuthorityColumn" msprop:Generator_UserColumnName="CampAuthority" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CampAuthorityDate" msprop:Generator_ColumnVarNameInTable="columnCampAuthorityDate" msprop:Generator_ColumnPropNameInRow="CampAuthorityDate" msprop:Generator_ColumnPropNameInTable="CampAuthorityDateColumn" msprop:Generator_UserColumnName="CampAuthorityDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Remark" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" msprop:Generator_UserColumnName="Remark" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AllowanceId" msprop:Generator_ColumnVarNameInTable="columnAllowanceId" msprop:Generator_ColumnPropNameInRow="AllowanceId" msprop:Generator_ColumnPropNameInTable="AllowanceIdColumn" msprop:Generator_UserColumnName="AllowanceId" type="xs:int" minOccurs="0" />
+              <xs:element name="FADID" msprop:Generator_ColumnVarNameInTable="columnFADID" msprop:Generator_ColumnPropNameInRow="FADID" msprop:Generator_ColumnPropNameInTable="FADIDColumn" msprop:Generator_UserColumnName="FADID" type="xs:int" minOccurs="0" />
+              <xs:element name="Sno" msprop:Generator_ColumnVarNameInTable="columnSno" msprop:Generator_ColumnPropNameInRow="Sno" msprop:Generator_ColumnPropNameInTable="SnoColumn" msprop:Generator_UserColumnName="Sno" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ServiceNo" msprop:Generator_ColumnVarNameInTable="columnServiceNo" msprop:Generator_ColumnPropNameInRow="ServiceNo" msprop:Generator_ColumnPropNameInTable="ServiceNoColumn" msprop:Generator_UserColumnName="ServiceNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RankID" msprop:Generator_ColumnVarNameInTable="columnRankID" msprop:Generator_ColumnPropNameInRow="RankID" msprop:Generator_ColumnPropNameInTable="RankIDColumn" msprop:Generator_UserColumnName="RankID" type="xs:int" minOccurs="0" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Active" msprop:Generator_ColumnVarNameInTable="columnActive" msprop:Generator_ColumnPropNameInRow="Active" msprop:Generator_ColumnPropNameInTable="ActiveColumn" msprop:Generator_UserColumnName="Active" type="xs:int" minOccurs="0" />
+              <xs:element name="UserRoleID" msprop:Generator_ColumnVarNameInTable="columnUserRoleID" msprop:Generator_ColumnPropNameInRow="UserRoleID" msprop:Generator_ColumnPropNameInTable="UserRoleIDColumn" msprop:Generator_UserColumnName="UserRoleID" type="xs:int" minOccurs="0" />
+              <xs:element name="EstablishmentId" msprop:Generator_ColumnVarNameInTable="columnEstablishmentId" msprop:Generator_ColumnPropNameInRow="EstablishmentId" msprop:Generator_ColumnPropNameInTable="EstablishmentIdColumn" msprop:Generator_UserColumnName="EstablishmentId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RejectStatus" msprop:Generator_ColumnVarNameInTable="columnRejectStatus" msprop:Generator_ColumnPropNameInRow="RejectStatus" msprop:Generator_ColumnPropNameInTable="RejectStatusColumn" msprop:Generator_UserColumnName="RejectStatus" type="xs:int" minOccurs="0" />
+              <xs:element name="CurrentStatus" msprop:Generator_ColumnVarNameInTable="columnCurrentStatus" msprop:Generator_ColumnPropNameInRow="CurrentStatus" msprop:Generator_ColumnPropNameInTable="CurrentStatusColumn" msprop:Generator_UserColumnName="CurrentStatus" type="xs:int" minOccurs="0" />
+              <xs:element name="SubmitStatus" msprop:Generator_ColumnVarNameInTable="columnSubmitStatus" msprop:Generator_ColumnPropNameInRow="SubmitStatus" msprop:Generator_ColumnPropNameInTable="SubmitStatusColumn" msprop:Generator_UserColumnName="SubmitStatus" type="xs:int" minOccurs="0" />
+              <xs:element name="FullHalfPay" msprop:Generator_ColumnVarNameInTable="columnFullHalfPay" msprop:Generator_ColumnPropNameInRow="FullHalfPay" msprop:Generator_ColumnPropNameInTable="FullHalfPayColumn" msprop:Generator_UserColumnName="FullHalfPay" type="xs:int" minOccurs="0" />
+              <xs:element name="FMSID" msprop:Generator_ColumnVarNameInTable="columnFMSID" msprop:Generator_ColumnPropNameInRow="FMSID" msprop:Generator_ColumnPropNameInTable="FMSIDColumn" msprop:Generator_UserColumnName="FMSID" type="xs:int" minOccurs="0" />
+              <xs:element name="CreatedBy" msprop:Generator_ColumnVarNameInTable="columnCreatedBy" msprop:Generator_ColumnPropNameInRow="CreatedBy" msprop:Generator_ColumnPropNameInTable="CreatedByColumn" msprop:Generator_UserColumnName="CreatedBy" type="xs:int" minOccurs="0" />
+              <xs:element name="ALWID" msprop:Generator_ColumnVarNameInTable="columnALWID" msprop:Generator_ColumnPropNameInRow="ALWID" msprop:Generator_ColumnPropNameInTable="ALWIDColumn" msprop:Generator_UserColumnName="ALWID" type="xs:int" />
+              <xs:element name="FADFID" msprop:Generator_ColumnVarNameInTable="columnFADFID" msprop:Generator_ColumnPropNameInRow="FADFID" msprop:Generator_ColumnPropNameInTable="FADFIDColumn" msprop:Generator_UserColumnName="FADFID" type="xs:int" />
+              <xs:element name="RecordStatusId" msprop:Generator_ColumnVarNameInTable="columnRecordStatusId" msprop:Generator_ColumnPropNameInRow="RecordStatusId" msprop:Generator_ColumnPropNameInTable="RecordStatusIdColumn" msprop:Generator_UserColumnName="RecordStatusId" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

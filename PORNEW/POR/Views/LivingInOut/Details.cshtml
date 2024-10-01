@@ -1,0 +1,922 @@
+﻿@using POR.Models
+@model IEnumerable<POR.Models.LivingInOut._LivingInOut >
+<link href="~/Content/CustomeStyle.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Details";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    //LivingInOutDetai
+    <div class="content-wrapper" style="height:900px !important;">
+
+        <section class="content-header">
+
+            <h1>
+                Bechelors/Spinster In/Out
+                <small>View Added Details</small>
+            </h1>
+
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+            </ol>
+
+            <div id="ErrorMessage">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong> @TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong>@TempData["ErrMsg"]
+                    </div>
+
+                }
+            </div>
+
+        </section>
+        
+        <br />
+         
+        @foreach (var item in Model)
+         {
+             if (TempData["NOKchangeStatus"] != null)
+             {
+                 int? NOKchangeStatus = Convert.ToInt32(TempData["NOKchangeStatus"]);
+                 int RejectStatus = Convert.ToInt32(TempData["Rejectstatus"]);
+                 string LivingStatus = TempData["LivingStatusCode"].ToString();
+
+                 switch (RejectStatus)
+                 {
+                     /// If Reject status is 2 show the reject reson and reject person Name 
+                     case 2:
+                         if (NOKchangeStatus == 2)
+                         {
+                            /// Nok Details not change, there is no any NOK Details Change, data shown in this area 
+                           
+                            <section class="col-lg-12 nav-tabs-custom connectedSortable">
+                                <div class="col-lg-6">
+                                    <br />
+                                    <dl class="dl-horizontal">
+                                        @*Service No*@
+                                        <dt class="form-group">
+                                            @Html.Label("Service No :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.Snumber)
+
+                                        </dd>
+
+                                        @*Rank*@
+                                        <dt class="form-group">
+                                            @Html.Label("Rank :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.Rank)
+                                        </dd>
+
+                                        @*Full Name*@
+                                        <dt class="form-group">
+                                            @Html.Label("Full Name :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.FullName)
+                                        </dd>
+
+                                        @*Location*@
+                                        <dt class="form-group">
+                                            @Html.Label("Location:", new { @class = "control-label" })
+
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.Location)
+                                        </dd>
+
+                                        @if (LivingStatus == "Bachelor/Spinster Living-In" || LivingStatus == "Married Living -In" || LivingStatus == "Married Living -Out")
+                                        {
+                                            @*With effect Date*@
+                                            <dt class="form-group">
+                                                @Html.Label("With effect Date :", new { @class = "control-label" })
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.FromDate, "{dd/MM/yyyy}")
+                                            </dd>
+                                        }
+                                        else
+                                        {
+                                            @*From Date*@
+                                            <dt class="form-group">
+                                                @Html.Label("From Date :", new { @class = "control-label" })
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.FromDate, "{dd/MM/yyyy}")
+                                            </dd>
+
+                                            @*To Date*@
+                                            <dt class="form-group">
+                                                @Html.Label("To Date :", new { @class = "control-label" })
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.ToDate, "{dd/MM/yyyy}")
+                                            </dd>
+                                        }
+                                        
+
+                                        @*Authority*@
+                                        <dt class="form-group">
+                                            @Html.Label("Authority :", new { @class = "control-label" })
+
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.Authority)
+                                        </dd>
+
+                                        @*Category Name*@
+                                        <dt class="form-group">
+                                            @Html.Label("Category Name :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+
+                                            @Html.DisplayFor(model => item.CategoryName)
+                                        </dd>
+
+                                        @*Refference No*@
+                                        <dt class="form-group">
+                                            @Html.Label("Refference No :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.RefNo)
+                                        </dd>
+
+                                        @* Reject Reason Comment :*@
+                                        <dt class="form-group alert-danger">
+                                            Reject Reason:
+                                        </dt>
+
+                                        <dd class="alert-danger">
+                                            @Html.DisplayFor(model => item.Comment)
+                                        </dd>
+
+                                        @* Reject Reason Person :*@
+                                        <dt class="form-group alert-warning">
+                                            Reject Person:
+                                        </dt>
+
+                                        <dd class="alert-warning">
+                                            @Html.DisplayFor(model => item.RejectRoleName)
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </section>
+                         }
+                         else
+                         {
+                            <section class="col-lg-12 nav-tabs-custom connectedSortable">
+                                <div class="col-lg-6">
+                                    <br />
+                                    <dl class="dl-horizontal">
+                                        @*Service No*@
+                                        <dt class="form-group">
+                                            @Html.Label("Service No :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.Snumber)
+
+                                        </dd>
+
+                                        @*Rank*@
+                                        <dt class="form-group">
+                                            @Html.Label("Rank :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.Rank)
+                                        </dd>
+
+                                        @*Full Name*@
+                                        <dt class="form-group">
+                                            @Html.Label("Full Name :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.FullName)
+                                        </dd>
+
+                                        @*Location*@
+                                        <dt class="form-group">
+                                            @Html.Label("Location:", new { @class = "control-label" })
+
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.Location)
+                                        </dd>
+
+                                        @{
+                                            DateTime? Todatetime = item.ToDate;
+                                            if (!Todatetime.HasValue)
+                                            {
+                                                @*From Date*@
+                                                <dt class="form-group">
+                                                    @Html.Label("From Date :", new { @class = "control-label" })
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => item.FromDate, "{dd/MM/yyyy}")
+                                                </dd>
+
+                                                @*To Date*@
+                                                <dt class="form-group">
+                                                    @Html.Label("To Date :", new { @class = "control-label" })
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => item.ToDate, "{dd/MM/yyyy}")
+                                                </dd>
+                                            }
+                                            else
+                                            {
+                                                @*From Date*@
+                                                <dt class="form-group">
+                                                    @Html.Label("With Effect Date :", new { @class = "control-label" })
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => item.FromDate, "{dd/MM/yyyy}")
+                                                </dd>
+                                            }
+                                        }
+
+
+                                        @*Authority*@
+                                        <dt class="form-group">
+                                            @Html.Label("Authority :", new { @class = "control-label" })
+
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.Authority)
+                                        </dd>
+
+                                        @*Category Name*@
+
+                                        <dt class="form-group">
+                                            @Html.Label("Category Name : :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+
+                                            @Html.DisplayFor(model => item.CategoryName)
+                                        </dd>
+
+                                        @*Refference No*@
+                                        <dt class="form-group">
+                                            @Html.Label("Refference No :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.RefNo)
+                                        </dd>
+
+                                        @* Reject Reason Comment :*@
+                                        <dt class="form-group alert-danger">
+                                            Reject Reason:
+                                        </dt>
+
+                                        <dd class="alert-danger">
+                                            @Html.DisplayFor(model => item.Comment)
+                                        </dd>
+
+                                        @* Reject Reason Person :*@
+                                        <dt class="form-group alert-warning">
+                                            Reject Person:
+                                        </dt>
+
+                                        <dd class="alert-warning">
+                                            @Html.DisplayFor(model => item.RejectRoleName)
+                                        </dd>
+                                    </dl>
+                                </div>
+                                @if (item.NOKName != "")
+                                {
+                                    <div class="col-lg-6">
+                                        <br />
+                                        <dl class="dl-horizontal">
+                                            @*NOKName*@
+                                            <dt class="form-group">
+                                                @Html.Label("NOK Name :", new { @class = "control-label" })
+
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.NOKName)
+
+                                            </dd>
+
+                                            @*NOK Change to*@
+                                            <dt class="form-group">
+                                                @Html.Label(" NOK Change To :", new { @class = "control-label" })
+
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.NOKChangeTo)
+
+                                            </dd>
+
+                                            @*NOKaddress*@
+                                            <dt class="form-group">
+                                                @Html.Label(" NOK Address :", new { @class = "control-label" })
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.NOKaddress)
+                                            </dd>
+
+                                            @*With Effice Date*@
+                                            <dt class="form-group">
+                                                @Html.Label("With Effect Date :", new { @class = "control-label" })
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.NOKWEFDate)
+                                            </dd>
+
+                                            @*District*@
+                                            <dt class="form-group">
+                                                @Html.Label("District :", new { @class = "control-label" })
+
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.District1)
+                                            </dd>
+
+                                            @*GS Division*@
+                                            <dt class="form-group">
+                                                @Html.Label("GS Division :", new { @class = "control-label" })
+
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.GSName)
+                                            </dd>
+
+                                            @*Nearest Town*@
+                                            <dt class="form-group">
+                                                @Html.Label("Nearest Town :", new { @class = "control-label" })
+
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.NearestTown)
+                                            </dd>
+
+                                            @*Police Station*@
+                                            <dt class="form-group">
+                                                @Html.Label("Police Station :", new { @class = "control-label" })
+
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.PoliceStation1)
+                                            </dd>
+
+                                            @*Post Office*@
+                                            <dt class="form-group">
+                                                Post Office :
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.PostOfficeName)
+
+                                            </dd>
+
+                                            @*Remarks*@
+                                            <dt class="form-group">
+                                                @Html.Label("Remarks :", new { @class = "control-label" })
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.Remarks)
+                                            </dd>
+
+                                        </dl>
+                                    </div>
+                                }
+
+                            </section>
+                         }
+
+                         break;
+                         default:
+                         if (NOKchangeStatus == 2)
+                         {
+                             <section class="col-lg-12 nav-tabs-custom connectedSortable">
+                                <div class="col-lg-6">
+                                    <br />
+                                    <dl class="dl-horizontal">
+                                        @*Service No*@
+                                        <dt class="form-group">
+                                            @Html.Label("Service No :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.Snumber)
+
+                                        </dd>
+
+                                        @*Rank*@
+                                        <dt class="form-group">
+                                            @Html.Label("Rank :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.Rank)
+                                        </dd>
+
+                                        @*Full Name*@
+                                        <dt class="form-group">
+                                            @Html.Label("Full Name :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.FullName)
+                                        </dd>
+
+                                        @*Location*@
+                                        <dt class="form-group">
+                                            @Html.Label("Location:", new { @class = "control-label" })
+
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.Location)
+                                        </dd>
+
+                                        @if (item.PreviousReject == 1)
+	                                    {
+		                                    @* Reject Ref :*@
+                                            <dt class="alert alert-danger">
+                                                Reject Ref No :
+                                            </dt>
+
+                                            <dd class="alert alert-danger">
+                                                @Html.DisplayFor(model => item.RejectAuth)
+
+                                            </dd>
+                                        }
+
+                                        @if (LivingStatus == "Bachelor/Spinster Living-In" || LivingStatus == "Married Living -In" || LivingStatus == "Married Living -Out")
+                                        {
+                                            @*With effect Date*@
+                                            <dt class="form-group">
+                                                @Html.Label("With effect Date :", new { @class = "control-label" })
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.FromDate, "{dd/MM/yyyy}")
+                                            </dd>
+
+                                        }
+                                        else
+                                        {
+                                            @*From Date*@
+                                            <dt class="form-group">
+                                                @Html.Label("From Date :", new { @class = "control-label" })
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.FromDate, "{dd/MM/yyyy}")
+                                            </dd>
+
+                                            @*To Date*@
+                                            <dt class="form-group">
+                                                @Html.Label("To Date :", new { @class = "control-label" })
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.ToDate, "{dd/MM/yyyy}")
+                                            </dd>
+                                        }
+                                      
+
+                                        @*Authority*@
+                                        <dt class="form-group">
+                                            @Html.Label("Authority :", new { @class = "control-label" })
+
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.Authority)
+                                        </dd>
+
+                                        @*Category Name*@
+                                        <dt class="form-group">
+                                            @Html.Label("Category Name :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+
+                                            @Html.DisplayFor(model => item.CategoryName)
+                                        </dd>
+
+                                        @*Refference No*@
+                                        <dt class="form-group">
+                                            @Html.Label("Refference No :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.RefNo)
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </section>
+                         }
+                         else
+                         {
+                            <section class="col-lg-12 nav-tabs-custom connectedSortable">
+                                <div class="col-lg-6">
+                                    <br />
+                                    <dl class="dl-horizontal">
+                                        @*Service No*@
+                                        <dt class="form-group">
+                                            @Html.Label("Service No :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.Snumber)
+
+                                        </dd>
+
+                                        @*Rank*@
+                                        <dt class="form-group">
+                                            @Html.Label("Rank :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.Rank)
+                                        </dd>
+
+                                        @*Full Name*@
+                                        <dt class="form-group">
+                                            @Html.Label("Full Name :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.FullName)
+                                        </dd>
+
+                                        @*Location*@
+                                        <dt class="form-group">
+                                            @Html.Label("Location:", new { @class = "control-label" })
+
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.Location)
+                                        </dd>
+
+                                        @{
+                                            DateTime? Todatetime = item.ToDate;
+                                            if (!Todatetime.HasValue)
+                                            {
+                                                @*From Date*@
+                                                <dt class="form-group">
+                                                    @Html.Label("From Date :", new { @class = "control-label" })
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => item.FromDate, "{dd/MM/yyyy}")
+                                                </dd>
+
+                                                @*To Date*@
+                                                <dt class="form-group">
+                                                    @Html.Label("To Date :", new { @class = "control-label" })
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => item.ToDate, "{dd/MM/yyyy}")
+                                                </dd>
+                                            }
+                                            else
+                                            {
+                                                @*From Date*@
+                                                <dt class="form-group">
+                                                    @Html.Label("With Effect Date :", new { @class = "control-label" })
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => item.FromDate, "{dd/MM/yyyy}")
+                                                </dd>
+                                            }
+                                        }
+
+
+                                        @*Authority*@
+                                        <dt class="form-group">
+                                            @Html.Label("Authority :", new { @class = "control-label" })
+
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.Authority)
+                                        </dd>
+
+                                        @*Category Name*@
+
+                                        <dt class="form-group">
+                                            @Html.Label("Category Name : :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+
+                                            @Html.DisplayFor(model => item.CategoryName)
+                                        </dd>
+
+                                        @*Refference No*@
+                                        <dt class="form-group">
+                                            @Html.Label("Refference No :", new { @class = "control-label" })
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => item.RefNo)
+                                        </dd>
+
+                                    </dl>
+                                </div>
+                                @if (item.NOKName != "")
+                                {
+                                    <div class="col-lg-6">
+                                        <br />
+                                        <dl class="dl-horizontal">
+                                            @*NOKName*@
+                                            <dt class="form-group">
+                                                @Html.Label("NOK Name :", new { @class = "control-label" })
+
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.NOKName)
+
+                                            </dd>
+
+                                            @*NOK Change to*@
+                                            <dt class="form-group">
+                                                @Html.Label(" NOK Change To :", new { @class = "control-label" })
+
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.NOKChangeTo)
+
+                                            </dd>
+
+                                            @*NOKaddress*@
+                                            <dt class="form-group">
+                                                @Html.Label(" NOK Address :", new { @class = "control-label" })
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.NOKaddress)
+                                            </dd>
+                                            @*With Effice Date*@
+                                            <dt class="form-group">
+                                                @Html.Label("With Effect Date :", new { @class = "control-label" })
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.NOKWEFDate)
+                                            </dd>
+
+                                            @*District*@
+                                            <dt class="form-group">
+                                                @Html.Label("District :", new { @class = "control-label" })
+
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.District1)
+                                            </dd>
+
+                                            @*GS Division*@
+                                            <dt class="form-group">
+                                                @Html.Label("GS Division :", new { @class = "control-label" })
+
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.GSName)
+                                            </dd>
+
+                                            @*Nearest Town*@
+                                            <dt class="form-group">
+                                                @Html.Label("Nearest Town :", new { @class = "control-label" })
+
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.NearestTown)
+                                            </dd>
+
+                                            @*Police Station*@
+                                            <dt class="form-group">
+                                                @Html.Label("Police Station :", new { @class = "control-label" })
+
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.PoliceStation1)
+                                            </dd>
+
+                                            @*Post Office*@
+                                            <dt class="form-group">
+                                                Post Office :
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.PostOfficeName)
+
+                                            </dd>
+
+                                            @*Remarks*@
+                                            <dt class="form-group">
+                                                @Html.Label("Remarks :", new { @class = "control-label" })
+                                            </dt>
+
+                                            <dd>
+                                                @Html.DisplayFor(model => item.Remarks)
+                                            </dd>
+
+                                        </dl>
+                                    </div>
+                                }
+
+                            </section>
+                         }
+
+                         break;
+                    }
+
+                  } 
+
+             <section>
+
+                @{
+                    int? URID = Convert.ToInt32(TempData["UserRoleId"]);
+                    int? CurrentStatus = Convert.ToInt32(TempData["CurrentStatus"]);
+                    int? SubmitStatus = Convert.ToInt32(TempData["SubmitStatus"]);
+                    int Reject = Convert.ToInt32(TempData["Rejectstatus"]);
+
+                    if (item.RSID == (int)POR.Enum.RecordStatus.Insert)
+                    {
+                        <div class="col-lg-12">
+                            @Html.ActionLink("Forward", "Forward", "LivingInOut", new { id = item.LIOHID }, new { @class = "btn btn-primary", id = "btnCertify" })
+                            @if (Reject == 2)
+                            {
+                                @Html.ActionLink("Edit", "Edit", "LivingInOut", new { id = item.LIOHID, rejectStatus = 2 }, new { @class = "btn btn-warning" })
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Edit", "Edit", "LivingInOut", new { id = item.LIOHID, rejectStatus = 1 }, new { @class = "btn btn-warning" })
+                            }
+                            
+                            @Html.ActionLink("Delete", "Delete", "LivingInOut", new { id = item.LIOHID }, new { @class = "btn btn-danger" })
+                            @*<input id="btnReject" type="button" value="" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-danger" />*@
+                            @Html.ActionLink("Back to List", "IndexLivingINOutStatus", "LivingInOut", new { id = item.LIOHID }, new { @class = "btn btn-info" })
+                        </div>
+                    }
+                    else if (item.RSID == (int)POR.Enum.RecordStatus.Forward && (URID == CurrentStatus || CurrentStatus == 0))
+                    {
+                        if (CurrentStatus == (int)POR.Enum.UserRole.ACCOUNTS01)
+                        {
+                            <div class="col-lg-12">
+                                @Html.ActionLink("Certify to ED", "Forward", "LivingInOut", new { id = item.LIOHID, Sno = item.Snumber }, new { @class = "btn btn-success",id="btnCertify"})
+                                <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-danger" />
+                                @Html.ActionLink("Back to List", "IndexLivingINOutStatus", "LivingInOut", new { id = item.LIOHID }, new { @class = "btn btn-info" })
+
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-lg-12">
+                                @Html.ActionLink("Forward", "Forward", "LivingInOut", new { id = item.LIOHID }, new { @class = "btn btn-primary", id = "btnCertify" })
+                                <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-danger" />
+                                @Html.ActionLink("Back to List", "IndexLivingINOutStatus", "LivingInOut", new { id = item.LIOHID }, new { @class = "btn btn-info" })
+
+                            </div>
+                        }
+                    }
+                    else if (item.RSID == (int)POR.Enum.RecordStatus.Forward && (URID == CurrentStatus && CurrentStatus != 1))
+                    {
+                        <div class="col-lg-12">
+                            @Html.ActionLink("Forward", "Forward", "LivingInOut", new { id = item.LIOHID }, new { @class = "btn btn-primary" , id = "btnCertify" })
+                            <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-danger" />
+                            @Html.ActionLink("Back to List", "IndexLivingINOutStatus", "LivingInOut", new { id = item.LIOHID }, new { @class = "btn btn-info" })
+                        </div>
+
+                    }
+
+                    else if (item.RSID == (int)POR.Enum.RecordStatus.Reject && URID == CurrentStatus && CurrentStatus == 11)
+                    {
+                        <div class="col-lg-12">
+                            @Html.ActionLink("Reject Confirm", "RejectConfirm", "LivingInOut", new { id = item.LIOHID, rejectStatus = 2 }, new { @class = "btn btn-danger" })
+                            @Html.ActionLink("Edit", "Edit", "LivingInOut", new { id = item.LIOHID, rejectStatus = 2 }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("Back to List", "RejectList", "LivingInOut", new { id = item.LIOHID }, new { @class = "btn btn-info" })
+                        </div>
+                    }
+                    else if (item.RSID == (int)POR.Enum.RecordStatus.Reject && URID == CurrentStatus && CurrentStatus != 1)
+                    {
+                        <div class="col-lg-12">
+                            @*@Html.ActionLink("Forward", "Forward", "Married", new { id = item.LIOHID }, new { @class = "btn btn-primary" })*@
+                            <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-danger" />
+                            @Html.ActionLink("Back to List", "RejectIndex", "Married", new { @class = "btn btn-info" })
+                        </div>
+                    }
+                    else if (item.RSID == (int)POR.Enum.RecordStatus.Reject && URID == 12 && CurrentStatus != 1)
+                    {
+                        <div class="col-lg-12">
+                            @Html.ActionLink("Forward", "Forward", "Married", new { id = item.LIOHID }, new { @class = "btn btn-primary", id = "btnCertify" })
+                            <input id="btnReject" type="button" value="Reject" data-assigned-id="1000" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-danger" />
+                            @Html.ActionLink("Back to List", "RejectIndex", "Married", new { @class = "btn btn-info" })
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-lg-12">
+                            @Html.ActionLink("Back to List", "IndexLivingINOutStatus", "LivingInOut", new { id = item.LIOHID }, new { @class = "btn btn-info" })
+                        </div>
+                    }
+                }
+                @*Fixed Details Id popup Box value*@
+                <input type="hidden" id="hndFADID" value="@Html.DisplayFor(model => item.LIOHID)" />
+                <input type="hidden" id="hndFMSID" value="@Html.DisplayFor(model => item.FMSID)" />
+
+            </section>
+
+            <div class="loading" id="dvloader">
+                <img class="loading-image" src="~/Content/img/Spinner-3.gif" alt="Loading..." />
+            </div>
+  } 
+               
+    </div>
+
+}
+<script src="~/Scripts/Jq.js"></script>
+<script src="~/Scripts/LivingInOut.js"></script>
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="border-bottom:none !important;">
+                Reject Comments
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <hr style="margin-top: 0px !important; margin-bottom: 0px !important; padding-bottom: 0px !important; padding-top: 0px !important;" />
+            </div>
+            <div class="modal-body" id="partial2">
+                @{
+                    <div>
+                        @Html.Partial("_RejectCommentLivingInOut")
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#btnReject').click(function () {
+            var CSHID = $("#hndCSHID").val();
+            var FMSID = $("#hndFMSID").val();
+
+            var route = '@Url.Action("Reject", "Married")?CSHID=' + CSHID + '&FMSID=' + FMSID;
+            $('#partial2').load(route);
+        });
+    });   
+</script>
+

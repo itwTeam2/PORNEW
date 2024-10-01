@@ -1,0 +1,291 @@
+﻿@model POR.Models.PersonalContact._PsnContactHeader
+
+<link href="~/Content/CustomeStyle.css" rel="stylesheet" />
+<script src="~/Scripts/Jq.js"></script>
+<script src="~/Scripts/PsnContact.js"></script>
+
+@{
+    ViewBag.Title = "RegiMakeInfo";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1 style="text-align:center"><span>Personal Contact Details</span></h1>
+
+            <div id="ErrorMessage" style="margin-top:5px">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong> @TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong>@TempData["ErrMsg"]
+                    </div>
+                }
+            </div>
+
+        </section>
+        <br />
+
+        <section class="col-lg-6 connectedSortable">
+
+            <div class="nav-tabs-custom">
+                <div class="box-body">
+                    <div style="margin-top:-10px">
+                        <div class="box-body">
+                            <div>
+                                @*Service No and  @*Rank*@
+                                <div class="form-group">
+                                    <div class="col-lg-6">
+                                        @Html.Label("Service Number", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.ServiceNo, new { @class = "form-control ", autocomplete = "off" })
+                                        @Html.ValidationMessageFor(model => model.ServiceNo, string.Empty, new { @class = "label label-danger" })
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        @Html.Label("Rank", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.Rank, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                                    </div>
+                                </div>
+
+                                @*Name and Branch*@
+                                <div class="form-group">
+                                    @* Name *@
+                                    <div class="col-lg-6">                                        
+                                        @Html.Label("Name", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.FullName, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                                    </div>
+
+                                    @* Branch/Trade *@
+                                    <div class="col-lg-6">
+                                        @Html.Label("Branch/Trade", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.Trade, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+
+                                    </div>
+                                </div>
+
+                                @* Select POR Sub Category *@
+                                <div class="form-group">
+                                    <div class="col-lg-12">
+                                        @Html.Label("Select POR Sub Category", new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.MasSubCatID, ViewBag.DDL_PersonalContactCat as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                    </div>                                    
+                                </div>
+
+                                @* Authority *@
+                                <div class="col-lg-12">
+                                    @Html.Label("Authority", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.Authority, new { @class = "form-control ", autocomplete = "off" })
+                                    @Html.ValidationMessageFor(model => model.Authority, string.Empty, new { @class = "label label-danger" })
+                                </div>
+
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            @*Mobile No*@
+            <div class="nav-tabs-custom" id="dvMobileNo">
+                <div class="box-body">
+                    <div style="margin-top:-10px">
+                        <div class="box-body">
+                            <div>
+                                <div class="form-group">
+                                    <div class="col-lg-12">
+                                        @Html.Label("Mobile No", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.MobileNo, new { @class = "form-control ", autocomplete = "off" })      
+                                        @Html.ValidationMessageFor(model => model.MobileNo, string.Empty, new { @class = "label label-danger" })                                   
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*Residential Tele No*@
+            <div class="nav-tabs-custom" id="dvResidentialTelNo">
+                <div class="box-body">
+                    <div style="margin-top:-10px">
+                        <div class="box-body">
+                            <div>
+                                <div class="form-group">
+                                    <div class="col-lg-12">
+                                        @Html.Label("Residential Tele No", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.ResidentialTeleNo, new { @class = "form-control ", autocomplete = "off" })      
+                                        @Html.ValidationMessageFor(model => model.ResidentialTeleNo, string.Empty, new { @class = "label label-danger" })                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*E- Mail*@
+            <div class="nav-tabs-custom" id="dvEMail">
+                <div class="box-body">
+                    <div style="margin-top:-10px">
+                        <div class="box-body">
+                            <div>
+                                <div class="form-group">
+                                    <div class="col-lg-12">
+                                        @Html.Label("E-Mail", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.EmailAddress, new { @class = "form-control ", autocomplete = "off" })
+                                        @Html.ValidationMessageFor(model => model.EmailAddress, string.Empty, new { @class = "label label-danger" })                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*Details Child*@
+            <div class="nav-tabs-custom" id="dvChild">
+                <div class="box-body">
+                    <div style="margin-top:-10px">
+                        @*Child Living Status*@
+                        <div class="form-group">
+                            @*Child Living Status*@
+                            <div class="col-lg-12">
+                                @*Child Living Status*@
+                                @Html.Label("Child Living Status", new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.SCID, ViewBag.DDL_ChildLivingStatus as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                            </div>
+                            
+                        </div>
+
+                        <div class="form-group" id="dvChildBirth">
+                            @*Child Full Name*@
+                            <div class="col-lg-12">
+                                @Html.Label("Child Full Name", new { @class = "control-label" })
+                                @Html.TextAreaFor(model => model.ChildFullName, new { @class = "form-control ", autocomplete = "off" })
+                                @Html.ValidationMessageFor(model => model.ServiceNo, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                            @*Child Name With Initial*@
+                            <div class="col-lg-12">
+                                @Html.Label("Child Name With Initial", new { @class = "control-label" })
+                                @Html.TextAreaFor(model => model.ChildFullNameWithInitial, new { @class = "form-control ", autocomplete = "off" })
+                                @Html.ValidationMessageFor(model => model.ServiceNo, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                            @*Gender*@
+                            <div class="form-group">
+                                <div class="col-lg-12">
+                                    @Html.Label("Select Child Gender", new { @class = "control-label" })
+                                    <div class="row">
+                                        <div class="col-lg-6" style="font-weight:bold">
+                                            Male  : @Html.RadioButton("Gender", "1", new { @class = "form-check-input" })
+                                        </div>
+                                        <div class="col-lg-6" style="font-weight:bold">
+                                            Famale  : @Html.RadioButton("Gender", "2", new { @class = "form-check-input" })
+                                        </div>
+                                    </div>
+                                </div>                              
+                            </div>
+
+                            @*Select District and Child Date of Birth*@
+                            <div class="form-group">
+                                <div class="col-lg-6" style="margin-top:10px">
+                                    @*District*@
+                                    @Html.Label("Select District", new { @class = "control-label" })
+                                    @Html.DropDownListFor(model => model.Disrict2, ViewBag.DDL_DistricSelectAll_Result as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                    @Html.HiddenFor(model => model.DESCRIPTION, new { @class = "form-control ", autocomplete = "off" })
+                                    @Html.ValidationMessageFor(model => model.District, string.Empty, new { @class = "label label-danger" })
+                                </div>
+                                @*Child Date of Birth*@
+                                <div class="col-lg-6" style="margin-top:10px">
+                                    @Html.Label("Child Date of Birth", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.DateOfBirth, new { @class = "form-control ", autocomplete = "off", @type = "date" })
+                                    @Html.ValidationMessageFor(model => model.DateOfBirth, string.Empty, new { @class = "label label-danger" })
+                                </div>
+                            </div>
+
+                            @*Child Birth Certificate No and Child Birth Place*@
+                            <div class="form-group">
+                                @*Child Birth Certificate No*@
+                                <div class="col-lg-6">
+                                    @Html.Label("Child Birth Certificate No", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.BirthCertificateNo, new { @class = "form-control ", autocomplete = "off" })
+                                    @Html.ValidationMessageFor(model => model.BirthCertificateNo, string.Empty, new { @class = "label label-danger" })
+                                </div>
+
+                                @* Child Birth Place *@
+                                <div class="col-lg-6">
+                                    @Html.Label("Child Birth Place", new { @class = "control-label" })
+                                    @Html.TextBoxFor(model => model.BirthPlace, new { @class = "form-control ", autocomplete = "off" })
+                                    @Html.ValidationMessageFor(model => model.BirthPlace, string.Empty, new { @class = "label label-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        @* Child Death relayed Info *@
+                        <div class="form-group" id="dvChildDeath">
+                            @*Select Death Child Name*@
+                            <div class="form-group">
+                                <div class="col-lg-12">
+                                    @Html.Label("Select Death Child Name", new { @class = "control-label" })
+                                    @Html.DropDownListFor(model => model.PCDID, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.PCDID, string.Empty, new { @class = "label label-danger" })
+                                </div>                               
+                            </div>
+                            @* Child Date of Death *@
+                            <div class="col-lg-6">
+                                @Html.Label("Child Date of Death", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.DateOfDeath, new { @class = "form-control ", autocomplete = "off", @type = "date" })
+                                @Html.ValidationMessageFor(model => model.DateOfDeath, string.Empty, new { @class = "label label-danger" })
+                            </div>
+
+                            @* Child Death Certificate No *@
+                            <div class="col-lg-6">
+                                @Html.Label("Child Death Certificate No", new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.DeathCertificateNo, new { @class = "form-control ", autocomplete = "off" })
+                                @Html.ValidationMessageFor(model => model.DeathCertificateNo, string.Empty, new { @class = "label label-danger" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="col-lg-6 connectedSortable">
+            <div class="nav-tabs-custom">
+                <div class="box-body">
+                    <div class="box-body">                      
+
+                        <div>
+                            <div class="form-group">
+                                <section class="col-lg-6">
+                                    <button type="submit" class="col-lg-4 btn btn-success pull-right" style="height:40px;width:200px">
+                                        <span class="info-box-text"><i class=" fa fa-save"></i> Save</span>
+                                    </button>
+                                    @*<i class=" fa fa-hand-o-left"><input type="submit" value="Save" class="btn btn-success pull-right submitBtn"></i>*@
+                                </section>
+                                <section class="col-lg-6">
+                                    <button type="button" class="col-lg-4 btn btn-warning pull-right" style="height:40px;width:200px" onclick="location.href='@Url.Action("Index", "PersonalContact")'">
+                                        <span class="info-box-text"><i class=" fa fa-hand-o-left"></i> Go to Pending List</span>
+                                    </button>
+                                </section>                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+}

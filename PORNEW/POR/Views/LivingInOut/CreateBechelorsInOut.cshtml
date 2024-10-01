@@ -1,0 +1,313 @@
+﻿@model POR.Models.LivingInOut._LivingInOut
+
+<script src="~/Scripts/Jq.js"></script>
+<script src="~/Scripts/LivingInOut.js"></script>
+@{
+    ViewBag.Title = "RegiMakeInfo";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="content-wrapper">
+
+        <section class="content-header">
+           
+            <h1 style="text-align:center"><span>Bechelors/Spinster In/Out</span></h1>
+
+            <div id="ErrorMessage">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong> @TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert! </strong>@TempData["ErrMsg"]
+                    </div>
+                }
+            </div>
+
+        </section>
+        
+        <br />
+
+        <section class="col-lg-6 connectedSortable">
+            <div class="nav-tabs-custom" style="height:695px">
+                @Html.ValidationSummary(true)
+                <div class="box-body">
+                    @*Service Number*@
+                    <div class="form-group">
+                        <div class="col-lg-6">
+                            @Html.Label("Service Number", new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.Snumber, new { @class = "form-control ", autocomplete = "off" })
+                            @Html.HiddenFor(model => model.ServiceNo, new { @class = "form-control ", autocomplete = "off" })
+                            @Html.ValidationMessageFor(model => model.Snumber, string.Empty, new { @class = "label label-danger" })
+                        </div>
+
+                        <div class="col-lg-6">
+                            @Html.Label("Rank", new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.Rank, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                        </div>
+
+                    </div>
+                    
+                    @*Name*@
+                    <div class="form-group">
+                        <div class="col-lg-12" style="margin-top:12px">
+                            @Html.Label("Name", new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.FullName, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(model => model.FullName, string.Empty, new { @class = "label label-danger" })
+
+                        </div>
+                    </div>
+                    
+                    @*Branch/Trade/Civil Status*@
+                    <div class="form-group">
+                        <div class="col-lg-6" style="margin-top:12px">
+                            @Html.Label("Branch/Trade", new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.Trade, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                        </div>
+                        <div class="col-lg-6" style="margin-top:12px">
+                            @Html.Label("Civil Status", new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.Marriage_Status, new { @class = "form-control ", autocomplete = "off", placeholder = "", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(model => model.Marriage_Status, string.Empty, new { @class = "label label-danger" })
+                        </div>
+                    </div> 
+                    
+                    @*Authority*@
+                    <div class="form-group">
+                        <div class="col-lg-12" style="margin-top:12px">
+                            @Html.Label("Authority", new { @class = "control-label" })
+                            @Html.TextAreaFor(model => model.Authority, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                            @Html.ValidationMessageFor(model => model.Authority, string.Empty, new { @class = "label label-danger" })
+                        </div>
+
+                    </div>  
+                    
+                    @*Select Living In/Out Status*@                
+                    <div class="col-lg-12" style="margin-top: 11px">
+                        @Html.Label("Select Living In/Out Status", new { @class = "control-label" })
+                        @Html.DropDownListFor(model => model.LSID, ViewBag.DDL_InOutCategories as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.LSID, string.Empty, new { @class = "label label-danger" })
+                    </div>                                      
+                    
+                    @*From Date/To Date for period section*@
+                    <div class="form-group" id="dvdatePeriod">
+                        <div class="col-lg-6" style="margin-top:12px">
+                            @Html.Label("From Date", new { @class = "control-label" })
+                            <input id="searchDate" type="date" name="FromDate" class="form-control" />
+                            @*@Html.TextBoxFor(model => model.FromDate, new { @class = "form-control datepicker" })
+                            @Html.ValidationMessageFor(model => model.FromDate, string.Empty, new { @class = "label label-danger" })*@
+                            
+                        </div>
+
+                        <div class="col-lg-6" style="margin-top:12px">
+                            @Html.Label("To Date", new { @class = "control-label" })
+                            <input id="searchDate" type="date" name="ToDate" class="form-control" />
+                            @*@Html.TextBoxFor(model => model.ToDate, new { @class = "form-control datepicker" })
+                            @Html.ValidationMessageFor(model => model.ToDate, string.Empty, new { @class = "label label-danger" })*@
+                        </div>
+
+                    </div>
+
+                    @*with effect date*@
+
+                    <div class="form-group" id="dvWithEffctDate">
+                        <div class="col-lg-12" style="margin-top:12px">
+                            @Html.Label("With Effective Date", new { @class = "control-label" })                            
+                            <input id="searchDate" type="date" name="WEDate" class="form-control" />
+                            @*@Html.TextBoxFor(model => model.FromDate, new { @class = "form-control datepicker" })
+                            @Html.ValidationMessageFor(model => model.FromDate, string.Empty, new { @class = "label label-danger" })*@
+                        </div>
+                    </div>
+
+                    @*NOK Button Area*@
+                    <div class="nav-tabs-custom col-lg-12" style="margin-left:5px;height:45px;margin-top:20px" id="dvNokShowArea">
+
+                        <h5 class="text-black" style="float:left"><b>Select NOK Change Status</b></h5>
+
+                        <section class="col-lg-6" style="margin-top: 9px">
+                            <div class="col-lg-6">
+                                <input type="button" value="Yes" class="btn btn btn-info" style="width:43px; height:30px" id="btnYes" name="btnName" />
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="submit" value="No" class="btn btn btn-warning" style="width:43px;height:30px" id="btnNo" name="btnName" />
+                            </div>
+                        </section>
+                    </div>
+
+                    @*Submit area Button.*@
+                    <div class="nav-tabs-custom col-lg-12" style="margin-left:5px;height:45px;margin-top:20px" id="dvNormalSaveArea">
+                        <h5 class="text-black" style="float:left"><b>Save Your Details</b></h5>
+
+                        <section class="col-lg-6" style="margin-top: 9px">
+
+                            <div class="col-lg-12 pull-right">
+                                <input type="submit" value="Save Details" class="btn btn btn-success pull-right" name="btnName" />
+                            </div>
+                        </section>
+                    </div>
+                   
+
+                    <div id="warnningDv">
+                        <section class="col-lg-12 alert alert-danger" style="margin-left:15px;margin-top:10px">
+                            <div class="form-group">
+                                <div>
+                                    <p style="font-size:15px;text-align:center">
+                                        <b>
+                                            This is not a valied request. Need to authorized Married POR first.
+                                        </b>
+                                    </p>
+                                </div>
+                            </div>                            
+                        </section>
+                    </div>                   
+                
+                    <div class="card-body d-flex flex-column" >
+                        <section class="col-lg-12" style="margin-top:30px">
+                            <button type="button" class="col-lg- btn btn-warning pull-right" id="btnYes" style="height:40px;width:200px" onclick="location.href='@Url.Action("IndexLivingINOutStatus", "LivingInOut")'">
+                                <span class="info-box-text"><i class=" fa fa-hand-o-left"></i> Go to Pending List</span>
+                            </button>
+                            <button type="button" class="col-lg- btn btn-info" style="height:40px;width:140px" onclick="location.href='@Url.Action("ClearFileds", "LivingInOut")'">
+                                <span class="info-box-text"><i class=" fa fa-remove"></i>Clear Fileds</span>
+                            </button>
+                        </section>
+
+                    </div>
+                
+                </div>
+            </div>
+        </section>       
+
+        <section class="col-lg-6 connectedSortable" id="dvYes">
+            <div class="nav-tabs-custom">
+                <div class="box-body">                    
+                    <div class="nav-tabs-custom col-lg-12" style="margin-left:5px">
+                        <div class="box-body">
+                            <div>
+                                @*NOK Name*@
+                                <div class="form-group">
+                                    @Html.Label("NOK Name", new { @class = "control-label" })
+                                    @Html.TextAreaFor(model => model.NOKName, new { @class = "form-control ", autocomplete = "off" })
+                                    @Html.ValidationMessageFor(model => model.NOKName, string.Empty, new { @class = "label label-danger" })
+                                </div>
+
+                                @*NOK Change Category And With Effect Date*@                                                              
+                                <div class="form-group">
+                                    <div class="col-lg-6">
+                                        @Html.Label("NOK Change Category", new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.RelationshipName, ViewBag.DDL_Relationship as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.RelationshipName, string.Empty, new { @class = "label label-danger" })
+                                    </div>
+                                    
+                                    <div class="col-lg-6">
+                                        @Html.Label("NOK With Effect Date", new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.NOKWEFDate, "{0:yyyy-MM-dd}", new { @class = "form-control" ,@type = "date" })
+                                        @Html.ValidationMessageFor(model => model.NOKWEFDate, string.Empty, new { @class = "label label-danger" })
+                                    </div>                                   
+                                </div>
+
+                                @*NOK Address*@
+                                <div class="form-group">
+                                    @Html.Label("NOK Address", new { @class = "control-label" })
+                                    @Html.TextAreaFor(model => model.NOKaddress, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                                    @Html.ValidationMessageFor(model => model.NOKaddress, string.Empty, new { @class = "label label-danger" })
+                                </div> 
+                                    
+                                @*Select District & GS*@
+                                <div class="form-group">
+                                    <div class="col-lg-6">
+                                        @Html.Label("Select District", new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.District, ViewBag.DDL_DistricSelectAll_Result as SelectList, "SELECT", htmlAttributes: new { @class = "form-control" })
+                                        @*@Html.DropDownListFor(model => model.GSName, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })*@
+                                        @Html.HiddenFor(model => model.DESCRIPTION, new { @class = "form-control ", autocomplete = "off" })
+                                    </div>
+                                    <div class="col-lg-6">
+                                        @Html.Label("Select GS Division", new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.GSName, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.GSName, string.Empty, new { @class = "label label-danger" })
+
+                                    </div>
+                                </div>
+
+                                @*Select Nearest Town & Police Station*@
+                                <div class="form-group">
+                                    <div class="col-lg-6">
+                                        @Html.Label("Select Nearest Town", new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.Town1, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Town1, string.Empty, new { @class = "label label-danger" })
+
+                                    </div>
+                                    <div class="col-lg-6">
+                                        @Html.Label("Select Police Station", new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.PoliceStation1, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.PoliceStation1, string.Empty, new { @class = "label label-danger" })
+
+                                    </div>
+                                </div>                           
+                            
+                                @*Select Post office location*@
+                                <div class="form-group">
+                                    @Html.Label("Select Post Office Location", new { @class = "control-label" })
+                                    @Html.DropDownListFor(model => model.PostOfficeName, new SelectList(string.Empty, "Value", "Text"), "SELECT", htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.PostOfficeName, string.Empty, new { @class = "label label-danger" })
+                                </div>
+
+                                @*Remarks*@
+                                <div class="form-group">
+                                    @Html.Label("Remarks", new { @class = "control-label" })
+                                    @Html.TextAreaFor(model => model.Remarks, new { @class = "form-control ", autocomplete = "off", placeholder = "" })
+                                    @Html.ValidationMessageFor(model => model.Remarks, string.Empty, new { @class = "label label-danger" })
+                                </div>
+
+                                @*Submit Button Area*@
+                                <div>
+                                    <div class="form-group">
+                                        <section class="col-lg-6">
+                                            @*<input type="button" value="Submit" class="btn btn-danger pull-right" id="btnNOKchange" />*@
+                                        </section>
+                                        <section class="col-lg-6">
+                                            <input type="submit" value="Submit" class="btn btn-success pull-right" id="btnNOKchange" style="width:120px;height:42px" name="btnName">
+                                        </section>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="col-lg-6 alert" id="dvHRIMSNOKInfo">
+            <div class="nav-tabs-custom alert-success">
+                <div class="box-body">
+                    <div><p style="font-size:12px;text-align:center"><b><u>HRMIS NOK Details</u></b></p></div>
+                    <ol type="a">
+                        <li><span class="col-lg-3"> <b>NOK Name:</b></span><span class="col-lg-9"><b><i id="Name"></i></b></span></li>
+                        <li style="margin-top:30px"><span class="col-lg-4"> <b>NOK Relationship:</b></span><span class="col-lg-8"><b><i id="NOKRelationship"></i></b></span></li>
+                        <li style="margin-top:30px"><span class="col-lg-4"> <b>NOK Address:</b></span><span class="col-lg-8"><b><i id="NOKAddress"></i></b></span></li>
+                    </ol>
+                </div>                
+            </div>           
+        </section>
+
+        <section class="col-lg-6 alert" id="dvPORIncludeNOKDetails" style="height:500px">
+            <div class="nav-tabs-custom  alert-error">
+                <div class="box-body">
+                    <div><p style="font-size:12px;text-align:center"><b><u>POR Include NOK Details</u></b></p></div>
+                    <ol type="a">
+                        <li><span class="col-lg-3"> <b>NOK Name:</b></span><span class="col-lg-9"><b><i id="PORName"></i></b></span></li>
+                        <li style="margin-top:60px"><span class="col-lg-4"> <b>NOK Relationship:</b></span><span class="col-lg-8"><b><i id="PORNOKRelationship"></i></b></span></li>
+                        <li style="margin-top:30px"><span class="col-lg-4"> <b>NOK Address:</b></span><span class="col-lg-8"><b><i id="PORNOKAddress"></i></b></span></li>
+                    </ol>
+                </div>                
+            </div>           
+        </section>    
+    
+    </div>
+}

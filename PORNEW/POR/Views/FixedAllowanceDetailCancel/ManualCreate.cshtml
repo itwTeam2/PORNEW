@@ -1,0 +1,64 @@
+﻿@model POR.Models._FixedAllowanceCancelManual
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="content-wrapper" style="height:900px!important;">
+        <section class="content-header">
+
+            <h1>
+                Fixed Allowance Manual Cancel               
+            </h1>
+
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+            </ol>
+
+            <div id="ErrorMessage">
+                @if (TempData["ScfMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12  alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert!</strong>&nbsp;@TempData["ScfMsg"]
+                    </div>
+                }
+                else if (TempData["ErrMsg"] != null)
+                {
+                    <div id="Msg" class="col-lg-12 alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Alert!</strong>&nbsp;@TempData["ErrMsg"]
+                    </div>
+                }
+            </div>
+
+        </section>
+        <br /> 
+
+        <section class="col-lg-12 connectedSortable">
+            <div class="nav-tabs-custom">
+                <div class="box-body">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            @Html.Label("Enter Your Cancel Description ", new { @class = "control-label" })
+                            @Html.TextAreaFor(model => model.Description, new { @class = "form-control", autocomplete = "off", placeholder = "" })
+                            @Html.ValidationMessageFor(model => model.Description, string.Empty, new { @class = "label label-danger" })
+                        </div>
+                      
+
+                        <div class="form-group">
+                            <input type="submit" value="Save & Forward" class="fa fa-arrow-circle-right btn btn-success pull-right" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+}
+
