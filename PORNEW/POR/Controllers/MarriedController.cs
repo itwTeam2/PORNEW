@@ -33,7 +33,7 @@ namespace POR.Controllers
         {
             /// Create By: Flt lt Wickramasinghe
             /// Create Date: 25/05/2021  
-            /// Description: por clerk initial step stage of crate married,divorce,widow por
+            /// Description: por clerk initial step stage of crate married,divorce,widow por to record data
 
             try
             {

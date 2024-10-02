@@ -209,6 +209,7 @@
     <Compile Include="Controllers\PersonalContactController.cs" />
     <Compile Include="Controllers\PublicHolidayCalenderController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\TestingController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="FAEligibleList.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -5272,6 +5273,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\DDL\" />
     <Folder Include="Views\Posting\" />
+    <Folder Include="Views\Testing\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
